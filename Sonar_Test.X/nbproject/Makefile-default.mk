@@ -104,14 +104,14 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/f3d5ffb746c6f1aa3d61730d6a4c1029d6344ad7 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/ede97104b5ca6b6a508d76a9f54093e5e838e5f4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/sonar.o.d 
 	@${RM} ${OBJECTDIR}/sonar.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/sonar.o.d" -MT "${OBJECTDIR}/sonar.o.d" -MT ${OBJECTDIR}/sonar.o  -o ${OBJECTDIR}/sonar.o sonar.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
-${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/822bf2196a79443fef92cbc3bf4ca8c225c389a6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/e9dc8751bf94869cf97ef0de510190b8f874ef83 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/sonar.o.d 
 	@${RM} ${OBJECTDIR}/sonar.o 

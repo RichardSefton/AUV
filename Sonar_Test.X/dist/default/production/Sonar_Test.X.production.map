@@ -1,7 +1,33 @@
 Archive member included to satisfy reference by file (symbol)
 
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+                              build/default/production/sonar.o (__divsf3)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o) (__divsf3x)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+                              build/default/production/sonar.o (__floatunsisf)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_inf)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_nan)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_pscA)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_pscB)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o) (__fp_round)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_split3)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o) (__fp_szero)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+                              build/default/production/sonar.o (__mulsf3)
+/usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
+                              /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o) (__mulsf3x)
 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
                               /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o (exit)
+/usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+                              build/default/production/sonar.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -10,8 +36,46 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/sonar.o
  .data          0x0000000000000000        0x0 build/default/production/sonar.o
  .bss           0x0000000000000000        0x0 build/default/production/sonar.o
- .text.DisableWO
-                0x0000000000000000        0xc build/default/production/sonar.o
+ .text.SetupTCB1
+                0x0000000000000000       0x20 build/default/production/sonar.o
+ .bss.pulse_counter
+                0x0000000000000000        0x1 build/default/production/sonar.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
@@ -28,6 +92,22 @@ Discarded input sections
                 0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -158,7 +238,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x13a
+.text           0x0000000000000000      0x5b2
  *(.vectors)
  .vectors       0x0000000000000000       0x78 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
                 0x0000000000000000                __vectors
@@ -199,6 +279,8 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x0000000000000084       0x10 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
+                0x0000000000000084                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -209,65 +291,123 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000084        0x8 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
+ .init9         0x0000000000000094        0x8 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
  *(.init9)
  *(.text)
- .text          0x000000000000008c        0x4 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
-                0x000000000000008c                __vector_22
-                0x000000000000008c                __vector_28
-                0x000000000000008c                __vector_1
-                0x000000000000008c                __vector_24
-                0x000000000000008c                __vector_12
-                0x000000000000008c                __bad_interrupt
-                0x000000000000008c                __vector_6
-                0x000000000000008c                __vector_3
-                0x000000000000008c                __vector_23
-                0x000000000000008c                __vector_25
-                0x000000000000008c                __vector_11
-                0x000000000000008c                __vector_13
-                0x000000000000008c                __vector_17
-                0x000000000000008c                __vector_19
-                0x000000000000008c                __vector_7
-                0x000000000000008c                __vector_27
-                0x000000000000008c                __vector_5
-                0x000000000000008c                __vector_4
-                0x000000000000008c                __vector_9
-                0x000000000000008c                __vector_2
-                0x000000000000008c                __vector_21
-                0x000000000000008c                __vector_15
-                0x000000000000008c                __vector_29
-                0x000000000000008c                __vector_26
-                0x000000000000008c                __vector_14
-                0x000000000000008c                __vector_16
-                0x000000000000008c                __vector_18
-                0x000000000000008c                __vector_20
-                0x0000000000000090                . = ALIGN (0x2)
+ .text          0x000000000000009c        0x4 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
+                0x000000000000009c                __vector_22
+                0x000000000000009c                __vector_28
+                0x000000000000009c                __vector_1
+                0x000000000000009c                __vector_24
+                0x000000000000009c                __vector_12
+                0x000000000000009c                __bad_interrupt
+                0x000000000000009c                __vector_23
+                0x000000000000009c                __vector_25
+                0x000000000000009c                __vector_11
+                0x000000000000009c                __vector_17
+                0x000000000000009c                __vector_19
+                0x000000000000009c                __vector_7
+                0x000000000000009c                __vector_27
+                0x000000000000009c                __vector_5
+                0x000000000000009c                __vector_4
+                0x000000000000009c                __vector_9
+                0x000000000000009c                __vector_2
+                0x000000000000009c                __vector_21
+                0x000000000000009c                __vector_15
+                0x000000000000009c                __vector_29
+                0x000000000000009c                __vector_8
+                0x000000000000009c                __vector_26
+                0x000000000000009c                __vector_14
+                0x000000000000009c                __vector_10
+                0x000000000000009c                __vector_16
+                0x000000000000009c                __vector_18
+                0x000000000000009c                __vector_20
+                0x00000000000000a0                . = ALIGN (0x2)
  *(.text.*)
  .text.MainClkCtrl
-                0x0000000000000090       0x12 build/default/production/sonar.o
-                0x0000000000000090                MainClkCtrl
+                0x00000000000000a0       0x12 build/default/production/sonar.o
+                0x00000000000000a0                MainClkCtrl
  .text.SetupPins
-                0x00000000000000a2       0x16 build/default/production/sonar.o
-                0x00000000000000a2                SetupPins
+                0x00000000000000b2       0x28 build/default/production/sonar.o
+                0x00000000000000b2                SetupPins
  .text.SetupTCA
-                0x00000000000000b8       0x22 build/default/production/sonar.o
-                0x00000000000000b8                SetupTCA
+                0x00000000000000da       0x22 build/default/production/sonar.o
+                0x00000000000000da                SetupTCA
  .text.EnableWO
-                0x00000000000000da        0xc build/default/production/sonar.o
-                0x00000000000000da                EnableWO
- .text.main     0x00000000000000e6       0x14 build/default/production/sonar.o
-                0x00000000000000e6                main
- .text.__vector_10
-                0x00000000000000fa       0x1e build/default/production/sonar.o
-                0x00000000000000fa                __vector_10
- .text.__vector_8
-                0x0000000000000118       0x1e build/default/production/sonar.o
-                0x0000000000000118                __vector_8
-                0x0000000000000136                . = ALIGN (0x2)
+                0x00000000000000fc       0x10 build/default/production/sonar.o
+                0x00000000000000fc                EnableWO
+ .text.DisableWO
+                0x000000000000010c        0xc build/default/production/sonar.o
+                0x000000000000010c                DisableWO
+ .text.SetupRTC
+                0x0000000000000118       0x18 build/default/production/sonar.o
+                0x0000000000000118                SetupRTC
+ .text.SetupTCB0
+                0x0000000000000130       0x2c build/default/production/sonar.o
+                0x0000000000000130                SetupTCB0
+ .text.main     0x000000000000015c       0x18 build/default/production/sonar.o
+                0x000000000000015c                main
+ .text.EnableTCB1
+                0x0000000000000174       0x10 build/default/production/sonar.o
+                0x0000000000000174                EnableTCB1
+ .text.DisableTCB1
+                0x0000000000000184       0x10 build/default/production/sonar.o
+                0x0000000000000184                DisableTCB1
+ .text.__vector_13
+                0x0000000000000194       0x4e build/default/production/sonar.o
+                0x0000000000000194                __vector_13
+ .text.__vector_6
+                0x00000000000001e2       0xa0 build/default/production/sonar.o
+                0x00000000000001e2                __vector_6
+ .text.__vector_3
+                0x0000000000000282       0x52 build/default/production/sonar.o
+                0x0000000000000282                __vector_3
+ .text.avr-libc.fplib
+                0x00000000000002d4        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+                0x00000000000002d4                __divsf3
+ .text.avr-libc.fplib
+                0x00000000000002dc       0xdc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+                0x00000000000002fc                __divsf3x
+                0x0000000000000302                __divsf3_pse
+ .text.avr-libc.fplib
+                0x00000000000003b8       0x7a /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+                0x00000000000003b8                __floatunsisf
+                0x00000000000003bc                __floatsisf
+ .text.avr-libc.fplib
+                0x0000000000000432        0xc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+                0x0000000000000432                __fp_inf
+ .text.avr-libc.fplib
+                0x000000000000043e        0x6 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+                0x000000000000043e                __fp_nan
+ .text.avr-libc.fplib
+                0x0000000000000444        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+                0x0000000000000444                __fp_pscA
+ .text.avr-libc.fplib
+                0x0000000000000452        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+                0x0000000000000452                __fp_pscB
+ .text.avr-libc.fplib
+                0x0000000000000460       0x22 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+                0x0000000000000460                __fp_round
+ .text.avr-libc.fplib
+                0x0000000000000482       0x44 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+                0x0000000000000482                __fp_split3
+                0x0000000000000492                __fp_splitA
+ .text.avr-libc.fplib
+                0x00000000000004c6        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+                0x00000000000004c6                __fp_zero
+                0x00000000000004c8                __fp_szero
+ .text.avr-libc.fplib
+                0x00000000000004d4        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+                0x00000000000004d4                __mulsf3
+ .text.avr-libc.fplib
+                0x00000000000004dc       0xd2 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
+                0x00000000000004fa                __mulsf3x
+                0x0000000000000500                __mulsf3_pse
+                0x00000000000005ae                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000136        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
-                0x0000000000000136                exit
-                0x0000000000000136                _exit
+ .fini9         0x00000000000005ae        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+                0x00000000000005ae                exit
+                0x00000000000005ae                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -286,16 +426,16 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000136        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+ .fini0         0x00000000000005ae        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000013a                _etext = .
+                0x00000000000005b2                _etext = .
 
 .rodata
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
 
-.data           0x0000000000803800        0x0 load address 0x000000000000013a
+.data           0x0000000000803800        0x0 load address 0x00000000000005b2
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -304,20 +444,22 @@ END GROUP
                 0x0000000000803800                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000803800        0x0
-                [!provide]                        PROVIDE (__bss_start, .)
+.bss            0x0000000000803800        0x4
+                0x0000000000803800                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.distance  0x0000000000803800        0x4 build/default/production/sonar.o
+                0x0000000000803800                distance
  *(COMMON)
-                [!provide]                        PROVIDE (__bss_end, .)
-                0x000000000000013a                __data_load_start = LOADADDR (.data)
-                0x000000000000013a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000803804                PROVIDE (__bss_end, .)
+                0x00000000000005b2                __data_load_start = LOADADDR (.data)
+                0x00000000000005b2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000803800        0x0
+.noinit         0x0000000000803804        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000803800                _end = .
+                0x0000000000803804                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0

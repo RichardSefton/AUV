@@ -7,7 +7,8 @@ build/default/debug/sonar.o.d build/default/debug/sonar.o: sonar.c \
  /usr/lib/avr/include/avr/version.h /usr/lib/avr/include/avr/xmega.h \
  /usr/lib/avr/include/avr/fuse.h /usr/lib/avr/include/avr/lock.h \
  /usr/lib/avr/include/avr/interrupt.h /usr/lib/avr/include/util/delay.h \
- /usr/lib/avr/include/util/delay_basic.h /usr/lib/avr/include/math.h
+ /usr/lib/avr/include/util/delay_basic.h /usr/lib/avr/include/math.h \
+ I2C_Client.h /usr/lib/gcc/avr/7.3.0/include/stddef.h
 
 /usr/lib/avr/include/avr/io.h:
 
@@ -40,3 +41,7 @@ build/default/debug/sonar.o.d build/default/debug/sonar.o: sonar.c \
 /usr/lib/avr/include/util/delay_basic.h:
 
 /usr/lib/avr/include/math.h:
+
+I2C_Client.h:
+
+/usr/lib/gcc/avr/7.3.0/include/stddef.h:

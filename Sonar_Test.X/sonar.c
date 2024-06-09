@@ -9,6 +9,9 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include "I2C_Client.h"
+
+#define ADDR 0x6f
 
 //Function declarations
 void MainClkCtrl(void);
@@ -22,16 +25,22 @@ void SetupTCB1(void);
 void EnableTCB1(void);
 void DisableTCB1(void);
 
+void I2CCallback(uint8_t);
+
 //This is the fequency we want the PWM signal to be at. This will be with a 50% duty cycle. 
 #define PWM_FREQUENCY 40000UL
+
+uint8_t enableDistCalc = 0x00;
 
 int main()
 {
     MainClkCtrl();
     SetupPins();
     SetupTCA();
-    SetupRTC();
+//    SetupRTC();
     SetupTCB0();
+    
+    I2C_Client_InitI2C(ADDR, I2CCallback);
     
     sei();
     
@@ -69,7 +78,7 @@ void SetupPins(void)
     //stop the counters and calculate the sos based on this. 
     PORTA.DIR &= ~(PIN1_bm);
     //To detect the high, we want an interrupt on rising edge. 
-    PORTA.PIN1CTRL |= PORT_ISC_BOTHEDGES_gc;
+    PORTA.PIN1CTRL |= PORT_ISC_FALLING_gc;
     
     //PWM output. TCA0 which will ewmit the PWM signal might take over them but lets just 
     //do this to be clear these pins will be used. 
@@ -171,12 +180,13 @@ void SetupTCB1(void)
     TCB1.INTCTRL |= TCB_CAPT_bm;
     
     //Use a prescaler of 2 to give the clock more time. We're not enabling the TCB1 at this point. 
-    TCB1.CTRLA |= TCB_CLKSEL_DIV2_gc;
+    TCB1.CTRLA |= TCB_CLKSEL_DIV1_gc;
 }
 
 //Function to enable TCB1
 void EnableTCB1(void)
 {
+    enableDistCalc = 0x01;
     TCB1.CNT = 0;
     TCB1.CTRLA |= TCB_ENABLE_bm;
 }
@@ -184,7 +194,17 @@ void EnableTCB1(void)
 //Simple function to disable TCB1
 void DisableTCB1(void)
 {
+    enableDistCalc = 0x00;
     TCB1.CTRLA &= ~(TCB_ENABLE_bm);
+}
+
+void I2CCallback(uint8_t data)
+{
+    if (data == 0xff)
+    {
+        EnableTCB1();
+        EnableWO(); 
+    }
 }
 
 // INTERRUPTS
@@ -219,30 +239,33 @@ ISR(TCB0_INT_vect)
 float distance = 0;
 ISR(PORTA_PORT_vect)
 {
-    DisableTCB1();
-    uint16_t cnt = TCB1.CNT;
-    if (cnt > 0)
+    if (enableDistCalc == 0x01)
     {
         DisableTCB1();
-        float count = (float)cnt / (float)(30.5176);
-//        float count = (float)(cnt);
-        float speedOfSound = 0.0343;
-        distance = ((float)(count) * (float)(speedOfSound)) / 2;
-        if (distance > 5.0)
+        uint16_t cnt = TCB1.CNT;
+        if (cnt > 0)
         {
-            uint8_t complete = 0x01;
-            PORTA.INTFLAGS |= PIN1_bm;
+            DisableTCB1();
+//            float count = (float)cnt / (float)(15.0);
+            float count = (float)(cnt);
+            float speedOfSound = 0.0343;
+            distance = ((float)(count) * (float)(speedOfSound)) / 2;
+            if (distance > 1.0)
+            {
+                 PORTA.INTFLAGS |= PIN1_bm;
+            }
         }
     }
+    
     PORTA.INTFLAGS |= PIN1_bm;
 }
 
 //This will be replaced with I2C code. 
-//We want to enable the TCA0 to emit a PWM signal to the transducer. 
-ISR(RTC_CNT_vect) 
-{    
-    RTC.INTFLAGS = RTC_OVF_bm;
-    EnableTCB1();
-    EnableWO(); 
+////We want to enable the TCA0 to emit a PWM signal to the transducer. 
+//ISR(RTC_CNT_vect) 
+//{    
+//    RTC.INTFLAGS = RTC_OVF_bm;
 //    EnableTCB1();
-}
+//    EnableWO(); 
+////    EnableTCB1();
+//}

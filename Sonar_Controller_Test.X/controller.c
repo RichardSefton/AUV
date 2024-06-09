@@ -46,7 +46,7 @@ void SetupRTC(void)
     RTC.CLKSEL = RTC_CLKSEL_INT1K_gc;
     
     // Set the period for 5 seconds (5 * 1024 = 5120)
-    RTC.PER = 5120;
+    RTC.PER = 5120*6;
 //    RTC.PER = 1024;
     // Enable the overflow interrupt
     //In the final module code, this interrupt code will be replaced with i2c intterrupt code. 

@@ -3,8 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/richard/code/uni/AUV/Sonar_Test.X/sonar.c</file>
-            <file>file:/home/richard/code/uni/AUV/Sonar_Test.X/I2C_Client.c</file>
+            <file>file:/home/richard/code/uni/AUV/Sonar_Controller_Test.X/controller.c</file>
+            <file>file:/home/richard/code/uni/AUV/Sonar_Controller_Test.X/I2C_Host.c</file>
         </group>
     </open-files>
 </project-private>

@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=sonar.c
+SOURCEFILES_QUOTED_IF_SPACED=sonar.c I2C_Client.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/sonar.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/sonar.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/sonar.o ${OBJECTDIR}/I2C_Client.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/sonar.o.d ${OBJECTDIR}/I2C_Client.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/sonar.o
+OBJECTFILES=${OBJECTDIR}/sonar.o ${OBJECTDIR}/I2C_Client.o
 
 # Source Files
-SOURCEFILES=sonar.c
+SOURCEFILES=sonar.c I2C_Client.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -110,12 +110,24 @@ ${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/ede97104b5ca6b6a50
 	@${RM} ${OBJECTDIR}/sonar.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/sonar.o.d" -MT "${OBJECTDIR}/sonar.o.d" -MT ${OBJECTDIR}/sonar.o  -o ${OBJECTDIR}/sonar.o sonar.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/29cb715a564ab1d8abb86865d171995af1955525 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
+	@${RM} ${OBJECTDIR}/I2C_Client.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/sonar.o: sonar.c  .generated_files/flags/default/e9dc8751bf94869cf97ef0de510190b8f874ef83 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/sonar.o.d 
 	@${RM} ${OBJECTDIR}/sonar.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/sonar.o.d" -MT "${OBJECTDIR}/sonar.o.d" -MT ${OBJECTDIR}/sonar.o  -o ${OBJECTDIR}/sonar.o sonar.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/1b789ac4b42d602e4b768c8865c9a0bf41b13254 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
+	@${RM} ${OBJECTDIR}/I2C_Client.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 

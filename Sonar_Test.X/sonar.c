@@ -54,7 +54,7 @@ int main()
 void MainClkCtrl(void) 
 {
     // Set the main clock to 20MHz without prescaler
-    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc);
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc | CLKCTRL_CLKOUT_bm);
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0x00);  // No prescaler
 }
 //void MainClkCtrl(void) 
@@ -69,7 +69,7 @@ void SetupPins(void)
     //stop the counters and calculate the sos based on this. 
     PORTA.DIR &= ~(PIN1_bm);
     //To detect the high, we want an interrupt on rising edge. 
-    PORTA.PIN1CTRL |= PORT_ISC_RISING_gc;
+    PORTA.PIN1CTRL |= PORT_ISC_BOTHEDGES_gc;
     
     //PWM output. TCA0 which will ewmit the PWM signal might take over them but lets just 
     //do this to be clear these pins will be used. 
@@ -79,7 +79,7 @@ void SetupPins(void)
     //the transducer which basically operates as a capacitot). But more power was required 
     //so this is now hooked up to an LED. The PWM signal is being funneled to a mosfet with a circuit to drive
     //this now.
-    PORTB.PIN4CTRL |= PORT_INVEN_bm;
+//    PORTB.PIN4CTRL |= PORT_INVEN_bm;
     
     // PortMUX to set TCA0 PWM on alternate pins (PB3 and PB4)
     //Using the alternate pins as the defaults we need to keep clear 
@@ -184,7 +184,6 @@ void EnableTCB1(void)
 //Simple function to disable TCB1
 void DisableTCB1(void)
 {
-    TCB1.CNT = 0;
     TCB1.CTRLA &= ~(TCB_ENABLE_bm);
 }
 
@@ -204,13 +203,14 @@ ISR(TCB0_INT_vect)
 //        pulse_counter++;
 //        //This is putting blocking code in an ISR routine which is considered bad,
 //        //but its a matter of us so we should be fine. 
-//        _delay_ms(10000000/0xffff);
+//        _delay_us(25);
 //        //This should start this cycle again
-//        EnableWO();
+////        EnableWO();
 //    }
 //    else if (pulse_counter >= 8)
 //    {
 //        //Clear the pulse counter ready for the next signal. 
+//        DisableWO();
 //        pulse_counter = 0;
 //    }
 
@@ -219,11 +219,21 @@ ISR(TCB0_INT_vect)
 float distance = 0;
 ISR(PORTA_PORT_vect)
 {
-    uint16_t cnt = TCB1.CNT;
     DisableTCB1();
-    float count = (float)cnt / (float)(30.5176);
-    float speedOfSound = 0.0343;
-    distance = ((float)(count) * (float)(speedOfSound)) / 2;
+    uint16_t cnt = TCB1.CNT;
+    if (cnt > 0)
+    {
+        DisableTCB1();
+        float count = (float)cnt / (float)(30.5176);
+//        float count = (float)(cnt);
+        float speedOfSound = 0.0343;
+        distance = ((float)(count) * (float)(speedOfSound)) / 2;
+        if (distance > 5.0)
+        {
+            uint8_t complete = 0x01;
+            PORTA.INTFLAGS |= PIN1_bm;
+        }
+    }
     PORTA.INTFLAGS |= PIN1_bm;
 }
 
@@ -232,7 +242,7 @@ ISR(PORTA_PORT_vect)
 ISR(RTC_CNT_vect) 
 {    
     RTC.INTFLAGS = RTC_OVF_bm;
-//    EnableTCB1();
-    EnableWO(); 
     EnableTCB1();
+    EnableWO(); 
+//    EnableTCB1();
 }

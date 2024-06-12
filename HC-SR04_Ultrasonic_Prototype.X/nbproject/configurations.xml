@@ -18,7 +18,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>motor.c</itemPath>
+      <itemPath>ultrasonic.c</itemPath>
       <itemPath>I2C_Client.c</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -165,12 +165,6 @@
         <property key="sram-segment" value=""/>
         <property key="v-printf" value="false"/>
       </AVR-LD>
-      <AtmelIceTool>
-        <property key="debugoptions.useswbreakpoints" value="true"/>
-      </AtmelIceTool>
-      <Tool>
-        <property key="debugoptions.useswbreakpoints" value="true"/>
-      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>

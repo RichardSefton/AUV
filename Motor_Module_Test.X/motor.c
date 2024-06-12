@@ -1,13 +1,25 @@
 #define F_CPU 3333333UL
 #include <avr/io.h>
 #include <util/delay.h>
+#include "I2C_Client.h"
 
 void MainClkCtrl(void);
 void SetupPins(void);
 void digitalWrite(uint8_t, uint8_t);
+void I2CCallback(uint8_t);
 
 #define HIGH 0x01
 #define LOW 0x00
+
+#define STOP 0x00
+#define FORWARD 0x01
+#define BACKWARD 0x02
+
+#define ADDR 0xA1
+
+uint8_t state = FORWARD;
+uint8_t step = 0x00;
+
 
 void stepperMotorStep(uint8_t step);
 
@@ -15,34 +27,35 @@ int main()
 {
     MainClkCtrl();
     SetupPins();
-    
-    uint8_t step = 0x00;
-    uint8_t dir = 0x01;
+    I2C_Client_InitI2C(ADDR, I2CCallback);
     
     while(1)
     {
-        stepperMotorStep(step);
-        
-        if(dir == 0x01)
+        if (state != STOP)
         {
-            step++;
+            stepperMotorStep(step);
+
+            if(state == 0x01)
+            {
+                step++;
+            }
+            else
+            {
+                step--;
+            }
+
+            if(step > 0x07)
+            {
+                step = 0x00;
+            }
+
+            if(step < 0x00)
+            {
+                step = 0x07;
+            }
+
+            _delay_us(750); // Adjust delay as needed    
         }
-        else
-        {
-            step--;
-        }
-        
-        if(step > 0x07)
-        {
-            step = 0x00;
-        }
-        
-        if(step < 0x00)
-        {
-            step = 0x07;
-        }
-        
-        _delay_us(750); // Adjust delay as needed
     }
     
     return 0;
@@ -74,6 +87,8 @@ void digitalWrite(uint8_t pin, uint8_t value)
 
 void stepperMotorStep(uint8_t step)
 {
+    //This is basically from the datasheet http://eeshop.unl.edu/pdf/Stepper+Driver.pdf
+    //Made the digitalWrite function to keep it inline. 
     switch (step)
     {
         case 0:
@@ -124,5 +139,25 @@ void stepperMotorStep(uint8_t step)
             digitalWrite(PIN6_bm, LOW);
             digitalWrite(PIN7_bm, HIGH);
             break;
+    }
+}
+
+void I2CCallback(uint8_t com)
+{
+    if (com == STOP) 
+    {
+        state = STOP;
+    }
+    else if (com == FORWARD)
+    {
+        state = FORWARD;
+    }
+    else if (com == BACKWARD)
+    {
+        state = BACKWARD;
+    }
+    else
+    {
+        state = STOP;
     }
 }

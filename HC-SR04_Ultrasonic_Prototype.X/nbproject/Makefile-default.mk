@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=motor.c I2C_Client.c
+SOURCEFILES_QUOTED_IF_SPACED=ultrasonic.c I2C_Client.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C_Client.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/motor.o.d ${OBJECTDIR}/I2C_Client.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/I2C_Client.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/ultrasonic.o.d ${OBJECTDIR}/I2C_Client.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C_Client.o
+OBJECTFILES=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/I2C_Client.o
 
 # Source Files
-SOURCEFILES=motor.c I2C_Client.c
+SOURCEFILES=ultrasonic.c I2C_Client.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -86,7 +86,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
@@ -104,26 +104,26 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/motor.o: motor.c  .generated_files/flags/default/38a7469aeff83ce964b3f9add16e3f8c2034c71e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/d5eb6531eb823acf7bea6ebaa46e6cad365a24a9 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/motor.o.d 
-	@${RM} ${OBJECTDIR}/motor.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor.o.d" -MT "${OBJECTDIR}/motor.o.d" -MT ${OBJECTDIR}/motor.o  -o ${OBJECTDIR}/motor.o motor.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/ultrasonic.o.d 
+	@${RM} ${OBJECTDIR}/ultrasonic.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o  -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/8df2f6647dd681acacc24b8c8c7894a8e6adbf33 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/34dce2bd60d58594a2ec69387d542fae3facca4b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
 	@${RM} ${OBJECTDIR}/I2C_Client.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
-${OBJECTDIR}/motor.o: motor.c  .generated_files/flags/default/86a306566ade7fe03501a60b0fb93a99af932f0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/18157f1bb4754f20b69d503bba3a52881003115d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/motor.o.d 
-	@${RM} ${OBJECTDIR}/motor.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor.o.d" -MT "${OBJECTDIR}/motor.o.d" -MT ${OBJECTDIR}/motor.o  -o ${OBJECTDIR}/motor.o motor.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/ultrasonic.o.d 
+	@${RM} ${OBJECTDIR}/ultrasonic.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o  -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/25b9c51bc6995e439f63c371968eb1729f88ce80 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/4f348679420e69fd4d589625cfd0cdabf8bfc274 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
 	@${RM} ${OBJECTDIR}/I2C_Client.o 
@@ -140,9 +140,9 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=attiny1627 ${PACK_COMMON_OPTIONS}   -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.map"    -o ${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=attiny1627 ${PACK_COMMON_OPTIONS}   -gdwarf-2 -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.map"    -o ${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__ICD2RAM=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1 -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
 	
 	
 	
@@ -150,10 +150,10 @@ ${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  n
 	
 	
 else
-${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=attiny1627 ${PACK_COMMON_OPTIONS}  -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.map"    -o ${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION) -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
-	${MP_CC_DIR}/avr-objcopy -O ihex "${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}" "${DISTDIR}/Motor_Module_Test.X.${IMAGE_TYPE}.hex"
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mmcu=attiny1627 ${PACK_COMMON_OPTIONS}  -D__$(MP_PROCESSOR_OPTION)__  -Wl,-Map="${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.map"    -o ${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}      -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION) -Wl,--gc-sections -Wl,--start-group  -Wl,-lm -Wl,--end-group 
+	${MP_CC_DIR}/avr-objcopy -O ihex "${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}" "${DISTDIR}/HC-SR04_Ultrasonic_Prototype.X.${IMAGE_TYPE}.hex"
 	
 	
 	

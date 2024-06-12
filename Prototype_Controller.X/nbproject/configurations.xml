@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>I2C_Client.h</itemPath>
+      <itemPath>I2C_Host.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -18,8 +18,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>motor.c</itemPath>
-      <itemPath>I2C_Client.c</itemPath>
+      <itemPath>controller.c</itemPath>
+      <itemPath>I2C_Host.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -165,12 +165,6 @@
         <property key="sram-segment" value=""/>
         <property key="v-printf" value="false"/>
       </AVR-LD>
-      <AtmelIceTool>
-        <property key="debugoptions.useswbreakpoints" value="true"/>
-      </AtmelIceTool>
-      <Tool>
-        <property key="debugoptions.useswbreakpoints" value="true"/>
-      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>

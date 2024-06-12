@@ -40,12 +40,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/sonar.o
  .data          0x0000000000000000        0x0 build/default/production/sonar.o
  .bss           0x0000000000000000        0x0 build/default/production/sonar.o
- .text.SetupRTC
-                0x0000000000000000       0x18 build/default/production/sonar.o
- .text.SetupTCB1
-                0x0000000000000000       0x1e build/default/production/sonar.o
- .bss.pulse_counter
-                0x0000000000000000        0x1 build/default/production/sonar.o
  .text          0x0000000000000000        0x0 build/default/production/I2C_Client.o
  .data          0x0000000000000000        0x0 build/default/production/I2C_Client.o
  .bss           0x0000000000000000        0x0 build/default/production/I2C_Client.o
@@ -260,7 +254,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x686
+.text           0x0000000000000000      0x732
  *(.vectors)
  .vectors       0x0000000000000000       0x78 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
                 0x0000000000000000                __vectors
@@ -323,7 +317,6 @@ END GROUP
                 0x000000000000009c                __vector_24
                 0x000000000000009c                __vector_12
                 0x000000000000009c                __bad_interrupt
-                0x000000000000009c                __vector_3
                 0x000000000000009c                __vector_23
                 0x000000000000009c                __vector_25
                 0x000000000000009c                __vector_11
@@ -350,96 +343,96 @@ END GROUP
                 0x00000000000000a0       0x16 build/default/production/sonar.o
                 0x00000000000000a0                MainClkCtrl
  .text.SetupPins
-                0x00000000000000b6       0x22 build/default/production/sonar.o
+                0x00000000000000b6       0x28 build/default/production/sonar.o
                 0x00000000000000b6                SetupPins
  .text.SetupTCA
-                0x00000000000000d8       0x22 build/default/production/sonar.o
-                0x00000000000000d8                SetupTCA
+                0x00000000000000de       0x22 build/default/production/sonar.o
+                0x00000000000000de                SetupTCA
  .text.EnableWO
-                0x00000000000000fa       0x10 build/default/production/sonar.o
-                0x00000000000000fa                EnableWO
- .text.DisableWO
-                0x000000000000010a        0xc build/default/production/sonar.o
-                0x000000000000010a                DisableWO
- .text.SetupTCB0
-                0x0000000000000116       0x2c build/default/production/sonar.o
-                0x0000000000000116                SetupTCB0
- .text.main     0x0000000000000142       0x1e build/default/production/sonar.o
-                0x0000000000000142                main
- .text.EnableTCB1
-                0x0000000000000160       0x16 build/default/production/sonar.o
-                0x0000000000000160                EnableTCB1
+                0x0000000000000100       0x10 build/default/production/sonar.o
+                0x0000000000000100                EnableWO
  .text.I2CCallback
-                0x0000000000000176       0x10 build/default/production/sonar.o
-                0x0000000000000176                I2CCallback
- .text.DisableTCB1
-                0x0000000000000186       0x10 build/default/production/sonar.o
-                0x0000000000000186                DisableTCB1
+                0x0000000000000110       0x2a build/default/production/sonar.o
+                0x0000000000000110                I2CCallback
+ .text.DisableWO
+                0x000000000000013a       0x12 build/default/production/sonar.o
+                0x000000000000013a                DisableWO
+ .text.SetupRTC
+                0x000000000000014c       0x2c build/default/production/sonar.o
+                0x000000000000014c                SetupRTC
+ .text.SetupTCB0
+                0x0000000000000178       0x24 build/default/production/sonar.o
+                0x0000000000000178                SetupTCB0
+ .text.main     0x000000000000019c       0x2c build/default/production/sonar.o
+                0x000000000000019c                main
  .text.__vector_13
-                0x0000000000000196       0x4e build/default/production/sonar.o
-                0x0000000000000196                __vector_13
+                0x00000000000001c8       0x4e build/default/production/sonar.o
+                0x00000000000001c8                __vector_13
  .text.__vector_6
-                0x00000000000001e4       0xce build/default/production/sonar.o
-                0x00000000000001e4                __vector_6
+                0x0000000000000216      0x114 build/default/production/sonar.o
+                0x0000000000000216                __vector_6
+ .text.__vector_3
+                0x000000000000032a       0x34 build/default/production/sonar.o
+                0x000000000000032a                __vector_3
  .text.I2C_Client_InitI2C
-                0x00000000000002b2       0x18 build/default/production/I2C_Client.o
-                0x00000000000002b2                I2C_Client_InitI2C
+                0x000000000000035e       0x18 build/default/production/I2C_Client.o
+                0x000000000000035e                I2C_Client_InitI2C
  .text.__vector_14
-                0x00000000000002ca       0x8c build/default/production/I2C_Client.o
-                0x00000000000002ca                __vector_14
+                0x0000000000000376       0x8c build/default/production/I2C_Client.o
+                0x0000000000000376                __vector_14
  .text.avr-libc.fplib
-                0x0000000000000356        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
-                0x0000000000000356                __divsf3
+                0x0000000000000402        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3.o)
+                0x0000000000000402                __divsf3
  .text.avr-libc.fplib
-                0x000000000000035e       0xdc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
-                0x000000000000037e                __divsf3x
-                0x0000000000000384                __divsf3_pse
+                0x000000000000040a       0xdc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(divsf3x.o)
+                0x000000000000042a                __divsf3x
+                0x0000000000000430                __divsf3_pse
  .text.avr-libc.fplib
-                0x000000000000043a       0x7a /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
-                0x000000000000043a                __floatunsisf
-                0x000000000000043e                __floatsisf
+                0x00000000000004e6       0x7a /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(floatsisf.o)
+                0x00000000000004e6                __floatunsisf
+                0x00000000000004ea                __floatsisf
  .text.avr-libc.fplib
-                0x00000000000004b4        0xc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
-                0x00000000000004b4                __fp_inf
+                0x0000000000000560        0xc /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_inf.o)
+                0x0000000000000560                __fp_inf
  .text.avr-libc.fplib
-                0x00000000000004c0        0x6 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
-                0x00000000000004c0                __fp_nan
+                0x000000000000056c        0x6 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_nan.o)
+                0x000000000000056c                __fp_nan
  .text.avr-libc.fplib
-                0x00000000000004c6        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
-                0x00000000000004c6                __fp_pscA
+                0x0000000000000572        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscA.o)
+                0x0000000000000572                __fp_pscA
  .text.avr-libc.fplib
-                0x00000000000004d4        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
-                0x00000000000004d4                __fp_pscB
+                0x0000000000000580        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_pscB.o)
+                0x0000000000000580                __fp_pscB
  .text.avr-libc.fplib
-                0x00000000000004e2       0x22 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
-                0x00000000000004e2                __fp_round
+                0x000000000000058e       0x22 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_round.o)
+                0x000000000000058e                __fp_round
  .text.avr-libc.fplib
-                0x0000000000000504       0x44 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
-                0x0000000000000504                __fp_split3
-                0x0000000000000514                __fp_splitA
+                0x00000000000005b0       0x44 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_split3.o)
+                0x00000000000005b0                __fp_split3
+                0x00000000000005c0                __fp_splitA
  .text.avr-libc.fplib
-                0x0000000000000548        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
-                0x0000000000000548                __fp_zero
-                0x000000000000054a                __fp_szero
+                0x00000000000005f4        0xe /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_zero.o)
+                0x00000000000005f4                __fp_zero
+                0x00000000000005f6                __fp_szero
  .text.avr-libc.fplib
-                0x0000000000000556        0xa /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(gesf2.o)
-                0x0000000000000556                __gtsf2
-                0x0000000000000556                __gesf2
+                0x0000000000000602        0xa /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(gesf2.o)
+                0x0000000000000602                __gtsf2
+                0x0000000000000602                __gesf2
  .text.avr-libc.fplib
-                0x0000000000000560        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
-                0x0000000000000560                __mulsf3
+                0x000000000000060c        0x8 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3.o)
+                0x000000000000060c                __mulsf3
  .text.avr-libc.fplib
-                0x0000000000000568       0xd2 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
-                0x0000000000000586                __mulsf3x
-                0x000000000000058c                __mulsf3_pse
+                0x0000000000000614       0xd2 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(mulsf3x.o)
+                0x0000000000000632                __mulsf3x
+                0x0000000000000638                __mulsf3_pse
  .text.avr-libc.fplib
-                0x000000000000063a       0x48 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_cmp.o)
-                0x000000000000063a                __fp_cmp
-                0x0000000000000682                . = ALIGN (0x2)
+                0x00000000000006e6       0x48 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avrxmega3/libm.a(fp_cmp.o)
+                0x00000000000006e6                __fp_cmp
+                0x000000000000072e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000682        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
-                0x0000000000000682                exit
-                0x0000000000000682                _exit
+ .fini9         0x000000000000072e        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+                0x000000000000072e                exit
+                0x000000000000072e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -458,16 +451,16 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000682        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+ .fini0         0x000000000000072e        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000686                _etext = .
+                0x0000000000000732                _etext = .
 
 .rodata
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
 
-.data           0x0000000000803800        0x0 load address 0x0000000000000686
+.data           0x0000000000803800        0x0 load address 0x0000000000000732
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -476,27 +469,32 @@ END GROUP
                 0x0000000000803800                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000803800        0x7
+.bss            0x0000000000803800        0xb
                 0x0000000000803800                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.distance  0x0000000000803800        0x4 build/default/production/sonar.o
                 0x0000000000803800                distance
+ .bss.end_time  0x0000000000803804        0x2 build/default/production/sonar.o
+                0x0000000000803804                end_time
+ .bss.start_time
+                0x0000000000803806        0x2 build/default/production/sonar.o
+                0x0000000000803806                start_time
  .bss.enableDistCalc
-                0x0000000000803804        0x1 build/default/production/sonar.o
-                0x0000000000803804                enableDistCalc
+                0x0000000000803808        0x1 build/default/production/sonar.o
+                0x0000000000803808                enableDistCalc
  .bss.receive_callback
-                0x0000000000803805        0x2 build/default/production/I2C_Client.o
+                0x0000000000803809        0x2 build/default/production/I2C_Client.o
  *(COMMON)
-                0x0000000000803807                PROVIDE (__bss_end, .)
-                0x0000000000000686                __data_load_start = LOADADDR (.data)
-                0x0000000000000686                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000080380b                PROVIDE (__bss_end, .)
+                0x0000000000000732                __data_load_start = LOADADDR (.data)
+                0x0000000000000732                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000803807        0x0
+.noinit         0x000000000080380b        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000803807                _end = .
+                0x000000000080380b                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0

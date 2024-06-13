@@ -65,8 +65,8 @@ void I2C_Host_WriteData(uint8_t data)
 // Read data from I2C
 uint8_t I2C_Host_ReadData(void)
 {
-    // Wait for data to be received
-    while (!(TWI0.MSTATUS & (TWI_RIF_bm | TWI_BUSERR_bm | TWI_ARBLOST_bm)));
+    // Wait for data to be received or an error to occur
+//    while (!(TWI0.MSTATUS & (TWI_RIF_bm | TWI_BUSERR_bm | TWI_ARBLOST_bm)));
 
     // Check for bus error or arbitration lost
     if (TWI0.MSTATUS & (TWI_BUSERR_bm | TWI_ARBLOST_bm))
@@ -75,11 +75,15 @@ uint8_t I2C_Host_ReadData(void)
         return 0;
     }
 
-    // Read the data
+    while (!(TWI0.MSTATUS & TWI_RIF_bm));
+    // Read the data from the data register
     uint8_t data = TWI0.MDATA;
 
-    // Send ACK
-    TWI0.MCTRLB = TWI_MCMD_RECVTRANS_gc;
+    // Clear the read interrupt flag by writing '1' to it
+//    TWI0.MSTATUS = TWI_RIF_bm;
+
+    // Send NACK to signal the end of the read operation
+    TWI0.MCTRLB = TWI_MCMD_STOP_gc | TWI_ACKACT_NACK_gc;
 
     return data;
 }

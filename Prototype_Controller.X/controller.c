@@ -2,10 +2,11 @@
 #include <avr/interrupt.h>
 #include "I2C_Host.h"
 
-#define MOTOR_DRIVER_ADDR 0xA1
+#define MOTOR_DRIVER_ADDR 0x09
 #define SONAR_ADDR 0x08
 
-#define COM_SCAN 0xFF
+#define COM_STOP 0xFF
+#define COM_START 0xAA
 
 void MainClkCtrl(void);
 void SetupRTC(void);
@@ -41,8 +42,8 @@ void SetupRTC(void)
     
     // Set the period for 5 seconds (5 * 1024 = 5120)
 //    RTC.PER = 5120*6;
-    RTC.PER = 5120;
-//    RTC.PER = 1024;
+//    RTC.PER = 5120 * 2;
+    RTC.PER = 1024;
     // Enable the overflow interrupt
     //In the final module code, this interrupt code will be replaced with i2c intterrupt code. 
     RTC.INTCTRL = RTC_OVF_bm;
@@ -56,12 +57,25 @@ ISR(RTC_CNT_vect)
 {
     //Clear the interrupt flag
     RTC.INTFLAGS |= RTC_OVF_bm;
-    
+    uint8_t distance = 0.0;
     if (I2C_Host_Start(SONAR_ADDR, 0x01) == 0x01)
     {
         uint8_t distance = I2C_Host_ReadData();
-//        I2C_Host_WriteData(COM_SCAN);
     }
     
-    I2C_Host_Stop();
+    if (I2C_Host_Start(MOTOR_DRIVER_ADDR, 0x00) == 0x00)
+    {
+        if (distance < 50)
+        {
+            I2C_Host_WriteData(COM_STOP);
+        }
+        else 
+        {
+            I2C_Host_WriteData(COM_START);
+        }
+        
+    }
+    
+    
+//    I2C_Host_Stop();
 }

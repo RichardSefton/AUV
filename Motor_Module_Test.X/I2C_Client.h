@@ -7,10 +7,10 @@
 
 // Type definition for the receive callback function
 typedef void (*I2C_ReceiveCallback)(uint8_t data);
+typedef uint8_t (*I2C_TransmitCallback)(void);
 
 // Function declarations
-void I2C_Client_InitPins(void);
-void I2C_Client_InitI2C(uint8_t address, I2C_ReceiveCallback callback);
+void I2C_Client_InitI2C(uint8_t, I2C_ReceiveCallback, I2C_TransmitCallback);
 uint8_t I2C_Client_ReadData(void);
 void I2C_Client_WriteData(uint8_t data);
 

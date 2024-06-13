@@ -6,16 +6,17 @@
 void MainClkCtrl(void);
 void SetupPins(void);
 void digitalWrite(uint8_t, uint8_t);
-void I2CCallback(uint8_t);
+void I2C_RX_Callback(uint8_t);
+uint8_t  I2C_TX_Callback(void);
 
 #define HIGH 0x01
 #define LOW 0x00
 
-#define STOP 0x00
-#define FORWARD 0x01
+#define STOP 0xFF
+#define FORWARD 0xAA
 #define BACKWARD 0x02
 
-#define ADDR 0xA1
+#define ADDR 0x09
 
 uint8_t state = FORWARD;
 uint8_t step = 0x00;
@@ -27,7 +28,7 @@ int main()
 {
     MainClkCtrl();
     SetupPins();
-    I2C_Client_InitI2C(ADDR, I2CCallback);
+    I2C_Client_InitI2C(ADDR, I2C_RX_Callback, I2C_TX_Callback);
     
     while(1)
     {
@@ -142,7 +143,7 @@ void stepperMotorStep(uint8_t step)
     }
 }
 
-void I2CCallback(uint8_t com)
+void I2C_RX_Callback(uint8_t com)
 {
     if (com == STOP) 
     {
@@ -160,4 +161,9 @@ void I2CCallback(uint8_t com)
     {
         state = STOP;
     }
+}
+
+uint8_t I2C_TX_Callback(void)
+{
+    
 }

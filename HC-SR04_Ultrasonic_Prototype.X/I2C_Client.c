@@ -43,8 +43,9 @@ void I2C_Client_WriteData(uint8_t data)
     // Write the data
     TWI0.SDATA = data;
 
-    // Send acknowledge and wait for the data to be transmitted
-    TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
+//    // Send acknowledge and wait for the data to be transmitted
+//    TWI0.SSTATUS = TWI_DIF_bm;
+//    TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
 }
 
 // Interrupt Service Routine for I2C
@@ -80,11 +81,7 @@ ISR(TWI0_TWIS_vect)
             if (transmit_callback != NULL)
             {
                 uint8_t data_to_send = transmit_callback();
-                if (data_to_send > 0x00)
-                {
-                    I2C_Client_WriteData(data_to_send);
-                }
-                
+                I2C_Client_WriteData(data_to_send);                
             }
         }
         else
@@ -99,7 +96,7 @@ ISR(TWI0_TWIS_vect)
             }
         }
 
-        // Clear the data interrupt flag and prepare to respond
+
         TWI0.SSTATUS = TWI_DIF_bm;
         TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
     }

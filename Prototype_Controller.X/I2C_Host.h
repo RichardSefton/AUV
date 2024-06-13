@@ -15,7 +15,8 @@ typedef struct {
     // Add any necessary fields here, if needed
 } I2C_Host;
 
-void I2C_Host_InitPins(void);
+// Type definition for the receive callback function
+//typedef void (*I2C_ReceiveCallback)(uint8_t data);
 
 void I2C_Host_InitI2C(void);
 
@@ -35,6 +36,8 @@ double I2C_Host_CalcBaud_BAUD(double);
 uint8_t I2C_Host_Start(uint8_t, uint8_t);
 
 void I2C_Host_WriteData(uint8_t);
+
+uint8_t I2C_Host_ReadData(void);
 
 void I2C_Host_Stop(void);
 

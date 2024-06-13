@@ -165,6 +165,9 @@
         <property key="sram-segment" value=""/>
         <property key="v-printf" value="false"/>
       </AVR-LD>
+      <AtmelIceTool>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
+      </AtmelIceTool>
     </conf>
   </confs>
 </configurationDescriptor>

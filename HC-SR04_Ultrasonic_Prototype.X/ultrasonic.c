@@ -3,7 +3,7 @@
 
 #include "I2C_Client.h"
 
-#define ADDR 0xB1
+#define ADDR 0x08
 
 #define COM_SCAN 0xFF
 
@@ -11,12 +11,14 @@ void MainClkCtrl(void);
 void SetupPins(void);
 void SetupRTC(void);
 void SetupTCB0(void);
-void I2CCallback(uint8_t);
+void I2C_RX_Callback(uint8_t);
+uint8_t I2C_TX_Callback(void);
 
-uint8_t waitingForEcho = 0;
-uint8_t endTime = 0;
-float distance = 0.0;
-float speedOfSound = 0.0343;
+volatile uint8_t waitingForEcho = 0;
+volatile uint16_t endTime = 0;
+volatile float distance = 0.0;
+float speedOfSound = 0.0343; // cm per microsecond
+float ticks = 0.0;
 
 int main()
 {
@@ -25,11 +27,13 @@ int main()
     SetupRTC();
     SetupTCB0();
     
-    I2C_Client_InitI2C(ADDR, I2CCallback);
+    I2C_Client_InitI2C(ADDR, I2C_RX_Callback, I2C_TX_Callback);
+    
+    sei();
     
     while(1)
     {
-        
+        // Main loop does nothing, waiting for interrupts
     }
     
     return 0;
@@ -44,10 +48,10 @@ void MainClkCtrl(void)
 
 void SetupPins(void)
 {
-    //Trigger
+    // Trigger
     PORTA.DIR |= PIN2_bm;
     
-    //Echo
+    // Echo
     PORTA.DIR &= ~(PIN3_bm);
     PORTA.PIN3CTRL = PORT_ISC_FALLING_gc;
 }
@@ -74,30 +78,41 @@ void SetupTCB0(void)
     TCB0.INTCTRL |= TCB_CAPT_bm;
 }
 
-void I2CCallback(uint8_t com)
+void I2C_RX_Callback(uint8_t com)
 {
-    if (com == COM_SCAN)
-    {
-        TCA0.SINGLE.INTFLAGS = TCA_SINGLE_CMP1_bm;
-        //Turn on the Trigger pin.
-        PORTA.OUT |= PIN2_bm;
-        //Turn on TCB so we can count to 10us
-        TCB0.CTRLA |= TCB_ENABLE_bm;
-    }
+    // Handle received I2C commands here
+}
+
+uint8_t I2C_TX_Callback(void)
+{
+    // Turn on TCB so we can count to 10us
+    distance = 0.0;
+    TCB0.CTRLA |= TCB_ENABLE_bm;
+    
+    // Turn on the Trigger pin
+    PORTA.OUTSET |= PIN2_bm;
+
+    return 0x00; // Placeholder return value
 }
 
 ISR(TCB0_INT_vect)
 {
-    if(TCB0.INTFLAGS & TCB_CAPT_bm)
+    if (TCB0.INTFLAGS & TCB_CAPT_bm)
     {
         TCB0.INTFLAGS = TCB_CAPT_bm;    
 
         if (!waitingForEcho)
         {
-            PORTA.OUTCLR |= PIN1_bm;
-            TCB0.CTRLA &= ~(1 << TCB_ENABLE_bp);
             waitingForEcho = 1;
-            //Init the RTC
+            
+            // Disable TCB0
+            TCB0.CTRLA &= ~TCB_ENABLE_bm;
+            
+            // Turn off the Trigger pin
+            PORTA.OUTCLR |= PIN2_bm;
+
+            // Enable the RTC to start timing
+            RTC.CNT = 0; // Reset the counter
             RTC.CTRLA |= RTC_RTCEN_bm;
         }
     }
@@ -105,38 +120,31 @@ ISR(TCB0_INT_vect)
 
 ISR(PORTA_PORT_vect)
 {
-    if (PORTA.INTFLAGS & PORT_INT_2_bm)
+    if (PORTA.INTFLAGS & PIN3_bm)
     {
-        if (waitingForEcho && !(PORTA.IN & (1 << PIN2_bp)))
+        if (waitingForEcho)
         {
             // Pin is low, record the end time and calculate distance
-            endTime = RTC.CNT; // Capture the time elapsed since the trigger was stopped
-            //convert the endtime from cycles to ?ms?
+            endTime = RTC.CNT; // Capture the time elapsed since the trigger was stopped 
             
-            endTime = endTime/32.768;
-            if (endTime)
-            {
-                // Calculate distance in millimeters (distance = speed * time / 2)
-                distance = ((float)(speedOfSound) * endTime) / 2.0;
-                
-                if (distance < (float)(2.5)) // Distance threshold in millimeters
-                {
+            //time in microseconds
+            ticks = (float)endTime * 30.5176;
 
-                } 
+            // Calculate the distance
+            distance = ((float)(ticks) * speedOfSound) / 2.0;
 
+            I2C_Client_WriteData((uint8_t)(distance)); // Send distance as a single byte
 
-                //Disable the RTC
-                RTC.CTRLA &= ~(1 << RTC_RTCEN_bm);
-                RTC.CNT = 0;
-
-            }   
+            // Disable the RTC
+            RTC.CTRLA &= ~RTC_RTCEN_bm;
+            RTC.CNT = 0;
 
             // Reset waitingForEcho for the next cycle
             waitingForEcho = 0;
-
         }
+
         // Clear the interrupt flag
-        PORTA.INTFLAGS = PORT_INT_2_bm;
+        PORTA.INTFLAGS |= PIN3_bm;
     }
 }
 
@@ -145,10 +153,10 @@ ISR(PORTA_PORT_vect)
  */
 ISR(RTC_CNT_vect)
 {
-    RTC.INTFLAGS = RTC_INTFLAGS; //Should reset the flags
-//    MoveServo(312);
-    waitingForEcho = 0; //Reenable the ability to trigger the ultrasonic sensor
-    //Disable the RTC
-    RTC.CTRLA &= ~(1 << RTC_RTCEN_bm);
+    RTC.INTFLAGS = RTC_OVF_bm; // Clear the overflow flag
+    waitingForEcho = 0; // Re-enable the ability to trigger the ultrasonic sensor
+
+    // Disable the RTC
+    RTC.CTRLA &= ~RTC_RTCEN_bm;
     RTC.CNT = 0;
 }

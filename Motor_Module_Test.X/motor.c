@@ -36,7 +36,7 @@ int main()
         {
             stepperMotorStep(step);
 
-            if(state == 0x01)
+            if(state == FORWARD)
             {
                 step++;
             }

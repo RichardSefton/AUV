@@ -13,9 +13,11 @@ void I2C_Client_InitI2C(uint8_t address, I2C_ReceiveCallback rx_callback, I2C_Tr
 
     // Set the slave address
     TWI0.SADDR = address << 1 | 0x00;
+    
+    
 
     // Enable the TWI and enable various interrupts
-    TWI0.SCTRLA = TWI_ENABLE_bm | TWI_DIEN_bm | TWI_APIEN_bm | TWI_PIEN_bm;
+    TWI0.SCTRLA |= TWI_ENABLE_bm | TWI_DIEN_bm | TWI_APIEN_bm | TWI_PIEN_bm;
 
     sei(); // Enable global interrupts
 }
@@ -55,20 +57,20 @@ ISR(TWI0_TWIS_vect)
     if (TWI0.SSTATUS & TWI_APIF_bm)
     {
         // Clear the interrupt flag
-        TWI0.SSTATUS = TWI_APIF_bm;
+        TWI0.SSTATUS |= TWI_APIF_bm;
 
         // Check if the address match
         if (TWI0.SSTATUS & TWI_AP_bm)
         {
             // Clear the address match flag
-            TWI0.SSTATUS = TWI_AP_bm;
-            TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
+            TWI0.SSTATUS |= TWI_AP_bm;
+//            TWI0.SCTRLB |= TWI_SCMD_RESPONSE_gc;
         }
-        else
-        {
-            // If not an address match, it must be a stop condition
-            TWI0.SCTRLB = TWI_SCMD_COMPTRANS_gc;
-        }
+//        else
+//        {
+//            // If not an address match, it must be a stop condition
+//            TWI0.SCTRLB = TWI_SCMD_COMPTRANS_gc;
+//        }
     }
 
     // Check if Data interrupt
@@ -81,23 +83,24 @@ ISR(TWI0_TWIS_vect)
             if (transmit_callback != NULL)
             {
                 uint8_t data_to_send = transmit_callback();
-                I2C_Client_WriteData(data_to_send);                
+                I2C_Client_WriteData(data_to_send);   
+                
+                TWI0.SSTATUS |= TWI_DIF_bm;
+                TWI0.SCTRLB |= TWI_SCMD_RESPONSE_gc;
             }
         }
         else
         {
             // Read the received data
-            uint8_t received_data = TWI0.SDATA;
+            uint8_t received_data = I2C_Client_ReadData();
 
             // Call the receive callback if it's set
             if (receive_callback != NULL)
             {
                 receive_callback(received_data);
+                TWI0.SSTATUS |= TWI_DIF_bm;
+                TWI0.SCTRLB |= TWI_SCMD_RESPONSE_gc;
             }
         }
-
-
-        TWI0.SSTATUS = TWI_DIF_bm;
-        TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
     }
 }

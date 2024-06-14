@@ -11,6 +11,8 @@
 void MainClkCtrl(void);
 void SetupRTC(void);
 
+uint8_t distance = 0;
+
 int main()
 {
     MainClkCtrl();
@@ -57,25 +59,25 @@ ISR(RTC_CNT_vect)
 {
     //Clear the interrupt flag
     RTC.INTFLAGS |= RTC_OVF_bm;
-    uint8_t distance = 0.0;
-    if (I2C_Host_Start(SONAR_ADDR, 0x01) == 0x01)
+    distance = 0;
+    uint8_t startI2C = I2C_Host_Start(SONAR_ADDR, 0x01);
+    if (startI2C == 0x01)
     {
-        uint8_t distance = I2C_Host_ReadData();
+        distance = I2C_Host_ReadData();
     }
     
-    if (I2C_Host_Start(MOTOR_DRIVER_ADDR, 0x00) == 0x00)
-    {
-        if (distance < 50)
-        {
-            I2C_Host_WriteData(COM_STOP);
-        }
-        else 
-        {
-            I2C_Host_WriteData(COM_START);
-        }
-        
-    }
+//    if (I2C_Host_Start(MOTOR_DRIVER_ADDR, 0x00) == 0x01)
+//    {
+//        if (distance < 50)
+//        {
+//            I2C_Host_WriteData(COM_STOP);
+//        }
+//        else 
+//        {
+//            I2C_Host_WriteData(COM_START);
+//        }
+//        I2C_Host_Stop();      
+//    }
     
-    
-//    I2C_Host_Stop();
+    I2C_Host_Stop();
 }

@@ -6,10 +6,16 @@
 #endif
 
 #include <avr/io.h>
+#include <util/delay.h>
 
-#define I2C_CHECK_START() (TWI_WIF_bm & TWI_CLKHOLD_bm) 
-#define I2C_CHECK_WRITE() (TWI_WIF_bm)
+#define I2C_CHECK_WRITE() (TWI_WIF_bm & TWI_CLKHOLD_bm)
+#define I2C_CHECK_READ() (TWI_RXACK_bm)
 #define I2C_CHECK_NACK() (TWI_WIF_bm & TWI_RXACK_bm)
+#define I2C_CHECK_ARBLOST() (TWI_WIF_bm & TWI_ARBLOST_bm)
+#define I2C_CHECK_BUSERR() (TWI_BUSERR_bm)
+#define I2C_CHECK_IDLE() (TWI_BUSSTATE_IDLE_gc)
+#define I2C_CHECK_WRITE_COMP() (TWI_WIF_bm)
+#define I2C_CHECK_READ_ALLOWED() (TWI_RIF_bm & TWI_CLKHOLD_bm)
 
 typedef struct {
     // Add any necessary fields here, if needed
@@ -20,20 +26,8 @@ typedef struct {
 
 void I2C_Host_InitI2C(void);
 
-uint8_t I2C_Host_CalcBaud(void);
-
-struct BAUD_TIMING_t{
-    double T_LOW;
-    double T_HIGH;
-    double T_OF;
-    double T_R;
-};
-
-double I2C_Host_CalcBaud_F_SCL(void);
-
-double I2C_Host_CalcBaud_BAUD(double);
-
 uint8_t I2C_Host_Start(uint8_t, uint8_t);
+uint8_t I2C_Host_Start_R(uint8_t, uint8_t, uint8_t);
 
 void I2C_Host_WriteData(uint8_t);
 

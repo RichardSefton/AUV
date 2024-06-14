@@ -15,7 +15,7 @@ void I2C_Client_InitI2C(uint8_t address, I2C_ReceiveCallback rx_callback, I2C_Tr
     TWI0.SADDR = address << 1 | 0x00;
 
     // Enable the TWI and enable various interrupts
-    TWI0.SCTRLA = TWI_ENABLE_bm | TWI_DIEN_bm | TWI_APIEN_bm | TWI_PIEN_bm;
+    TWI0.SCTRLA |= TWI_ENABLE_bm | TWI_SMEN_bm | TWI_DIEN_bm | TWI_APIEN_bm | TWI_PIEN_bm;
 
     sei(); // Enable global interrupts
 }
@@ -30,7 +30,9 @@ uint8_t I2C_Client_ReadData(void)
     if (TWI0.SSTATUS & TWI_DIF_bm)
     {
         // Read and return the data
-        return TWI0.SDATA;
+        uint8_t data = TWI0.SDATA;
+        // Clear the Data Interrupt Flag (DIF)
+        return data;
     }
 
     // Return 0 if no data was received
@@ -42,10 +44,8 @@ void I2C_Client_WriteData(uint8_t data)
 {
     // Write the data
     TWI0.SDATA = data;
-
-//    // Send acknowledge and wait for the data to be transmitted
-//    TWI0.SSTATUS = TWI_DIF_bm;
-//    TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
+    // Clear the Data Interrupt Flag (DIF)
+    TWI0.SSTATUS |= TWI_DIF_bm;
 }
 
 // Interrupt Service Routine for I2C
@@ -55,19 +55,13 @@ ISR(TWI0_TWIS_vect)
     if (TWI0.SSTATUS & TWI_APIF_bm)
     {
         // Clear the interrupt flag
-        TWI0.SSTATUS = TWI_APIF_bm;
+        TWI0.SSTATUS |= TWI_APIF_bm;
 
         // Check if the address match
         if (TWI0.SSTATUS & TWI_AP_bm)
         {
             // Clear the address match flag
-            TWI0.SSTATUS = TWI_AP_bm;
-            TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
-        }
-        else
-        {
-            // If not an address match, it must be a stop condition
-            TWI0.SCTRLB = TWI_SCMD_COMPTRANS_gc;
+            TWI0.SSTATUS |= TWI_AP_bm;
         }
     }
 
@@ -81,13 +75,14 @@ ISR(TWI0_TWIS_vect)
             if (transmit_callback != NULL)
             {
                 uint8_t data_to_send = transmit_callback();
-                I2C_Client_WriteData(data_to_send);                
+                I2C_Client_WriteData(data_to_send);
+                TWI0.SCTRLB |= TWI_SCMD_RESPONSE_gc;
             }
         }
         else
         {
             // Read the received data
-            uint8_t received_data = TWI0.SDATA;
+            uint8_t received_data = I2C_Client_ReadData();
 
             // Call the receive callback if it's set
             if (receive_callback != NULL)
@@ -95,9 +90,5 @@ ISR(TWI0_TWIS_vect)
                 receive_callback(received_data);
             }
         }
-
-
-        TWI0.SSTATUS = TWI_DIF_bm;
-        TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
     }
 }

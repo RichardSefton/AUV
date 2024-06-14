@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=motor.c I2C_Client.c
+SOURCEFILES_QUOTED_IF_SPACED=motor.c I2C.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C_Client.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/motor.o.d ${OBJECTDIR}/I2C_Client.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/motor.o.d ${OBJECTDIR}/I2C.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C_Client.o
+OBJECTFILES=${OBJECTDIR}/motor.o ${OBJECTDIR}/I2C.o
 
 # Source Files
-SOURCEFILES=motor.c I2C_Client.c
+SOURCEFILES=motor.c I2C.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -110,11 +110,11 @@ ${OBJECTDIR}/motor.o: motor.c  .generated_files/flags/default/38a7469aeff83ce964
 	@${RM} ${OBJECTDIR}/motor.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor.o.d" -MT "${OBJECTDIR}/motor.o.d" -MT ${OBJECTDIR}/motor.o  -o ${OBJECTDIR}/motor.o motor.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/8df2f6647dd681acacc24b8c8c7894a8e6adbf33 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/I2C.o: I2C.c  .generated_files/flags/default/f711c99bbce261950df4c7dd35b7d2101f4d6df9 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
-	@${RM} ${OBJECTDIR}/I2C_Client.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/I2C.o.d 
+	@${RM} ${OBJECTDIR}/I2C.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C.o.d" -MT "${OBJECTDIR}/I2C.o.d" -MT ${OBJECTDIR}/I2C.o  -o ${OBJECTDIR}/I2C.o I2C.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/motor.o: motor.c  .generated_files/flags/default/86a306566ade7fe03501a60b0fb93a99af932f0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -123,11 +123,11 @@ ${OBJECTDIR}/motor.o: motor.c  .generated_files/flags/default/86a306566ade7fe035
 	@${RM} ${OBJECTDIR}/motor.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/motor.o.d" -MT "${OBJECTDIR}/motor.o.d" -MT ${OBJECTDIR}/motor.o  -o ${OBJECTDIR}/motor.o motor.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/25b9c51bc6995e439f63c371968eb1729f88ce80 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/I2C.o: I2C.c  .generated_files/flags/default/9effae0f612487f896bb13dc3f9f3f8c66097667 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
-	@${RM} ${OBJECTDIR}/I2C_Client.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/I2C.o.d 
+	@${RM} ${OBJECTDIR}/I2C.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C.o.d" -MT "${OBJECTDIR}/I2C.o.d" -MT ${OBJECTDIR}/I2C.o  -o ${OBJECTDIR}/I2C.o I2C.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 

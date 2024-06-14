@@ -1,7 +1,7 @@
 #define F_CPU 3333333UL
 #include <avr/io.h>
 #include <util/delay.h>
-#include "I2C_Client.h"
+#include "TWI.h"
 
 void MainClkCtrl(void);
 void SetupPins(void);
@@ -28,7 +28,7 @@ int main()
 {
     MainClkCtrl();
     SetupPins();
-    I2C_Client_InitI2C(ADDR, I2C_RX_Callback, I2C_TX_Callback);
+    TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
     
     while(1)
     {

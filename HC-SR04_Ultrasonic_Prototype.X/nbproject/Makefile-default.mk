@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ultrasonic.c I2C_Client.c
+SOURCEFILES_QUOTED_IF_SPACED=ultrasonic.c TWI.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/I2C_Client.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/ultrasonic.o.d ${OBJECTDIR}/I2C_Client.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/TWI.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/ultrasonic.o.d ${OBJECTDIR}/TWI.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/I2C_Client.o
+OBJECTFILES=${OBJECTDIR}/ultrasonic.o ${OBJECTDIR}/TWI.o
 
 # Source Files
-SOURCEFILES=ultrasonic.c I2C_Client.c
+SOURCEFILES=ultrasonic.c TWI.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -110,11 +110,11 @@ ${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/d5eb6531
 	@${RM} ${OBJECTDIR}/ultrasonic.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o  -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/34dce2bd60d58594a2ec69387d542fae3facca4b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/TWI.o: TWI.c  .generated_files/flags/default/13b0ece3d104cc81b56701b769b11fc7f99d2a2a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
-	@${RM} ${OBJECTDIR}/I2C_Client.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/TWI.o.d 
+	@${RM} ${OBJECTDIR}/TWI.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/TWI.o.d" -MT "${OBJECTDIR}/TWI.o.d" -MT ${OBJECTDIR}/TWI.o  -o ${OBJECTDIR}/TWI.o TWI.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/18157f1bb4754f20b69d503bba3a52881003115d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -123,11 +123,11 @@ ${OBJECTDIR}/ultrasonic.o: ultrasonic.c  .generated_files/flags/default/18157f1b
 	@${RM} ${OBJECTDIR}/ultrasonic.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/ultrasonic.o.d" -MT "${OBJECTDIR}/ultrasonic.o.d" -MT ${OBJECTDIR}/ultrasonic.o  -o ${OBJECTDIR}/ultrasonic.o ultrasonic.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/I2C_Client.o: I2C_Client.c  .generated_files/flags/default/4f348679420e69fd4d589625cfd0cdabf8bfc274 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/TWI.o: TWI.c  .generated_files/flags/default/d63a11bfe8f25134bedb21735c4d1fdedfa38af7 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/I2C_Client.o.d 
-	@${RM} ${OBJECTDIR}/I2C_Client.o 
-	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/I2C_Client.o.d" -MT "${OBJECTDIR}/I2C_Client.o.d" -MT ${OBJECTDIR}/I2C_Client.o  -o ${OBJECTDIR}/I2C_Client.o I2C_Client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/TWI.o.d 
+	@${RM} ${OBJECTDIR}/TWI.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/TWI.o.d" -MT "${OBJECTDIR}/TWI.o.d" -MT ${OBJECTDIR}/TWI.o  -o ${OBJECTDIR}/TWI.o TWI.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 endif
 

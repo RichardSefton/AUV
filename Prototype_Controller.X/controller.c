@@ -1,6 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "I2C_Host.h"
+#include "TWI.h"
 
 #define MOTOR_DRIVER_ADDR 0x09
 #define SONAR_ADDR 0x08
@@ -18,7 +18,7 @@ int main()
     MainClkCtrl();
     SetupRTC();
     
-    I2C_Host_InitI2C();
+    TWI_Master_Init();
     
     sei();
     
@@ -60,12 +60,14 @@ ISR(RTC_CNT_vect)
     //Clear the interrupt flag
     RTC.INTFLAGS |= RTC_OVF_bm;
     distance = 0;
-    uint8_t startI2C = I2C_Host_Start(SONAR_ADDR, 0x01);
-    if (startI2C == 0x01)
-    {
-        distance = I2C_Host_ReadData();
-    }
     
+    TWI_Master_Start(SONAR_ADDR, 0x01);
+    distance = TWI_Master_Read_NACK();
+    TWI_Master_Stop();
+    
+    TWI_Master_Start(MOTOR_DRIVER_ADDR, 0x00);
+    
+  
 //    if (I2C_Host_Start(MOTOR_DRIVER_ADDR, 0x00) == 0x01)
 //    {
 //        if (distance < 50)
@@ -79,5 +81,5 @@ ISR(RTC_CNT_vect)
 //        I2C_Host_Stop();      
 //    }
     
-    I2C_Host_Stop();
+    
 }

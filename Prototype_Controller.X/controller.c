@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "TWI.h"
 
 #define MOTOR_DRIVER_ADDR 0x09
@@ -8,23 +9,42 @@
 #define COM_STOP 0xFF
 #define COM_START 0xAA
 
+//LED For debugging
+#define RED PIN6_bm
+#define GREEN PIN5_bm
+#define BLUE PIN4_bm
+#define YELLOW (PIN6_bm | PIN5_bm)
+#define PURPLE (PIN6_bm | PIN4_bm)
+#define CYAN (PIN5_bm | PIN4_bm)
+#define WHITE (PIN6_bm | PIN5_bm | PIN4_bm)
+
 void MainClkCtrl(void);
 void SetupRTC(void);
+
+//For LED Debugging
+void SetupPins(void);
+void ChangeColour(uint8_t);
 
 uint8_t distance = 0;
 
 int main()
 {
     MainClkCtrl();
+    
+    //Allow Slaves to init
+    _delay_ms(2000);
+    
     SetupRTC();
     
     TWI_Master_Init();
+        
+    SetupPins();
     
     sei();
     
     while(1)
     {
-        
+        ChangeColour(YELLOW);
     }
     
     return 0;
@@ -53,6 +73,16 @@ void SetupRTC(void)
     RTC.INTFLAGS = RTC_OVF_bm;
     // Enable the RTC
     RTC.CTRLA = RTC_RTCEN_bm;
+}
+
+void SetupPins(void)
+{
+    PORTB.DIR |= RED | GREEN | BLUE;
+}
+void ChangeColour(uint8_t c)
+{
+    PORTB.OUTSET |= RED | GREEN | BLUE;
+    PORTB.OUT &= ~c;
 }
 
 ISR(RTC_CNT_vect)

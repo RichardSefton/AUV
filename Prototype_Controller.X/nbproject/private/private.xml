@@ -4,8 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/richard/code/uni/AUV/Prototype_Controller.X/controller.c</file>
-            <file>file:/home/richard/code/uni/AUV/Prototype_Controller.X/I2C_Host.h</file>
-            <file>file:/home/richard/code/uni/AUV/Prototype_Controller.X/I2C_Host.c</file>
+            <file>file:/home/richard/code/uni/AUV/Prototype_Controller.X/TWI.c</file>
+            <file>file:/home/richard/code/uni/AUV/Prototype_Controller.X/TWI.h</file>
         </group>
     </open-files>
 </project-private>

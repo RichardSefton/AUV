@@ -55,13 +55,25 @@ void TWI_Master_Init(void)
     sei();
 }
 
-void TWI_Master_Start(uint8_t address, uint8_t read) 
+void TWI_Master_Reset(void)
+{
+    // Disable TWI by writing a zero to the enable bit
+    TWI0.MCTRLA &= ~TWI_ENABLE_bm;
+
+    // Clear status registers to reset the state
+    TWI0.MSTATUS |= TWI_BUSERR_bm | TWI_ARBLOST_bm | TWI_RXACK_bm | TWI_COLL_bm | TWI_BUSSTATE_IDLE_gc;
+//    TWI0.MCTRLB |= TWI_FLUSH_bm; // Flush TWI
+
+    // Re-enable TWI
+    TWI0.MCTRLA |= TWI_ENABLE_bm;
+}
+
+void TWI_Master_Start(uint8_t address, uint8_t read)
 {
     TWI0.MADDR = (address << 1) | read;
-    
     //Wait for the address transmission to complete. When the address is confirmed 
     //by the slave, the WIF or RIF flags will be raised. 
-    while (!(TWI0.MSTATUS & (TWI_WIF_bm | TWI_RIF_bm)));
+    while (!(TWI0.MSTATUS & (TWI_RIF_bm | TWI_WIF_bm)));
 }
 
 void TWI_Master_Write(uint8_t data) 
@@ -71,10 +83,19 @@ void TWI_Master_Write(uint8_t data)
     //Wait for the WIF to become high. Writing data will set it low (Smart mode),
     //When the Slave receives it will be set back to high. 
     while (!(TWI0.MSTATUS & TWI_WIF_bm));
+    
+    // Check for arbitration lost or bus error
+    if (TWI0.MSTATUS & (TWI_ARBLOST_bm | TWI_BUSERR_bm)) {
+        // Handle error
+        TWI0.MCTRLB = TWI_FLUSH_bm;
+        TWI0.MSTATUS = TWI_BUSSTATE_IDLE_gc;
+    }
 }
 
 uint8_t TWI_Master_Read_ACK(void) 
 {
+//    //Temporarily Disable SM
+//    TWI0.MCTRLA &= ~TWI_SMEN_bm;
     //Prime the MCTRLB with the ACK bit
     TWI0.MCTRLB = TWI_ACKACT_ACK_gc;
     
@@ -88,15 +109,27 @@ uint8_t TWI_Master_Read_ACK(void)
 
 uint8_t TWI_Master_Read_NACK(void) 
 {
+    //Temporarily Disable SM
+//    TWI0.MCTRLA &= ~TWI_SMEN_bm;
+    
     //Prime the MCTRLB with the NACK bit
     TWI0.MCTRLB = TWI_ACKACT_NACK_gc;
     
     //Wait till the device has received the data
     while (!(TWI0.MSTATUS & TWI_RIF_bm));
     
+    TWI0.MCTRLB |= TWI_MCMD_STOP_gc;
     //Return the data from the buffer. Smart mode should then send the NACK bit 
     //and clear the relevant flags
-    return TWI0.MDATA;
+    uint8_t data = TWI0.MDATA;
+    
+//    TWI0.MCTRLB |= TWI_MCMD_STOP_gc;
+    
+    //Renable SM
+//    TWI0.MCTRLA |= TWI_SMEN_bm;
+    
+//    return TWI0.MDATA;
+    return data;
 }
 
 /**
@@ -104,6 +137,7 @@ uint8_t TWI_Master_Read_NACK(void)
  */
 void TWI_Master_Stop(void) {
     TWI0.MCTRLB = TWI_MCMD_STOP_gc;
+//    TWI0.MSTATUS = TWI_BUSSTATE_IDLE_gc; 
 }
 
 // Global variable to store the receive callback function
@@ -132,8 +166,15 @@ void TWI_Slave_Write(uint8_t data) {
     //When the Master has received the data the DIF interrupt should be high again. 
     while (!(TWI0.SSTATUS & TWI_DIF_bm));
     
+    if (TWI0.SSTATUS & TWI_RXACK_bm)
+    {
+        //Master send dobby an NACK. END TRANSMISSION
+        TWI0.SCTRLB |= TWI_SCMD_COMPTRANS_gc;
+    }
+    
     // Clear the DIF
-    TWI0.SSTATUS |= TWI_DIF_bm;
+//    TWI0.SSTATUS |= TWI_DIF_bm;
+    
 }
 
 uint8_t TWI_Slave_Read(void) {
@@ -145,9 +186,33 @@ uint8_t TWI_Slave_Read(void) {
     
     // Clear the data interrupt flag
     //THIS SHOULDNT BE REQUIRED BECAUSE SMART MODE. 
-    TWI0.SSTATUS |= TWI_DIF_bm;
+//    TWI0.SSTATUS |= TWI_DIF_bm;
+    
     
     return data;
+}
+
+uint8_t TWI_Slave_Read_ACK(void) {
+    // Wait for the data to be ready
+    while (!(TWI0.SSTATUS & TWI_DIF_bm));
+    
+    // Read the data from the buffer
+    uint8_t data = TWI0.SDATA;
+    
+    // Send ACK after receiving data
+    TWI0.SCTRLB = TWI_ACKACT_ACK_gc;
+    
+    return data;
+}
+
+uint8_t TWI_Slave_Read_NACK(void) {
+    // Wait for the data to be ready
+    while (!(TWI0.SSTATUS & TWI_DIF_bm));
+    
+//     Send NACK after receiving data
+    TWI0.SCTRLB = TWI_ACKACT_NACK_gc;
+    
+    return TWI0.SDATA;
 }
 
 /**
@@ -164,14 +229,33 @@ uint8_t TWI_Slave_Read(void) {
 ISR(TWI0_TWIS_vect) 
 {
     // Check if Address/Stop interrupt
-    if (TWI0.SSTATUS & TWI_APIF_bm) {
+//    if (TWI0.SSTATUS & TWI_APIF_bm) {
+//        // Clear the interrupt flag
+//        TWI0.SSTATUS |= TWI_APIF_bm;
+//        // Check if the address match
+//        if (TWI0.SSTATUS & TWI_AP_bm) {
+//            // Clear the address match flag
+//            TWI0.SSTATUS |= TWI_AP_bm;
+//        }
+//    }
+        // Check if Address/Stop interrupt
+    if (TWI0.SSTATUS & TWI_APIF_bm)
+    {
         // Clear the interrupt flag
-        TWI0.SSTATUS |= TWI_APIF_bm;
+        TWI0.SSTATUS = TWI_APIF_bm;
+        
         // Check if the address match
-        if (TWI0.SSTATUS & TWI_AP_bm) {
+        if (TWI0.SSTATUS & TWI_AP_bm)
+        {
             // Clear the address match flag
-            TWI0.SSTATUS |= TWI_AP_bm;
+            TWI0.SSTATUS = TWI_AP_bm;
+            TWI0.SCTRLB = TWI_SCMD_RESPONSE_gc;
         }
+//        else
+//        {
+//            // If not an address match, it must be a stop condition
+//            TWI0.SCTRLB = TWI_SCMD_COMPTRANS_gc;
+//        }
     }
 
     // Check if Data interrupt
@@ -184,9 +268,11 @@ ISR(TWI0_TWIS_vect)
             TWI_Slave_Write(data_to_send);  // Example data
         } else {
             //Read the received data. 
-            uint8_t received_data = TWI_Slave_Read();
+            uint8_t received_data = TWI_Slave_Read_NACK();
             //Send the data to the callback function
             receive_callback(received_data);
         }
+        
+        TWI0.SSTATUS |= TWI_DIF_bm;
     }
 }

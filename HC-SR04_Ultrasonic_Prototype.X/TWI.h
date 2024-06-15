@@ -34,6 +34,12 @@ typedef uint8_t (*I2C_TransmitCallback)(void);
 void TWI_Master_Init(void);
 
 /**
+ * This function will try to force the TWI protocol back into its starting state. 
+ * This is to stop an issue where repeated requests are crashing the device. 
+ */
+void TWI_Master_Reset(void);
+
+/**
  * This function will put the protocol in a state where it is able to either read or 
  * write data. It will target a slave, and specify if its a read or write operation. 
  * 
@@ -113,5 +119,17 @@ void TWI_Slave_Write(uint8_t data);
  * @return              The received data
  */
 uint8_t TWI_Slave_Read(void);
+
+/**
+ * Same as above but explicitly sends ACK
+ * @return 
+ */
+uint8_t TWI_Slave_Read_ACK(void);
+
+/**
+ * Same as above but explicitly sends NACK and Transaction Complete command. 
+ * @return 
+ */
+uint8_t TWI_Slave_Read_NACK(void);
 
 #endif // TWI_H

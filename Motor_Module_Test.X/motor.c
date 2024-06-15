@@ -16,10 +16,10 @@ uint8_t  I2C_TX_Callback(void);
 #define FORWARD 0xAA
 #define BACKWARD 0x02
 
-#define ADDR 0x09
+#define ADDR 0x49
 
-uint8_t state = FORWARD;
-uint8_t step = 0x00;
+volatile uint8_t state = FORWARD;
+volatile uint8_t step = 0x00;
 
 
 void stepperMotorStep(uint8_t step);

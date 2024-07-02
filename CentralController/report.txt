@@ -1,0 +1,82 @@
+Info: Processing symbol 'J5:'.
+Info: Processing symbol 'R2:'.
+Info: Processing symbol 'R1:'.
+Info: Processing symbol 'J8:'.
+Info: Processing symbol 'U1:Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm'.
+Info: Processing symbol 'J7:'.
+Info: Processing symbol 'D1:'.
+Info: Processing symbol 'J6:'.
+Info: Processing symbol 'J4:'.
+Info: Processing symbol 'J3:'.
+Info: Processing symbol 'J2:'.
+Info: Processing symbol 'J1:'.
+Add net unconnected-(U1-PA3-Pad2).
+Add net +5V.
+Connected U1 pin 7 to unconnected-(U1-PA6-Pad7).
+Connected U1 pin 2 to unconnected-(U1-PA3-Pad2).
+Add net unconnected-(U1-PB7-Pad9).
+Connected U1 pin 9 to unconnected-(U1-PB7-Pad9).
+Add net unconnected-(U1-PA6-Pad7).
+Add net unconnected-(U1-PA2-Pad1).
+Connected U1 pin 21 to unconnected-(U1-PC4-Pad21).
+Add net unconnected-(U1-PC4-Pad21).
+Connected U1 pin 25 to GND.
+Connected U1 pin 18 to Net-(D1-GK).
+Add net Net-(D1-GK).
+Connected U1 pin 17 to Net-(D1-BK).
+Add net Net-(D1-BK).
+Connected U1 pin 5 to unconnected-(U1-PA4-Pad5).
+Add net unconnected-(U1-PA4-Pad5).
+Connected U1 pin 13 to unconnected-(U1-PB3-Pad13).
+Connected U1 pin 12 to unconnected-(U1-PB4-Pad12).
+Add net unconnected-(U1-PB4-Pad12).
+Connected U1 pin 11 to unconnected-(U1-PB5-Pad11).
+Add net unconnected-(U1-PB5-Pad11).
+Connected U1 pin 22 to unconnected-(U1-PC5-Pad22).
+Add net unconnected-(U1-PC5-Pad22).
+Connected U1 pin 14 to unconnected-(U1-PB2-Pad14).
+Add net unconnected-(U1-PB2-Pad14).
+Connected U1 pin 4 to +5V.
+Add net unconnected-(U1-PB3-Pad13).
+Connected U1 pin 1 to unconnected-(U1-PA2-Pad1).
+Add net unconnected-(U1-PC3-Pad20).
+Connected U1 pin 24 to unconnected-(U1-PA1-Pad24).
+Add net unconnected-(U1-PA1-Pad24).
+Connected U1 pin 15 to Net-(J1-Pin_2).
+Add net Net-(J1-Pin_2).
+Add net unconnected-(U1-PA7-Pad8).
+Added U1 (footprint 'Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm').
+Changed REF** reference designator to U1.
+Changed U1 value from QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm to ATtiny1627-M.
+Updated U1 symbol association from  to /e07e0286-0b62-42dc-9a5e-731c107107c1.
+Updated U1 fields.
+Updated U1 sheetname to 'Root'.
+Updated U1 sheetfile to 'CentralController.kicad_sch'.
+Updated U1 footprint filters to 'QFN*1EP*4x4mm*P0.5mm*'.
+Add net Net-(D1-RK).
+Connected U1 pin 19 to Net-(D1-RK).
+Connected U1 pin 6 to unconnected-(U1-PA5-Pad6).
+Add net unconnected-(U1-PB6-Pad10).
+Connected U1 pin 10 to unconnected-(U1-PB6-Pad10).
+Add net GND.
+Connected U1 pin 23 to GND.
+Connected U1 pin 20 to unconnected-(U1-PC3-Pad20).
+Add net Net-(J1-Pin_1).
+Connected U1 pin 16 to Net-(J1-Pin_1).
+Connected U1 pin 3 to GND.
+Connected U1 pin 8 to unconnected-(U1-PA7-Pad8).
+Add net unconnected-(U1-PA5-Pad6).
+Error: Cannot add D1 (no footprint assigned).
+Error: Cannot add J1 (no footprint assigned).
+Error: Cannot add J2 (no footprint assigned).
+Error: Cannot add J3 (no footprint assigned).
+Error: Cannot add J4 (no footprint assigned).
+Error: Cannot add J5 (no footprint assigned).
+Error: Cannot add J6 (no footprint assigned).
+Error: Cannot add J7 (no footprint assigned).
+Error: Cannot add J8 (no footprint assigned).
+Error: Cannot add R1 (no footprint assigned).
+Error: Cannot add R2 (no footprint assigned).
+
+
+Info: Total warnings: 0, errors: 11.

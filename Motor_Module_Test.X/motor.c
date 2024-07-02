@@ -165,5 +165,5 @@ void I2C_RX_Callback(uint8_t com)
 
 uint8_t I2C_TX_Callback(void)
 {
-    
+    //Not used, but needed for SlaveInit
 }

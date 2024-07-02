@@ -11,7 +11,6 @@
 void MainClkCtrl(void);
 void SetupPins(void);
 void SetupRTC(void);
-//void SetupTCB0(void);
 void I2C_RX_Callback(uint8_t);
 uint8_t I2C_TX_Callback(void);
 
@@ -27,7 +26,6 @@ int main()
     MainClkCtrl();
     SetupPins();
     SetupRTC();
-//    SetupTCB0();
     
     TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
     
@@ -44,7 +42,7 @@ int main()
 void MainClkCtrl(void) 
 {
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc);
-    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_6X_gc | CLKCTRL_PEN_bm); // Prescaler of 6
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_6X_gc | CLKCTRL_PEN_bm);
     // F_CPU with this configuration will be 3.33MHz
 }
 
@@ -59,35 +57,17 @@ void SetupPins(void)
 }
 
 void SetupRTC(void) {
-    // Select the 32.768 kHz internal oscillator as the RTC clock source
     RTC.CLKSEL = RTC_CLKSEL_INT32K_gc;
-    
     // Wait for synchronization
     while (RTC.STATUS & RTC_CTRLABUSY_bm);
-    
-    // Set the period to maximum
-    RTC.PER = 0xFFFF;
-    
-    // Enable RTC overflow interrupt
-//    RTC.INTCTRL = RTC_OVF_bm;
-    
+    RTC.PER = 0xFFFF; //Maximum period
     // Enable the RTC, run in standby mode, no prescaler
     RTC.CTRLA = RTC_RUNSTDBY_bm | RTC_PRESCALER_DIV1_gc | RTC_RTCEN_bm;
 }
-//
-//void SetupTCB0(void)
-//{
-//    TCB0.CCMP = 17;
-//    TCB0.CNT = 0xFFFF;
-//    TCB0.CTRLA |= TCB_CLKSEL_DIV2_gc; 
-//    TCB0.CTRLB |= TCB_CNTMODE_INT_gc;
-//
-//    TCB0.INTCTRL |= TCB_CAPT_bm;
-//}
 
 void I2C_RX_Callback(uint8_t com)
 {
-    // Handle received I2C commands here
+    // We're not actually using this. Just need the function for the SlaveInit function
 }
 
 uint8_t I2C_TX_Callback(void)

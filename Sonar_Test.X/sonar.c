@@ -30,12 +30,12 @@ int main()
     SetupPins();
     SetupTCA();
 //    EnableWO();
-    SetupRTC();
-    SetupTCB0();
+//    SetupRTC();
+//    SetupTCB0();
     
     PORTA.OUTSET |= PIN2_bm;
     
-    I2C_Client_InitI2C(ADDR, I2CCallback);
+//    I2C_Client_InitI2C(ADDR, I2CCallback);
     
     sei();
     
@@ -59,6 +59,7 @@ void SetupPins(void)
     PORTA.PIN1CTRL |= PORT_ISC_RISING_gc;
 
     PORTB.DIR |= PIN3_bm | PIN4_bm; // PWM Output on PB3 and PB4
+    PORTB.PIN4CTRL |= PORT_INVEN_bm; //invert the PWM
     
     PORTMUX.TCAROUTEA = PORTMUX_TCA00_ALT1_gc | PORTMUX_TCA01_ALT1_gc;
     
@@ -74,7 +75,7 @@ void SetupTCA(void)
     TCA0.SINGLE.CMP1 = period / 2; // 50% duty cycle for WO1
 
     TCA0.SINGLE.CTRLB = TCA_SINGLE_CMP0EN_bm | TCA_SINGLE_CMP1EN_bm | TCA_SINGLE_WGMODE_SINGLESLOPE_gc;
-    TCA0.SINGLE.CTRLA |= TCA_SINGLE_CLKSEL_DIV1_gc;
+    TCA0.SINGLE.CTRLA |= TCA_SINGLE_CLKSEL_DIV1_gc | TCA_SINGLE_ENABLE_bm;
 }
 
 void EnableWO(void)
@@ -125,46 +126,41 @@ void I2CCallback(uint8_t data)
     }
 }
 
-ISR(TCB0_INT_vect) 
-{
-    TCB0.INTFLAGS = TCB_CAPT_bm;
-    DisableWO();
-}
+//ISR(TCB0_INT_vect) 
+//{
+//    TCB0.INTFLAGS = TCB_CAPT_bm;
+//    DisableWO();
+//}
 
-ISR(PORTA_PORT_vect)
-{
-    if (enableDistCalc == 0x01)
-    {
-        end_time = RTC.CNT;
+//ISR(PORTA_PORT_vect)
+//{
+//    if (enableDistCalc == 0x01)
+//    {
+//        end_time = RTC.CNT;
+//
+//        uint16_t elapsed_ticks;
+//        if (end_time >= start_time)
+//        {
+//            elapsed_ticks = end_time - start_time;
+//        }
+//        else
+//        {
+//            elapsed_ticks = (0xFFFF - start_time) + end_time + 1; // Handle overflow
+//        }
+//
+////        float elapsed_time = (float)elapsed_ticks / 32.768; // Convert to seconds
+//        float elapsed_time = (float)(end_time) / 32.768;
+//        float speed_of_sound = 0.0343; // Speed of sound in cm/us
+//        distance = (elapsed_time * speed_of_sound) / 2.0; // Divide by 2 for round trip
+//
+//        if (distance > 1.0)
+//        {
+//            PORTA.INTFLAGS |= PIN1_bm;
+//        }
+//        enableDistCalc = 0x00;
+//    }
+//    
+//    PORTA.INTFLAGS |= PIN1_bm;
+//}
 
-        uint16_t elapsed_ticks;
-        if (end_time >= start_time)
-        {
-            elapsed_ticks = end_time - start_time;
-        }
-        else
-        {
-            elapsed_ticks = (0xFFFF - start_time) + end_time + 1; // Handle overflow
-        }
-
-//        float elapsed_time = (float)elapsed_ticks / 32.768; // Convert to seconds
-        float elapsed_time = (float)(end_time) / 32.768;
-        float speed_of_sound = 0.0343; // Speed of sound in cm/us
-        distance = (elapsed_time * speed_of_sound) / 2.0; // Divide by 2 for round trip
-
-        if (distance > 1.0)
-        {
-            PORTA.INTFLAGS |= PIN1_bm;
-        }
-        enableDistCalc = 0x00;
-    }
-    
-    PORTA.INTFLAGS |= PIN1_bm;
-}
-
-ISR(RTC_CNT_vect)
-{
-    RTC.INTFLAGS = RTC_INTFLAGS; //Should reset the flags
-    RTC.CTRLA &= ~(1 << RTC_RTCEN_bm);
-    RTC.CNT = 0;
-}
+//

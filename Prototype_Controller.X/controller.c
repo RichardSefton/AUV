@@ -27,14 +27,13 @@ void SetupPins(void);
 void ChangeColour(uint8_t);
 
 volatile uint8_t distance = 0;
-//uint8_t ping = 0;
 volatile uint8_t sendMotorInstruction = 0;
 
 int main()
 {
     MainClkCtrl();
     
-    // Allow Slaves to init
+    // Allow Slaves to init first
     _delay_ms(2000);
     
     SetupRTC();
@@ -48,16 +47,7 @@ int main()
     
     while(1)
     {
-        // Main loop can be used for other tasks
         ChangeColour(GREEN);
-        
-//        if (sendMotorInstruction == 1)
-//        {
-//            TWI_Master_Stop();
-//            TWI_Master_Start((uint8_t)MOTOR_DRIVER_ADDR, 0x00);
-//            TWI_Master_Write(COM_START);
-//            sendMotorInstruction = 0;
-//        }
     }
     
     return 0;
@@ -66,24 +56,18 @@ int main()
 void MainClkCtrl(void) 
 {
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc);
-    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_6X_gc | CLKCTRL_PEN_bm); // Prescaler of 6
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_6X_gc | CLKCTRL_PEN_bm);
     // F_CPU with this configuration will be 3.33MHz
 }
 
 void SetupRTC(void) 
 {
-    // Use 1.024 kHz internal clock
     RTC.CLKSEL |= RTC_CLKSEL_INT1K_gc;
-    
-    // Set the period for 5 seconds (5 * 1024 = 5120)
-    RTC.PER = 1024;
-    
+    RTC.PER = 1024; //provides a 1 second interval timer
     // Clear any existing flags
-    RTC.INTFLAGS |= RTC_OVF_bm;
-    
+    RTC.INTFLAGS |= RTC_OVF_bm;   
     // Enable the overflow interrupt
     RTC.INTCTRL |= RTC_OVF_bm;
-    
     // Enable the RTC
     RTC.CTRLA |= RTC_RTCEN_bm;
 }
@@ -92,18 +76,12 @@ void SetupTCA(void)
 {
     // Set up TCA to overflow at a desired interval
     TCA0.SINGLE.PER = 0xFFFF; // Maximum period
-    
     // Enable TCA overflow interrupt
     TCA0.SINGLE.INTCTRL |= TCA_SINGLE_OVF_bm;
-    
     // Set TCA to Normal mode
     TCA0.SINGLE.CTRLB |= TCA_SINGLE_WGMODE_NORMAL_gc;
-    
     // Use the system clock and set prescaler
     TCA0.SINGLE.CTRLA |= TCA_SINGLE_CLKSEL_DIV1_gc;
-    
-    // Disable the TCA initially
-//    TCA0.SINGLE.CTRLA &= ~TCA_SINGLE_ENABLE_bm;
 }
 
 void SetupPins(void)
@@ -125,50 +103,19 @@ ISR(RTC_CNT_vect)
     ChangeColour(RED);
     
     // Start TWI operation
-    distance = 0;
-    TWI_Master_Start(SONAR_ADDR, 0x01);
-    distance = TWI_Master_Read_NACK();
-//    TWI_Master_Stop();
-    TWI_Master_Start((uint8_t)MOTOR_DRIVER_ADDR, 0x00);
+    distance = 0; //reset the distance
+    TWI_Master_Start(SONAR_ADDR, 0x01); //Start TWI to sonar module 
+    distance = TWI_Master_Read_NACK(); //Get the distance
+    TWI_Master_Start((uint8_t)MOTOR_DRIVER_ADDR, 0x00); //Start TWI to Motor
     if (distance < 55)
     {
-        TWI_Master_Write(COM_STOP);
+        TWI_Master_Write(COM_STOP); //Send motor a stop command
     }
     else
     {
-        TWI_Master_Write(COM_START);
+        TWI_Master_Write(COM_START); //Send motor a start command. 
     }
     TWI_Master_Stop();
-//    sendMotorInstruction = 0;
-//    TWI_Master_Stop();
     
     ChangeColour(PURPLE);
-
-    // Enable TCA
-//    TCA0.SINGLE.CTRLA |= TCA_SINGLE_ENABLE_bm;
-}
-
-ISR(TCA0_OVF_vect)
-{    
-    // Clear the TCA overflow interrupt flag
-    TCA0.SINGLE.INTFLAGS = TCA_SINGLE_OVF_bm;
-    // Disable TCA after operation is complete
-    TCA0.SINGLE.CTRLA &= ~TCA_SINGLE_ENABLE_bm;
-    sendMotorInstruction = 1;
-    // Perform TWI write operation
-    ChangeColour(BLUE);
-//    TWI_Master_Start(MOTOR_DRIVER_ADDR, 0x00);
-//    TWI_Master_Write(COM_START);
-//    TWI_Master_Stop();
-//    
-//    if (distance < 55)
-//    {
-//        TWI_Master_Write(COM_STOP);
-//    }
-//    else
-//    {
-//        TWI_Master_Write(COM_START);
-//    }
-    
-//    TWI_Master_Stop();
 }

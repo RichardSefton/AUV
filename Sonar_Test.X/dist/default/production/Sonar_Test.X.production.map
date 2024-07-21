@@ -3,7 +3,7 @@ Archive member included to satisfy reference by file (symbol)
 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
                               /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o (exit)
 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_clear_bss.o)
-                              build/default/production/sonar.o (__do_clear_bss)
+                              build/default/production/I2C_Client.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -12,22 +12,10 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/sonar.o
  .data          0x0000000000000000        0x0 build/default/production/sonar.o
  .bss           0x0000000000000000        0x0 build/default/production/sonar.o
- .text.EnableWO
-                0x0000000000000000       0x10 build/default/production/sonar.o
- .text.DisableWO
-                0x0000000000000000       0x12 build/default/production/sonar.o
  .text.SetupRTC
-                0x0000000000000000       0x2c build/default/production/sonar.o
+                0x0000000000000000       0x2e build/default/production/sonar.o
  .text.SetupTCB0
                 0x0000000000000000       0x24 build/default/production/sonar.o
- .text.I2CCallback
-                0x0000000000000000       0x2a build/default/production/sonar.o
- .bss.distance  0x0000000000000000        0x4 build/default/production/sonar.o
- .bss.end_time  0x0000000000000000        0x2 build/default/production/sonar.o
- .bss.start_time
-                0x0000000000000000        0x2 build/default/production/sonar.o
- .bss.enableDistCalc
-                0x0000000000000000        0x1 build/default/production/sonar.o
  .text          0x0000000000000000        0x0 build/default/production/I2C_Client.o
  .data          0x0000000000000000        0x0 build/default/production/I2C_Client.o
  .bss           0x0000000000000000        0x0 build/default/production/I2C_Client.o
@@ -202,7 +190,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x1b8
+.text           0x0000000000000000      0x2b2
  *(.vectors)
  .vectors       0x0000000000000000       0x78 /opt/microchip/mplabx/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
                 0x0000000000000000                __vectors
@@ -262,7 +250,6 @@ END GROUP
                 0x000000000000009c                __vector_22
                 0x000000000000009c                __vector_28
                 0x000000000000009c                __vector_1
-                0x000000000000009c                __vector_24
                 0x000000000000009c                __vector_12
                 0x000000000000009c                __bad_interrupt
                 0x000000000000009c                __vector_6
@@ -270,7 +257,6 @@ END GROUP
                 0x000000000000009c                __vector_23
                 0x000000000000009c                __vector_25
                 0x000000000000009c                __vector_11
-                0x000000000000009c                __vector_13
                 0x000000000000009c                __vector_17
                 0x000000000000009c                __vector_19
                 0x000000000000009c                __vector_7
@@ -294,21 +280,33 @@ END GROUP
                 0x00000000000000a0       0x16 build/default/production/sonar.o
                 0x00000000000000a0                MainClkCtrl
  .text.SetupPins
-                0x00000000000000b6       0x34 build/default/production/sonar.o
+                0x00000000000000b6       0x44 build/default/production/sonar.o
                 0x00000000000000b6                SetupPins
  .text.SetupTCA
-                0x00000000000000ea       0x24 build/default/production/sonar.o
-                0x00000000000000ea                SetupTCA
- .text.main     0x000000000000010e       0x1a build/default/production/sonar.o
-                0x000000000000010e                main
+                0x00000000000000fa       0x26 build/default/production/sonar.o
+                0x00000000000000fa                SetupTCA
+ .text.EnableWO
+                0x0000000000000120       0x12 build/default/production/sonar.o
+                0x0000000000000120                EnableWO
+ .text.DisableWO
+                0x0000000000000132       0x12 build/default/production/sonar.o
+                0x0000000000000132                DisableWO
+ .text.main     0x0000000000000144       0x3e build/default/production/sonar.o
+                0x0000000000000144                main
+ .text.__vector_13
+                0x0000000000000182       0x4e build/default/production/sonar.o
+                0x0000000000000182                __vector_13
+ .text.__vector_24
+                0x00000000000001d0       0x52 build/default/production/sonar.o
+                0x00000000000001d0                __vector_24
  .text.__vector_14
-                0x0000000000000128       0x8c build/default/production/I2C_Client.o
-                0x0000000000000128                __vector_14
-                0x00000000000001b4                . = ALIGN (0x2)
+                0x0000000000000222       0x8c build/default/production/I2C_Client.o
+                0x0000000000000222                __vector_14
+                0x00000000000002ae                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000001b4        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
-                0x00000000000001b4                exit
-                0x00000000000001b4                _exit
+ .fini9         0x00000000000002ae        0x0 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+                0x00000000000002ae                exit
+                0x00000000000002ae                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -327,16 +325,16 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000001b4        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
+ .fini0         0x00000000000002ae        0x4 /usr/lib/gcc/avr/7.3.0/avrxmega3/libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000001b8                _etext = .
+                0x00000000000002b2                _etext = .
 
 .rodata
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
 
-.data           0x0000000000803800        0x0 load address 0x00000000000001b8
+.data           0x0000000000803800        0x0 load address 0x00000000000002b2
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -353,8 +351,8 @@ END GROUP
                 0x0000000000803800        0x2 build/default/production/I2C_Client.o
  *(COMMON)
                 0x0000000000803802                PROVIDE (__bss_end, .)
-                0x00000000000001b8                __data_load_start = LOADADDR (.data)
-                0x00000000000001b8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000002b2                __data_load_start = LOADADDR (.data)
+                0x00000000000002b2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0000000000803802        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)

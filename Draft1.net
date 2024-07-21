@@ -1,0 +1,13 @@
+* Z:\home\richard\code\uni\AUV\Draft1.asc
+Q1 N002 N003 N004 0 NPN
+Q2 N002 N004 N005 0 NPN
+Q3 N002 N005 0 0 NPN
+V1 N001 0 PULSE(0 5 0 1n 1n 12.5u 25u)
+R1 N003 N001 100k
+R2 N001 N002 120
+.model NPN NPN
+.model PNP PNP
+.lib C:\users\richard\Documents\LTspiceXVII\lib\cmp\standard.bjt
+.tran 200u
+.backanno
+.end

@@ -1,0 +1,8 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=D:/code/uni/AUV/SonarModule.X/_build_mplab/SonarModule/default"
+    ],
+    "clangd.checkUpdates": true,
+    "mplab.project.workspace.addExternalProjectFoldersToWorkspace": "Always",
+    "mplab.project.workspace.addNewSourceFiles": "Always"
+}

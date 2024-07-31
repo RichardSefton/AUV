@@ -1,306 +1,204 @@
 /**
- * This is the depth controller for the submarine. 
- * 
- * This is a stepper motor connected to a convertor of my own design to convert
- * linear to rotary force. Its basically a screw connected to a large nut with a housing for the syringe 
- * plunger. 
- * 
- * So basically this controller needs to control the stepper motor in two directions (forward
- * and reverse), and also make sure the motor does not turn beyond a certain point in either direction. 
- * 
- * Basically we need a way to track the position of the nut. 
+ * v2 based on the Psuedocode. 
  */
 
-//Lets get the basics out the way. 
 #define F_CPU 3333333UL
 #include <avr/io.h>
-#include <avr/delay.h>
+#include <avr/iotn1627.h>
+#include <util/delay.h>
 #include <avr/interrupt.h>
+#include "TWI.h"
 
-void MainClkCtrl(void);
+int plungerPos = 125;
+int commandedPos = 0;
 
-/**
- * Need a way to track the position. I'm thinking an array. As the motor turns, 
- * every second or so we can either increment or decrement the array based on direction. 
- * 
- * If the array is at the start of end, we can't progress. It would be neat. As long 
- * as theres no reset of the device. 
- * 
- * Option 2 would be a wire and a contact plate so we know where at the start or the
- * end of the rail.
- * 
- * I think both. So in cases where the device has no power at non-start or stop position its 
- * reference isn't completely lost. 
- * 
- * To traverse the array we'll have a Timer Counter that will increment the index after a 
- * set period
- */
-volatile int pos[1024];
-void PosSetup(void);
-void BufferSetup(void);
-void RTCSetup(void);
-void PosDec(void);
-void PosInc(void);
+#define OUT 1
+#define IN 2
+int dir = IN;
 
 /*
- * Motor driver. We can steal this from the midterm prototype. which in itself was 
- * stolen from some forum describing how to use stepper motors with arduino. I think it 
- * was the original stepper motor datasheet but this was a while ago. - I just read its
- * comments. It was from the datasheet
+ * Lets apply the pins to some defines
  * 
- * So we need a digital write function
  * 
- * We also need to rejig the pins its using. 
  * 
- * And have a setup function to setup the pins 
- */
-void MotorSetup(void);
-void StepperMotorStep(uint8_t);
-void digitalWrite(uint8_t, uint8_t);
-#define HIGH 0x01
-#define LOW 0x00
-//Contols the step
-volatile int8_t step = 0x00; //needs to be signed so it can slip into negative values
+ * StepperMotor
+ * 17 - PC0
+ * 18 - PC1
+ * 19 - PC2
+ * 20 - PC3
+ * 
+ * Going to use 6(PA5), 7(PA6). These need to be inputs to detect voltage
+ * Will also need interrupts on these and pullup enabled because they're floating
+ * 
+ * Button we'll put on PB2
+ * Also we'll add the pullup because while theres no voltage its also floating. 
+*/
+//PortC
+#define STEP_PIN_1 PIN0_bm
+#define STEP_PIN_2 PIN1_bm
+#define STEP_PIN_3 PIN2_bm
+#define STEP_PIN_4 PIN3_bm
 
-/**
- * Need a way to control the direction. We'll use some constants and a direction variable
- * 
- * There are 3 possible directions. UP, DOWN and NONE
- */
-#define UP 0
-#define NONE 1
-#define DOWN 2
-volatile uint8_t dir = 1;
+//PortA
+#define BUFFER_OUT_PIN PIN5_bm
+#define BUFFER_IN_PIN PIN7_bm
 
-int main(void)
-{
-    MainClkCtrl();
-    PosSetup(); 
-    BufferSetup();
+//Functions we need to define. 
+//This isn't in pseudocode. I like to include it to be explicit
+void mainClkCtrl(void);
+void stepper(int);
+void setup(void);
+void setupPins(void);
+void setupRTC(void);
+void enableRTC(void);
+void disableRTC(void);
+
+//My TWI Library requires callbacks. 
+void I2C_RX_Callback(uint8_t);
+uint8_t I2C_TX_Callback(void);
+//Also need an address we can bind this module to. 
+#define ADDR 0x08
+
+int main(void) {
+    setup();
     
-    while(1)
-    {
-        //1 is the marker number. If the element is 1, it means the device thinks the 
-        //nut is in that position. so we won't go any further. 
-        if (dir == UP && pos[1023] != 1)
-        {
-            stepperMotorStep(step);
-            step--;
-        }
-        else if (dir == DOWN && pos[0] != 1)
-        {
-            stepperMotorStep(step);
-            step++;
-        }
-        
-        //Keep the step in bounds
-        if(step > 0x07)
-        {
-            step = 0x00;
-        }
+    TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
 
-        if(step < 0x00)
-        {
-            step = 0x07;
+    sei();
+    
+    int step = 0;
+    while(1) {
+        if (plungerPos != commandedPos) {
+            if (dir == OUT && plungerPos != 255) {
+                stepper(step);
+                step--;
+                 if (step < 0) {
+                    step = 7;
+                }
+            } else if (dir == IN && plungerPos != 0) {
+                stepper(step);
+                step++;
+                if (step > 7) {
+                    step = 0;
+                }
+            }
+            _delay_us(750);
         }
-        
-        _delay_us(750); //controls the speed. Adjust as needed. 
     }
     
     return 0;
 }
 
-/**
- * I think I've mentioned this in a previous part. This MCU has a default clock speed
- * of 3.33MHz. (20MHz with a default prescaler of 6). These settings are fine so we're 
- * just going to make it explicit. 
- */
-void MainClkCtrl(void) 
+void stepper(int step) {
+    switch(step) {
+        case 0:
+            PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3;
+            PORTC.OUTSET |= STEP_PIN_4;
+            break;     
+        case 1:
+            PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2;
+            PORTC.OUTSET |=  STEP_PIN_3 | STEP_PIN_4;
+            break;    
+        case 2:
+            PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_4;
+            PORTC.OUTSET |= STEP_PIN_3;
+            break;      
+        case 3:
+            PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_4;
+            PORTC.OUTSET |= STEP_PIN_2 | STEP_PIN_3;
+            break;  
+        case 4:
+            PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_3 | STEP_PIN_4;
+            PORTC.OUTSET |= STEP_PIN_2;
+            break;    
+        case 5:
+            PORTC.OUTCLR |= STEP_PIN_3 | STEP_PIN_4;
+            PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_2;
+            break;
+        case 6:
+            PORTC.OUTCLR |= STEP_PIN_2 | STEP_PIN_3 | STEP_PIN_4;
+            PORTC.OUTSET |= STEP_PIN_1;
+            break;
+        case 7:
+            PORTC.OUTCLR |= STEP_PIN_2 | STEP_PIN_3;
+            PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_4;
+            break;
+    }
+}
+
+void mainClkCtrl(void) 
 {
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc | CLKCTRL_CLKOUT_bm);
     _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_6X_gc | CLKCTRL_PEN_bm);
 }
 
-/*
- * Basically we're going to 0 the array and make the midpoint (512) 1. 
- * It will sort itself out in travel with the buffer
- */
-void PosSetup(void)
-{
-    for (int i = 0; i < 1024; i++)
-    {
-        pos[i] = 0;
-    }
-    pos[512] = 1;
+void setup(void) {
+    mainClkCtrl();
+    setupRTC();
+    setupPins();
 }
 
-/**
- Buffer setup is the setup function for the start/stop plate we can use to reset the array to
- * make sure we don't go out of bounds.
- */
-void BufferSetup(void)
-{
-    //Pins to avoid are 15(PB1) and 16(PB0) as these are SDA and SCL respectively. 
-    //also 23 (PA0) is the UPDI pin. 
+void setupRTC(void) {
+    RTC.CLKSEL = RTC_CLKSEL_INT32K_gc; // Using internal 32.768 kHz oscillator
+    RTC.CTRLA = RTC_PRESCALER_DIV64_gc;
+    RTC.PER = 2560;
+    RTC.INTCTRL |= RTC_OVF_bm;
+}
+
+void enableRTC(void) {
+    RTC.CNT = 0;
+    RTC.CTRLA |= RTC_RTCEN_bm;
+}
+void disableRTC(void) {
+    RTC.CTRLA &= ~(RTC_RTCEN_bm);
+}
+
+void setupPins(void) {
+    //Motor
+    PORTC.DIR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3 | STEP_PIN_4;
     
-    //Going to use 6(PA5), 7(PA6). These need to be inputs to detect voltage
-    PORTA.DIR &= ~(PIN5_bm | PIN6_bm);
+    //Buffers
+    PORTA.DIR &= ~(BUFFER_OUT_PIN);
+    PORTA.DIR &= ~(BUFFER_IN_PIN);
+    PORTA.PIN5CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc;
+    PORTA.PIN7CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc; 
+}
+
+void I2C_RX_Callback(uint8_t com) {
+    // We're not actually using this. Just need the function for the SlaveInit function
+    if (com > plungerPos) {
+        dir = OUT;
+    } else {
+        dir = IN;
+    }
+
+    commandedPos = com;
+}
+
+uint8_t I2C_TX_Callback(void) {
+    // We're not actually using this. Just need the function for the SlaveInit function
+}
+
+//ISRS
+ISR(RTC_CNT_vect) {
+    RTC.INTFLAGS = RTC_OVF_bm;
+    if (dir == OUT) {
+        plungerPos += 5;
+    } else if (dir == IN) {
+        plungerPos -= 5;
+    }
+}
+
+ISR(PORTA_PORT_vect) {
+    if (PORTA.INTFLAGS & BUFFER_OUT_PIN) {
+        plungerPos = 255;
+        dir = IN;
+        PORTA.INTFLAGS |= BUFFER_OUT_PIN;
+    }
     
-    //Gonna need the interrupts on these
-    PORTA.PIN5CTRL |= PORT_ISC_RISING_gc;
-    PORTA.PIN6CTRL |= PORT_ISC_RISING_gc;
-}
-
-/**
- * Setup the RTC to count periods of time to control the motor position
- */
-void RTCSetup(void)
-{
-    
-}
-
-/**
- * Pos mover. 
- */
-void PosDec(void)
-{
-    int index = 0;
-    for (int i = 0; i < 1024; i++)
-    {
-        if (pos[i] == 1)
-        {
-            index = i;
-        }
-        pos[i] = 0;
-    }
-    pos[index - 1] = 1;
-}
-void PosInc(void)
-{
-    int index = 0;
-    for (int i = 0; i < 1024; i++)
-    {
-        if (pos[i] == 1)
-        {
-            index = i;
-        }
-        pos[i] = 0;
-    }
-    pos[index + 1] = 1;
-}
-
-/**
- * Need to setup the pins for the stepper motor. Because of the digital write function 
- * we need to keep them on the same port. 
- * 
- * We'll use port c. 
- * 17 - PC0
- * 18 - PC1
- * 19 - PC2
- * 20 - PC3
- */
-void MotorSetup(void)
-{
-    PORTC.DIR |= PIN0_bm | PIN1_bm | PIN2_bm | PIN3_bm;
-}
-
-/*
- * This function will drive the stepper motor. The sequance depends on the step
- */
-void stepperMotorStep(int8_t step)
-{
-    //This is basically from the datasheet http://eeshop.unl.edu/pdf/Stepper+Driver.pdf
-    //Made the digitalWrite function to keep it inline. 
-    switch (step)
-    {
-        case 0:
-            digitalWrite(PIN0_bm, LOW);
-            digitalWrite(PIN1_bm, LOW);
-            digitalWrite(PIN2_bm, LOW);
-            digitalWrite(PIN3_bm, HIGH);
-            break;
-        case 1:
-            digitalWrite(PIN0_bm, LOW);
-            digitalWrite(PIN1_bm, LOW);
-            digitalWrite(PIN2_bm, HIGH);
-            digitalWrite(PIN3_bm, HIGH);
-            break;
-        case 2:
-            digitalWrite(PIN0_bm, LOW);
-            digitalWrite(PIN1_bm, LOW);
-            digitalWrite(PIN2_bm, HIGH);
-            digitalWrite(PIN3_bm, LOW);
-            break;
-        case 3:
-            digitalWrite(PIN0_bm, LOW);
-            digitalWrite(PIN1_bm, HIGH);
-            digitalWrite(PIN2_bm, HIGH);
-            digitalWrite(PIN3_bm, LOW);
-            break;
-        case 4:
-            digitalWrite(PIN0_bm, LOW);
-            digitalWrite(PIN1_bm, HIGH);
-            digitalWrite(PIN2_bm, LOW);
-            digitalWrite(PIN3_bm, LOW);
-            break;
-        case 5:
-            digitalWrite(PIN0_bm, HIGH);
-            digitalWrite(PIN1_bm, HIGH);
-            digitalWrite(PIN2_bm, LOW);
-            digitalWrite(PIN3_bm, LOW);
-            break;
-        case 6:
-            digitalWrite(PIN0_bm, HIGH);
-            digitalWrite(PIN1_bm, LOW);
-            digitalWrite(PIN2_bm, LOW);
-            digitalWrite(PIN3_bm, LOW);
-            break;
-        case 7:
-            digitalWrite(PIN0_bm, HIGH);
-            digitalWrite(PIN1_bm, LOW);
-            digitalWrite(PIN2_bm, LOW);
-            digitalWrite(PIN3_bm, HIGH);
-            break;
-    }
-}
-void digitalWrite(uint8_t pin, uint8_t value)
-{
-    if (value == LOW)
-    {
-        PORTC.OUTCLR = pin;
-    }
-    else
-    {
-        PORTC.OUTSET = pin;
-    }
-}
-
-ISR(PORTA_PORT_vect)
-{
-    //Two pins that could trigger this. Need to handle each one differently
-    //5 We'll have as the near end
-    if (PORTA.INTFLAGS & PIN5_bm) {
-        //I know normally we would use the size of the array but in c we need to calculate this. 
-        //Its sizeof the array / sizeof the first element. We know the size and its not going to change. 
-        //so we'll just use that..
-        for (int i = 0; i < 1024; i++)
-        {
-            pos[i] = 0;
-        }
-        pos[1023] = 1;
-        
-        //Clear the flag so it can be raised in the future
-        PORTA.INTFLAGS = PIN5_bm;
-    }
-
-    if (PORTA.INTFLAGS & PIN6_bm) {
-        for (int i = 0; i < 1024; i++)
-        {
-            pos[i] = 0;
-        }
-        pos[0] = 1;
-        
-        //Clear the flag so it can be raised in the future
-        PORTA.INTFLAGS = PIN6_bm;
+    if (PORTA.INTFLAGS & BUFFER_IN_PIN) {
+        plungerPos = 0;
+        dir = OUT;
+        PORTA.INTFLAGS |= BUFFER_IN_PIN;
     }
 }

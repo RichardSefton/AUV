@@ -1,0 +1,120 @@
+{
+    "importedFrom": "file:///d:/code/uni/AUV/SonarModule.X",
+    "version": "1.1",
+    "configurations": [
+        {
+            "name": "default",
+            "id": "conf1",
+            "targetDevice": "ATtiny1627",
+            "imageType": "application",
+            "platformTool": "default-atmelice",
+            "packs": [
+                {
+                    "name": "ATtiny_DFP",
+                    "vendor": "Microchip",
+                    "version": "3.1.260"
+                }
+            ],
+            "fileSet": "MPLAB X Virtual Filesystem",
+            "outputFiles": [
+                {
+                    "name": "build",
+                    "toolchain": "default-XC8",
+                    "imagePath": "./out/SonarModule/default.elf"
+                }
+            ]
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-XC8",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc8-toolchain@2.46",
+            "properties": {
+                "HI-TECH-COMP": "default-HI-TECH-COMP",
+                "HI-TECH-LINK": "default-HI-TECH-LINK",
+                "XC8-CO": "default-XC8-CO",
+                "XC8-config-global": "default-XC8-config-global"
+            }
+        },
+        {
+            "name": "default-HI-TECH-COMP",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc8-HI-TECH-COMP@2.46",
+            "properties": {
+                "define-macros": [],
+                "undefine-macros": [],
+                "extra-include-directories": [],
+                "asmlist": true,
+                "optimization-assembler-files": true,
+                "tentative-definitions": "-fno-common"
+            }
+        },
+        {
+            "name": "default-HI-TECH-LINK",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc8-HI-TECH-LINK@2.46",
+            "properties": {
+                "input-libraries": [
+                    "libm"
+                ],
+                "extra-lib-directories": [],
+                "calibrate-oscillator": true,
+                "opt-xc8-linker-serial": []
+            }
+        },
+        {
+            "name": "default-XC8-CO",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc8-XC8-CO@2.46",
+            "properties": {}
+        },
+        {
+            "name": "default-XC8-config-global",
+            "type": "translator",
+            "provider": "microchip.toolchains:xc8-XC8-config-global@2.46",
+            "properties": {}
+        },
+        {
+            "name": "default-atmelice",
+            "type": "tool",
+            "provider": "microchip.tool-*:atmelice",
+            "properties": {
+                "debugoptions.useswbreakpoints": true
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "MPLAB X Virtual Filesystem",
+            "contains": [
+                "Header Files",
+                "Important Files",
+                "Linker Files",
+                "Source Files"
+            ]
+        },
+        {
+            "name": "Header Files"
+        },
+        {
+            "name": "Important Files",
+            "files": [
+                "Makefile"
+            ],
+            "encoding": "ISO-8859-1"
+        },
+        {
+            "name": "Linker Files",
+            "translator": "toolchain:linker"
+        },
+        {
+            "name": "Source Files",
+            "files": [
+                "main.c"
+            ],
+            "encoding": "ISO-8859-1",
+            "translator": "toolchain:compiler"
+        }
+    ]
+}

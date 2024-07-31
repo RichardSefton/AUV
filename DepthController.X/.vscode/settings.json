@@ -1,0 +1,5 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=d:\\code\\uni\\AUV\\DepthController.X\\_build_mplab\\DepthController\\default\\image_default.elf"
+    ]
+}

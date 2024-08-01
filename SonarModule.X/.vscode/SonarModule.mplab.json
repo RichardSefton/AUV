@@ -86,15 +86,6 @@
     ],
     "fileSets": [
         {
-            "name": "MPLAB X Virtual Filesystem",
-            "contains": [
-                "Header Files",
-                "Important Files",
-                "Linker Files",
-                "Source Files"
-            ]
-        },
-        {
             "name": "Header Files"
         },
         {
@@ -115,6 +106,12 @@
             ],
             "encoding": "ISO-8859-1",
             "translator": "toolchain:compiler"
+        },
+        {
+            "name": "MPLAB X Virtual Filesystem",
+            "files": [
+                "TWI.h"
+            ]
         }
     ]
 }

@@ -50,12 +50,18 @@ build CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController
   OBJECT_DIR = CMakeFiles\compile.dir
   OBJECT_FILE_DIR = CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController
 
+build CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\TWI.c.p1: C_COMPILER__compile_unscanned_ D$:\code\uni\AUV\CentralController\CentralController\TWI.c || cmake_object_order_depends_target_compile
+  DEP_FILE = CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\TWI.c.p1.d
+  FLAGS = -mcpu=ATtiny1627 -c -x c -D__ATtiny1627__ -mdfp=C:/Users/richa/.mchp_packs/Microchip/ATtiny_DFP/3.1.260/xc8 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=default -gdwarf-3 -mno-const-data-in-progmem
+  OBJECT_DIR = CMakeFiles\compile.dir
+  OBJECT_FILE_DIR = CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController
+
 
 
 #############################################
 # Object library compile
 
-build compile: phony CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\main.c.p1
+build compile: phony CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\main.c.p1 CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\TWI.c.p1
 
 # =============================================================================
 # Object build statements for EXECUTABLE target default.elf
@@ -74,7 +80,7 @@ build cmake_object_order_depends_target_default.elf: phony || cmake_object_order
 #############################################
 # Link the executable default.elf
 
-build default.elf: C_EXECUTABLE_LINKER__default.2eelf_ CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\main.c.p1 || compile
+build default.elf: C_EXECUTABLE_LINKER__default.2eelf_ CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\main.c.p1 CMakeFiles\compile.dir\D_\code\uni\AUV\CentralController\CentralController\TWI.c.p1 || compile
   LINK_FLAGS = -mcpu=ATtiny1627 -Wl,-Map=mem.map -DXPRJ_default=default -Wl,--defsym=__MPLAB_BUILD=1 -mdfp=C:/Users/richa/.mchp_packs/Microchip/ATtiny_DFP/3.1.260/xc8 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -gdwarf-3 -mno-const-data-in-progmem -Wl,--memorysummary,memoryfile.xml, -Wl,--start-group -Wl,--end-group
   OBJECT_DIR = CMakeFiles\default.elf.dir
   POST_BUILD = cmd.exe /C "cd /D D:\code\uni\AUV\CentralController\CentralController\_build_mplab\CentralController\default\image_default.elf && C:\Users\richa\.mplab\app-finder\apps\cmake\v3.27.1\cmake-3.27.1-windows-x86_64\bin\cmake.exe -E make_directory d:/code/uni/AUV/CentralController/CentralController/out/CentralController && C:\Users\richa\.mplab\app-finder\apps\cmake\v3.27.1\cmake-3.27.1-windows-x86_64\bin\cmake.exe -E copy default.elf d:/code/uni/AUV/CentralController/CentralController/out/CentralController/default.elf"

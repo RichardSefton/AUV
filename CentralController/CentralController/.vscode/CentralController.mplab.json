@@ -37,7 +37,14 @@
         {
             "name": "default",
             "files": [
-                "main.c"
+                {
+                    "include": "main.c",
+                    "id": 0
+                },
+                {
+                    "id": 1,
+                    "include": "TWI.*"
+                }
             ]
         }
     ]

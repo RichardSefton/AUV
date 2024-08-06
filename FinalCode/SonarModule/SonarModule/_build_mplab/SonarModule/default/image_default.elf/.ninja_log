@@ -1,0 +1,4 @@
+# ninja log v5
+2	558	7444968012282768	CMakeFiles/compile.dir/D_/code/uni/AUV/FinalCode/SonarModule/SonarModule/main.c.p1	4a2ec039bab3163d
+44	305	7444916935318737	CMakeFiles/compile.dir/D_/code/uni/AUV/FinalCode/SonarModule/SonarModule/TWI.c.p1	80a6ef3681a95444
+558	759	7444968013597637	default.elf	1eb175a2ef9bf08c

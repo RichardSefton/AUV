@@ -5,12 +5,12 @@
 #define F_CPU 3333333UL
 
 #include <avr/io.h>
-#include <avr/iotn1627.h>
+// #include <avr/iotn1627.h>
 
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#include "TWI.h"
+// #include "TWI.h"
 
 float distance = 0.0;
 
@@ -35,7 +35,7 @@ uint8_t I2C_TX_Callback(void);
 int main(void) {
     setup();
 
-    TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
+    // TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
 
     sei();
     

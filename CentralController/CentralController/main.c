@@ -3,7 +3,7 @@
  */
 
  #include <avr/io.h>
- #include <avr/iotn1627.h>
+ //#include <avr/iotn1627.h>
 
  #include "TWI.h"
 
@@ -28,10 +28,10 @@ int main() {
 
     TWI_Master_Init();
 
-    //DIVE, DIVE, DIVE!
-    dive(255);
-
     sei();
+
+    //DIVE, DIVE, DIVE!
+    // dive(255);
     while(1) {
 
     }
@@ -40,8 +40,8 @@ int main() {
 }
 
 void setup(void) {
-    setupRTC();
     mainClkCtrl();
+    setupRTC();
 }
 
 void mainClkCtrl(void) 
@@ -94,6 +94,7 @@ void raise(int d) {
 }
 
 ISR(RTC_CNT_vect) {
-    int distance = ping();
-    handleDistanceResponse(distance, LOWER);
+    // int distance = ping();
+    // handleDistanceResponse(distance, LOWER);
+    RTC.INTFLAGS = RTC_OVF_bm;
 }

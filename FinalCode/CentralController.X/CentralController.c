@@ -9,9 +9,9 @@
 #include <avr/interrupt.h>
  //#include <avr/iotn1627.h> 
 
-#define ULTRASONIC_BOTTOM 0x09
+#define ULTRASONIC_BOTTOM 0x08
 
-#define DEPTH_CONTROLLER 0x08
+#define DEPTH_CONTROLLER 0x4C
 
 volatile int depth = 0;
 
@@ -22,20 +22,27 @@ void mainClkCtrl(void);
 void setupRTC(void);
 int ping(void);
 void handleDistanceResponse(int, int);
-void dive(int);
-void raise(int);
+void dive(uint8_t);
+void raise(uint8_t);
+
+#define BLOCK 1
+#define NOBLOCK 0
+uint8_t block = BLOCK;
 
 int main() {
-    setup();
-
-    _delay_ms(2000);
-
     TWI_Master_Init();
-
-    sei();
+    
+    _delay_ms(5000);
 
     //DIVE, DIVE, DIVE!
-    // dive(255);
+    dive(255);
+    
+    _delay_ms(60000);
+
+//    cli();
+//    setup();
+//    sei();
+    
     while(1) {
 
     }
@@ -86,19 +93,22 @@ void handleDistanceResponse(int distance, int direction) {
     }
 }
 
-void dive(int d) {
-    TWI_Master_Start(DEPTH_CONTROLLER, 0x00); //Write Command..
+void dive(uint8_t d) {
+    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00); //Write Command..
     TWI_Master_Write(d);
     TWI_Master_Stop();
 }
-void raise(int d) {
-    TWI_Master_Start(DEPTH_CONTROLLER, 0x00);
+void raise(uint8_t d) {
+    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00);
     TWI_Master_Write(d);
     TWI_Master_Stop();
 }
 
 ISR(RTC_CNT_vect) {
-    int distance = ping();
-    handleDistanceResponse(distance, LOWER);
+    if (block == NOBLOCK) {
+        int distance = ping();
+        handleDistanceResponse(distance, LOWER);
+    }
+    
     RTC.INTFLAGS = RTC_OVF_bm;
 }

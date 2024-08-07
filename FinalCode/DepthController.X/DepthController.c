@@ -46,6 +46,7 @@ int dir = IN;
 //This isn't in pseudocode. I like to include it to be explicit
 void mainClkCtrl(void);
 void stepper(int);
+void allStop(void);
 void setup(void);
 void setupPins(void);
 void setupRTC(void);
@@ -56,18 +57,19 @@ void disableRTC(void);
 void I2C_RX_Callback(uint8_t);
 uint8_t I2C_TX_Callback(void);
 //Also need an address we can bind this module to. 
-#define ADDR 0x08
+#define ADDR 0x4C
 
 int main(void) {
-    setup();
-    
     TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
 
+    cli();
+    setup();
     sei();
     
     int step = 0;
     while(1) {
         if (plungerPos != commandedPos) {
+            enableRTC();
             if (dir == OUT && plungerPos != 255) {
                 stepper(step);
                 step--;
@@ -82,6 +84,8 @@ int main(void) {
                 }
             }
             _delay_us(750);
+        } else {
+            allStop();
         }
     }
     
@@ -89,6 +93,7 @@ int main(void) {
 }
 
 void stepper(int step) {
+    PORTB.OUTSET |= PIN5_bm;
     switch(step) {
         case 0:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3;
@@ -123,6 +128,12 @@ void stepper(int step) {
             PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_4;
             break;
     }
+    PORTB.OUTCLR |= PIN5_bm;
+}
+
+void allStop(void) {
+    PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3 | STEP_PIN_4;
+    disableRTC();
 }
 
 void mainClkCtrl(void) 
@@ -138,18 +149,22 @@ void setup(void) {
 }
 
 void setupRTC(void) {
-    RTC.CLKSEL = RTC_CLKSEL_INT32K_gc; // Using internal 32.768 kHz oscillator
-    RTC.CTRLA = RTC_PRESCALER_DIV64_gc;
-    RTC.PER = 2560;
+    RTC.CLKSEL = RTC_CLKSEL_INT1K_gc; // Using internal 32.768 kHz oscillator
+    RTC.CTRLA = RTC_PRESCALER_DIV1_gc;
+    RTC.PER = 1024;
     RTC.INTCTRL |= RTC_OVF_bm;
 }
 
 void enableRTC(void) {
-    RTC.CNT = 0;
-    RTC.CTRLA |= RTC_RTCEN_bm;
+    if (!(RTC.CTRLA & RTC_RTCEN_bm)) {
+        RTC.CTRLA |= RTC_RTCEN_bm;
+    }
 }
 void disableRTC(void) {
-    RTC.CTRLA &= ~(RTC_RTCEN_bm);
+    if (RTC.CTRLA & RTC_RTCEN_bm) {
+        RTC.CNT = 0;
+        RTC.CTRLA &= ~(RTC_RTCEN_bm);
+    }
 }
 
 void setupPins(void) {
@@ -161,10 +176,11 @@ void setupPins(void) {
     PORTA.DIR &= ~(BUFFER_IN_PIN);
     PORTA.PIN5CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc;
     PORTA.PIN7CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc; 
+    
+    PORTB.DIR |= PIN5_bm;
 }
 
 void I2C_RX_Callback(uint8_t com) {
-    // We're not actually using this. Just need the function for the SlaveInit function
     if (com > plungerPos) {
         dir = OUT;
     } else {

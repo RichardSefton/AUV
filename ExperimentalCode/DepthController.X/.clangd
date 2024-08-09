@@ -1,0 +1,15 @@
+CompileFlags:
+  Add: 
+    - -IC:\Program Files\Microchip\xc8\v2.46\avr\avr\include
+    - -IC:\Program Files\Microchip\xc8\v2.46\avr\include\libiberty
+    - -IC:\Users\richa\.mchp_packs\Microchip\ATtiny_DFP\3.1.260\include
+    - -D__ATtiny1627__
+    - -D__LANGUAGE_C__
+    - -Wno-implicit-function-declaration
+  Remove:
+    - -mcpu=*
+    - -mdfp=*
+    - -mno-const-data-in-progmem
+
+# Diagnostics:
+#   UnusedIncludes: None

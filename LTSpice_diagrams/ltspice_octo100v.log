@@ -1,0 +1,23 @@
+Circuit: * Z:\home\richard\code\uni\AUV\ltspice_octo100v.asc
+
+Limiting rise time of source v1 to 1.25e-006
+Limiting fall time of source v1 to 1.25e-006
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Jun 30 02:55:50 2024
+Total elapsed time: 0.107 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4399
+traniter = 4379
+tranpoints = 1789
+accept = 1577
+rejected = 212
+matrix size = 12
+fillins = 0
+solver = Normal
+Matrix Compiler1: 392 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.1/0.1
+

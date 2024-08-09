@@ -1,8 +1,0 @@
-set(FILE_GROUP_assemble "")
-set(FILE_GROUP_assemblePreprocess "")
-set(FILE_GROUP_compile "../../../../main.c;../../../../TWI.c")
-set(FILE_GROUP_link "")
-set(BUILD_LIBRARY 0)
-set(internal_image_name "d:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf/default.elf")
-set(image_name "default.elf")
-set(output_dir "d:/code/uni/AUV/CentralController/CentralController/out/CentralController")

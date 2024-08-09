@@ -1,0 +1,4 @@
+D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf/CMakeFiles/compile.dir
+D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf/CMakeFiles/default.elf.dir
+D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf/CMakeFiles/edit_cache.dir
+D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf/CMakeFiles/rebuild_cache.dir

@@ -9,7 +9,7 @@
 #include <avr/interrupt.h>
  //#include <avr/iotn1627.h> 
 
-#define ULTRASONIC_BOTTOM 0x08
+#define ULTRASONIC_BOTTOM 0x09
 
 #define DEPTH_CONTROLLER 0x4C
 
@@ -17,34 +17,43 @@ volatile int depth = 0;
 
 #define LOWER 1
 
+//Need an LED Status indicator. 
+#define RED PIN6_bm
+#define GREEN PIN5_bm
+#define BLUE PIN4_bm
+
 void setup(void);
 void mainClkCtrl(void);
 void setupRTC(void);
+void setupPins(void);
 int ping(void);
 void handleDistanceResponse(int, int);
+uint8_t getDepth();
 void dive(uint8_t);
 void raise(uint8_t);
+void rgb(uint8_t);
 
-#define BLOCK 1
-#define NOBLOCK 0
-uint8_t block = BLOCK;
+#define TRUE 1
+#define FALSE 0
+
+int initComplete = FALSE; 
 
 int main() {
-    TWI_Master_Init();
+    setup();
     
-    _delay_ms(5000);
+    _delay_ms(500);
+    
+    TWI_Master_Init(); 
 
+    _delay_ms(2000);
+    
     //DIVE, DIVE, DIVE!
     dive(255);
     
-    _delay_ms(60000);
-
-//    cli();
-//    setup();
-//    sei();
-    
+    initComplete = TRUE;
     while(1) {
-
+        rgb(RED);
+        _delay_ms(500);
     }
 
     return 0;
@@ -53,6 +62,7 @@ int main() {
 void setup(void) {
     mainClkCtrl();
     setupRTC();
+    setupPins();
 }
 
 void mainClkCtrl(void) 
@@ -63,17 +73,31 @@ void mainClkCtrl(void)
 }
 
 void setupRTC(void) {
-    RTC.CLKSEL = RTC_CLKSEL_INT1K_gc; // Using internal 32.768 kHz oscillator
-    RTC.PER = 1024;
+    RTC.CLKSEL = RTC_CLKSEL_INT1K_gc;
+    while(RTC.STATUS);
+    RTC.CTRLA |= RTC_PRESCALER_DIV1_gc;
+    RTC.PER = 15000;
+    while (RTC.STATUS);
+    RTC.INTFLAGS |= RTC_OVF_bm;
     RTC.INTCTRL |= RTC_OVF_bm;
+    while (RTC.STATUS);
     RTC.CTRLA |= RTC_RTCEN_bm;
+    while (RTC.STATUS);
+}
+
+void setupPins(void) {
+    PORTB.DIR |= RED | GREEN | BLUE;
 }
 
 int ping(void) {
-    TWI_Master_Start(ULTRASONIC_BOTTOM, 0x01); //Start TWI to sonar module 
-    int distance = TWI_Master_Read_NACK();
-    TWI_Master_Stop();
-    return distance;
+    if (initComplete == TRUE) {
+        TWI_Master_Start(ULTRASONIC_BOTTOM, 0x01); //Start TWI to sonar module 
+        int distance = TWI_Master_Read_NACK();
+        TWI_Master_Stop();
+        return distance;
+    } else {
+        return 0;
+    }
 }
 
 void handleDistanceResponse(int distance, int direction) {
@@ -82,6 +106,7 @@ void handleDistanceResponse(int distance, int direction) {
             if (depth == 0) {
                 //Handle later
             } else {
+                depth = getDepth();
                 depth -= 10;
                 raise(depth);
             }
@@ -93,22 +118,44 @@ void handleDistanceResponse(int distance, int direction) {
     }
 }
 
+uint8_t getDepth() {
+    rgb(BLUE);
+    TWI_Master_Start(DEPTH_CONTROLLER, 0x01); //Start TWI to sonar module 
+    uint8_t d = TWI_Master_Read_NACK();
+    TWI_Master_Stop();
+    return d;
+    rgb(GREEN);
+}
+
 void dive(uint8_t d) {
+    rgb(RED | BLUE);
     TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00); //Write Command..
     TWI_Master_Write(d);
     TWI_Master_Stop();
+    rgb(GREEN);
 }
 void raise(uint8_t d) {
+    dive(GREEN | BLUE);
     TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00);
     TWI_Master_Write(d);
     TWI_Master_Stop();
+    rgb(GREEN);
+}
+
+void rgb(uint8_t colour) {
+    PORTB.OUTSET = RED | GREEN | BLUE;
+    PORTB.OUTCLR = colour;
 }
 
 ISR(RTC_CNT_vect) {
-    if (block == NOBLOCK) {
+    if (initComplete == TRUE) {
+        rgb(RED | GREEN | BLUE);
+        RTC.INTFLAGS = RTC_OVF_bm;
         int distance = ping();
-        handleDistanceResponse(distance, LOWER);
+        if (distance < 100 && distance > 0) {
+            handleDistanceResponse(distance, LOWER);
+        }    
+    } else {
+        RTC.INTFLAGS = RTC_OVF_bm;
     }
-    
-    RTC.INTFLAGS = RTC_OVF_bm;
 }

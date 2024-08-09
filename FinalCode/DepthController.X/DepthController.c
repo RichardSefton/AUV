@@ -8,13 +8,16 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-int plungerPos = 125;
+int plungerPos = 255;
 int commandedPos = 0;
 
-#define OUT 1
-#define IN 2
-int dir = IN;
+#define THREAD_OUT 1
+#define THREAD_IN 2
+#define STOP 0
+#define GO 1
 
+int dir = THREAD_IN;
+int run = GO;
 /*
  * Lets apply the pins to some defines
  * 
@@ -42,6 +45,11 @@ int dir = IN;
 #define BUFFER_OUT_PIN PIN5_bm
 #define BUFFER_IN_PIN PIN7_bm
 
+//Need an LED Status indicator. 
+#define RED PIN6_bm
+#define GREEN PIN5_bm
+#define BLUE PIN4_bm
+
 //Functions we need to define. 
 //This isn't in pseudocode. I like to include it to be explicit
 void mainClkCtrl(void);
@@ -50,8 +58,7 @@ void allStop(void);
 void setup(void);
 void setupPins(void);
 void setupRTC(void);
-void enableRTC(void);
-void disableRTC(void);
+void rgb(uint8_t);
 
 //My TWI Library requires callbacks. 
 void I2C_RX_Callback(uint8_t);
@@ -60,23 +67,21 @@ uint8_t I2C_TX_Callback(void);
 #define ADDR 0x4C
 
 int main(void) {
-    TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
-
-    cli();
     setup();
-    sei();
+    TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
     
     int step = 0;
     while(1) {
         if (plungerPos != commandedPos) {
-            enableRTC();
-            if (dir == OUT && plungerPos != 255) {
+            run = GO;
+            rgb(BLUE);
+            if ((dir == THREAD_OUT && plungerPos != 254) && plungerPos != commandedPos){
                 stepper(step);
                 step--;
                  if (step < 0) {
                     step = 7;
                 }
-            } else if (dir == IN && plungerPos != 0) {
+            } else if ((dir == THREAD_IN && plungerPos != 1) && plungerPos != commandedPos) {
                 stepper(step);
                 step++;
                 if (step > 7) {
@@ -85,6 +90,8 @@ int main(void) {
             }
             _delay_us(750);
         } else {
+            run = STOP;
+            rgb(GREEN);
             allStop();
         }
     }
@@ -93,7 +100,6 @@ int main(void) {
 }
 
 void stepper(int step) {
-    PORTB.OUTSET |= PIN5_bm;
     switch(step) {
         case 0:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3;
@@ -128,12 +134,10 @@ void stepper(int step) {
             PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_4;
             break;
     }
-    PORTB.OUTCLR |= PIN5_bm;
 }
 
 void allStop(void) {
     PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3 | STEP_PIN_4;
-    disableRTC();
 }
 
 void mainClkCtrl(void) 
@@ -149,22 +153,21 @@ void setup(void) {
 }
 
 void setupRTC(void) {
-    RTC.CLKSEL = RTC_CLKSEL_INT1K_gc; // Using internal 32.768 kHz oscillator
-    RTC.CTRLA = RTC_PRESCALER_DIV1_gc;
-    RTC.PER = 1024;
+    RTC.CLKSEL = RTC_CLKSEL_INT1K_gc;
+    while(RTC.STATUS);
+    RTC.CTRLA |= RTC_PRESCALER_DIV1_gc;
+    /**
+     * End to end takes 2min 39s/159s
+     * 
+     * 255/159 = 1.6035 and change. So one tick of the pos is worth ~1.6s
+     */
+    RTC.PER = 1624;
+    while (RTC.STATUS);
+    RTC.INTFLAGS |= RTC_OVF_bm;
     RTC.INTCTRL |= RTC_OVF_bm;
-}
-
-void enableRTC(void) {
-    if (!(RTC.CTRLA & RTC_RTCEN_bm)) {
-        RTC.CTRLA |= RTC_RTCEN_bm;
-    }
-}
-void disableRTC(void) {
-    if (RTC.CTRLA & RTC_RTCEN_bm) {
-        RTC.CNT = 0;
-        RTC.CTRLA &= ~(RTC_RTCEN_bm);
-    }
+    while (RTC.STATUS);
+    RTC.CTRLA |= RTC_RTCEN_bm;
+    while (RTC.STATUS);
 }
 
 void setupPins(void) {
@@ -177,44 +180,60 @@ void setupPins(void) {
     PORTA.PIN5CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc;
     PORTA.PIN7CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc; 
     
-    PORTB.DIR |= PIN5_bm;
+    PORTB.DIR |= RED | GREEN | BLUE;
 }
 
 void I2C_RX_Callback(uint8_t com) {
     if (com > plungerPos) {
-        dir = OUT;
+        dir = THREAD_OUT;
     } else {
-        dir = IN;
+        dir = THREAD_IN;
     }
 
     commandedPos = com;
 }
 
 uint8_t I2C_TX_Callback(void) {
-    // We're not actually using this. Just need the function for the SlaveInit function
-    return 0;
+    //This is used in read requests where the controller is expecting the depth.
+    
+    //without getting the current depth we would risk bottoming out particularly 
+    //in the first call to dive which sends to max depth. 
+    return plungerPos;
+}
+
+void rgb(uint8_t colour) {
+    PORTB.OUTSET = RED | GREEN | BLUE;
+    PORTB.OUTCLR = colour;
 }
 
 //ISRS
 ISR(RTC_CNT_vect) {
     RTC.INTFLAGS = RTC_OVF_bm;
-    if (dir == OUT) {
-        plungerPos += 5;
-    } else if (dir == IN) {
-        plungerPos -= 5;
-    }
+    if (run == GO) {
+        if (dir == THREAD_OUT) {
+            plungerPos += 1;
+        } else if (dir == THREAD_IN) {
+            plungerPos -= 1;
+        }    
+    } 
 }
 
 ISR(PORTA_PORT_vect) {
     if (PORTA.INTFLAGS & BUFFER_OUT_PIN) {
-        plungerPos = 255;
-        dir = IN;
+        if (!(PORTA.IN & BUFFER_OUT_PIN)) {
+            plungerPos = 255;
+            commandedPos = 254;
+            dir = THREAD_IN;
+        }
         PORTA.INTFLAGS |= BUFFER_OUT_PIN;
     }
     
     if (PORTA.INTFLAGS & BUFFER_IN_PIN) {
-        plungerPos = 0;
-        dir = OUT;
+        if (!(PORTA.IN & BUFFER_IN_PIN)) {
+            plungerPos = 0;
+            commandedPos = 1;
+            dir = THREAD_OUT;
+        }
         PORTA.INTFLAGS |= BUFFER_IN_PIN;
     }
 }

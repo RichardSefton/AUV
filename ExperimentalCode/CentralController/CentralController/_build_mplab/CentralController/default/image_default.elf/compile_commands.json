@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc8\\v2.46\\bin\\xc8-cc.exe -mcpu=ATtiny1627 -c -x c -D__ATtiny1627__ -mdfp=C:/Users/richa/.mchp_packs/Microchip/ATtiny_DFP/3.1.260/xc8 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=default -gdwarf-3 -mno-const-data-in-progmem -o CMakeFiles\\compile.dir\\D_\\code\\uni\\AUV\\CentralController\\CentralController\\main.c.p1 -c D:\\code\\uni\\AUV\\CentralController\\CentralController\\main.c",
+  "file": "D:\\code\\uni\\AUV\\CentralController\\CentralController\\main.c",
+  "output": "CMakeFiles\\compile.dir\\D_\\code\\uni\\AUV\\CentralController\\CentralController\\main.c.p1"
+},
+{
+  "directory": "D:/code/uni/AUV/CentralController/CentralController/_build_mplab/CentralController/default/image_default.elf",
+  "command": "c:\\PROGRA~1\\MICROC~1\\xc8\\v2.46\\bin\\xc8-cc.exe -mcpu=ATtiny1627 -c -x c -D__ATtiny1627__ -mdfp=C:/Users/richa/.mchp_packs/Microchip/ATtiny_DFP/3.1.260/xc8 -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=default -gdwarf-3 -mno-const-data-in-progmem -o CMakeFiles\\compile.dir\\D_\\code\\uni\\AUV\\CentralController\\CentralController\\TWI.c.p1 -c D:\\code\\uni\\AUV\\CentralController\\CentralController\\TWI.c",
+  "file": "D:\\code\\uni\\AUV\\CentralController\\CentralController\\TWI.c",
+  "output": "CMakeFiles\\compile.dir\\D_\\code\\uni\\AUV\\CentralController\\CentralController\\TWI.c.p1"
+}
+]

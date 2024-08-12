@@ -265,7 +265,7 @@ ISR(TWI0_TWIS_vect)
             //Get the data from the callback function passed in in initialisation. 
             //Should handle cases where this is NULL. but eh. Not for this this implementation. 
             uint8_t data_to_send = transmit_callback();
-            TWI_Slave_Write(data_to_send);  // Example data
+            TWI_Slave_Write(data_to_send);
         } else {
             //Read the received data. 
             uint8_t received_data = TWI_Slave_Read_NACK();

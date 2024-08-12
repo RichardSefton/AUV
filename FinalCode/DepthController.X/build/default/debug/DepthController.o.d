@@ -17,7 +17,9 @@ build/default/debug/DepthController.o.d \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h \
+ ../TWI.X/TWI.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h:
 
@@ -54,3 +56,7 @@ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h:
+
+../TWI.X/TWI.h:
+
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h:

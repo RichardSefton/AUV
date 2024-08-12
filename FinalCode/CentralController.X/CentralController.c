@@ -7,13 +7,13 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include "TWI.h"
  //#include <avr/iotn1627.h> 
 
-#define ULTRASONIC_BOTTOM 0x3C
-
+//#define ULTRASONIC_BOTTOM 0x3C
 #define DEPTH_CONTROLLER 0x4C
 
-volatile uint8_t depth = 0;
+uint8_t depth = 0;
 
 #define LOWER 1
 
@@ -26,27 +26,43 @@ void setup(void);
 void mainClkCtrl(void);
 void setupRTC(void);
 void setupPins(void);
-int ping(void);
-void handleDistanceResponse(uint8_t, uint8_t);
-uint8_t getDepth();
-void dive(uint8_t);
-void raise(uint8_t);
+//int ping(void);
+//void handleDistanceResponse(uint8_t, uint8_t);
+uint8_t getDepth(void);
+//void dive(uint8_t);
+//void raise(uint8_t);
 void rgb(uint8_t);
+//
+//#define TRUE 0x01
+//#define FALSE 0x00
 
-#define TRUE 0x01
-#define FALSE 0x00
-
-uint8_t initComplete = FALSE; 
+//volatile uint8_t initComplete = FALSE; 
 
 int main() {
     setup();
     
-    TWI_Master_Init(); 
-//
+    //Give other modules time to init
+    rgb(RED | GREEN | BLUE);
+    _delay_ms(2000);
+    
+    TWI_Master_Init();
+    
+    //Wait for depth controller to enter home position.
+    TWI_Master_Start(DEPTH_CONTROLLER, 0x01);
+    while (depth != 1) {
+        rgb(RED | GREEN);
+        depth = getDepth();
+        _delay_ms(1000);
+    }
+    TWI_Master_Stop();
+
+    
 //    //DIVE, DIVE, DIVE!
-    dive(0xFF);
+//    dive(0xFF);
 //    
     //initComplete = TRUE;
+    
+    sei();
     
     while(1) {
         rgb(RED);
@@ -62,7 +78,7 @@ int main() {
 
 void setup(void) {
     mainClkCtrl();
-    //setupRTC();
+    setupRTC();
     setupPins();
 }
 
@@ -90,58 +106,54 @@ void setupPins(void) {
     PORTB.DIR |= RED | GREEN | BLUE;
 }
 
-int ping(void) {
-    if (initComplete == TRUE) {
-        TWI_Master_Start(ULTRASONIC_BOTTOM, 0x01); //Start TWI to sonar module 
-        int distance = TWI_Master_Read_NACK();
-        TWI_Master_Stop();
-        return distance;
-    } else {
-        return 0;
-    }
-}
+//int ping(void) {
+//    if (initComplete == TRUE) {
+//        TWI_Master_Start(ULTRASONIC_BOTTOM, 0x01); //Start TWI to sonar module 
+//        int distance = TWI_Master_Read_NACK();
+//        TWI_Master_Stop();
+//        return distance;
+//    } else {
+//        return 0;
+//    }
+//}
 
-void handleDistanceResponse(uint8_t distance, uint8_t direction) {
-    switch (direction) {
-        case LOWER: {
-            if (depth == 0) {
-                //Handle later
-            } else {
-                depth = getDepth();
-                depth -= 10;
-                raise(depth);
-            }
-        }
+//void handleDistanceResponse(uint8_t distance, uint8_t direction) {
+//    switch (direction) {
+//        case LOWER: {
+//            if (depth == 0) {
+//                //Handle later
+//            } else {
+//                depth = getDepth();
+//                depth -= 10;
+//                raise(depth);
+//            }
+//        }
+//
+//        default: { 
+//            return;
+//        }
+//    }
+//}
 
-        default: { 
-            return;
-        }
-    }
-}
-
-uint8_t getDepth() {
+uint8_t getDepth(void) {
     rgb(BLUE);
-    TWI_Master_Start(DEPTH_CONTROLLER, 0x01); //Start TWI to sonar module 
-    uint8_t d = TWI_Master_Read_NACK();
-    TWI_Master_Stop();
-    return d;
-    rgb(GREEN);
+    return TWI_Master_Read_NACK();
 }
 
-void dive(uint8_t d) {
-    rgb(RED | BLUE);
-    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00); //Write Command..
-    TWI_Master_Write(d);
-    TWI_Master_Stop();
-    rgb(GREEN);
-}
-void raise(uint8_t d) {
-    dive(GREEN | BLUE);
-    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00);
-    TWI_Master_Write(d);
-    TWI_Master_Stop();
-    rgb(GREEN);
-}
+//void dive(uint8_t d) {
+//    rgb(RED | BLUE);
+//    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00); //Write Command..
+//    TWI_Master_Write(d);
+//    TWI_Master_Stop();
+//    rgb(GREEN);
+//}
+//void raise(uint8_t d) {
+//    dive(GREEN | BLUE);
+//    TWI_Master_Start((uint8_t)DEPTH_CONTROLLER, 0x00);
+//    TWI_Master_Write(d);
+//    TWI_Master_Stop();
+//    rgb(GREEN);
+//}
 
 void rgb(uint8_t colour) {
     PORTB.OUTSET = RED | GREEN | BLUE;
@@ -149,14 +161,15 @@ void rgb(uint8_t colour) {
 }
 
 ISR(RTC_CNT_vect) {
-    if (initComplete == TRUE) {
-        rgb(RED | GREEN | BLUE);
-        RTC.INTFLAGS = RTC_OVF_bm;
-        uint8_t distance = ping();
-        if (distance < 100 && distance > 0) {
-            handleDistanceResponse(distance, LOWER);
-        }    
-    } else {
-        RTC.INTFLAGS = RTC_OVF_bm;
-    }
+//    if (initComplete == TRUE) {
+//        rgb(RED | GREEN | BLUE);
+//        RTC.INTFLAGS = RTC_OVF_bm;
+//        uint8_t distance = ping();
+//        if (distance < 100 && distance > 0) {
+//            handleDistanceResponse(distance, LOWER);
+//        }    
+//    } else {
+//        RTC.INTFLAGS = RTC_OVF_bm;
+//    }
+    RTC.INTFLAGS = RTC_OVF_bm;
 }

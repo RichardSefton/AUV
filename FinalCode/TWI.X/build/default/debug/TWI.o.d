@@ -1,5 +1,4 @@
-build/default/debug/CentralController.o.d \
- build/default/debug/CentralController.o: CentralController.c \
+build/default/debug/TWI.o.d build/default/debug/TWI.o: TWI.c TWI.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\inttypes.h \
@@ -14,12 +13,10 @@ build/default/debug/CentralController.o.d \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\xmega.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h \
- ../TWI.X/TWI.h \
  c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h
+
+TWI.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h:
 
@@ -49,14 +46,6 @@ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h:
-
-c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h:
-
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h:
-
-../TWI.X/TWI.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h:

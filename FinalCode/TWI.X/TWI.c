@@ -22,8 +22,8 @@ void TWI_Master_Init(void)
      * but because the way C handles float conversion to uint8, the fractional is dropped 
      * and the result rounded down. So we're adding one at the end to combat this.
      */ 
-    //TWI0.MBAUD = (uint8_t)TWI_BAUD(TWI_FREQ, 0) + 1; // Adding 1 as it is rounding down
-    TWI0.MBAUD = 12;
+    TWI0.MBAUD = (uint8_t)TWI_BAUD(TWI_FREQ, 0) + 1; // Adding 1 as it is rounding down
+    //TWI0.MBAUD = 12;
     
     /* Enable TWI master and Smart Mode
      * Smart mode will automatically raise the DIF, RIF and WIF interrupt flags when
@@ -117,7 +117,11 @@ uint8_t TWI_Master_Read_NACK(void)
     TWI0.MCTRLB = TWI_ACKACT_NACK_gc;
     
     //Wait till the device has received the data
-    while (!(TWI0.MSTATUS & TWI_RIF_bm));
+    while (!(TWI0.MSTATUS & TWI_RIF_bm)) {
+        if (TWI0.MSTATUS & TWI_BUSERR_bm) {
+            TWI_Master_Reset();
+        }
+    }
     
     TWI0.MCTRLB |= TWI_MCMD_STOP_gc;
     //Return the data from the buffer. Smart mode should then send the NACK bit 

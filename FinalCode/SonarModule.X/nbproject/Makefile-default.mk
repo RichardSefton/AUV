@@ -88,14 +88,14 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/SonarModule.o: SonarModule.c  .generated_files/flags/default/eb6db65fa9f7218b9ceed0f2a5e1af5d552a0b23 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/SonarModule.o: SonarModule.c  .generated_files/flags/default/2420c030669d49f949104f686ac3aa0c6d51883a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SonarModule.o.d 
 	@${RM} ${OBJECTDIR}/SonarModule.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -Og -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/SonarModule.o.d" -MT "${OBJECTDIR}/SonarModule.o.d" -MT ${OBJECTDIR}/SonarModule.o -o ${OBJECTDIR}/SonarModule.o SonarModule.c 
 	
 else
-${OBJECTDIR}/SonarModule.o: SonarModule.c  .generated_files/flags/default/61c605002c812101311ddc70bd1a3e191cc3a728 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/SonarModule.o: SonarModule.c  .generated_files/flags/default/27566e1334b94f294ebaded903f129722b2c9ac5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SonarModule.o.d 
 	@${RM} ${OBJECTDIR}/SonarModule.o 

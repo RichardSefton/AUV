@@ -20,7 +20,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/DepthController.o
  .data          0x0000000000000000        0x0 build/default/production/DepthController.o
  .bss           0x0000000000000000        0x0 build/default/production/DepthController.o
- .text.rgb      0x0000000000000000        0xc build/default/production/DepthController.o
  .text          0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
  .data          0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
  .bss           0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
@@ -433,28 +432,28 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x344f
+.debug_info     0x0000000000000000     0x3426
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x1b97 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_info    0x0000000000001b97     0x100d build/default/production/DepthController.o
- .debug_info    0x0000000000002ba4      0x8ab ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_info    0x0000000000001b97      0xfe9 build/default/production/DepthController.o
+ .debug_info    0x0000000000002b80      0x8a6 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
-.debug_abbrev   0x0000000000000000     0x1e1b
+.debug_abbrev   0x0000000000000000     0x1ddc
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000     0x1a20 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_abbrev  0x0000000000001a20      0x270 build/default/production/DepthController.o
- .debug_abbrev  0x0000000000001c90      0x18b ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_abbrev  0x0000000000001a20      0x231 build/default/production/DepthController.o
+ .debug_abbrev  0x0000000000001c51      0x18b ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
-.debug_line     0x0000000000000000      0x95a
+.debug_line     0x0000000000000000      0x93a
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x14b C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_line    0x000000000000014b      0x48b build/default/production/DepthController.o
- .debug_line    0x00000000000005d6      0x384 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_line    0x000000000000014b      0x46b build/default/production/DepthController.o
+ .debug_line    0x00000000000005b6      0x384 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
-.debug_frame    0x0000000000000000      0x218
+.debug_frame    0x0000000000000000      0x234
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xec build/default/production/DepthController.o
- .debug_frame   0x00000000000000ec      0x12c ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_frame   0x0000000000000000      0x108 build/default/production/DepthController.o
+ .debug_frame   0x0000000000000108      0x12c ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
 .debug_str      0x0000000000000000      0xc16
  *(.debug_str)
@@ -462,10 +461,10 @@ END GROUP
  .debug_str     0x0000000000000bdd       0x39 build/default/production/DepthController.o
  .debug_str     0x0000000000000c16        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
-.debug_loc      0x0000000000000000      0x280
+.debug_loc      0x0000000000000000      0x257
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x19b build/default/production/DepthController.o
- .debug_loc     0x000000000000019b       0xe5 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_loc     0x0000000000000000      0x172 build/default/production/DepthController.o
+ .debug_loc     0x0000000000000172       0xe5 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -485,10 +484,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x108
+.debug_ranges   0x0000000000000000       0xd8
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x98 build/default/production/DepthController.o
- .debug_ranges  0x0000000000000098       0x70 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_ranges  0x0000000000000000       0x68 build/default/production/DepthController.o
+ .debug_ranges  0x0000000000000068       0x70 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
 .debug_macro
  *(.debug_macro)
@@ -517,157 +516,161 @@ LOAD data_init
  .bss.receive_callback
                 0x000000000080380a        0x2 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
 
-.text.main      0x00000000000000f4       0xc6
- .text.main     0x00000000000000f4       0xc6 build/default/production/DepthController.o
+.text.main      0x00000000000000f4       0xd4
+ .text.main     0x00000000000000f4       0xd4 build/default/production/DepthController.o
                 0x00000000000000f4                main
 
-.text.stepper   0x00000000000001ba       0xa2
- .text.stepper  0x00000000000001ba       0xa2 build/default/production/DepthController.o
-                0x00000000000001ba                stepper
+.text.stepper   0x00000000000001c8       0xa2
+ .text.stepper  0x00000000000001c8       0xa2 build/default/production/DepthController.o
+                0x00000000000001c8                stepper
 
 .text.__vector_14
-                0x000000000000025c       0x9a
+                0x000000000000026a       0x9a
  .text.__vector_14
-                0x000000000000025c       0x9a ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x000000000000025c                __vector_14
+                0x000000000000026a       0x9a ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+                0x000000000000026a                __vector_14
 
 .text.__vector_6
-                0x00000000000002f6       0x94
+                0x0000000000000304       0x98
  .text.__vector_6
-                0x00000000000002f6       0x94 build/default/production/DepthController.o
-                0x00000000000002f6                __vector_6
+                0x0000000000000304       0x98 build/default/production/DepthController.o
+                0x0000000000000304                __vector_6
 
 .text.__vector_3
-                0x000000000000038a       0x66
+                0x000000000000039c       0x66
  .text.__vector_3
-                0x000000000000038a       0x66 build/default/production/DepthController.o
-                0x000000000000038a                __vector_3
+                0x000000000000039c       0x66 build/default/production/DepthController.o
+                0x000000000000039c                __vector_3
 
-.text.setupRTC  0x00000000000003f0       0x4e
+.text.setupRTC  0x0000000000000402       0x52
  .text.setupRTC
-                0x00000000000003f0       0x4e build/default/production/DepthController.o
-                0x00000000000003f0                setupRTC
+                0x0000000000000402       0x52 build/default/production/DepthController.o
+                0x0000000000000402                setupRTC
 
 .text.I2C_RX_Callback
-                0x000000000000043e       0x34
+                0x0000000000000454       0x34
  .text.I2C_RX_Callback
-                0x000000000000043e       0x34 build/default/production/DepthController.o
-                0x000000000000043e                I2C_RX_Callback
+                0x0000000000000454       0x34 build/default/production/DepthController.o
+                0x0000000000000454                I2C_RX_Callback
 
 .text.setupPins
-                0x0000000000000472       0x32
+                0x0000000000000488       0x32
  .text.setupPins
-                0x0000000000000472       0x32 build/default/production/DepthController.o
-                0x0000000000000472                setupPins
+                0x0000000000000488       0x32 build/default/production/DepthController.o
+                0x0000000000000488                setupPins
 
 .text.TWI_Slave_Init
-                0x00000000000004a4       0x22
+                0x00000000000004ba       0x22
  .text.TWI_Slave_Init
-                0x00000000000004a4       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x00000000000004a4                TWI_Slave_Init
+                0x00000000000004ba       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+                0x00000000000004ba                TWI_Slave_Init
 
 .text.TWI_Slave_Write
-                0x00000000000004c6       0x22
+                0x00000000000004dc       0x22
  .text.TWI_Slave_Write
-                0x00000000000004c6       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x00000000000004c6                TWI_Slave_Write
+                0x00000000000004dc       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+                0x00000000000004dc                TWI_Slave_Write
 
 .text.mainClkCtrl
-                0x00000000000004e8       0x18
+                0x00000000000004fe       0x18
  .text.mainClkCtrl
-                0x00000000000004e8       0x18 build/default/production/DepthController.o
-                0x00000000000004e8                mainClkCtrl
+                0x00000000000004fe       0x18 build/default/production/DepthController.o
+                0x00000000000004fe                mainClkCtrl
 
 .text.TWI_Slave_Read_NACK
-                0x0000000000000500       0x16
+                0x0000000000000516       0x16
  .text.TWI_Slave_Read_NACK
-                0x0000000000000500       0x16 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x0000000000000500                TWI_Slave_Read_NACK
+                0x0000000000000516       0x16 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+                0x0000000000000516                TWI_Slave_Read_NACK
 
-.text.exit      0x0000000000000516       0x16
- .text.exit     0x0000000000000516       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000516                exit
+.text.exit      0x000000000000052c       0x16
+ .text.exit     0x000000000000052c       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x000000000000052c                exit
 
-.text.setup     0x000000000000052c        0xe
- .text.setup    0x000000000000052c        0xe build/default/production/DepthController.o
-                0x000000000000052c                setup
+.text.setup     0x0000000000000542        0xe
+ .text.setup    0x0000000000000542        0xe build/default/production/DepthController.o
+                0x0000000000000542                setup
 
-.text.allStop   0x000000000000053a        0xc
- .text.allStop  0x000000000000053a        0xc build/default/production/DepthController.o
-                0x000000000000053a                allStop
+.text.allStop   0x0000000000000550        0xc
+ .text.allStop  0x0000000000000550        0xc build/default/production/DepthController.o
+                0x0000000000000550                allStop
 
-.text.libgcc    0x0000000000000546        0xc
- .text.libgcc   0x0000000000000546        0xc c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
-                0x0000000000000546                __tablejump2__
+.text.rgb       0x000000000000055c        0xc
+ .text.rgb      0x000000000000055c        0xc build/default/production/DepthController.o
+                0x000000000000055c                rgb
+
+.text.libgcc    0x0000000000000568        0xc
+ .text.libgcc   0x0000000000000568        0xc c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_tablejump2.o)
+                0x0000000000000568                __tablejump2__
 
 .text.I2C_TX_Callback
-                0x0000000000000552        0x6
+                0x0000000000000574        0x6
  .text.I2C_TX_Callback
-                0x0000000000000552        0x6 build/default/production/DepthController.o
-                0x0000000000000552                I2C_TX_Callback
+                0x0000000000000574        0x6 build/default/production/DepthController.o
+                0x0000000000000574                I2C_TX_Callback
 
-.text           0x0000000000000558        0x4
- .text          0x0000000000000558        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
-                0x0000000000000558                __vector_22
-                0x0000000000000558                __vector_28
-                0x0000000000000558                __vector_1
-                0x0000000000000558                __vector_24
-                0x0000000000000558                __vector_12
-                0x0000000000000558                __bad_interrupt
-                0x0000000000000558                __vector_23
-                0x0000000000000558                __vector_25
-                0x0000000000000558                __vector_11
-                0x0000000000000558                __vector_13
-                0x0000000000000558                __vector_17
-                0x0000000000000558                __vector_19
-                0x0000000000000558                __vector_7
-                0x0000000000000558                __vector_27
-                0x0000000000000558                __vector_5
-                0x0000000000000558                __vector_4
-                0x0000000000000558                __vector_9
-                0x0000000000000558                __vector_2
-                0x0000000000000558                __vector_21
-                0x0000000000000558                __vector_15
-                0x0000000000000558                __vector_29
-                0x0000000000000558                __vector_8
-                0x0000000000000558                __vector_26
-                0x0000000000000558                __vector_10
-                0x0000000000000558                __vector_16
-                0x0000000000000558                __vector_18
-                0x0000000000000558                __vector_20
+.text           0x000000000000057a        0x4
+ .text          0x000000000000057a        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
+                0x000000000000057a                __vector_22
+                0x000000000000057a                __vector_28
+                0x000000000000057a                __vector_1
+                0x000000000000057a                __vector_24
+                0x000000000000057a                __vector_12
+                0x000000000000057a                __bad_interrupt
+                0x000000000000057a                __vector_23
+                0x000000000000057a                __vector_25
+                0x000000000000057a                __vector_11
+                0x000000000000057a                __vector_13
+                0x000000000000057a                __vector_17
+                0x000000000000057a                __vector_19
+                0x000000000000057a                __vector_7
+                0x000000000000057a                __vector_27
+                0x000000000000057a                __vector_5
+                0x000000000000057a                __vector_4
+                0x000000000000057a                __vector_9
+                0x000000000000057a                __vector_2
+                0x000000000000057a                __vector_21
+                0x000000000000057a                __vector_15
+                0x000000000000057a                __vector_29
+                0x000000000000057a                __vector_8
+                0x000000000000057a                __vector_26
+                0x000000000000057a                __vector_10
+                0x000000000000057a                __vector_16
+                0x000000000000057a                __vector_18
+                0x000000000000057a                __vector_20
 
-.text._Exit     0x000000000000055c        0x4
- .text._Exit    0x000000000000055c        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
-                0x000000000000055c                _Exit
+.text._Exit     0x000000000000057e        0x4
+ .text._Exit    0x000000000000057e        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
+                0x000000000000057e                _Exit
 
 .text.__dummy_fini
-                0x0000000000000560        0x2
+                0x0000000000000582        0x2
  .text.__dummy_fini
-                0x0000000000000560        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000560                _fini
+                0x0000000000000582        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000582                _fini
 
 .text.__dummy_funcs_on_exit
-                0x0000000000000562        0x2
+                0x0000000000000584        0x2
  .text.__dummy_funcs_on_exit
-                0x0000000000000562        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000562                __funcs_on_exit
+                0x0000000000000584        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000584                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x0000000000000564        0x2
+                0x0000000000000586        0x2
  .text.__dummy_simulator_exit
-                0x0000000000000564        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000564                __simulator_exit
+                0x0000000000000586        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000586                __simulator_exit
 
-.data.run       0x0000000000803800        0x2 load address 0x0000000000000566
+.data.run       0x0000000000803800        0x2 load address 0x0000000000000588
  .data.run      0x0000000000803800        0x2 build/default/production/DepthController.o
                 0x0000000000803800                run
 
-.data.dir       0x0000000000803802        0x2 load address 0x0000000000000568
+.data.dir       0x0000000000803802        0x2 load address 0x000000000000058a
  .data.dir      0x0000000000803802        0x2 build/default/production/DepthController.o
                 0x0000000000803802                dir
 
 .data.plungerPos
-                0x0000000000803806        0x2 load address 0x000000000000056a
+                0x0000000000803806        0x2 load address 0x000000000000058c
  .data.plungerPos
                 0x0000000000803806        0x2 build/default/production/DepthController.o
                 0x0000000000803806                plungerPos

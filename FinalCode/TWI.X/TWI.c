@@ -22,7 +22,8 @@ void TWI_Master_Init(void)
      * but because the way C handles float conversion to uint8, the fractional is dropped 
      * and the result rounded down. So we're adding one at the end to combat this.
      */ 
-    TWI0.MBAUD = (uint8_t)TWI_BAUD(TWI_FREQ, 0) + 1; // Adding 1 as it is rounding down
+    //TWI0.MBAUD = (uint8_t)TWI_BAUD(TWI_FREQ, 0) + 1; // Adding 1 as it is rounding down
+    TWI0.MBAUD = 12;
     
     /* Enable TWI master and Smart Mode
      * Smart mode will automatically raise the DIF, RIF and WIF interrupt flags when

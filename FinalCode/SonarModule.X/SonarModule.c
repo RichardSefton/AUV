@@ -28,7 +28,7 @@ void calcDistance(float);
 void I2C_RX_Callback(uint8_t);
 uint8_t I2C_TX_Callback(void);
 //Also need an address 
-#define ADDR 0x09
+#define ADDR 0x3C
 
 int main(void) {
     setup();

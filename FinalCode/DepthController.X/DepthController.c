@@ -8,16 +8,16 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-int plungerPos = 255;
-int commandedPos = 0;
+uint8_t plungerPos = 0xFF;
+uint8_t commandedPos = 0x00;
 
-#define THREAD_OUT 1
-#define THREAD_IN 2
-#define STOP 0
-#define GO 1
+#define THREAD_OUT 0x01
+#define THREAD_IN 0x02
+#define STOP 0x00
+#define GO 0x01
 
-int dir = THREAD_IN;
-int run = GO;
+uint8_t dir = THREAD_IN;
+uint8_t run = GO;
 /*
  * Lets apply the pins to some defines
  * 
@@ -53,7 +53,7 @@ int run = GO;
 //Functions we need to define. 
 //This isn't in pseudocode. I like to include it to be explicit
 void mainClkCtrl(void);
-void stepper(int);
+void stepper(uint8_t);
 void allStop(void);
 void setup(void);
 void setupPins(void);
@@ -70,7 +70,7 @@ int main(void) {
     setup();
     TWI_Slave_Init(ADDR, I2C_RX_Callback, I2C_TX_Callback);
     
-    int step = 0;
+    uint8_t step = 0x00;
     while(1) {
         if (plungerPos != commandedPos) {
             run = GO;
@@ -78,14 +78,14 @@ int main(void) {
             if ((dir == THREAD_OUT && plungerPos != 254) && plungerPos != commandedPos){
                 stepper(step);
                 step--;
-                 if (step < 0) {
-                    step = 7;
+                 if (step < 0x00) {
+                    step = 0x07;
                 }
             } else if ((dir == THREAD_IN && plungerPos != 1) && plungerPos != commandedPos) {
                 stepper(step);
                 step++;
-                if (step > 7) {
-                    step = 0;
+                if (step > 0x07) {
+                    step = 0x00;
                 }
             }
             _delay_us(750);
@@ -99,39 +99,41 @@ int main(void) {
     return 0;
 }
 
-void stepper(int step) {
+void stepper(uint8_t step) {
     switch(step) {
-        case 0:
+        case 0x00:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_3;
             PORTC.OUTSET |= STEP_PIN_4;
             break;     
-        case 1:
+        case 0x01:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2;
             PORTC.OUTSET |=  STEP_PIN_3 | STEP_PIN_4;
             break;    
-        case 2:
+        case 0x02:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_2 | STEP_PIN_4;
             PORTC.OUTSET |= STEP_PIN_3;
             break;      
-        case 3:
+        case 0x03:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_4;
             PORTC.OUTSET |= STEP_PIN_2 | STEP_PIN_3;
             break;  
-        case 4:
+        case 0x04:
             PORTC.OUTCLR |= STEP_PIN_1 | STEP_PIN_3 | STEP_PIN_4;
             PORTC.OUTSET |= STEP_PIN_2;
             break;    
-        case 5:
+        case 0x05:
             PORTC.OUTCLR |= STEP_PIN_3 | STEP_PIN_4;
             PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_2;
             break;
-        case 6:
+        case 0x06:
             PORTC.OUTCLR |= STEP_PIN_2 | STEP_PIN_3 | STEP_PIN_4;
             PORTC.OUTSET |= STEP_PIN_1;
             break;
-        case 7:
+        case 0x07:
             PORTC.OUTCLR |= STEP_PIN_2 | STEP_PIN_3;
             PORTC.OUTSET |= STEP_PIN_1 | STEP_PIN_4;
+            break;
+        default:
             break;
     }
 }
@@ -221,8 +223,8 @@ ISR(RTC_CNT_vect) {
 ISR(PORTA_PORT_vect) {
     if (PORTA.INTFLAGS & BUFFER_OUT_PIN) {
         if (!(PORTA.IN & BUFFER_OUT_PIN)) {
-            plungerPos = 255;
-            commandedPos = 254;
+            plungerPos = 0xFF;
+            commandedPos = (0xFF-1);
             dir = THREAD_IN;
         }
         PORTA.INTFLAGS |= BUFFER_OUT_PIN;
@@ -230,8 +232,8 @@ ISR(PORTA_PORT_vect) {
     
     if (PORTA.INTFLAGS & BUFFER_IN_PIN) {
         if (!(PORTA.IN & BUFFER_IN_PIN)) {
-            plungerPos = 0;
-            commandedPos = 1;
+            plungerPos = 0x00;
+            commandedPos = 0x01;
             dir = THREAD_OUT;
         }
         PORTA.INTFLAGS |= BUFFER_IN_PIN;

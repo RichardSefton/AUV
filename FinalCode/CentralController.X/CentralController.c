@@ -9,11 +9,11 @@
 #include <avr/interrupt.h>
  //#include <avr/iotn1627.h> 
 
-#define ULTRASONIC_BOTTOM 0x09
+#define ULTRASONIC_BOTTOM 0x3C
 
 #define DEPTH_CONTROLLER 0x4C
 
-volatile int depth = 0;
+volatile uint8_t depth = 0;
 
 #define LOWER 1
 
@@ -27,32 +27,33 @@ void mainClkCtrl(void);
 void setupRTC(void);
 void setupPins(void);
 int ping(void);
-void handleDistanceResponse(int, int);
+void handleDistanceResponse(uint8_t, uint8_t);
 uint8_t getDepth();
 void dive(uint8_t);
 void raise(uint8_t);
 void rgb(uint8_t);
 
-#define TRUE 1
-#define FALSE 0
+#define TRUE 0x01
+#define FALSE 0x00
 
-int initComplete = FALSE; 
+uint8_t initComplete = FALSE; 
 
 int main() {
     setup();
     
-    _delay_ms(500);
-    
     TWI_Master_Init(); 
-
-    _delay_ms(2000);
+//
+//    //DIVE, DIVE, DIVE!
+    dive(0xFF);
+//    
+    //initComplete = TRUE;
     
-    //DIVE, DIVE, DIVE!
-    dive(255);
-    
-    initComplete = TRUE;
     while(1) {
         rgb(RED);
+        _delay_ms(500);
+        rgb(BLUE);
+        _delay_ms(500);
+        rgb(GREEN);
         _delay_ms(500);
     }
 
@@ -61,7 +62,7 @@ int main() {
 
 void setup(void) {
     mainClkCtrl();
-    setupRTC();
+    //setupRTC();
     setupPins();
 }
 
@@ -76,7 +77,7 @@ void setupRTC(void) {
     RTC.CLKSEL = RTC_CLKSEL_INT1K_gc;
     while(RTC.STATUS);
     RTC.CTRLA |= RTC_PRESCALER_DIV1_gc;
-    RTC.PER = 15000;
+    RTC.PER = 1024;
     while (RTC.STATUS);
     RTC.INTFLAGS |= RTC_OVF_bm;
     RTC.INTCTRL |= RTC_OVF_bm;
@@ -100,7 +101,7 @@ int ping(void) {
     }
 }
 
-void handleDistanceResponse(int distance, int direction) {
+void handleDistanceResponse(uint8_t distance, uint8_t direction) {
     switch (direction) {
         case LOWER: {
             if (depth == 0) {
@@ -151,7 +152,7 @@ ISR(RTC_CNT_vect) {
     if (initComplete == TRUE) {
         rgb(RED | GREEN | BLUE);
         RTC.INTFLAGS = RTC_OVF_bm;
-        int distance = ping();
+        uint8_t distance = ping();
         if (distance < 100 && distance > 0) {
             handleDistanceResponse(distance, LOWER);
         }    

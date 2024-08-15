@@ -5,11 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>twi_pins.h</itemPath>
-      <itemPath>Wire.h</itemPath>
-      <itemPath>Stream.h</itemPath>
-      <itemPath>Print.h</itemPath>
-      <itemPath>String.h</itemPath>
-      <itemPath>Printable.h</itemPath>
+      <itemPath>CWire.h</itemPath>
+      <itemPath>ShortTypes.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -23,15 +20,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Wire.cpp</itemPath>
       <itemPath>twi_pins.c</itemPath>
       <itemPath>host.c</itemPath>
-      <itemPath>String.cpp</itemPath>
-      <itemPath>Stream.cpp</itemPath>
-      <itemPath>Printable.cpp</itemPath>
-      <itemPath>Print.cpp</itemPath>
+      <itemPath>CWire.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem></Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -40,7 +36,7 @@
         <targetDevice>ATtiny1627</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>AtmelIceTool</platformTool>
         <languageToolchain>AVR</languageToolchain>
         <languageToolchainVersion>7.3.0</languageToolchainVersion>
         <platform>3</platform>
@@ -175,6 +171,9 @@
         <property key="sram-segment" value=""/>
         <property key="v-printf" value="false"/>
       </AVR-LD>
+      <AtmelIceTool>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
+      </AtmelIceTool>
     </conf>
   </confs>
 </configurationDescriptor>

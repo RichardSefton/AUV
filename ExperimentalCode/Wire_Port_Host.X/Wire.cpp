@@ -37,6 +37,10 @@ extern "C" {
 #endif
 #include "Wire.h"
 
+#ifndef TWI0
+#define TWI0
+#endif
+
 
 extern "C" {    // compiler was complaining when I put twi.h into the upper C include part
   #include "twi_pins.h"
@@ -245,6 +249,7 @@ void TwoWire::usePullups(void) {
  *@return     bool
  *@retval     true if change was successful
  */
+//NOTE - NOT IMPLEMENTED AS 1627 HAS ONLY ONE TWI
 bool TwoWire::swapModule(TWI_t *twi_module) {
   if (__builtin_constant_p(twi_module)) {
     if (twi_module == NULL) {
@@ -252,26 +257,26 @@ bool TwoWire::swapModule(TWI_t *twi_module) {
       return false;
     }
   }
-  #if defined(TWI1)
-    #if defined(TWI_USING_WIRE1)
-      badCall("swapModule() can only be used if Wire1 is not used");
-    #else
-      if ((_bools._hostEnabled | _bools._clientEnabled) == 0) { // make sure nothing's enabled
-        if (&TWI0 == twi_module) {
-          twi0_wire = this;
-          _module = twi_module;
-          return true;
-        }
-        else if (&TWI1 == twi_module) {
-          twi1_wire = this;
-          _module = twi_module;
-          return true;
-        }
-      }
-    #endif
-  #else
-    badCall("Only one TWI module available, nothing to switch with");
-  #endif
+//  #if defined(TWI1)
+//    #if defined(TWI_USING_WIRE1)
+//      badCall("swapModule() can only be used if Wire1 is not used");
+//    #else
+//      if ((_bools._hostEnabled | _bools._clientEnabled) == 0) { // make sure nothing's enabled
+//        if (&TWI0 == twi_module) {
+//          twi0_wire = this;
+//          _module = twi_module;
+//          return true;
+//        }
+//        else if (&TWI1 == twi_module) {
+//          twi1_wire = this;
+//          _module = twi_module;
+//          return true;
+//        }
+//      }
+//    #endif
+//  #else
+//    badCall("Only one TWI module available, nothing to switch with");
+//  #endif
   return false;
 }
 
@@ -540,26 +545,26 @@ void TwoWire::endSlave(void) {
 
 uint8_t TwoWire::specialConfig( __attribute__ ((unused)) bool smbuslvl, __attribute__ ((unused)) bool longsetup, __attribute__ ((unused)) uint8_t sda_hold, __attribute__ ((unused)) bool smbuslvl_dual, __attribute__ ((unused)) uint8_t sda_hold_dual) {
   uint8_t ret = 0;
-  #if !defined(TWI_INPUTLVL_bm) // if there's no input level option, we want to notify the user with an error so they don't think they have a feature they don't
-    if (__builtin_constant_p(smbuslvl))  { //but they could be passign a zero, which is legal. See if it's constant...
-      if (smbuslvl) {                      // and non-zero, in which case error:
-        badCall("the smbus level option is not present on these parts. You need a Dx for that.");
-      }
-    } else if (smbuslvl_dual) { //same deal for dual mode
-      if (smbuslvl_dual) {
-        badCall("the smbus level option is not present on these parts. You need a Dx for that.");
-      }
-    // the above will always fold to nothing or and error, and does not bloat binary
-    // but we may not know at compile time what will be passed, so we have to have a runtime test.
-    }
-    else if (smbuslvl || smbuslvl_dual) {
-      ret         |= 1; //
-      smbuslvl     = 0; // We don't HAVE this option here, so zero out the option we pass along.
-     //#if defined(TWI_DUALCTRL)
-     //   smbuslvldual = 0; // no need to 0 - variable is no longer used, w/out dual ctrl, there's also not going to be smbus levels.
-     //#endif
-    }
-  #endif
+//  #if !defined(TWI_INPUTLVL_bm) // if there's no input level option, we want to notify the user with an error so they don't think they have a feature they don't
+//    if (__builtin_constant_p(smbuslvl))  { //but they could be passign a zero, which is legal. See if it's constant...
+//      if (smbuslvl) {                      // and non-zero, in which case error:
+//        badCall("the smbus level option is not present on these parts. You need a Dx for that.");
+//      }
+//    } else if (smbuslvl_dual) { //same deal for dual mode
+//      if (smbuslvl_dual) {
+//        badCall("the smbus level option is not present on these parts. You need a Dx for that.");
+//      }
+//    // the above will always fold to nothing or and error, and does not bloat binary
+//    // but we may not know at compile time what will be passed, so we have to have a runtime test.
+//    }
+//    else if (smbuslvl || smbuslvl_dual) {
+//      ret         |= 1; //
+//      smbuslvl     = 0; // We don't HAVE this option here, so zero out the option we pass along.
+//     //#if defined(TWI_DUALCTRL)
+//     //   smbuslvldual = 0; // no need to 0 - variable is no longer used, w/out dual ctrl, there's also not going to be smbus levels.
+//     //#endif
+//    }
+//  #endif
   if (__builtin_constant_p(sda_hold))  {
     if (sda_hold > 3) {
       badArg("Only 0, 1, 2 and 3 are valid SDA hold options. Suggest using the named constants.");
@@ -1201,13 +1206,14 @@ uint8_t TwoWire::slaveTransactionOpen() {
  *
  *@return     void
  */
+//NOTE - NOT IMPLEMENTED ON 1627
 void TwoWire::enableDualMode(bool fmp_enable) {
-  #if defined(TWI_DUALCTRL)
-    _module->DUALCTRL = ((fmp_enable << TWI_FMPEN_bp) | TWI_ENABLE_bm);
-  #else
-    badCall("enableDualMode was called, but device does not support it");
-    (void) fmp_enable;    // Disable unused variable warning
-  #endif
+//  #if defined(TWI_DUALCTRL)
+//    _module->DUALCTRL = ((fmp_enable << TWI_FMPEN_bp) | TWI_ENABLE_bm);
+//  #else
+//    badCall("enableDualMode was called, but device does not support it");
+//    (void) fmp_enable;    // Disable unused variable warning
+//  #endif
 }
 
 
@@ -1251,12 +1257,13 @@ uint8_t TwoWire::checkPinLevels(void) {
  *
  *@return     void
  */
+//NOTE - NOT IMPLEMENTED ON 1627
 void TwoWire::selectSlaveBuffer(void) {
-  #if defined(TWI_MANDS)
-    _bools._toggleStreamFn = 0x01;
-  #else
-    badCall("selectSlaveBuffer() was called, but simultaneous mode is not selected");
-  #endif
+//  #if defined(TWI_MANDS)
+//    _bools._toggleStreamFn = 0x01;
+//  #else
+//    badCall("selectSlaveBuffer() was called, but simultaneous mode is not selected");
+//  #endif
 }
 
 
@@ -1273,12 +1280,13 @@ void TwoWire::selectSlaveBuffer(void) {
  *
  *@return     void
  */
+//NOTE - NOT IMPLEMENTED ON 1627
 void TwoWire::deselectSlaveBuffer(void) {
-  #if defined(TWI_MANDS)
-    _bools._toggleStreamFn = 0x00;
-  #else
-    badCall("deselectSlaveBuffer() was called, but simultaneous mode is not selected");
-  #endif
+//  #if defined(TWI_MANDS)
+//    _bools._toggleStreamFn = 0x00;
+//  #else
+//    badCall("deselectSlaveBuffer() was called, but simultaneous mode is not selected");
+//  #endif
 }
 
 

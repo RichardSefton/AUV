@@ -104,38 +104,38 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/9b1d009e5c1dd0bdeabd4cfbb17d3ca166f2768c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/85154fac586f33817f6453b37d47ebecfe8142cc .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/client.o.d 
 	@${RM} ${OBJECTDIR}/client.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/client.o.d" -MT "${OBJECTDIR}/client.o.d" -MT ${OBJECTDIR}/client.o  -o ${OBJECTDIR}/client.o client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/f6b6d4364d68cb65ed4d8c66eeca0e1a344b25be .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/bbe4e19807e315359f9df3c76fad1261b0030591 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CWire.o.d 
 	@${RM} ${OBJECTDIR}/CWire.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/CWire.o.d" -MT "${OBJECTDIR}/CWire.o.d" -MT ${OBJECTDIR}/CWire.o  -o ${OBJECTDIR}/CWire.o CWire.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/192d835509390d2cae8f58e60afea50aeafe380b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/952e0023ebe1797851dbd3334cce303f9fb85243 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/twi_pins.o.d 
 	@${RM} ${OBJECTDIR}/twi_pins.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/twi_pins.o.d" -MT "${OBJECTDIR}/twi_pins.o.d" -MT ${OBJECTDIR}/twi_pins.o  -o ${OBJECTDIR}/twi_pins.o twi_pins.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
-${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/2bdfa5e7a2ad793d01927ace9b30f02180dac875 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/9ec30f402f2624c48fae4f1c804ad8dc59c68025 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/client.o.d 
 	@${RM} ${OBJECTDIR}/client.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/client.o.d" -MT "${OBJECTDIR}/client.o.d" -MT ${OBJECTDIR}/client.o  -o ${OBJECTDIR}/client.o client.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/af9fd937d092f1a1d8422e55812f2e0b890e6b50 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/c89d8357d30908f6083331af9d9a4bd0d72f66ec .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CWire.o.d 
 	@${RM} ${OBJECTDIR}/CWire.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=attiny1627 ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/CWire.o.d" -MT "${OBJECTDIR}/CWire.o.d" -MT ${OBJECTDIR}/CWire.o  -o ${OBJECTDIR}/CWire.o CWire.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/a1a81cfdf5d888ddc589f06c82e836cda95e1f79 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/dae6b0108f971b0346c211969831bff0ef0acf97 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/twi_pins.o.d 
 	@${RM} ${OBJECTDIR}/twi_pins.o 

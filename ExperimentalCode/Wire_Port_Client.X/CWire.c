@@ -391,7 +391,7 @@ void TwoWire_HandleSlaveIRQ(TwoWire *wire_s) {
   }
 
   u8 *address,  *buffer;
-  u16 *head, *tail;
+  twi_buf_index_t *head, *tail;
   #if defined(TWI_MANDS)
     address = &(wire_s->_incomingAddress);
     head    = &(wire_s->_bytesToReadWriteS);
@@ -485,18 +485,34 @@ void TwoWire_HandleSlaveIRQ(TwoWire *wire_s) {
 
 // Data handling
 u8 TwoWire_write(TwoWire *self, u8 data) {
-    if (self->_bytesToReadWrite < TWI_BUFFER_LENGTH) {
-        self->_hostBuffer[self->_bytesToReadWrite] = data;
-        self->_bytesToReadWrite++;
-        return 1;  // Success
+    u8 *txBuffer;
+    twi_buf_index_t *txHead;
+
+    #if defined(TWI_MANDS)  // If host and client are split
+    if (self->_bools._toggleStreamFn == 0x01) {
+        txHead = &(self->_bytesToReadWriteS);
+        txBuffer = self->_clientBuffer;
+    } else
+    #endif
+    {
+        txHead = &(self->_bytesToReadWrite);
+        txBuffer = self->_hostBuffer;
+    }
+
+    // Put byte in txBuffer
+    if ((*txHead) < TWI_BUFFER_LENGTH) {    // while buffer not full, write to it
+        txBuffer[(*txHead)] = data;         // Load data into the buffer
+        (*txHead)++;                        // advancing the head
+        return 1;
     } else {
         return 0;  // Buffer full
     }
 }
 
+// Function to write an array of bytes
 u8 TwoWire_writeBytes(TwoWire *self, const u8 *data, u16 length) {
-    u16 i;
-    for (i = 0; i < length; i++) {
+    u16 i = 0;
+    for (; i < length; i++) {
         if (TwoWire_write(self, data[i]) == 0) {
             break;  // Stop if buffer is full
         }
@@ -504,43 +520,57 @@ u8 TwoWire_writeBytes(TwoWire *self, const u8 *data, u16 length) {
     return i;  // Number of bytes successfully written
 }
 
-u8 TwoWire_writeUInt8(TwoWire *self, u8 n) {
-    return TwoWire_write(self, n);
-}
-
-u8 TwoWire_writeUInt32(TwoWire *self, u32 n) {
-    u8 result = 1;
-    result &= TwoWire_write(self, (n >> 24) & 0xFF);
-    result &= TwoWire_write(self, (n >> 16) & 0xFF);
-    result &= TwoWire_write(self, (n >> 8) & 0xFF);
-    result &= TwoWire_write(self, n & 0xFF);
-    return result;
-}
-
-u8 TwoWire_writeInt(TwoWire *self, int n) {
-    u8 result = 1;
-    result &= TwoWire_write(self, (n >> 8) & 0xFF);
-    result &= TwoWire_write(self, n & 0xFF);
-    return result;
-}
 
 int TwoWire_available(TwoWire *self) {
     return self->_bytesToReadWrite - self->_bytesReadWritten;
 }
 
 int TwoWire_read(TwoWire *self) {
-    if (self->_bytesReadWritten < self->_bytesToReadWrite) {
-        return self->_clientBuffer[self->_bytesReadWritten++];
-    } else {
-        return -1;  // No data available
+    uint8_t *rxBuffer;
+    twi_buf_index_t *rxHead, *rxTail;
+    #if defined(TWI_MANDS)                         // Add following if host and client are split
+    if (_bools._toggleStreamFn == 0x01) {
+        rxHead   = &(_bytesToReadWriteS);
+        rxTail   = &(_bytesReadWrittenS);
+        rxBuffer =   _clientBuffer;
+    } else
+    #endif
+    {
+        rxHead   = &(self->_bytesToReadWrite);
+        rxTail   = &(self->_bytesReadWritten);
+        rxBuffer =   self->_hostBuffer;
+    }
+
+
+    if ((*rxTail) < (*rxHead)) {   // if there are bytes to read
+        uint8_t c = rxBuffer[(*rxTail)];
+        (*rxTail)++;
+        return c;
+    } else {                      // No bytes to read. At this point, rxTail moved up to
+        return -1;                  // rxHead. To reset both to 0, a MasterRead or AddrWrite has to be called
     }
 }
 
 int TwoWire_peek(TwoWire *self) {
-    if (self->_bytesReadWritten < self->_bytesToReadWrite) {
-        return self->_clientBuffer[self->_bytesReadWritten];
-    } else {
-        return -1;  // No data available
+    uint8_t *rxBuffer;
+    twi_buf_index_t *rxHead, *rxTail;
+    #if defined(TWI_MANDS)                         // Add following if host and client are split
+    if (_bools._toggleStreamFn == 0x01) {
+        rxHead   = &(_bytesToReadWriteS);
+        rxTail   = &(_bytesReadWrittenS);
+        rxBuffer =   _clientBuffer;
+    } else
+    #endif
+    {
+        rxHead   = &(self->_bytesToReadWrite);
+        rxTail   = &(self->_bytesReadWritten);
+        rxBuffer =   self->_hostBuffer;
+    }
+
+    if ((*rxTail) < (*rxHead)) {   // if there are bytes to read
+        return rxBuffer[(*rxTail)];
+    } else {      // No bytes to read
+        return -1;
     }
 }
 

@@ -182,15 +182,19 @@ typedef struct {
     u8 _hostBuffer[TWI_BUFFER_LENGTH];
     u8 _clientBuffer[TWI_BUFFER_LENGTH];
     u8 _clientAddress;
-    u16 _bytesToReadWrite;
-    u16 _bytesReadWritten;
-    u16 _bytesTransmittedS;
+    twi_buf_index_t _bytesToReadWrite;
+    twi_buf_index_t _bytesReadWritten;
+    twi_buf_index_t _bytesTransmittedS;
     twiDataBools _bools;
     void (*user_onReceive)(u8);
     void (*user_onRequest)(void);
 } TwoWire;
 
-typedef u8 twi_buf_index_t;
+#if (TWI_BUFFER_LENGTH > 255) || defined(TWI_16BIT_BUFFER)
+  typedef uint16_t twi_buf_index_t;
+#else
+  typedef uint8_t  twi_buf_index_t;
+#endif
 
 u8 MasterCalcBaud(u32 freq);
 
@@ -224,9 +228,11 @@ void TwoWire_HandleSlaveIRQ(TwoWire *wire_s);
 // Data handling
 u8 TwoWire_write(TwoWire *self, u8 data);
 u8 TwoWire_writeBytes(TwoWire *self, const u8 *data, u16 length);
-u8 TwoWire_writeUInt8(TwoWire *self, u8 n);
-u8 TwoWire_writeUInt32(TwoWire *self, u32 n);
-u8 TwoWire_writeInt(TwoWire *self, int n);
+//u8 TwoWire_write(TwoWire *self, u8 data);
+//u8 TwoWire_writeBytes(TwoWire *self, const u8 *data, u16 length);
+//u8 TwoWire_writeUInt8(TwoWire *self, u8 n);
+//u8 TwoWire_writeUInt32(TwoWire *self, u32 n);
+//u8 TwoWire_writeInt(TwoWire *self, int n);
 int TwoWire_available(TwoWire *self);
 int TwoWire_read(TwoWire *self);
 int TwoWire_peek(TwoWire *self);

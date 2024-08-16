@@ -1,16 +1,16 @@
 Archive member included to satisfy reference by file (symbol)
 
-c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
                               build/default/debug/CWire.o (__udivmodsi4)
-c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
                               C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o (exit)
-c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
                               build/default/debug/host.o (__do_clear_bss)
 
 Allocating common symbols
 Common symbol       size              file
 
-twi0                0x53              build/default/debug/host.o
+twi0                0x50              build/default/debug/host.o
 twi0_wire           0x2               build/default/debug/CWire.o
 
 Discarded input sections
@@ -43,9 +43,9 @@ Discarded input sections
  .text.TwoWire_endMaster
                 0x0000000000000000       0x28 build/default/debug/CWire.o
  .text.TwoWire_masterReceive
-                0x0000000000000000       0x92 build/default/debug/CWire.o
+                0x0000000000000000       0xb0 build/default/debug/CWire.o
  .text.TwoWire_requestFrom
-                0x0000000000000000       0x3c build/default/debug/CWire.o
+                0x0000000000000000       0x36 build/default/debug/CWire.o
  .text.TwoWire_Slave_begin
                 0x0000000000000000       0x58 build/default/debug/CWire.o
  .text.TwoWire_endSlave
@@ -53,7 +53,7 @@ Discarded input sections
  .text.TwoWire_getIncomingAddress
                 0x0000000000000000        0xa build/default/debug/CWire.o
  .text.TwoWire_getBytesRead
-                0x0000000000000000        0xe build/default/debug/CWire.o
+                0x0000000000000000        0xc build/default/debug/CWire.o
  .text.TwoWire_slaveTransactionOpen
                 0x0000000000000000       0x1c build/default/debug/CWire.o
  .text.TwoWire_checkPinLevels
@@ -64,68 +64,62 @@ Discarded input sections
                 0x0000000000000000        0xc build/default/debug/CWire.o
  .text.TwoWire_writeBytes
                 0x0000000000000000       0x52 build/default/debug/CWire.o
- .text.TwoWire_writeUInt8
-                0x0000000000000000        0x6 build/default/debug/CWire.o
- .text.TwoWire_writeUInt32
-                0x0000000000000000       0x5e build/default/debug/CWire.o
- .text.TwoWire_writeInt
-                0x0000000000000000       0x2a build/default/debug/CWire.o
  .text.TwoWire_available
-                0x0000000000000000       0x1a build/default/debug/CWire.o
+                0x0000000000000000       0x16 build/default/debug/CWire.o
  .text.TwoWire_read
                 0x0000000000000000       0x34 build/default/debug/CWire.o
  .text.TwoWire_peek
-                0x0000000000000000       0x28 build/default/debug/CWire.o
+                0x0000000000000000       0x2c build/default/debug/CWire.o
  .text.TwoWire_end
                 0x0000000000000000       0x16 build/default/debug/CWire.o
  .text.TwoWire_flush
                 0x0000000000000000        0xe build/default/debug/CWire.o
- .text          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
- .data          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
- .bss           0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text.libgcc.mul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
- .text.libgcc   0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text.libgcc.prologue
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
- .text          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
- .data          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
- .bss           0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+ .data          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+ .bss           0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
- .text          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
- .data          0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
- .bss           0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .data          0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .bss           0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.mul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+                0x0000000000000000        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -152,12 +146,12 @@ LOAD build/default/debug/CWire.o
                 0x0000000000000001                __MPLAB_DEBUG = 0x1
                 0x0000000000000001                __DEBUG = 0x1
 START GROUP
-LOAD c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libm.a
+LOAD d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libm.a
 END GROUP
 START GROUP
-LOAD c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a
-LOAD c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libm.a
-LOAD c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libc.a
+LOAD d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a
+LOAD d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libm.a
+LOAD d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avrxmega3\libc.a
 LOAD C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3\libattiny1627.a
 END GROUP
                 [0x0000000000000000]                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
@@ -261,7 +255,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x602
+.text           0x0000000000000000      0x5fe
  *(.vectors)
  .vectors       0x0000000000000000       0x78 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
                 0x0000000000000000                __vector_default
@@ -302,7 +296,7 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x0000000000000084       0x10 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
+ .init4         0x0000000000000084       0x10 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_clear_bss.o)
                 0x0000000000000084                __do_clear_bss
  *(.init4)
  *(.init5)
@@ -374,37 +368,37 @@ END GROUP
                 0x0000000000000270       0x30 build/default/debug/CWire.o
                 0x0000000000000270                TwoWire_Master_begin
  .text.TwoWire_beginTransmission
-                0x00000000000002a0       0x24 build/default/debug/CWire.o
+                0x00000000000002a0       0x20 build/default/debug/CWire.o
                 0x00000000000002a0                TwoWire_beginTransmission
  .text.TwoWire_masterTransmit
-                0x00000000000002c4       0x9e build/default/debug/CWire.o
-                0x00000000000002c4                TwoWire_masterTransmit
+                0x00000000000002c0       0xd2 build/default/debug/CWire.o
+                0x00000000000002c0                TwoWire_masterTransmit
  .text.TwoWire_endTransmission
-                0x0000000000000362       0x20 build/default/debug/CWire.o
-                0x0000000000000362                TwoWire_endTransmission
+                0x0000000000000392       0x20 build/default/debug/CWire.o
+                0x0000000000000392                TwoWire_endTransmission
  .text.TwoWire_write
-                0x0000000000000382       0x2e build/default/debug/CWire.o
-                0x0000000000000382                TwoWire_write
+                0x00000000000003b2       0x28 build/default/debug/CWire.o
+                0x00000000000003b2                TwoWire_write
  .text.pauseDeepSleep
-                0x00000000000003b0       0x18 build/default/debug/CWire.o
-                0x00000000000003b0                pauseDeepSleep
+                0x00000000000003da       0x18 build/default/debug/CWire.o
+                0x00000000000003da                pauseDeepSleep
  .text.restoreSleep
-                0x00000000000003c8        0xe build/default/debug/CWire.o
-                0x00000000000003c8                restoreSleep
+                0x00000000000003f2        0xe build/default/debug/CWire.o
+                0x00000000000003f2                restoreSleep
  .text.TwoWire_HandleSlaveIRQ
-                0x00000000000003d6      0x194 build/default/debug/CWire.o
-                0x00000000000003d6                TwoWire_HandleSlaveIRQ
+                0x0000000000000400      0x166 build/default/debug/CWire.o
+                0x0000000000000400                TwoWire_HandleSlaveIRQ
  .text.__vector_14
-                0x000000000000056a       0x50 build/default/debug/CWire.o
-                0x000000000000056a                __vector_14
+                0x0000000000000566       0x50 build/default/debug/CWire.o
+                0x0000000000000566                __vector_14
  .text.libgcc.div
-                0x00000000000005ba       0x44 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
-                0x00000000000005ba                __udivmodsi4
-                0x00000000000005fe                . = ALIGN (0x2)
+                0x00000000000005b6       0x44 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x00000000000005b6                __udivmodsi4
+                0x00000000000005fa                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000005fe        0x0 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
-                0x00000000000005fe                _exit
-                0x00000000000005fe                exit
+ .fini9         0x00000000000005fa        0x0 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+                0x00000000000005fa                _exit
+                0x00000000000005fa                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -423,16 +417,16 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000005fe        0x4 c:/electronics/toolchains/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
+ .fini0         0x00000000000005fa        0x4 d:/toolchains/avr/gcc/bin/../lib/gcc/avr/7.3.0/avrxmega3\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000602                _etext = .
+                0x00000000000005fe                _etext = .
 
 .rodata
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
 
-.data           0x0000000000803800        0x0 load address 0x0000000000000602
+.data           0x0000000000803800        0x0 load address 0x00000000000005fe
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -441,7 +435,7 @@ END GROUP
                 0x0000000000803800                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000803800       0x56
+.bss            0x0000000000803800       0x53
                 0x0000000000803800                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -449,19 +443,19 @@ END GROUP
                 0x0000000000803800        0x1 build/default/debug/CWire.o
                 0x0000000000803800                sleepStack
  *(COMMON)
- COMMON         0x0000000000803801       0x53 build/default/debug/host.o
+ COMMON         0x0000000000803801       0x50 build/default/debug/host.o
                 0x0000000000803801                twi0
- COMMON         0x0000000000803854        0x2 build/default/debug/CWire.o
-                0x0000000000803854                twi0_wire
-                0x0000000000803856                PROVIDE (__bss_end, .)
-                0x0000000000000602                __data_load_start = LOADADDR (.data)
-                0x0000000000000602                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0000000000803851        0x2 build/default/debug/CWire.o
+                0x0000000000803851                twi0_wire
+                0x0000000000803853                PROVIDE (__bss_end, .)
+                0x00000000000005fe                __data_load_start = LOADADDR (.data)
+                0x00000000000005fe                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000803856        0x0
+.noinit         0x0000000000803853        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000803856                _end = .
+                0x0000000000803853                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
@@ -528,24 +522,24 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x1a8
+.debug_aranges  0x0000000000000000      0x190
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x48 build/default/debug/twi_pins.o
  .debug_aranges
                 0x0000000000000048       0x38 build/default/debug/host.o
  .debug_aranges
-                0x0000000000000080      0x128 build/default/debug/CWire.o
+                0x0000000000000080      0x110 build/default/debug/CWire.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x3949
+.debug_info     0x0000000000000000     0x386e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x1b97 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
  .debug_info    0x0000000000001b97      0x497 build/default/debug/twi_pins.o
- .debug_info    0x000000000000202e      0x8ac build/default/debug/host.o
- .debug_info    0x00000000000028da     0x106f build/default/debug/CWire.o
+ .debug_info    0x000000000000202e      0x8a1 build/default/debug/host.o
+ .debug_info    0x00000000000028cf      0xf9f build/default/debug/CWire.o
 
 .debug_abbrev   0x0000000000000000     0x2111
  *(.debug_abbrev)
@@ -554,34 +548,34 @@ END GROUP
  .debug_abbrev  0x0000000000001b90      0x276 build/default/debug/host.o
  .debug_abbrev  0x0000000000001e06      0x30b build/default/debug/CWire.o
 
-.debug_line     0x0000000000000000      0xf8a
+.debug_line     0x0000000000000000      0xed5
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x14b C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
- .debug_line    0x000000000000014b      0x1c3 build/default/debug/twi_pins.o
- .debug_line    0x000000000000030e      0x2b0 build/default/debug/host.o
- .debug_line    0x00000000000005be      0x9cc build/default/debug/CWire.o
+ .debug_line    0x000000000000014b      0x19f build/default/debug/twi_pins.o
+ .debug_line    0x00000000000002ea      0x244 build/default/debug/host.o
+ .debug_line    0x000000000000052e      0x9a7 build/default/debug/CWire.o
 
-.debug_frame    0x0000000000000000      0x44c
+.debug_frame    0x0000000000000000      0x3f8
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x74 build/default/debug/twi_pins.o
  .debug_frame   0x0000000000000074       0x5c build/default/debug/host.o
- .debug_frame   0x00000000000000d0      0x37c build/default/debug/CWire.o
+ .debug_frame   0x00000000000000d0      0x328 build/default/debug/CWire.o
 
-.debug_str      0x0000000000000000     0x1561
+.debug_str      0x0000000000000000     0x154c
  *(.debug_str)
  .debug_str     0x0000000000000000      0xbdd C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/gcc/dev/attiny1627/avrxmega3/crtattiny1627.o
- .debug_str     0x0000000000000bdd      0x2df build/default/debug/twi_pins.o
-                                        0x32c (size before relaxing)
- .debug_str     0x0000000000000ebc      0x236 build/default/debug/host.o
-                                        0x4cd (size before relaxing)
- .debug_str     0x00000000000010f2      0x46f build/default/debug/CWire.o
-                                        0x85f (size before relaxing)
+ .debug_str     0x0000000000000bdd      0x2da build/default/debug/twi_pins.o
+                                        0x327 (size before relaxing)
+ .debug_str     0x0000000000000eb7      0x23d build/default/debug/host.o
+                                        0x4cf (size before relaxing)
+ .debug_str     0x00000000000010f4      0x458 build/default/debug/CWire.o
+                                        0x84a (size before relaxing)
 
-.debug_loc      0x0000000000000000     0x17f5
+.debug_loc      0x0000000000000000     0x19a5
  *(.debug_loc)
  .debug_loc     0x0000000000000000       0x7c build/default/debug/twi_pins.o
  .debug_loc     0x000000000000007c      0x156 build/default/debug/host.o
- .debug_loc     0x00000000000001d2     0x1623 build/default/debug/CWire.o
+ .debug_loc     0x00000000000001d2     0x17d3 build/default/debug/CWire.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -601,11 +595,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x1c8
+.debug_ranges   0x0000000000000000      0x1b0
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x38 build/default/debug/twi_pins.o
  .debug_ranges  0x0000000000000038       0x28 build/default/debug/host.o
- .debug_ranges  0x0000000000000060      0x168 build/default/debug/CWire.o
+ .debug_ranges  0x0000000000000060      0x150 build/default/debug/CWire.o
 
 .debug_macro
  *(.debug_macro)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/Wire_Port_Client.X.production.elf">                 
+  <executable name="dist/default/debug/Wire_Port_Client2.X.debug.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
       <length>16384</length>                 
-      <used>1102</used>                     
-      <free>15282</free>                     
+      <used>1030</used>                     
+      <free>15354</free>                     
     </memory>                              
     <memory name="data">                 
       <units>bytes</units>                 

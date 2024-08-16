@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     setupPins();
     
     TwoWire_init(&twi0, &TWI0);
-    TwoWire_Slave_begin(&twi0, 0x30, 0, 0);
+    TwoWire_Slave_begin(&twi0, 0x40, 0, 0);
     
     TwoWire_onReceive(&twi0, onReceive);
     TwoWire_onRequest(&twi0, onRequest);
@@ -55,5 +55,5 @@ void onReceive(u8 numBytes) {
 }
 
 void onRequest(void) {
-    TwoWire_write(&twi0, GREEN);
+    TwoWire_write(&twi0, BLUE);
 }

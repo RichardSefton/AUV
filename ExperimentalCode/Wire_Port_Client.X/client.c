@@ -1,10 +1,9 @@
 #define F_CPU 3333333UL
 
-#include <stdio.h>
+#include <avr/io.h>
 #include <stdlib.h>
 #include "CWire.h"
 #include "ShortTypes.h"
-#include <util/delay.h>
 #include <avr/interrupt.h>
 
 #define MEGATINYCORE

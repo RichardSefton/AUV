@@ -7,7 +7,9 @@
             <creation-uuid>44632057-458d-4cbb-9517-6233b3a8b2b3</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../CWire.X</make-dep-project>
+            </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem/>
             </sourceRootList>

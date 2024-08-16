@@ -1,65 +1,60 @@
 build/default/debug/host.o.d build/default/debug/host.o: host.c \
- d:\toolchains\avr\gcc\avr\include\stdio.h \
- d:\toolchains\avr\gcc\avr\include\inttypes.h \
- d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdint.h \
- d:\toolchains\avr\gcc\avr\include\stdint.h \
- d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdarg.h \
- d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stddef.h \
- d:\toolchains\avr\gcc\avr\include\stdlib.h CWire.h \
- d:\toolchains\avr\gcc\avr\include\avr\io.h \
- d:\toolchains\avr\gcc\avr\include\avr\sfr_defs.h \
- C:/Program\ Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/include/avr/iotn1627.h \
- d:\toolchains\avr\gcc\avr\include\avr\portpins.h \
- d:\toolchains\avr\gcc\avr\include\avr\common.h \
- d:\toolchains\avr\gcc\avr\include\avr\version.h \
- d:\toolchains\avr\gcc\avr\include\avr\xmega.h \
- d:\toolchains\avr\gcc\avr\include\avr\fuse.h \
- d:\toolchains\avr\gcc\avr\include\avr\lock.h ShortTypes.h \
- d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdbool.h \
- d:\toolchains\avr\gcc\avr\include\util\delay.h \
- d:\toolchains\avr\gcc\avr\include\util\delay_basic.h \
- d:\toolchains\avr\gcc\avr\include\math.h
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\sfr_defs.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\inttypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\features.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdint.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\stdint.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\bits\alltypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\bits\stdint.h \
+ C:/Program\ Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/include/avr/iotn1627.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\portpins.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\common.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\xmega.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\fuse.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\stdlib.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h \
+ ShortTypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../CWire.X/CWire.h ../CWire.X/ShortTypes.h
 
-d:\toolchains\avr\gcc\avr\include\stdio.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h:
 
-d:\toolchains\avr\gcc\avr\include\inttypes.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\sfr_defs.h:
 
-d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdint.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\inttypes.h:
 
-d:\toolchains\avr\gcc\avr\include\stdint.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\features.h:
 
-d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdarg.h:
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdint.h:
 
-d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stddef.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\stdint.h:
 
-d:\toolchains\avr\gcc\avr\include\stdlib.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\bits\alltypes.h:
 
-CWire.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\bits\stdint.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\io.h:
+C:/Program\ Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/include/avr/iotn1627.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\sfr_defs.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\portpins.h:
 
-C:/Program\ Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/include/avr/iotn1627.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\common.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\portpins.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\xmega.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\common.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\fuse.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\version.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\lock.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\xmega.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\stdlib.h:
 
-d:\toolchains\avr\gcc\avr\include\avr\fuse.h:
-
-d:\toolchains\avr\gcc\avr\include\avr\lock.h:
+c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h:
 
 ShortTypes.h:
 
-d:\toolchains\avr\gcc\lib\gcc\avr\7.3.0\include\stdbool.h:
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
-d:\toolchains\avr\gcc\avr\include\util\delay.h:
+../CWire.X/CWire.h:
 
-d:\toolchains\avr\gcc\avr\include\util\delay_basic.h:
-
-d:\toolchains\avr\gcc\avr\include\math.h:
+../CWire.X/ShortTypes.h:

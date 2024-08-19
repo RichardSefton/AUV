@@ -17,7 +17,10 @@ build/default/debug/SonarModule.o.d build/default/debug/SonarModule.o: \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h \
+ ../CWire.X/ShortTypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../CWire.X/CWire.h ../CWire.X/ShortTypes.h
 
 c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdint.h:
 
@@ -54,3 +57,11 @@ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h:
+
+../CWire.X/ShortTypes.h:
+
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+../CWire.X/CWire.h:
+
+../CWire.X/ShortTypes.h:

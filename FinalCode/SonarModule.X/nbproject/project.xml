@@ -3,12 +3,14 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>SonarModule</name>
+            <name>Sonar_Lower</name>
             <creation-uuid>8d2dc091-4d69-43ef-8af0-a701ab14be43</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects>
-                <make-dep-project>../TWI.X</make-dep-project>
+                <make-dep-project>../Common.X</make-dep-project>
+                <make-dep-project>../CWire.X</make-dep-project>
+                <make-dep-project>../Sonar.X</make-dep-project>
             </make-dep-projects>
             <sourceRootList/>
             <confList>

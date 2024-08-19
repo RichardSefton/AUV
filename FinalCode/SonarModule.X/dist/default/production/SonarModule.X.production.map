@@ -1,15 +1,21 @@
 Archive member included to satisfy reference by file (symbol)
 
-..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                              build/default/production/SonarModule.o (TWI_Slave_Init)
+..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                              build/default/production/SonarModule.o (TwoWire_init)
+..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+                              ..\CWire.X\dist\default\production\CWire.X.a(CWire.o) (TWI0_ClearPins)
+..\Common.X\dist\default\production\Common.X.a(Common.o)
+                              build/default/production/SonarModule.o (setupRGB)
+..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                              build/default/production/SonarModule.o (Sonar_init)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
-                              build/default/production/SonarModule.o (__divsf3)
+                              ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o) (__divsf3)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o)
                               c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o) (__divsf3x)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fixunssfsi.o)
-                              build/default/production/SonarModule.o (__fixunssfsi)
+                              ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o) (__fixunssfsi)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(floatsisf.o)
-                              build/default/production/SonarModule.o (__floatunsisf)
+                              ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o) (__floatunsisf)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_inf.o)
                               c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o) (__fp_inf)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_nan.o)
@@ -25,9 +31,11 @@ c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../av
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_zero.o)
                               c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fixunssfsi.o) (__fp_zero)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3.o)
-                              build/default/production/SonarModule.o (__mulsf3)
+                              ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o) (__mulsf3)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3x.o)
                               c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3.o) (__mulsf3x)
+c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                              ..\CWire.X\dist\default\production\CWire.X.a(CWire.o) (__udivmodsi4)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
                               build/default/production/SonarModule.o (__do_clear_bss)
 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
@@ -44,27 +52,68 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/SonarModule.o
  .data          0x0000000000000000        0x0 build/default/production/SonarModule.o
  .bss           0x0000000000000000        0x0 build/default/production/SonarModule.o
- .text          0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .data          0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .bss           0x0000000000000000        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Init
-                0x0000000000000000       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Reset
-                0x0000000000000000       0x18 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Start
-                0x0000000000000000       0x14 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Write
-                0x0000000000000000       0x24 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Read_ACK
-                0x0000000000000000       0x14 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Read_NACK
-                0x0000000000000000       0x1e ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Master_Stop
-                0x0000000000000000        0x8 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Slave_Read
-                0x0000000000000000       0x10 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
- .text.TWI_Slave_Read_ACK
-                0x0000000000000000       0x14 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .text          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .data          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .bss           0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.MasterCalcBaud
+                0x0000000000000000       0x96 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_pins
+                0x0000000000000000        0xa ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_usePullups
+                0x0000000000000000        0x6 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_setClock
+                0x0000000000000000       0x8a ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_Master_begin
+                0x0000000000000000       0x30 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_endMaster
+                0x0000000000000000       0x26 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_beginTransmission
+                0x0000000000000000       0x1c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_masterTransmit
+                0x0000000000000000       0xc8 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_endTransmission
+                0x0000000000000000       0x20 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_masterReceive
+                0x0000000000000000       0xaa ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_requestFrom
+                0x0000000000000000       0x32 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_endSlave
+                0x0000000000000000       0x2e ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_getIncomingAddress
+                0x0000000000000000        0xa ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_getBytesRead
+                0x0000000000000000        0xc ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_slaveTransactionOpen
+                0x0000000000000000       0x1c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_checkPinLevels
+                0x0000000000000000        0x6 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_writeBytes
+                0x0000000000000000       0x50 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_peek
+                0x0000000000000000       0x28 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_end
+                0x0000000000000000       0x16 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text.TwoWire_flush
+                0x0000000000000000        0xe ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .text          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .data          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .bss           0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text.TWI0_Pins
+                0x0000000000000000       0x14 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text.TWI0_swap
+                0x0000000000000000        0xa ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text.TWI0_usePullups
+                0x0000000000000000       0x16 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text.TWI0_checkPinLevel
+                0x0000000000000000        0x6 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text.TWI0_setConfig
+                0x0000000000000000       0x14 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .text          0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .data          0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .bss           0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .text          0x0000000000000000        0x0 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+ .data          0x0000000000000000        0x0 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+ .bss           0x0000000000000000        0x0 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
  .stack.descriptors
@@ -117,6 +166,26 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3x.o)
  .stack.descriptors
                 0x0000000000000000       0x31 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3x.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x0000000000000000       0x44 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .stack.descriptors
+                0x0000000000000000       0x1a c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_copy_data.o)
@@ -182,7 +251,9 @@ Address of section .data set to 0x803800
 LOAD C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
 LOAD build/default/production/SonarModule.o
-LOAD ..\TWI.X\dist\default\production\TWI.X.a
+LOAD ..\CWire.X\dist\default\production\CWire.X.a
+LOAD ..\Common.X\dist\default\production\Common.X.a
+LOAD ..\Sonar.X\dist\default\production\Sonar.X.a
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a
 END GROUP
@@ -442,7 +513,10 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f build/default/production/SonarModule.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .comment       0x000000000000002f       0x30 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .comment       0x000000000000002f       0x30 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .comment       0x000000000000002f       0x30 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .comment       0x000000000000002f       0x30 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
  .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
                                          0x2d (size before relaxing)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
@@ -530,49 +604,72 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xf0
+.debug_aranges  0x0000000000000000      0x218
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x70 build/default/production/SonarModule.o
+                0x0000000000000000       0x40 build/default/production/SonarModule.o
  .debug_aranges
-                0x0000000000000070       0x80 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+                0x0000000000000040      0x110 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_aranges
+                0x0000000000000150       0x48 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_aranges
+                0x0000000000000198       0x28 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_aranges
+                0x00000000000001c0       0x58 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x369f
+.debug_info     0x0000000000000000     0x57d9
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x1b97 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_info    0x0000000000001b97     0x1262 build/default/production/SonarModule.o
- .debug_info    0x0000000000002df9      0x8a6 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_info    0x0000000000001b97      0xce8 build/default/production/SonarModule.o
+ .debug_info    0x000000000000287f     0x150e ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_info    0x0000000000003d8d      0x6c2 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_info    0x000000000000444f      0x461 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_info    0x00000000000048b0      0xf29 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
-.debug_abbrev   0x0000000000000000     0x1e12
+.debug_abbrev   0x0000000000000000     0x22fc
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000     0x1a20 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_abbrev  0x0000000000001a20      0x267 build/default/production/SonarModule.o
- .debug_abbrev  0x0000000000001c87      0x18b ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_abbrev  0x0000000000001a20      0x1c4 build/default/production/SonarModule.o
+ .debug_abbrev  0x0000000000001be4      0x2ca ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_abbrev  0x0000000000001eae      0x155 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_abbrev  0x0000000000002003       0xc9 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_abbrev  0x00000000000020cc      0x230 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
-.debug_line     0x0000000000000000      0x783
+.debug_line     0x0000000000000000     0x11be
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x14b C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_line    0x000000000000014b      0x2b4 build/default/production/SonarModule.o
- .debug_line    0x00000000000003ff      0x384 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_line    0x000000000000014b      0x203 build/default/production/SonarModule.o
+ .debug_line    0x000000000000034e      0x908 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_line    0x0000000000000c56      0x1b7 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_line    0x0000000000000e0d      0x11b ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_line    0x0000000000000f28      0x296 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
-.debug_frame    0x0000000000000000      0x1f0
+.debug_frame    0x0000000000000000      0x4ec
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xc4 build/default/production/SonarModule.o
- .debug_frame   0x00000000000000c4      0x12c ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_frame   0x0000000000000000       0x64 build/default/production/SonarModule.o
+ .debug_frame   0x0000000000000064      0x318 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_frame   0x000000000000037c       0x74 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_frame   0x00000000000003f0       0x34 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_frame   0x0000000000000424       0xc8 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
-.debug_str      0x0000000000000000      0xc3e
+.debug_str      0x0000000000000000      0xd97
  *(.debug_str)
  .debug_str     0x0000000000000000      0xbdd C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_str     0x0000000000000bdd       0x61 build/default/production/SonarModule.o
- .debug_str     0x0000000000000c3e        0x0 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_str     0x0000000000000bdd       0xaa build/default/production/SonarModule.o
+ .debug_str     0x0000000000000c87       0x9f ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_str     0x0000000000000d26       0x1f ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_str     0x0000000000000d45        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_str     0x0000000000000d45       0x52 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
-.debug_loc      0x0000000000000000      0x1ab
+.debug_loc      0x0000000000000000     0x1415
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0xc6 build/default/production/SonarModule.o
- .debug_loc     0x00000000000000c6       0xe5 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_loc     0x0000000000000000       0x34 build/default/production/SonarModule.o
+ .debug_loc     0x0000000000000034     0x116c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_loc     0x00000000000011a0       0xbb ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_loc     0x000000000000125b      0x1ba ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -592,10 +689,13 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xd0
+.debug_ranges   0x0000000000000000      0x1f8
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x60 build/default/production/SonarModule.o
- .debug_ranges  0x0000000000000060       0x70 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+ .debug_ranges  0x0000000000000000       0x30 build/default/production/SonarModule.o
+ .debug_ranges  0x0000000000000030      0x130 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_ranges  0x0000000000000160       0x38 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_ranges  0x0000000000000198       0x18 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_ranges  0x00000000000001b0       0x48 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
 
 .debug_macro
  *(.debug_macro)
@@ -608,216 +708,291 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
 
-.bss.distance   0x0000000000803800        0x4
- .bss.distance  0x0000000000803800        0x4 build/default/production/SonarModule.o
-                0x0000000000803800                distance
+.bss.sonar      0x0000000000803850       0x12
+ .bss.sonar     0x0000000000803850       0x12 build/default/production/SonarModule.o
+                0x0000000000803850                sonar
 
-.bss.transmit_callback
-                0x0000000000803804        0x2
- .bss.transmit_callback
-                0x0000000000803804        0x2 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+.bss.twi0       0x0000000000803800       0x50
+ .bss.twi0      0x0000000000803800       0x50 build/default/production/SonarModule.o
+                0x0000000000803800                twi0
 
-.bss.receive_callback
-                0x0000000000803806        0x2
- .bss.receive_callback
-                0x0000000000803806        0x2 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
+.bss.twi0_wire  0x0000000000803862        0x2
+ .bss.twi0_wire
+                0x0000000000803862        0x2 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000803862                twi0_wire
 
-.text           0x00000000000000d2       0xde
- .text          0x00000000000000d2       0xde c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o)
-                0x00000000000000d2                __divsf3x
-                0x00000000000000fa                __divsf3_pse
+.bss.sleepStack
+                0x0000000000803864        0x1
+ .bss.sleepStack
+                0x0000000000803864        0x1 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000803864                sleepStack
 
-.text           0x00000000000001b0       0xd4
- .text          0x00000000000001b0       0xd4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3x.o)
-                0x00000000000001b0                __mulsf3x
-                0x00000000000001d6                __mulsf3_pse
+.text.TwoWire_HandleSlaveIRQ
+                0x00000000000000d2      0x164
+ .text.TwoWire_HandleSlaveIRQ
+                0x00000000000000d2      0x164 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000000d2                TwoWire_HandleSlaveIRQ
+
+.text           0x0000000000000236       0xde
+ .text          0x0000000000000236       0xde c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3x.o)
+                0x0000000000000236                __divsf3x
+                0x000000000000025e                __divsf3_pse
+
+.text           0x0000000000000314       0xd4
+ .text          0x0000000000000314       0xd4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3x.o)
+                0x0000000000000314                __mulsf3x
+                0x000000000000033a                __mulsf3_pse
+
+.text           0x00000000000003e8       0x7a
+ .text          0x00000000000003e8       0x7a c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(floatsisf.o)
+                0x00000000000003e8                __floatunsisf
+                0x00000000000003ec                __floatsisf
+
+.text.Sonar_calculateDistance
+                0x0000000000000462       0x5e
+ .text.Sonar_calculateDistance
+                0x0000000000000462       0x5e ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x0000000000000462                Sonar_calculateDistance
+
+.text           0x00000000000004c0       0x5e
+ .text          0x00000000000004c0       0x5e c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fixunssfsi.o)
+                0x00000000000004c0                __fixunssfsi
+
+.text.TwoWire_Slave_begin
+                0x000000000000051e       0x58
+ .text.TwoWire_Slave_begin
+                0x000000000000051e       0x58 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x000000000000051e                TwoWire_Slave_begin
 
 .text.__vector_14
-                0x0000000000000284       0x9a
+                0x0000000000000576       0x50
  .text.__vector_14
-                0x0000000000000284       0x9a ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x0000000000000284                __vector_14
+                0x0000000000000576       0x50 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000576                __vector_14
 
-.text           0x000000000000031e       0x7a
- .text          0x000000000000031e       0x7a c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(floatsisf.o)
-                0x000000000000031e                __floatunsisf
-                0x0000000000000322                __floatsisf
+.text.Sonar_trigger
+                0x00000000000005c6       0x4e
+ .text.Sonar_trigger
+                0x00000000000005c6       0x4e ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x00000000000005c6                Sonar_trigger
 
-.text           0x0000000000000398       0x5e
- .text          0x0000000000000398       0x5e c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fixunssfsi.o)
-                0x0000000000000398                __fixunssfsi
+.text.main      0x0000000000000614       0x46
+ .text.main     0x0000000000000614       0x46 build/default/production/SonarModule.o
+                0x0000000000000614                main
 
-.text.I2C_TX_Callback
-                0x00000000000003f6       0x4c
- .text.I2C_TX_Callback
-                0x00000000000003f6       0x4c build/default/production/SonarModule.o
-                0x00000000000003f6                I2C_TX_Callback
+.text           0x000000000000065a       0x44
+ .text          0x000000000000065a       0x44 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_split3.o)
+                0x000000000000065a                __fp_split3
+                0x000000000000066a                __fp_splitA
 
-.text           0x0000000000000442       0x44
- .text          0x0000000000000442       0x44 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_split3.o)
-                0x0000000000000442                __fp_split3
-                0x0000000000000452                __fp_splitA
+.text.Sonar_init
+                0x000000000000069e       0x3c
+ .text.Sonar_init
+                0x000000000000069e       0x3c ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x000000000000069e                Sonar_init
 
-.text.calcDistance
-                0x0000000000000486       0x36
- .text.calcDistance
-                0x0000000000000486       0x36 build/default/production/SonarModule.o
-                0x0000000000000486                calcDistance
-
-.text.TWI_Slave_Init
-                0x00000000000004bc       0x22
- .text.TWI_Slave_Init
-                0x00000000000004bc       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x00000000000004bc                TWI_Slave_Init
-
-.text.TWI_Slave_Write
-                0x00000000000004de       0x22
- .text.TWI_Slave_Write
-                0x00000000000004de       0x22 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x00000000000004de                TWI_Slave_Write
-
-.text           0x0000000000000500       0x22
- .text          0x0000000000000500       0x22 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_round.o)
-                0x0000000000000500                __fp_round
-
-.text.setupPins
-                0x0000000000000522       0x1e
- .text.setupPins
-                0x0000000000000522       0x1e build/default/production/SonarModule.o
-                0x0000000000000522                setupPins
-
-.text.triggerSonar
-                0x0000000000000540       0x1a
- .text.triggerSonar
-                0x0000000000000540       0x1a build/default/production/SonarModule.o
-                0x0000000000000540                triggerSonar
-
-.text.mainClkCtrl
-                0x000000000000055a       0x18
- .text.mainClkCtrl
-                0x000000000000055a       0x18 build/default/production/SonarModule.o
-                0x000000000000055a                mainClkCtrl
-
-.text.main      0x0000000000000572       0x18
- .text.main     0x0000000000000572       0x18 build/default/production/SonarModule.o
-                0x0000000000000572                main
-
-.text.setupTCA  0x000000000000058a       0x16
- .text.setupTCA
-                0x000000000000058a       0x16 build/default/production/SonarModule.o
-                0x000000000000058a                setupTCA
-
-.text.TWI_Slave_Read_NACK
-                0x00000000000005a0       0x16
- .text.TWI_Slave_Read_NACK
-                0x00000000000005a0       0x16 ..\TWI.X\dist\default\production\TWI.X.a(TWI.o)
-                0x00000000000005a0                TWI_Slave_Read_NACK
-
-.text.exit      0x00000000000005b6       0x16
- .text.exit     0x00000000000005b6       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x00000000000005b6                exit
-
-.text.enableTCA
-                0x00000000000005cc       0x10
- .text.enableTCA
-                0x00000000000005cc       0x10 build/default/production/SonarModule.o
-                0x00000000000005cc                enableTCA
-
-.text.setup     0x00000000000005dc        0xe
- .text.setup    0x00000000000005dc        0xe build/default/production/SonarModule.o
-                0x00000000000005dc                setup
-
-.text           0x00000000000005ea        0xe
- .text          0x00000000000005ea        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscA.o)
-                0x00000000000005ea                __fp_pscA
-
-.text           0x00000000000005f8        0xe
- .text          0x00000000000005f8        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscB.o)
-                0x00000000000005f8                __fp_pscB
-
-.text           0x0000000000000606        0xe
- .text          0x0000000000000606        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_zero.o)
-                0x0000000000000606                __fp_zero
-                0x0000000000000608                __fp_szero
-
-.text.disableTCA
-                0x0000000000000614        0xc
- .text.disableTCA
-                0x0000000000000614        0xc build/default/production/SonarModule.o
-                0x0000000000000614                disableTCA
-
-.text           0x0000000000000620        0xc
- .text          0x0000000000000620        0xc c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_inf.o)
-                0x0000000000000620                __fp_inf
-
-.text           0x000000000000062c        0x8
- .text          0x000000000000062c        0x8 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
-                0x000000000000062c                __divsf3
-
-.text           0x0000000000000634        0x8
- .text          0x0000000000000634        0x8 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3.o)
-                0x0000000000000634                __mulsf3
-
-.text           0x000000000000063c        0x6
- .text          0x000000000000063c        0x6 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_nan.o)
-                0x000000000000063c                __fp_nan
-
-.text           0x0000000000000642        0x4
- .text          0x0000000000000642        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
-                0x0000000000000642                __vector_22
-                0x0000000000000642                __vector_28
-                0x0000000000000642                __vector_1
-                0x0000000000000642                __vector_24
-                0x0000000000000642                __vector_12
-                0x0000000000000642                __bad_interrupt
-                0x0000000000000642                __vector_6
-                0x0000000000000642                __vector_3
-                0x0000000000000642                __vector_23
-                0x0000000000000642                __vector_25
-                0x0000000000000642                __vector_11
-                0x0000000000000642                __vector_13
-                0x0000000000000642                __vector_17
-                0x0000000000000642                __vector_19
-                0x0000000000000642                __vector_7
-                0x0000000000000642                __vector_27
-                0x0000000000000642                __vector_5
-                0x0000000000000642                __vector_4
-                0x0000000000000642                __vector_9
-                0x0000000000000642                __vector_2
-                0x0000000000000642                __vector_21
-                0x0000000000000642                __vector_15
-                0x0000000000000642                __vector_29
-                0x0000000000000642                __vector_8
-                0x0000000000000642                __vector_26
-                0x0000000000000642                __vector_10
-                0x0000000000000642                __vector_16
-                0x0000000000000642                __vector_18
-                0x0000000000000642                __vector_20
-
-.text._Exit     0x0000000000000646        0x4
- .text._Exit    0x0000000000000646        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
-                0x0000000000000646                _Exit
+.text.TwoWire_read
+                0x00000000000006da       0x34
+ .text.TwoWire_read
+                0x00000000000006da       0x34 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000006da                TwoWire_read
 
 .text.I2C_RX_Callback
-                0x000000000000064a        0x2
+                0x000000000000070e       0x2e
  .text.I2C_RX_Callback
-                0x000000000000064a        0x2 build/default/production/SonarModule.o
-                0x000000000000064a                I2C_RX_Callback
+                0x000000000000070e       0x2e build/default/production/SonarModule.o
+                0x000000000000070e                I2C_RX_Callback
+
+.text.TwoWire_write
+                0x000000000000073c       0x28
+ .text.TwoWire_write
+                0x000000000000073c       0x28 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x000000000000073c                TwoWire_write
+
+.text           0x0000000000000764       0x22
+ .text          0x0000000000000764       0x22 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_round.o)
+                0x0000000000000764                __fp_round
+
+.text.Sonar_setupSonar
+                0x0000000000000786       0x1e
+ .text.Sonar_setupSonar
+                0x0000000000000786       0x1e ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x0000000000000786                Sonar_setupSonar
+
+.text.Sonar_convertDistances
+                0x00000000000007a4       0x1e
+ .text.Sonar_convertDistances
+                0x00000000000007a4       0x1e ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x00000000000007a4                Sonar_convertDistances
+
+.text.mainClkCtrl
+                0x00000000000007c2       0x18
+ .text.mainClkCtrl
+                0x00000000000007c2       0x18 build/default/production/SonarModule.o
+                0x00000000000007c2                mainClkCtrl
+
+.text.TwoWire_available
+                0x00000000000007da       0x18
+ .text.TwoWire_available
+                0x00000000000007da       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000007da                TwoWire_available
+
+.text.pauseDeepSleep
+                0x00000000000007f2       0x18
+ .text.pauseDeepSleep
+                0x00000000000007f2       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000007f2                pauseDeepSleep
+
+.text.Sonar_setupTCA
+                0x000000000000080a       0x16
+ .text.Sonar_setupTCA
+                0x000000000000080a       0x16 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x000000000000080a                Sonar_setupTCA
+
+.text.exit      0x0000000000000820       0x16
+ .text.exit     0x0000000000000820       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000820                exit
+
+.text.I2C_TX_Callback
+                0x0000000000000836       0x14
+ .text.I2C_TX_Callback
+                0x0000000000000836       0x14 build/default/production/SonarModule.o
+                0x0000000000000836                I2C_TX_Callback
+
+.text.setup     0x000000000000084a       0x14
+ .text.setup    0x000000000000084a       0x14 build/default/production/SonarModule.o
+                0x000000000000084a                setup
+
+.text.setupRGB  0x000000000000085e       0x12
+ .text.setupRGB
+                0x000000000000085e       0x12 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+                0x000000000000085e                setupRGB
+
+.text.TwoWire_init
+                0x0000000000000870       0x10
+ .text.TwoWire_init
+                0x0000000000000870       0x10 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000870                TwoWire_init
+
+.text.Sonar_enableTCA
+                0x0000000000000880       0x10
+ .text.Sonar_enableTCA
+                0x0000000000000880       0x10 ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x0000000000000880                Sonar_enableTCA
+
+.text.restoreSleep
+                0x0000000000000890        0xe
+ .text.restoreSleep
+                0x0000000000000890        0xe ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000890                restoreSleep
+
+.text           0x000000000000089e        0xe
+ .text          0x000000000000089e        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscA.o)
+                0x000000000000089e                __fp_pscA
+
+.text           0x00000000000008ac        0xe
+ .text          0x00000000000008ac        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_pscB.o)
+                0x00000000000008ac                __fp_pscB
+
+.text           0x00000000000008ba        0xe
+ .text          0x00000000000008ba        0xe c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_zero.o)
+                0x00000000000008ba                __fp_zero
+                0x00000000000008bc                __fp_szero
+
+.text.TwoWire_onReceive
+                0x00000000000008c8        0xc
+ .text.TwoWire_onReceive
+                0x00000000000008c8        0xc ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000008c8                TwoWire_onReceive
+
+.text.TwoWire_onRequest
+                0x00000000000008d4        0xc
+ .text.TwoWire_onRequest
+                0x00000000000008d4        0xc ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000008d4                TwoWire_onRequest
+
+.text.RGB       0x00000000000008e0        0xc
+ .text.RGB      0x00000000000008e0        0xc ..\Common.X\dist\default\production\Common.X.a(Common.o)
+                0x00000000000008e0                RGB
+
+.text.Sonar_disableTCA
+                0x00000000000008ec        0xc
+ .text.Sonar_disableTCA
+                0x00000000000008ec        0xc ..\Sonar.X\dist\default\production\Sonar.X.a(Sonar.o)
+                0x00000000000008ec                Sonar_disableTCA
+
+.text           0x00000000000008f8        0xc
+ .text          0x00000000000008f8        0xc c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_inf.o)
+                0x00000000000008f8                __fp_inf
+
+.text.TWI0_ClearPins
+                0x0000000000000904        0x8
+ .text.TWI0_ClearPins
+                0x0000000000000904        0x8 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+                0x0000000000000904                TWI0_ClearPins
+
+.text           0x000000000000090c        0x8
+ .text          0x000000000000090c        0x8 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(divsf3.o)
+                0x000000000000090c                __divsf3
+
+.text           0x0000000000000914        0x8
+ .text          0x0000000000000914        0x8 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(mulsf3.o)
+                0x0000000000000914                __mulsf3
+
+.text           0x000000000000091c        0x6
+ .text          0x000000000000091c        0x6 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libm.a(fp_nan.o)
+                0x000000000000091c                __fp_nan
+
+.text           0x0000000000000922        0x4
+ .text          0x0000000000000922        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
+                0x0000000000000922                __vector_22
+                0x0000000000000922                __vector_28
+                0x0000000000000922                __vector_1
+                0x0000000000000922                __vector_24
+                0x0000000000000922                __vector_12
+                0x0000000000000922                __bad_interrupt
+                0x0000000000000922                __vector_6
+                0x0000000000000922                __vector_3
+                0x0000000000000922                __vector_23
+                0x0000000000000922                __vector_25
+                0x0000000000000922                __vector_11
+                0x0000000000000922                __vector_13
+                0x0000000000000922                __vector_17
+                0x0000000000000922                __vector_19
+                0x0000000000000922                __vector_7
+                0x0000000000000922                __vector_27
+                0x0000000000000922                __vector_5
+                0x0000000000000922                __vector_4
+                0x0000000000000922                __vector_9
+                0x0000000000000922                __vector_2
+                0x0000000000000922                __vector_21
+                0x0000000000000922                __vector_15
+                0x0000000000000922                __vector_29
+                0x0000000000000922                __vector_8
+                0x0000000000000922                __vector_26
+                0x0000000000000922                __vector_10
+                0x0000000000000922                __vector_16
+                0x0000000000000922                __vector_18
+                0x0000000000000922                __vector_20
+
+.text._Exit     0x0000000000000926        0x4
+ .text._Exit    0x0000000000000926        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
+                0x0000000000000926                _Exit
 
 .text.__dummy_fini
-                0x000000000000064c        0x2
+                0x000000000000092a        0x2
  .text.__dummy_fini
-                0x000000000000064c        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x000000000000064c                _fini
+                0x000000000000092a        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x000000000000092a                _fini
 
 .text.__dummy_funcs_on_exit
-                0x000000000000064e        0x2
+                0x000000000000092c        0x2
  .text.__dummy_funcs_on_exit
-                0x000000000000064e        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x000000000000064e                __funcs_on_exit
+                0x000000000000092c        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x000000000000092c                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x0000000000000650        0x2
+                0x000000000000092e        0x2
  .text.__dummy_simulator_exit
-                0x0000000000000650        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000650                __simulator_exit
+                0x000000000000092e        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x000000000000092e                __simulator_exit

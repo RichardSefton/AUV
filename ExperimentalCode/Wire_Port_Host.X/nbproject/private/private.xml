@@ -8,10 +8,6 @@
             <file>file:/C:/code/embedded/AUV/ExperimentalCode/Wire_Port_Host.X/CWire.h</file>
             <file>file:/C:/code/embedded/AUV/ExperimentalCode/Wire_Port_Host.X/CWire.c</file>
         </group>
-        <group name="FinalCode">
-            <file>file:/D:/code/uni/AUV/ExperimentalCode/Wire_Port_Host.X/CWire.c</file>
-            <file>file:/D:/code/uni/AUV/ExperimentalCode/Wire_Port_Host.X/CWire.h</file>
-            <file>file:/D:/code/uni/AUV/ExperimentalCode/Wire_Port_Host.X/host.c</file>
-        </group>
+        <group name="FinalCode"/>
     </open-files>
 </project-private>

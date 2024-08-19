@@ -88,26 +88,26 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/7f3555c379c9d8d3f31bd98e033d8498fa21a9ac .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/3084fb9280febe621620b6ff12b1bfd2aedb7cbf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CWire.o.d 
 	@${RM} ${OBJECTDIR}/CWire.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/CWire.o.d" -MT "${OBJECTDIR}/CWire.o.d" -MT ${OBJECTDIR}/CWire.o -o ${OBJECTDIR}/CWire.o CWire.c 
 	
-${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/fb11223812e1b1ffb81009b1589e59c23ed5a8f8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/6e90a454ea26db80057ebe5ed2c1441dd5cc3f1a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/twi_pins.o.d 
 	@${RM} ${OBJECTDIR}/twi_pins.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/twi_pins.o.d" -MT "${OBJECTDIR}/twi_pins.o.d" -MT ${OBJECTDIR}/twi_pins.o -o ${OBJECTDIR}/twi_pins.o twi_pins.c 
 	
 else
-${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/b9bd53bb61385e26d1b87ab680c907de19a78b3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CWire.o: CWire.c  .generated_files/flags/default/e311cc2447e66d7117ca0b8e0a90f370f3b9bc9e .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CWire.o.d 
 	@${RM} ${OBJECTDIR}/CWire.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/CWire.o.d" -MT "${OBJECTDIR}/CWire.o.d" -MT ${OBJECTDIR}/CWire.o -o ${OBJECTDIR}/CWire.o CWire.c 
 	
-${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/109a8add5c05acc12b813b2e7354431d673df7c0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/twi_pins.o: twi_pins.c  .generated_files/flags/default/b3bb6a2fc68ab05289043d5644effc4be64575d3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/twi_pins.o.d 
 	@${RM} ${OBJECTDIR}/twi_pins.o 

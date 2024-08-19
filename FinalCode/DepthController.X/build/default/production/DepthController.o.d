@@ -18,8 +18,9 @@ build/default/production/DepthController.o.d \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h \
- ../TWI.X/TWI.h \
- c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h
+ ../CWire.X/CWire.h ../Common.X/Common.h ../Common.X/ShortTypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../Common.X/ShortTypes.h ../StepperMotor.X/StepperMotor.h
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\io.h:
 
@@ -57,6 +58,14 @@ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\interrupt.h:
 
-../TWI.X/TWI.h:
+../CWire.X/CWire.h:
 
-c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+../Common.X/Common.h:
+
+../Common.X/ShortTypes.h:
+
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+../Common.X/ShortTypes.h:
+
+../StepperMotor.X/StepperMotor.h:

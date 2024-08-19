@@ -5,8 +5,6 @@
         <group>
             <file>file:/C:/code/embedded/AUV/FinalCode/CentralController.X/CentralController.c</file>
         </group>
-        <group name="FinalCode">
-            <file>file:/D:/code/uni/AUV/FinalCode/CentralController.X/CentralController.c</file>
-        </group>
+        <group name="FinalCode"/>
     </open-files>
 </project-private>

@@ -88,14 +88,14 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/7aee2633659a38158bc9885efed2a63cfba1fd3f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/2ff23190572e1089535e68a23a39cc8319e6e78 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/client.o.d 
 	@${RM} ${OBJECTDIR}/client.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/client.o.d" -MT "${OBJECTDIR}/client.o.d" -MT ${OBJECTDIR}/client.o -o ${OBJECTDIR}/client.o client.c 
 	
 else
-${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/36c53998a0df3a147c6452ad90357f4bdd023211 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/client.o: client.c  .generated_files/flags/default/9b31f55737cfa10f13b7ab9f4a171a30776a33c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/client.o.d 
 	@${RM} ${OBJECTDIR}/client.o 

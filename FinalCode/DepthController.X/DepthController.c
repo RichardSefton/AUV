@@ -41,11 +41,13 @@ void I2C_TX_Callback(void);
 TwoWire twi0;
 StepperMotor stepper;
 
+#define ADDR 0x40
+
 int main(void) {
     setup();
     
     TwoWire_init(&twi0, &TWI0);
-    TwoWire_Slave_begin(&twi0, 0x40, 0, 0);
+    TwoWire_Slave_begin(&twi0, ADDR, 0, 0);
     
     TwoWire_onReceive(&twi0, I2C_RX_Callback);
     TwoWire_onRequest(&twi0, I2C_TX_Callback);
@@ -93,14 +95,13 @@ void setupRTC(void) {
     while(RTC.STATUS);
     RTC.CTRLA |= RTC_PRESCALER_DIV1_gc;
     /**
-     * End to end takes 2min 39s/159s
+     * End to end takes 2min 25s/145s
      * 
-     * 255/159 = 1.6035 and change. So one tick of the pos is worth ~1.6s
+     * Going to knock off 5s so we should be clear of the buffer. 
      * 
-     * Mathematically this is correct but in actuality it seems wrong. moving 10 units 
-     * is too much travel for what is basically 5%. So lets halve it. 
+     * 140/255 = 0.55 and change. So one tick of the pos is worth ~0.55s 
      */
-    RTC.PER = 812;
+    RTC.PER = 550;
     while (RTC.STATUS);
     RTC.INTFLAGS |= RTC_OVF_bm;
     RTC.INTCTRL |= RTC_OVF_bm;
@@ -151,10 +152,12 @@ ISR(RTC_CNT_vect) {
         }
     } 
     //Incase we naturally get there without using the buffer. We don't want to sit at 0
-    if (plungerPos == 0) {
+    if (plungerPos == 1) {
         commandedPos = 1;
-    } else if (plungerPos == 255) {
+        dir = THREAD_IN;
+    } else if (plungerPos == 254 && commandedPos > 0) {
         commandedPos = 254;
+        dir = THREAD_OUT;
     }
 }
 

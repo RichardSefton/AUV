@@ -88,14 +88,14 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/DepthController.o: DepthController.c  .generated_files/flags/default/eeedc8b32a3cabcf518853bdd800896fb187472f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/DepthController.o: DepthController.c  .generated_files/flags/default/ac06997bf1b64e89fa6513c4fa9df56cae9fe352 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/DepthController.o.d 
 	@${RM} ${OBJECTDIR}/DepthController.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -Og -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -I"../Common.X" -I"../StepperMotor.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/DepthController.o.d" -MT "${OBJECTDIR}/DepthController.o.d" -MT ${OBJECTDIR}/DepthController.o -o ${OBJECTDIR}/DepthController.o DepthController.c 
 	
 else
-${OBJECTDIR}/DepthController.o: DepthController.c  .generated_files/flags/default/ba419dbe5f4fe90c02ba7e4c48fee957e23951b6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/DepthController.o: DepthController.c  .generated_files/flags/default/8212b2816b3938b6206616cfe1db6ce2f1bfe58f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/DepthController.o.d 
 	@${RM} ${OBJECTDIR}/DepthController.o 

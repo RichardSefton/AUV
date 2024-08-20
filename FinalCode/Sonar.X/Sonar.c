@@ -33,7 +33,7 @@ void Sonar_disableTCA(void) {
 
 void Sonar_trigger(Sonar* self) {
     PORTC.OUTSET |= TRIGGER;
-    _delay_us(20);
+    _delay_us(10);
     PORTC.OUTCLR |= TRIGGER;
     //wait for echo to go high
     while((!(PORTC.IN & ECHO)));
@@ -60,7 +60,10 @@ void Sonar_calculateDistance(Sonar* self) {
 
 void Sonar_convertDistances(Sonar* self) {
     //Should take the whole number of the float
-    self->distance.as_u16 = (u16)(self->distance.as_float);
-    //Should take the msb of the u16 conversion.
-    self->distance.as_u8 = (u8)(self->distance.as_u16 >> 8);
+    float fdist = self->distance.as_float;
+    u16 u16dist = (u16)fdist;
+    u8 u8dist = (u8)(u16dist / 100);
+    
+    self->distance.as_u16 = u16dist;
+    self->distance.as_u8 = u8dist;
 }

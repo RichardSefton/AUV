@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=CentralController.c
+SOURCEFILES_QUOTED_IF_SPACED=CentralController.c AUV.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/CentralController.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/CentralController.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/CentralController.o ${OBJECTDIR}/AUV.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/CentralController.o.d ${OBJECTDIR}/AUV.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/CentralController.o
+OBJECTFILES=${OBJECTDIR}/CentralController.o ${OBJECTDIR}/AUV.o
 
 # Source Files
-SOURCEFILES=CentralController.c
+SOURCEFILES=CentralController.c AUV.c
 
 
 
@@ -88,18 +88,30 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/CentralController.o: CentralController.c  .generated_files/flags/default/9efa094e01685950cd34f2871f973f6521ab1aa4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CentralController.o: CentralController.c  .generated_files/flags/default/2586696700fd7d0c3d68f3ecaec951c5efc8ea6a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CentralController.o.d 
 	@${RM} ${OBJECTDIR}/CentralController.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/CentralController.o.d" -MT "${OBJECTDIR}/CentralController.o.d" -MT ${OBJECTDIR}/CentralController.o -o ${OBJECTDIR}/CentralController.o CentralController.c 
 	
+${OBJECTDIR}/AUV.o: AUV.c  .generated_files/flags/default/59bf9510731c9b80dcac64c21bf0df32495a7895 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/AUV.o.d 
+	@${RM} ${OBJECTDIR}/AUV.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/AUV.o.d" -MT "${OBJECTDIR}/AUV.o.d" -MT ${OBJECTDIR}/AUV.o -o ${OBJECTDIR}/AUV.o AUV.c 
+	
 else
-${OBJECTDIR}/CentralController.o: CentralController.c  .generated_files/flags/default/19dd0272e769e12ee16ad8ff61d57c024e38ad1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/CentralController.o: CentralController.c  .generated_files/flags/default/36698e96c05e2859d85bd7ddb94ab33fe2641161 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/CentralController.o.d 
 	@${RM} ${OBJECTDIR}/CentralController.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/CentralController.o.d" -MT "${OBJECTDIR}/CentralController.o.d" -MT ${OBJECTDIR}/CentralController.o -o ${OBJECTDIR}/CentralController.o CentralController.c 
+	
+${OBJECTDIR}/AUV.o: AUV.c  .generated_files/flags/default/9d84336c84afcdd3dec475961f02c0d67295bde3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/AUV.o.d 
+	@${RM} ${OBJECTDIR}/AUV.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/AUV.o.d" -MT "${OBJECTDIR}/AUV.o.d" -MT ${OBJECTDIR}/AUV.o -o ${OBJECTDIR}/AUV.o AUV.c 
 	
 endif
 

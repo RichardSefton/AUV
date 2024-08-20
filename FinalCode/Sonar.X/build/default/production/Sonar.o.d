@@ -16,7 +16,9 @@ build/default/production/Sonar.o.d build/default/production/Sonar.o: \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h
+ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h \
+ ../Common.X/Common.h ../Common.X/ShortTypes.h \
+ c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h
 
 Sonar.h:
 
@@ -53,3 +55,9 @@ c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay.h:
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.46\avr\avr\include\math.h:
+
+../Common.X/Common.h:
+
+../Common.X/ShortTypes.h:
+
+c:\program\ files\microchip\xc8\v2.46\avr\lib\gcc\avr\5.4.0\include\stdbool.h:

@@ -2,10 +2,10 @@
 
 void setupRGB(void) {
     PORTB.DIR |= RED | GREEN | BLUE;
-    PORTB.OUTSET |= RED | GREEN | BLUE;
+    PORTB.OUT |= (RED | GREEN | BLUE);
 }
 
 void RGB(u8 colour) {
-    PORTB.OUTSET = RED | GREEN | BLUE;
-    PORTB.OUTCLR = colour;
+    PORTB.OUT |= RED | GREEN | BLUE;
+    PORTB.OUT &= ~colour;
 }

@@ -25,10 +25,9 @@ Discarded input sections
  .data          0x0000000000000000        0x0 build/default/production/CentralController.o
  .bss           0x0000000000000000        0x0 build/default/production/CentralController.o
  .text.raise    0x0000000000000000        0x6 build/default/production/CentralController.o
- .bss.Directions
-                0x0000000000000000        0x1 build/default/production/CentralController.o
- .bss.ADDRESSES
-                0x0000000000000000        0x1 build/default/production/CentralController.o
+ .text          0x0000000000000000        0x0 build/default/production/AUV.o
+ .data          0x0000000000000000        0x0 build/default/production/AUV.o
+ .bss           0x0000000000000000        0x0 build/default/production/AUV.o
  .text          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
  .data          0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
  .bss           0x0000000000000000        0x0 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
@@ -75,7 +74,6 @@ Discarded input sections
                 0x0000000000000000        0x6 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
  .text.TWI0_setConfig
                 0x0000000000000000       0x14 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .text          0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
  .data          0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
  .bss           0x0000000000000000        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
@@ -159,6 +157,7 @@ Address of section .data set to 0x803800
 LOAD C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
                 0x0000000000000001                __MPLAB_BUILD = 0x1
 LOAD build/default/production/CentralController.o
+LOAD build/default/production/AUV.o
 LOAD ..\CWire.X\dist\default\production\CWire.X.a
 LOAD ..\Common.X\dist\default\production\Common.X.a
 START GROUP
@@ -420,6 +419,7 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f build/default/production/CentralController.o
                                          0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 build/default/production/AUV.o
  .comment       0x000000000000002f       0x30 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
  .comment       0x000000000000002f       0x30 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
  .comment       0x000000000000002f       0x30 ..\Common.X\dist\default\production\Common.X.a(Common.o)
@@ -460,64 +460,72 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x1e8
+.debug_aranges  0x0000000000000000      0x220
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x68 build/default/production/CentralController.o
+                0x0000000000000000       0x70 build/default/production/CentralController.o
  .debug_aranges
-                0x0000000000000068      0x110 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000070       0x38 build/default/production/AUV.o
  .debug_aranges
-                0x0000000000000178       0x48 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+                0x00000000000000a8      0x110 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
  .debug_aranges
-                0x00000000000001c0       0x28 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+                0x00000000000001b8       0x48 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_aranges
+                0x0000000000000200       0x20 ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x50fd
+.debug_info     0x0000000000000000     0x5a17
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x1b97 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_info    0x0000000000001b97     0x1535 build/default/production/CentralController.o
- .debug_info    0x00000000000030cc     0x150e ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_info    0x00000000000045da      0x6c2 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_info    0x0000000000004c9c      0x461 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_info    0x0000000000001b97     0x195b build/default/production/CentralController.o
+ .debug_info    0x00000000000034f2      0x54f build/default/production/AUV.o
+ .debug_info    0x0000000000003a41     0x1513 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_info    0x0000000000004f54      0x6c7 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_info    0x000000000000561b      0x3fc ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
-.debug_abbrev   0x0000000000000000     0x219f
+.debug_abbrev   0x0000000000000000     0x22a0
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000     0x1a20 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_abbrev  0x0000000000001a20      0x297 build/default/production/CentralController.o
- .debug_abbrev  0x0000000000001cb7      0x2ca ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_abbrev  0x0000000000001f81      0x155 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_abbrev  0x00000000000020d6       0xc9 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_abbrev  0x0000000000001a20      0x2a2 build/default/production/CentralController.o
+ .debug_abbrev  0x0000000000001cc2       0xf8 build/default/production/AUV.o
+ .debug_abbrev  0x0000000000001dba      0x2ca ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_abbrev  0x0000000000002084      0x155 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_abbrev  0x00000000000021d9       0xc7 ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
-.debug_line     0x0000000000000000     0x1120
+.debug_line     0x0000000000000000     0x134f
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x14b C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_line    0x000000000000014b      0x3fb build/default/production/CentralController.o
- .debug_line    0x0000000000000546      0x908 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_line    0x0000000000000e4e      0x1b7 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_line    0x0000000000001005      0x11b ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_line    0x000000000000014b      0x4e2 build/default/production/CentralController.o
+ .debug_line    0x000000000000062d      0x128 build/default/production/AUV.o
+ .debug_line    0x0000000000000755      0x914 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_line    0x0000000000001069      0x1b7 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_line    0x0000000000001220      0x12f ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
-.debug_frame    0x0000000000000000      0x4d4
+.debug_frame    0x0000000000000000      0x558
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x114 build/default/production/CentralController.o
- .debug_frame   0x0000000000000114      0x318 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_frame   0x000000000000042c       0x74 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_frame   0x00000000000004a0       0x34 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_frame   0x0000000000000000      0x124 build/default/production/CentralController.o
+ .debug_frame   0x0000000000000124       0x54 build/default/production/AUV.o
+ .debug_frame   0x0000000000000178      0x318 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_frame   0x0000000000000490       0x74 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_frame   0x0000000000000504       0x54 ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
-.debug_str      0x0000000000000000      0xd5a
+.debug_str      0x0000000000000000      0xd9f
  *(.debug_str)
  .debug_str     0x0000000000000000      0xbdd C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
- .debug_str     0x0000000000000bdd       0xbf build/default/production/CentralController.o
- .debug_str     0x0000000000000c9c       0x9f ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_str     0x0000000000000d3b       0x1f ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_str     0x0000000000000d5a        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_str     0x0000000000000bdd      0x104 build/default/production/CentralController.o
+ .debug_str     0x0000000000000ce1        0x0 build/default/production/AUV.o
+ .debug_str     0x0000000000000ce1       0x9f ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_str     0x0000000000000d80       0x1f ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_str     0x0000000000000d9f        0x0 ..\Common.X\dist\default\production\Common.X.a(Common.o)
 
-.debug_loc      0x0000000000000000     0x14a4
+.debug_loc      0x0000000000000000     0x16e8
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x27d build/default/production/CentralController.o
- .debug_loc     0x000000000000027d     0x116c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_loc     0x00000000000013e9       0xbb ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+ .debug_loc     0x0000000000000000      0x3f2 build/default/production/CentralController.o
+ .debug_loc     0x00000000000003f2       0xcf build/default/production/AUV.o
+ .debug_loc     0x00000000000004c1     0x116c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_loc     0x000000000000162d       0xbb ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -537,12 +545,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x1d8
+.debug_ranges   0x0000000000000000      0x1f0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x58 build/default/production/CentralController.o
- .debug_ranges  0x0000000000000058      0x130 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
- .debug_ranges  0x0000000000000188       0x38 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
- .debug_ranges  0x00000000000001c0       0x18 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+ .debug_ranges  0x0000000000000000       0x60 build/default/production/CentralController.o
+ .debug_ranges  0x0000000000000060       0x28 build/default/production/AUV.o
+ .debug_ranges  0x0000000000000088      0x130 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+ .debug_ranges  0x00000000000001b8       0x38 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
 
 .debug_macro
  *(.debug_macro)
@@ -555,29 +563,28 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
 
-.bss.distances  0x0000000000803852        0x1
- .bss.distances
-                0x0000000000803852        0x1 build/default/production/CentralController.o
-                0x0000000000803852                distances
+.bss.auv        0x0000000000803850        0xf
+ .bss.auv       0x0000000000803850        0xf build/default/production/CentralController.o
+                0x0000000000803850                auv
 
 .bss.twi0       0x0000000000803800       0x50
  .bss.twi0      0x0000000000803800       0x50 build/default/production/CentralController.o
                 0x0000000000803800                twi0
 
-.bss.depth      0x0000000000803853        0x1
- .bss.depth     0x0000000000803853        0x1 build/default/production/CentralController.o
-                0x0000000000803853                depth
+.bss.depth      0x0000000000803861        0x1
+ .bss.depth     0x0000000000803861        0x1 build/default/production/CentralController.o
+                0x0000000000803861                depth
 
-.bss.twi0_wire  0x0000000000803850        0x2
+.bss.twi0_wire  0x000000000080385f        0x2
  .bss.twi0_wire
-                0x0000000000803850        0x2 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000803850                twi0_wire
+                0x000000000080385f        0x2 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x000000000080385f                twi0_wire
 
 .bss.sleepStack
-                0x0000000000803854        0x1
+                0x0000000000803862        0x1
  .bss.sleepStack
-                0x0000000000803854        0x1 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000803854                sleepStack
+                0x0000000000803862        0x1 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000803862                sleepStack
 
 .text.TwoWire_HandleSlaveIRQ
                 0x00000000000000d2      0x164
@@ -585,214 +592,239 @@ LOAD data_init
                 0x00000000000000d2      0x164 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
                 0x00000000000000d2                TwoWire_HandleSlaveIRQ
 
+.text.handleDistanceResponse
+                0x0000000000000236       0xd4
+ .text.handleDistanceResponse
+                0x0000000000000236       0xd4 build/default/production/CentralController.o
+                0x0000000000000236                handleDistanceResponse
+
 .text.TwoWire_masterTransmit
-                0x0000000000000236       0xc8
+                0x000000000000030a       0xc8
  .text.TwoWire_masterTransmit
-                0x0000000000000236       0xc8 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000000236                TwoWire_masterTransmit
+                0x000000000000030a       0xc8 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x000000000000030a                TwoWire_masterTransmit
 
 .text.TwoWire_masterReceive
-                0x00000000000002fe       0xaa
+                0x00000000000003d2       0xaa
  .text.TwoWire_masterReceive
-                0x00000000000002fe       0xaa ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000002fe                TwoWire_masterReceive
-
-.text.MasterCalcBaud
-                0x00000000000003a8       0x96
- .text.MasterCalcBaud
-                0x00000000000003a8       0x96 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000003a8                MasterCalcBaud
-
-.text.TwoWire_setClock
-                0x000000000000043e       0x8a
- .text.TwoWire_setClock
-                0x000000000000043e       0x8a ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x000000000000043e                TwoWire_setClock
+                0x00000000000003d2       0xaa ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000003d2                TwoWire_masterReceive
 
 .text.__vector_3
-                0x00000000000004c8       0x74
+                0x000000000000047c       0xa4
  .text.__vector_3
-                0x00000000000004c8       0x74 build/default/production/CentralController.o
-                0x00000000000004c8                __vector_3
+                0x000000000000047c       0xa4 build/default/production/CentralController.o
+                0x000000000000047c                __vector_3
 
-.text.main      0x000000000000053c       0x72
- .text.main     0x000000000000053c       0x72 build/default/production/CentralController.o
-                0x000000000000053c                main
+.text.MasterCalcBaud
+                0x0000000000000520       0x96
+ .text.MasterCalcBaud
+                0x0000000000000520       0x96 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000520                MasterCalcBaud
 
-.text.ping      0x00000000000005ae       0x56
- .text.ping     0x00000000000005ae       0x56 build/default/production/CentralController.o
-                0x00000000000005ae                ping
+.text.ping      0x00000000000005b6       0x92
+ .text.ping     0x00000000000005b6       0x92 build/default/production/CentralController.o
+                0x00000000000005b6                ping
+
+.text.TwoWire_setClock
+                0x0000000000000648       0x8a
+ .text.TwoWire_setClock
+                0x0000000000000648       0x8a ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000648                TwoWire_setClock
+
+.text           0x00000000000006d2       0x74
+ .text          0x00000000000006d2       0x74 ..\Common.X\dist\default\production\Common.X.a(Common.o)
+                0x00000000000006d2                setupRGB
+                0x0000000000000706                RGB
+
+.text.main      0x0000000000000746       0x72
+ .text.main     0x0000000000000746       0x72 build/default/production/CentralController.o
+                0x0000000000000746                main
 
 .text.__vector_14
-                0x0000000000000604       0x50
+                0x00000000000007b8       0x50
  .text.__vector_14
-                0x0000000000000604       0x50 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000000604                __vector_14
+                0x00000000000007b8       0x50 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000007b8                __vector_14
 
-.text.setupRTC  0x0000000000000654       0x4e
+.text.setupRTC  0x0000000000000808       0x4e
  .text.setupRTC
-                0x0000000000000654       0x4e build/default/production/CentralController.o
-                0x0000000000000654                setupRTC
+                0x0000000000000808       0x4e build/default/production/CentralController.o
+                0x0000000000000808                setupRTC
 
 .text.libgcc.div
-                0x00000000000006a2       0x44
+                0x0000000000000856       0x44
  .text.libgcc.div
-                0x00000000000006a2       0x44 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
-                0x00000000000006a2                __udivmodsi4
+                0x0000000000000856       0x44 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/avrxmega3\libgcc.a(_udivmodsi4.o)
+                0x0000000000000856                __udivmodsi4
 
-.text.getDepth  0x00000000000006e6       0x3e
+.text.getDepth  0x000000000000089a       0x3e
  .text.getDepth
-                0x00000000000006e6       0x3e build/default/production/CentralController.o
-                0x00000000000006e6                getDepth
-
-.text.handleDistanceResponse
-                0x0000000000000724       0x3a
- .text.handleDistanceResponse
-                0x0000000000000724       0x3a build/default/production/CentralController.o
-                0x0000000000000724                handleDistanceResponse
+                0x000000000000089a       0x3e build/default/production/CentralController.o
+                0x000000000000089a                getDepth
 
 .text.TwoWire_read
-                0x000000000000075e       0x34
+                0x00000000000008d8       0x34
  .text.TwoWire_read
-                0x000000000000075e       0x34 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x000000000000075e                TwoWire_read
+                0x00000000000008d8       0x34 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000008d8                TwoWire_read
 
-.text.dive      0x0000000000000792       0x32
- .text.dive     0x0000000000000792       0x32 build/default/production/CentralController.o
-                0x0000000000000792                dive
+.text.dive      0x000000000000090c       0x32
+ .text.dive     0x000000000000090c       0x32 build/default/production/CentralController.o
+                0x000000000000090c                dive
+
+.text.commandForwardMotor
+                0x000000000000093e       0x32
+ .text.commandForwardMotor
+                0x000000000000093e       0x32 build/default/production/CentralController.o
+                0x000000000000093e                commandForwardMotor
 
 .text.TwoWire_requestFrom
-                0x00000000000007c4       0x32
+                0x0000000000000970       0x32
  .text.TwoWire_requestFrom
-                0x00000000000007c4       0x32 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000007c4                TwoWire_requestFrom
+                0x0000000000000970       0x32 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000970                TwoWire_requestFrom
 
 .text.TwoWire_Master_begin
-                0x00000000000007f6       0x30
+                0x00000000000009a2       0x30
  .text.TwoWire_Master_begin
-                0x00000000000007f6       0x30 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000007f6                TwoWire_Master_begin
+                0x00000000000009a2       0x30 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000009a2                TwoWire_Master_begin
+
+.text.AUV_init  0x00000000000009d2       0x2a
+ .text.AUV_init
+                0x00000000000009d2       0x2a build/default/production/AUV.o
+                0x00000000000009d2                AUV_init
 
 .text.TwoWire_write
-                0x0000000000000826       0x28
+                0x00000000000009fc       0x28
  .text.TwoWire_write
-                0x0000000000000826       0x28 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000000826                TwoWire_write
+                0x00000000000009fc       0x28 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x00000000000009fc                TwoWire_write
 
 .text.TwoWire_endTransmission
-                0x000000000000084e       0x20
+                0x0000000000000a24       0x20
  .text.TwoWire_endTransmission
-                0x000000000000084e       0x20 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x000000000000084e                TwoWire_endTransmission
+                0x0000000000000a24       0x20 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000a24                TwoWire_endTransmission
 
 .text.TwoWire_beginTransmission
-                0x000000000000086e       0x1c
+                0x0000000000000a44       0x1c
  .text.TwoWire_beginTransmission
-                0x000000000000086e       0x1c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x000000000000086e                TwoWire_beginTransmission
+                0x0000000000000a44       0x1c ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000a44                TwoWire_beginTransmission
 
 .text.TwoWire_available
-                0x000000000000088a       0x18
+                0x0000000000000a60       0x18
  .text.TwoWire_available
-                0x000000000000088a       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x000000000000088a                TwoWire_available
+                0x0000000000000a60       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000a60                TwoWire_available
 
 .text.pauseDeepSleep
-                0x00000000000008a2       0x18
+                0x0000000000000a78       0x18
  .text.pauseDeepSleep
-                0x00000000000008a2       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000008a2                pauseDeepSleep
+                0x0000000000000a78       0x18 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000a78                pauseDeepSleep
 
 .text.mainClkCtrl
-                0x00000000000008ba       0x16
+                0x0000000000000a90       0x16
  .text.mainClkCtrl
-                0x00000000000008ba       0x16 build/default/production/CentralController.o
-                0x00000000000008ba                mainClkCtrl
+                0x0000000000000a90       0x16 build/default/production/CentralController.o
+                0x0000000000000a90                mainClkCtrl
 
-.text.exit      0x00000000000008d0       0x16
- .text.exit     0x00000000000008d0       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x00000000000008d0                exit
+.text.setup     0x0000000000000aa6       0x16
+ .text.setup    0x0000000000000aa6       0x16 build/default/production/CentralController.o
+                0x0000000000000aa6                setup
 
-.text.setupRGB  0x00000000000008e6       0x12
- .text.setupRGB
-                0x00000000000008e6       0x12 ..\Common.X\dist\default\production\Common.X.a(Common.o)
-                0x00000000000008e6                setupRGB
+.text.exit      0x0000000000000abc       0x16
+ .text.exit     0x0000000000000abc       0x16 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000abc                exit
+
+.text.AUV_loadSonar
+                0x0000000000000ad2       0x12
+ .text.AUV_loadSonar
+                0x0000000000000ad2       0x12 build/default/production/AUV.o
+                0x0000000000000ad2                AUV_loadSonar
+
+.text.AUV_incrementSonarIndex
+                0x0000000000000ae4       0x12
+ .text.AUV_incrementSonarIndex
+                0x0000000000000ae4       0x12 build/default/production/AUV.o
+                0x0000000000000ae4                AUV_incrementSonarIndex
 
 .text.TwoWire_init
-                0x00000000000008f8       0x10
+                0x0000000000000af6       0x10
  .text.TwoWire_init
-                0x00000000000008f8       0x10 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x00000000000008f8                TwoWire_init
-
-.text.setup     0x0000000000000908        0xe
- .text.setup    0x0000000000000908        0xe build/default/production/CentralController.o
-                0x0000000000000908                setup
+                0x0000000000000af6       0x10 ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000af6                TwoWire_init
 
 .text.restoreSleep
-                0x0000000000000916        0xe
+                0x0000000000000b06        0xe
  .text.restoreSleep
-                0x0000000000000916        0xe ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
-                0x0000000000000916                restoreSleep
+                0x0000000000000b06        0xe ..\CWire.X\dist\default\production\CWire.X.a(CWire.o)
+                0x0000000000000b06                restoreSleep
 
-.text.RGB       0x0000000000000924        0xc
- .text.RGB      0x0000000000000924        0xc ..\Common.X\dist\default\production\Common.X.a(Common.o)
-                0x0000000000000924                RGB
+.text.AUV_setMotorDirection
+                0x0000000000000b14        0x8
+ .text.AUV_setMotorDirection
+                0x0000000000000b14        0x8 build/default/production/AUV.o
+                0x0000000000000b14                AUV_setMotorDirection
 
 .text.TWI0_ClearPins
-                0x0000000000000930        0x8
+                0x0000000000000b1c        0x8
  .text.TWI0_ClearPins
-                0x0000000000000930        0x8 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
-                0x0000000000000930                TWI0_ClearPins
+                0x0000000000000b1c        0x8 ..\CWire.X\dist\default\production\CWire.X.a(twi_pins.o)
+                0x0000000000000b1c                TWI0_ClearPins
 
-.text           0x0000000000000938        0x4
- .text          0x0000000000000938        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
-                0x0000000000000938                __vector_22
-                0x0000000000000938                __vector_28
-                0x0000000000000938                __vector_1
-                0x0000000000000938                __vector_24
-                0x0000000000000938                __vector_12
-                0x0000000000000938                __bad_interrupt
-                0x0000000000000938                __vector_6
-                0x0000000000000938                __vector_23
-                0x0000000000000938                __vector_25
-                0x0000000000000938                __vector_11
-                0x0000000000000938                __vector_13
-                0x0000000000000938                __vector_17
-                0x0000000000000938                __vector_19
-                0x0000000000000938                __vector_7
-                0x0000000000000938                __vector_27
-                0x0000000000000938                __vector_5
-                0x0000000000000938                __vector_4
-                0x0000000000000938                __vector_9
-                0x0000000000000938                __vector_2
-                0x0000000000000938                __vector_21
-                0x0000000000000938                __vector_15
-                0x0000000000000938                __vector_29
-                0x0000000000000938                __vector_8
-                0x0000000000000938                __vector_26
-                0x0000000000000938                __vector_10
-                0x0000000000000938                __vector_16
-                0x0000000000000938                __vector_18
-                0x0000000000000938                __vector_20
+.text           0x0000000000000b24        0x4
+ .text          0x0000000000000b24        0x4 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/ATtiny_DFP/3.1.260/xc8/avr/lib/avrxmega3/crtattiny1627.o
+                0x0000000000000b24                __vector_22
+                0x0000000000000b24                __vector_28
+                0x0000000000000b24                __vector_1
+                0x0000000000000b24                __vector_24
+                0x0000000000000b24                __vector_12
+                0x0000000000000b24                __bad_interrupt
+                0x0000000000000b24                __vector_6
+                0x0000000000000b24                __vector_23
+                0x0000000000000b24                __vector_25
+                0x0000000000000b24                __vector_11
+                0x0000000000000b24                __vector_13
+                0x0000000000000b24                __vector_17
+                0x0000000000000b24                __vector_19
+                0x0000000000000b24                __vector_7
+                0x0000000000000b24                __vector_27
+                0x0000000000000b24                __vector_5
+                0x0000000000000b24                __vector_4
+                0x0000000000000b24                __vector_9
+                0x0000000000000b24                __vector_2
+                0x0000000000000b24                __vector_21
+                0x0000000000000b24                __vector_15
+                0x0000000000000b24                __vector_29
+                0x0000000000000b24                __vector_8
+                0x0000000000000b24                __vector_26
+                0x0000000000000b24                __vector_10
+                0x0000000000000b24                __vector_16
+                0x0000000000000b24                __vector_18
+                0x0000000000000b24                __vector_20
 
-.text._Exit     0x000000000000093c        0x4
- .text._Exit    0x000000000000093c        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
-                0x000000000000093c                _Exit
+.text._Exit     0x0000000000000b28        0x4
+ .text._Exit    0x0000000000000b28        0x4 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(_Exit.o)
+                0x0000000000000b28                _Exit
 
 .text.__dummy_fini
-                0x0000000000000940        0x2
+                0x0000000000000b2c        0x2
  .text.__dummy_fini
-                0x0000000000000940        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000940                _fini
+                0x0000000000000b2c        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000b2c                _fini
 
 .text.__dummy_funcs_on_exit
-                0x0000000000000942        0x2
+                0x0000000000000b2e        0x2
  .text.__dummy_funcs_on_exit
-                0x0000000000000942        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000942                __funcs_on_exit
+                0x0000000000000b2e        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000b2e                __funcs_on_exit
 
 .text.__dummy_simulator_exit
-                0x0000000000000944        0x2
+                0x0000000000000b30        0x2
  .text.__dummy_simulator_exit
-                0x0000000000000944        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
-                0x0000000000000944                __simulator_exit
+                0x0000000000000b30        0x2 c:/program files/microchip/xc8/v2.46/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega3\libc.a(exit.o)
+                0x0000000000000b30                __simulator_exit

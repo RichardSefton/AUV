@@ -88,14 +88,14 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/host.o: host.c  .generated_files/flags/default/f3be7006cdf0af838a5e993de74ec15601e82e27 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/host.o: host.c  .generated_files/flags/default/c850b5f2c8f2baefac11dd0e5caae793caf39bf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/host.o.d 
 	@${RM} ${OBJECTDIR}/host.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../CWire.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/host.o.d" -MT "${OBJECTDIR}/host.o.d" -MT ${OBJECTDIR}/host.o -o ${OBJECTDIR}/host.o host.c 
 	
 else
-${OBJECTDIR}/host.o: host.c  .generated_files/flags/default/b03083863581b12cf1cc997db30a3a0668e805f2 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/host.o: host.c  .generated_files/flags/default/35b4642126fd4b71c2d352b159adfb87d5f068aa .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/host.o.d 
 	@${RM} ${OBJECTDIR}/host.o 

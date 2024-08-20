@@ -88,18 +88,18 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Sonar.o: Sonar.c  .generated_files/flags/default/6a0a6f427da7c5725e582e1e56a2167ba3bd1159 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/Sonar.o: Sonar.c  .generated_files/flags/default/a9388791db0dd2b92e2332b536c4a57255272c55 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Sonar.o.d 
 	@${RM} ${OBJECTDIR}/Sonar.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Sonar.o.d" -MT "${OBJECTDIR}/Sonar.o.d" -MT ${OBJECTDIR}/Sonar.o -o ${OBJECTDIR}/Sonar.o Sonar.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)   -L"../Common.X" $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Sonar.o.d" -MT "${OBJECTDIR}/Sonar.o.d" -MT ${OBJECTDIR}/Sonar.o -o ${OBJECTDIR}/Sonar.o Sonar.c 
 	
 else
-${OBJECTDIR}/Sonar.o: Sonar.c  .generated_files/flags/default/bbd617150fde9666f36cd52e5ae6ae85018645 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/Sonar.o: Sonar.c  .generated_files/flags/default/10de8188ea90365de2d0ac68611631b66426dae3 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Sonar.o.d 
 	@${RM} ${OBJECTDIR}/Sonar.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Sonar.o.d" -MT "${OBJECTDIR}/Sonar.o.d" -MT ${OBJECTDIR}/Sonar.o -o ${OBJECTDIR}/Sonar.o Sonar.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)   -L"../Common.X" $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/Sonar.o.d" -MT "${OBJECTDIR}/Sonar.o.d" -MT ${OBJECTDIR}/Sonar.o -o ${OBJECTDIR}/Sonar.o Sonar.c 
 	
 endif
 

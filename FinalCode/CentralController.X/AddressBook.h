@@ -8,10 +8,12 @@
 #ifndef ADDRESSBOOK_H
 #define	ADDRESSBOOK_H
 
-enum {
-    DEPTH_CONTROLLER = 0x40,
-    US_BOTTOM = 0x30,
-}ADDRESSES;
+#define     DEPTH_CONTROLLER    0x40
+#define     US_BOTTOM           0x30
+#define     US_RIGHT            0x31
+#define     US_LEFT             0x32
+#define     US_FORWARD          0x33
+#define     FORWARD_MOTOR       0x45
 
 #endif	/* ADDRESSBOOK_H */
 

@@ -12,12 +12,13 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include "Common.h"
 
-typedef uint8_t u8;
-typedef uint16_t u16;
+//typedef uint8_t u8;
+//typedef uint16_t u16;
 
 extern enum {
-    TRIGGER = PIN1_bm,
+    TRIGGER = PIN3_bm,
     ECHO = PIN2_bm
 } S_Pins;
 

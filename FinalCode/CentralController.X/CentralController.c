@@ -10,7 +10,7 @@
 #include "CWire.h"
 #include "ShortTypes.h"
 #include "AddressBook.h"
-#include "Modules.h"
+#include "AUV.h"
 #include "Common.h"
 
 u8 depth = 0;
@@ -18,14 +18,15 @@ u8 depth = 0;
 void setup(void);
 void mainClkCtrl(void);
 void setupRTC(void);
-u8 ping(void);
-void handleDistanceResponse(u8);
+u16 ping(SonarModule);
+void handleDistanceResponse(SonarDirection);
 u8 getDepth(void);
 void dive(u8);
 void raise(u8);
+void commandForwardMotor(ForwardMotorDirection);
 
 TwoWire twi0;
-Distances distances;
+AUV auv;
 
 int main() {
     setup();
@@ -63,6 +64,7 @@ void setup(void) {
     mainClkCtrl();
     setupRTC();
     setupRGB();
+    AUV_init(&auv);
 }
 
 void mainClkCtrl(void) 
@@ -85,27 +87,52 @@ void setupRTC(void) {
     while (RTC.STATUS);
 }
 
-u8 ping(void) {
+u16 ping(SonarModule module) {
     //initiate sonar
-    TwoWire_beginTransmission(&twi0, US_BOTTOM);
+    u8 addr = 0x00;
+    switch(module) {
+        case LOWER: {
+            addr = US_BOTTOM;
+            break;
+        }
+        case FORWARD: {
+            addr = US_FORWARD;
+            break;
+        }
+        case LEFT: {
+            addr = US_LEFT;
+            break;
+        }
+        case RIGHT: {
+            addr = US_RIGHT;
+            break;
+        }
+        default: break;
+    }
+    cli();
+    TwoWire_beginTransmission(&twi0, addr);
     TwoWire_write(&twi0, 0x50); //The arb value to initiate an actual ping
     TwoWire_endTransmission(&twi0, 1);
     _delay_ms(250); //Wait before responding
     
     //get the results
-    u8 data = 0;
-    TwoWire_requestFrom(&twi0, US_BOTTOM, 1, 1);
-    if (TwoWire_available(&twi0)) {
-        data = TwoWire_read(&twi0);  // Read the received byte
+    u16 dist = 0;
+    TwoWire_requestFrom(&twi0, addr, 2, 1);
+    if (TwoWire_available(&twi0) == 2) {
+        u8 dataLow = TwoWire_read(&twi0);  
+        u8 dataHigh = TwoWire_read(&twi0);
+        dist = dataLow;
+        dist |= (dataHigh << 8);
     }
-    
-    return data;
+    sei();
+    return dist;
 }
 
-void handleDistanceResponse(u8 dir) {
+void handleDistanceResponse(SonarDirection dir) {
     switch (dir) {
-        case LOWER: {
-            if (distances.lower < 50) {
+        case SD_LOWER: {
+            Sonar* s = AUV_loadSonar(&auv, LOWER);
+            if (s->distance > 0 && s->distance < 1400) {
                 depth = getDepth();
                 if (depth == 0) {
                 //Handle later
@@ -125,11 +152,39 @@ void handleDistanceResponse(u8 dir) {
                         raise(0); //raise to 0 and it should 1 itself. 
                     }                    
                 }
+                AUV_setMotorDirection(&auv, FMD_STOP, SD_LOWER);
+            } else if (s->distance > 0 && s->distance > 3000) {
+//                if (depth < 245) {
+//                    depth += 10;
+//                    dive(depth);
+//                } else if (depth == 254) {
+//                    dive(254);
+//                } else {
+//                    dive(255);
+//                }
+                if (auv.mainMotorHeldBy == SD_LOWER || auv.mainMotorHeldBy == SD_NONE) {
+                    AUV_setMotorDirection(&auv, FMD_FORWARD, SD_NONE);
+                }
             }
         }
 
+        case SD_FORWARD: {
+            Sonar* s = AUV_loadSonar(&auv, FORWARD);
+            if (s->distance > 0 && s->distance < 1400) {
+                if(s->distance < 800) {
+                    AUV_setMotorDirection(&auv,FMD_BACKWARD, SD_FORWARD);
+                } else {
+                    AUV_setMotorDirection(&auv, FMD_STOP, SD_FORWARD);
+                }
+            } else if(s->distance > 0 && s->distance > 1400) {
+                if (auv.mainMotorHeldBy == SD_FORWARD || auv.mainMotorHeldBy == SD_NONE) {
+                    AUV_setMotorDirection(&auv, FMD_FORWARD, SD_NONE);
+                }
+            }
+        }
+        
         default: { 
-            return;
+            break;
         }
     }
 }
@@ -156,11 +211,45 @@ void raise(u8 d) {
     dive(d);
 }
 
+void commandForwardMotor(ForwardMotorDirection dir) {
+    RGB(BLUE);
+    TwoWire_beginTransmission(&twi0, FORWARD_MOTOR);
+    TwoWire_write(&twi0, (u8)dir);
+    TwoWire_endTransmission(&twi0, 1);
+    RGB(GREEN);
+}
+
 ISR(RTC_CNT_vect) {
     RGB(BLUE);
-    RTC.INTFLAGS = RTC_OVF_bm;
-    distances.lower = ping();
-    RGB(GREEN);
-    handleDistanceResponse(LOWER);
+    switch(auv.sonarIndex) {
+        case LOWER: {
+            auv.sonars[LOWER].distance = ping(LOWER);
+            RGB(GREEN);
+            handleDistanceResponse(SD_LOWER);
+            break;
+        }
+        case FORWARD: {
+            auv.sonars[FORWARD].distance = ping(FORWARD);
+            RGB(GREEN);
+            handleDistanceResponse(SD_FORWARD);
+            break;
+        }
+//        case LEFT: {
+//            auv.sonars[LEFT].distance = ping(LEFT);
+//            RGB(GREEN);
+//            handleDistanceResponse(SD_LEFT);
+//            break;
+//        }
+//        case RIGHT: {
+//            auv.sonars[RIGHT].distance = ping(RIGHT);
+//            RGB(GREEN);
+//            handleDistanceResponse(SD_RIGHT);
+//            break;
+//        }
+        default: break;
+    }
+    AUV_incrementSonarIndex(&auv);
+    commandForwardMotor(auv.mainMotorDirection);
+    
     RTC.INTFLAGS = RTC_OVF_bm;
 }

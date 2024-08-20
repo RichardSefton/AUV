@@ -88,18 +88,18 @@ MP_PROCESSOR_OPTION=ATtiny1627
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/StepperMotor.o: StepperMotor.c  .generated_files/flags/default/77c1da92f49de49dd89c00f764f278e3a6526530 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/StepperMotor.o: StepperMotor.c  .generated_files/flags/default/af818ce702176d3923195a30640af15044b030e0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/StepperMotor.o.d 
 	@${RM} ${OBJECTDIR}/StepperMotor.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/StepperMotor.o.d" -MT "${OBJECTDIR}/StepperMotor.o.d" -MT ${OBJECTDIR}/StepperMotor.o -o ${OBJECTDIR}/StepperMotor.o StepperMotor.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)   -L"../Common.X" $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/StepperMotor.o.d" -MT "${OBJECTDIR}/StepperMotor.o.d" -MT ${OBJECTDIR}/StepperMotor.o -o ${OBJECTDIR}/StepperMotor.o StepperMotor.c 
 	
 else
-${OBJECTDIR}/StepperMotor.o: StepperMotor.c  .generated_files/flags/default/e8c50480604ef2506f169a4c60e90115cfc42035 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/StepperMotor.o: StepperMotor.c  .generated_files/flags/default/dedb2b41db8d3f75070a998a91231dc9e9bff055 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/StepperMotor.o.d 
 	@${RM} ${OBJECTDIR}/StepperMotor.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/StepperMotor.o.d" -MT "${OBJECTDIR}/StepperMotor.o.d" -MT ${OBJECTDIR}/StepperMotor.o -o ${OBJECTDIR}/StepperMotor.o StepperMotor.c 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -fno-common -funsigned-char -funsigned-bitfields -I"../Common.X" -Wall -DXPRJ_default=$(CND_CONF)   -L"../Common.X" $(COMPARISON_BUILD)  -gdwarf-3 -mno-const-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/StepperMotor.o.d" -MT "${OBJECTDIR}/StepperMotor.o.d" -MT ${OBJECTDIR}/StepperMotor.o -o ${OBJECTDIR}/StepperMotor.o StepperMotor.c 
 	
 endif
 

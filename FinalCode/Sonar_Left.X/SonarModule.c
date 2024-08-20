@@ -76,6 +76,10 @@ void I2C_RX_Callback(u8 val) {
 
 //By the point this is called the distance calculations should have occurred.
 void I2C_TX_Callback(void) {
-    TwoWire_write(&twi0, sonar.distance.as_u8);
+    //sending it back as the u16 value. Should really do this in the library but lets just check it works first. 
+    u8 high = sonar.distance.as_u16 >> 8;
+    u8 low = sonar.distance.as_u16;
+    u8 dataToSend [2] = { low, high };
+    TwoWire_writeBytes(&twi0, dataToSend, 2);
     RGB(GREEN);
 }

@@ -99,9 +99,9 @@ void setupRTC(void) {
      * 
      * Going to knock off 5s so we should be clear of the buffer. 
      * 
-     * 140/255 = 0.55 and change. So one tick of the pos is worth ~0.55s 
+     * 145/255 = 0.57 and change. So one tick of the pos is worth ~0.57s 
      */
-    RTC.PER = 550;
+    RTC.PER = 582; //Needed to add 12 as 1k is 1024 kHz
     while (RTC.STATUS);
     RTC.INTFLAGS |= RTC_OVF_bm;
     RTC.INTCTRL |= RTC_OVF_bm;
@@ -152,13 +152,13 @@ ISR(RTC_CNT_vect) {
         }
     } 
     //Incase we naturally get there without using the buffer. We don't want to sit at 0
-    if (plungerPos == 1) {
-        commandedPos = 1;
-        dir = THREAD_IN;
-    } else if (plungerPos == 254 && commandedPos > 0) {
-        commandedPos = 254;
-        dir = THREAD_OUT;
-    }
+//    if (plungerPos == 1) {
+//        commandedPos = 1;
+//        dir = THREAD_IN;
+//    } else if (plungerPos == 254 && commandedPos > 0) {
+//        commandedPos = 254;
+//        dir = THREAD_OUT;
+//    }
 }
 
 ISR(PORTA_PORT_vect) {

@@ -234,18 +234,18 @@ ISR(RTC_CNT_vect) {
             handleDistanceResponse(SD_FORWARD);
             break;
         }
-//        case LEFT: {
-//            auv.sonars[LEFT].distance = ping(LEFT);
-//            RGB(GREEN);
-//            handleDistanceResponse(SD_LEFT);
-//            break;
-//        }
-//        case RIGHT: {
-//            auv.sonars[RIGHT].distance = ping(RIGHT);
-//            RGB(GREEN);
-//            handleDistanceResponse(SD_RIGHT);
-//            break;
-//        }
+        case LEFT: {
+            auv.sonars[LEFT].distance = ping(LEFT);
+            RGB(GREEN);
+            handleDistanceResponse(SD_LEFT);
+            break;
+        }
+        case RIGHT: {
+            auv.sonars[RIGHT].distance = ping(RIGHT);
+            RGB(GREEN);
+            handleDistanceResponse(SD_RIGHT);
+            break;
+        }
         default: break;
     }
     AUV_incrementSonarIndex(&auv);

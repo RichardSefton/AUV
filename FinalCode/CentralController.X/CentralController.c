@@ -24,6 +24,7 @@ u8 getDepth(void);
 void dive(u8);
 void raise(u8);
 void commandForwardMotor(ForwardMotorDirection);
+void commandSideMotors(SideMotorDirection);
 
 TwoWire twi0;
 AUV auv;
@@ -88,6 +89,7 @@ void setupRTC(void) {
 }
 
 u16 ping(SonarModule module) {
+    AUV_setSonarMode(&auv);
     //initiate sonar
     u8 addr = 0x00;
     switch(module) {
@@ -111,7 +113,7 @@ u16 ping(SonarModule module) {
     }
     cli();
     TwoWire_beginTransmission(&twi0, addr);
-    TwoWire_write(&twi0, 0x50); //The arb value to initiate an actual ping
+    TwoWire_write(&twi0, auv.sonarMode); //The value is the mode of operation
     TwoWire_endTransmission(&twi0, 1);
     _delay_ms(250); //Wait before responding
     
@@ -125,6 +127,13 @@ u16 ping(SonarModule module) {
         dist |= (dataHigh << 8);
     }
     sei();
+    
+    //Becuase the sensor is mounted on the bottom, we can't actively test this now its
+    //assembled. It was tested as working previously but now we need to override the 
+    //returned value. 
+    if ((addr == US_BOTTOM) && (auv.sonarMode == LAND)) {
+        return 0xFFFF; //Return max. 
+    }
     return dist;
 }
 
@@ -183,6 +192,36 @@ void handleDistanceResponse(SonarDirection dir) {
             }
         }
         
+        case SD_LEFT: {
+            Sonar* s = AUV_loadSonar(&auv, LEFT);
+            if (s->distance < 1400) {
+                AUV_setMotorDirection(&auv,FMD_STOP, SD_LEFT);
+                AUV_setTurnDirection(&auv, SMD_RIGHT, SD_LEFT);
+            } else {
+                if (auv.mainMotorHeldBy == SD_LEFT || auv.mainMotorHeldBy == SD_NONE) {
+                    AUV_setMotorDirection(&auv, FMD_FORWARD, SD_NONE);
+                }
+                if (auv.sideMotorHeldBy == SD_LEFT || auv.sideMotorHeldBy == SD_NONE) {
+                    AUV_setTurnDirection(&auv, SMD_NONE, SD_NONE);
+                }
+            }
+        }
+        
+        case SD_RIGHT: {
+            Sonar* s = AUV_loadSonar(&auv, LEFT);
+            if (s->distance < 800) {
+                AUV_setMotorDirection(&auv,FMD_STOP, SD_RIGHT);
+                AUV_setTurnDirection(&auv, SMD_LEFT, SD_RIGHT);
+            } else {
+                if (auv.mainMotorHeldBy == SD_RIGHT || auv.mainMotorHeldBy == SD_NONE) {
+                    AUV_setMotorDirection(&auv, FMD_FORWARD, SD_NONE);
+                }
+                if (auv.sideMotorHeldBy == SD_RIGHT || auv.sideMotorHeldBy == SD_NONE) {
+                    AUV_setTurnDirection(&auv, SMD_NONE, SD_NONE);
+                }
+            }
+        }
+        
         default: { 
             break;
         }
@@ -219,6 +258,36 @@ void commandForwardMotor(ForwardMotorDirection dir) {
     RGB(GREEN);
 }
 
+void commandSideMotors(SideMotorDirection dir) {
+    RGB(BLUE);
+    if (dir == SMD_LEFT) {
+        TwoWire_beginTransmission(&twi0, LEFT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_OFF);
+        TwoWire_endTransmission(&twi0, 1);
+        _delay_ms(100);
+        TwoWire_beginTransmission(&twi0, RIGHT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_ON);
+        TwoWire_endTransmission(&twi0, 1);
+    } else if (dir == SMD_RIGHT) {
+        TwoWire_beginTransmission(&twi0, RIGHT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_OFF);
+        TwoWire_endTransmission(&twi0, 1);
+        _delay_ms(100);
+        TwoWire_beginTransmission(&twi0, LEFT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_ON);
+        TwoWire_endTransmission(&twi0, 1);
+    } else if (dir == SMD_NONE) {
+        TwoWire_beginTransmission(&twi0, RIGHT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_OFF);
+        TwoWire_endTransmission(&twi0, 1);
+        _delay_ms(100);
+        TwoWire_beginTransmission(&twi0, LEFT_MOTOR);
+        TwoWire_write(&twi0, (u8)SMS_OFF);
+        TwoWire_endTransmission(&twi0, 1);
+    }
+    RGB(GREEN);
+}
+
 ISR(RTC_CNT_vect) {
     RGB(BLUE);
     switch(auv.sonarIndex) {
@@ -250,6 +319,20 @@ ISR(RTC_CNT_vect) {
     }
     AUV_incrementSonarIndex(&auv);
     commandForwardMotor(auv.mainMotorDirection);
+    commandSideMotors(auv.sideMotorDirection);
+    
+    if ((depth == 0) || (depth == 1)) {
+        AUV_increaseSurfaceTimer(&auv);
+        if (AUV_shouldDive(&auv) == 1) {
+            dive(255);
+        }
+    } else {
+        AUV_increaseSubmergeTimer(&auv);
+        if (AUV_shouldSurface(&auv)) {
+            raise(0);
+        }
+    }
+    
     
     RTC.INTFLAGS = RTC_OVF_bm;
 }

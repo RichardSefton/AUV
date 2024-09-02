@@ -43,11 +43,11 @@ int main() {
         if (dir == FORWARD) {
             RGB(GREEN);
             StepperMotor_step(&stepper);
-            StepperMotor_decreaseStep(&stepper);
+            StepperMotor_increaseStep(&stepper);
         } else if (dir == BACKWARD) {
             RGB(BLUE);
             StepperMotor_step(&stepper);
-            StepperMotor_increaseStep(&stepper);
+            StepperMotor_decreaseStep(&stepper);
         } else {
             RGB(RED);
             StepperMotor_allStop();

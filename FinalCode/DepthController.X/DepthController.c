@@ -114,6 +114,11 @@ void setupPins(void) {
     //Buffers
     PORTA.DIR &= ~(BUFFER_OUT_PIN);
     PORTA.DIR &= ~(BUFFER_IN_PIN);
+    
+    //This pin is for the voltage to be detected. 
+    PORTA.DIR |= PIN4_bm;
+    PORTA.OUT |= PIN4_bm;
+    
     PORTA.PIN5CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc;
     PORTA.PIN7CTRL |= PORT_PULLUPEN_bm | PORT_ISC_RISING_gc; 
 }
@@ -181,4 +186,5 @@ ISR(PORTA_PORT_vect) {
         }
         PORTA.INTFLAGS |= BUFFER_IN_PIN;
     }
+    PORTA.INTFLAGS |= BUFFER_IN_PIN | BUFFER_OUT_PIN;
 }

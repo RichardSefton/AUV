@@ -14,6 +14,8 @@
 #define     US_LEFT             0x32
 #define     US_FORWARD          0x33
 #define     FORWARD_MOTOR       0x45
+#define     LEFT_MOTOR          0x46
+#define     RIGHT_MOTOR         0x47
 
 #endif	/* ADDRESSBOOK_H */
 

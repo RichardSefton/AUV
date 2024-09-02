@@ -66,7 +66,12 @@ void I2C_RX_Callback(u8 val) {
         while (TwoWire_available(&twi0)) {
             u8 data = TwoWire_read(&twi0);
             //arbitrary value just to prevent against accidental triggers from noise on the line
-            if (data == 0x50) { 
+            if ((data == LAND) || (data == WATER)) { 
+                if (data == LAND) {
+                    sonar.mode = LAND;
+                } else if (data == WATER) {
+                    sonar.mode == WATER;
+                }
                 RGB(BLUE);
                 Sonar_trigger(&sonar);
             }

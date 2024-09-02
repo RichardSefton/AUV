@@ -23,8 +23,8 @@ extern enum {
 } S_Pins;
 
 typedef enum {
-    LAND = 0,
-    WATER = 1,
+    LAND = 1,
+    WATER = 2,
 } Mode;
 
 typedef struct {

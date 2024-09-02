@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper,titlepage]{report}
+
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=trad-abbrv]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+	\posttitle{%
+		\par\end{center}
+	\begin{center}\large#1\end{center}
+	\vskip0.5em}%
+}
+\lstset{
+	frame=tb,
+	language=c,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=left,
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\title{Final Project}
+\subtitle{Autonomous Underwater Vehicle}
+\author{Richard Sefton}
+
+\graphicspath{./assets/}
+\usepackage[inkscapeformat=png]{svg}
+
+\addbibresource{BIBLIOGRAPHY.bib}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\begin{abstract}
+		This report depicts the end to end design and development of an Autonomous Underwater Vehicle for the Final Project of the BSc Computer Science degree. As it transpires this was an incredibly ambitious project to deliver in such a short time frame. This report will try to capture the key aspects of the development process which will be a challenge in itself given the constraints on the report and as such, some aspects will be focused on more than others.  
+	\end{abstract}
+	
+	\chapter*{Introduction} (max 2 pages)
+	
+	Autonomous Underwater Vehicles have been around since the 1950s, with the first AUV on record developed by Washington University in 1957 named SPURV\cite{SPURV} (Self Propelled Underwater Research Vehicle). The device was fitted with various temperature and pressure sending probes and could traverse to depths of 3600\unit{\meter} and one of the last uses of the SPURV AUV was to study submarine wakes in the 70s. Since this first development, in the last 67 years AUVs have been refined and further developed by various governments, oceanographic institutes, universities and private companies. Today, AUVs are often considered cheaper, better and safer to deploy than manned underwater vehicles (particularly in the light of the more recent Titan submarine implosion\cite{TITAN_IMPLOSION}), and safer than deploying divers. They are capable of obtaining more data than any single diver can obtain, and capable of diving longer than any manned vehicle as the requirement for breathable air is negated. An AUVs dive time is only limited by its available power which will only increase as power technology improves. AUVs are used across a multitude of different industrial sectors spanning scientific research, surveying, military, shipping and gas and oil. CITATION NEEDED
+	
+	The aim of this project is to design and develop a rudimentary AUV. This project does not comfortably fall into any of the predefined template project ideas but was born from a personal enjoyment of the Internet of Things module which allowed me to explore microcontroller programming and interacting with physical sensors and actuators, which blossomed into a passion for robotics. As one of the early module videos highlighted, our projects should be something we are passionate about as without passion we would lack the motivation to complete such a lengthy and isolated piece of work\cite{COURSERA_PROJECT_VIDEO}. I found that the existing Internet of Things templates involved topics I'm not particularly passionate about. I did gain permission from the Coursera Tutor Forums prior to embarking on this journey\cite{COURSERA_PROJECT_PERMISSION}.
+	
+	This project was initially inspired by the work of a YouTuber (Brick Experiment Channel\cite{BRICK_EXPERIMENT_CHANNEL_PROFILE}) who created a small remote controlled submarine using a watertight container and Lego. The accompanying blog\cite{BRICK_EXPERIMENT_CHANNEL_BLOG} depicts the design and development of several versions of this device, and also explains some of the key concepts that need to be considered such as buoyancy. The original plan for this project was to do something similar to this (occupying the hobby space of the AUV market) - a small device that provides basic functionality autonomously, using similar materials (a water tight container and Lego). However, following the initial research into the AUV market there is a trend of developed AUVs costing thousands\cite{AUV_COST}. 
+	
+	\chapter*{Literature Review}
+	Literatures review: this is a revised version of the document that you submit for your second peer review (max 5 pages)
+	
+	\chapter*{Design}
+	Design: this is a revised version of the document that you submit for your third peer review (max 4 pages)
+	
+	\chapter*{Implementation}
+	Implemementation: this should describe the implementation of the project. This should follow the style of the topic 6 peer review (but greatly expanded to cover the entire implementation), describing the major algorithms/techniques used, explanation of the most important parts of the code and a visual representation of the results (e.g. screenshorts or graphs). (max 3 pages)
+	
+	\chapter*{Evaluation}
+	Evaluation: Describe the evaluation carried out (e.g. user studies or testing on data) and give the results. This should give a critical evaluation of the project as a whole making clear successes, failures, limiations and possible extensions. (max 3 pages)
+	
+	\chapter*{Conclusion}
+	Conclusion: This can be a short summary of the project as a whole but it can also bring out any broader themes you would like to discuss or suggest further work. (max 2 pages)
+	
+	\printbibliography
+\end{document}

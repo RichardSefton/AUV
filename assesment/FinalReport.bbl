@@ -1,0 +1,225 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{BRICK_EXPERIMENT_CHANNEL_PROFILE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=70d0c724fa255a1b3f113f57403c36ea}{%
+           family={Channel},
+           familyi={C\bibinitperiod},
+           given={Brick\bibnamedelima Experiment},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{fullhash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{fullhashraw}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{bibnamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorbibnamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authornamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorfullhash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorfullhashraw}{70d0c724fa255a1b3f113f57403c36ea}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Brick Experiment Channel}
+      \verb{urlraw}
+      \verb https://www.youtube.com/c/BrickExperimentChannel
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/c/BrickExperimentChannel
+      \endverb
+    \endentry
+    \entry{BRICK_EXPERIMENT_CHANNEL_BLOG}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=70d0c724fa255a1b3f113f57403c36ea}{%
+           family={Channel},
+           familyi={C\bibinitperiod},
+           given={Brick\bibnamedelima Experiment},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{fullhash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{fullhashraw}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{bibnamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorbibnamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authornamehash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorfullhash}{70d0c724fa255a1b3f113f57403c36ea}
+      \strng{authorfullhashraw}{70d0c724fa255a1b3f113f57403c36ea}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Brick Experiment Channel}
+      \verb{urlraw}
+      \verb https@//brickexperimentchannel.wordpress.com/
+      \endverb
+      \verb{url}
+      \verb https@//brickexperimentchannel.wordpress.com/
+      \endverb
+    \endentry
+    \entry{SPURV}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=3233c8e0fd83ab7490508f6513195d1f}{%
+           family={HR},
+           familyi={H\bibinitperiod},
+           given={Widditsch},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Applied Physics Labratory, Univerity of Washington}%
+      }
+      \strng{namehash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{fullhash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{fullhashraw}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{bibnamehash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{authorbibnamehash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{authornamehash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{authorfullhash}{3233c8e0fd83ab7490508f6513195d1f}
+      \strng{authorfullhashraw}{3233c8e0fd83ab7490508f6513195d1f}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SPURV - The First Decade}
+      \field{year}{1973}
+    \endentry
+    \entry{TITAN_IMPLOSION}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b3f2dbd9edcdea0a5c4fda9ae732b555}{%
+           family={News},
+           familyi={N\bibinitperiod},
+           given={BBC},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{fullhash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{fullhashraw}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{bibnamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authorbibnamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authornamehash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authorfullhash}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \strng{authorfullhashraw}{b3f2dbd9edcdea0a5c4fda9ae732b555}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{11}
+      \field{month}{10}
+      \field{title}{Remaining debris from destroyed Titan sub found on Atlantic seabed}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.bbc.co.uk/news/world-us-canada-67073535
+      \endverb
+      \verb{url}
+      \verb https://www.bbc.co.uk/news/world-us-canada-67073535
+      \endverb
+    \endentry
+    \entry{AUV_COST}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=aeb5d6839d39f312f8199d7238ef8477}{%
+           family={Oceanography},
+           familyi={O\bibinitperiod},
+           given={Project},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Ocean Technology}%
+      }
+      \strng{namehash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{fullhash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{fullhashraw}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{bibnamehash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{authorbibnamehash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{authornamehash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{authorfullhash}{aeb5d6839d39f312f8199d7238ef8477}
+      \strng{authorfullhashraw}{aeb5d6839d39f312f8199d7238ef8477}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Underwater robots: Autonomous Underwater Vehicles (AUVs)}
+      \field{year}{1999}
+    \endentry
+    \entry{COURSERA_PROJECT_VIDEO}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=fcee9693e9e4049126d64bc39ab6adf7}{%
+           family={London},
+           familyi={L\bibinitperiod},
+           given={University},
+           giveni={U\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{fullhash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{fullhashraw}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{bibnamehash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{authorbibnamehash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{authornamehash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{authorfullhash}{fcee9693e9e4049126d64bc39ab6adf7}
+      \strng{authorfullhashraw}{fcee9693e9e4049126d64bc39ab6adf7}
+      \field{sortinit}{o}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Module Author Interviews - Project Templates}
+      \verb{urlraw}
+      \verb NEEDED
+      \endverb
+      \verb{url}
+      \verb NEEDED
+      \endverb
+    \endentry
+    \entry{COURSERA_PROJECT_PERMISSION}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=76734206a2102c7a3fd48db54c3e5089}{%
+           family={Sefton},
+           familyi={S\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{fullhash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{fullhashraw}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{bibnamehash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{authorbibnamehash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{authornamehash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{authorfullhash}{76734206a2102c7a3fd48db54c3e5089}
+      \strng{authorfullhashraw}{76734206a2102c7a3fd48db54c3e5089}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Project Template}
+      \verb{urlraw}
+      \verb NEEDED
+      \endverb
+      \verb{url}
+      \verb NEEDED
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,38 @@
+\contentsline {chapter}{Introduction}{1}{}%
+\contentsline {section}{Previous Works}{1}{}%
+\contentsline {subsection}{Amateur Level}{1}{}%
+\contentsline {subsection}{Commercial Level}{2}{}%
+\contentsline {subsection}{Research Level}{2}{}%
+\contentsline {chapter}{Literature Review}{4}{}%
+\contentsline {section}{Communication}{4}{}%
+\contentsline {section}{Navigation}{7}{}%
+\contentsline {chapter}{Project Design}{9}{}%
+\contentsline {section}{Domain}{9}{}%
+\contentsline {section}{Technologies}{9}{}%
+\contentsline {section}{Project Plan}{11}{}%
+\contentsline {section}{Evaluation Plan}{13}{}%
+\contentsline {chapter}{Feature Prototype}{14}{}%
+\contentsline {section}{Overview}{14}{}%
+\contentsline {section}{Challenges}{15}{}%
+\contentsline {section}{Further Development}{17}{}%
+\contentsline {section}{\numberline {0.1}v1}{22}{}%
+\contentsline {chapter}{Appendices}{26}{}%
+\contentsline {chapter}{\numberline {A}Project Permission}{27}{}%
+\contentsline {chapter}{\numberline {B}Project Plan}{28}{}%
+\contentsline {chapter}{\numberline {C}VQFN Breakout}{30}{}%
+\contentsline {chapter}{\numberline {D}AVR ATTiny 1627 Features}{32}{}%
+\contentsline {chapter}{\numberline {E}TWI Library Code}{43}{}%
+\contentsline {chapter}{\numberline {F}Sonar Schematics}{54}{}%
+\contentsline {chapter}{\numberline {G}Depth Controller}{56}{}%
+\contentsline {chapter}{\numberline {H}Pseudocode}{64}{}%
+\contentsline {section}{\numberline {H.1}Depth Controller v1}{64}{}%
+\contentsline {section}{\numberline {H.2}Sonar Module v1}{68}{}%
+\contentsline {section}{\numberline {H.3}Depth Controller v2}{71}{}%
+\contentsline {section}{\numberline {H.4}Sonar Module v2}{75}{}%
+\contentsline {section}{\numberline {H.5}Central Controller v1}{77}{}%
+\contentsline {chapter}{\numberline {I}Code}{80}{}%
+\contentsline {section}{\numberline {I.1}Depth Controller v1}{80}{}%
+\contentsline {section}{\numberline {I.2}Sonar Module v1}{84}{}%
+\contentsline {section}{\numberline {I.3}Depth Controller v2}{87}{}%
+\contentsline {section}{\numberline {I.4}Sonar Module v2}{91}{}%
+\contentsline {section}{\numberline {I.5}Central Controller v1}{94}{}%

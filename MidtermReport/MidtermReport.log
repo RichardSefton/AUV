@@ -1,0 +1,1232 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.20)  2 SEP 2024 15:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**MidtermReport.tex
+(./MidtermReport.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-05-27>
+(c:/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
+(c:/texlive/2024/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+
+(c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count269
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\csq@reset=\count270
+\csq@gtype=\count271
+\csq@glevel=\count272
+\csq@qlevel=\count273
+\csq@maxlvl=\count274
+\csq@tshold=\count275
+\csq@ltx@everypar=\toks18
+
+(c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(c:/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(c:/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count276
+
+(c:/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count277
+\c@listtotal=\count278
+\c@listcount=\count279
+\c@liststart=\count280
+\c@liststop=\count281
+\c@citecount=\count282
+\c@citetotal=\count283
+\c@multicitecount=\count284
+\c@multicitetotal=\count285
+\c@instcount=\count286
+\c@maxnames=\count287
+\c@minnames=\count288
+\c@maxitems=\count289
+\c@minitems=\count290
+\c@citecounter=\count291
+\c@maxcitecounter=\count292
+\c@savedcitecounter=\count293
+\c@uniquelist=\count294
+\c@uniquename=\count295
+\c@refsection=\count296
+\c@refsegment=\count297
+\c@maxextratitle=\count298
+\c@maxextratitleyear=\count299
+\c@maxextraname=\count300
+\c@maxextradate=\count301
+\c@maxextraalpha=\count302
+\c@abbrvpenalty=\count303
+\c@highnamepenalty=\count304
+\c@lownamepenalty=\count305
+\c@maxparens=\count306
+\c@parenlevel=\count307
+\blx@tempcnta=\count308
+\blx@tempcntb=\count309
+\blx@tempcntc=\count310
+\c@blx@maxsection=\count311
+\blx@maxsegment@0=\count312
+\blx@notetype=\count313
+\blx@parenlevel@text=\count314
+\blx@parenlevel@foot=\count315
+\blx@sectionciteorder@0=\count316
+\blx@sectionciteorderinternal@0=\count317
+\blx@entrysetcounter=\count318
+\blx@biblioinstance=\count319
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language89
+\c@mincomprange=\count320
+\c@maxcomprange=\count321
+\c@mincompwidth=\count322
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'trad-abbrv.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count323
+\c@savedafterword=\count324
+\c@annotator=\count325
+\c@savedannotator=\count326
+\c@author=\count327
+\c@savedauthor=\count328
+\c@bookauthor=\count329
+\c@savedbookauthor=\count330
+\c@commentator=\count331
+\c@savedcommentator=\count332
+\c@editor=\count333
+\c@savededitor=\count334
+\c@editora=\count335
+\c@savededitora=\count336
+\c@editorb=\count337
+\c@savededitorb=\count338
+\c@editorc=\count339
+\c@savededitorc=\count340
+\c@foreword=\count341
+\c@savedforeword=\count342
+\c@holder=\count343
+\c@savedholder=\count344
+\c@introduction=\count345
+\c@savedintroduction=\count346
+\c@namea=\count347
+\c@savednamea=\count348
+\c@nameb=\count349
+\c@savednameb=\count350
+\c@namec=\count351
+\c@savednamec=\count352
+\c@translator=\count353
+\c@savedtranslator=\count354
+\c@shortauthor=\count355
+\c@savedshortauthor=\count356
+\c@shorteditor=\count357
+\c@savedshorteditor=\count358
+\c@labelname=\count359
+\c@savedlabelname=\count360
+\c@institution=\count361
+\c@savedinstitution=\count362
+\c@lista=\count363
+\c@savedlista=\count364
+\c@listb=\count365
+\c@savedlistb=\count366
+\c@listc=\count367
+\c@savedlistc=\count368
+\c@listd=\count369
+\c@savedlistd=\count370
+\c@liste=\count371
+\c@savedliste=\count372
+\c@listf=\count373
+\c@savedlistf=\count374
+\c@location=\count375
+\c@savedlocation=\count376
+\c@organization=\count377
+\c@savedorganization=\count378
+\c@origlocation=\count379
+\c@savedoriglocation=\count380
+\c@origpublisher=\count381
+\c@savedorigpublisher=\count382
+\c@publisher=\count383
+\c@savedpublisher=\count384
+\c@language=\count385
+\c@savedlanguage=\count386
+\c@origlanguage=\count387
+\c@savedoriglanguage=\count388
+\c@pageref=\count389
+\c@savedpageref=\count390
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count391
+\c@textcitetotal=\count392
+\c@textcitemaxnames=\count393
+\c@biburlbigbreakpenalty=\count394
+\c@biburlbreakpenalty=\count395
+\c@biburlnumpenalty=\count396
+\c@biburlucpenalty=\count397
+\c@biburllcpenalty=\count398
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count399
+)
+Package biblatex Info: Trying to load bibliography style 'trad-abbrv'...
+Package biblatex Info: ... file 'trad-abbrv.bbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex-trad/trad-abbrv.bbx
+File: trad-abbrv.bbx 2021/03/06 v0.5 biblatex-trad abbrv bibliography style
+Package biblatex Info: Trying to load bibliography style 'trad-standard'...
+Package biblatex Info: ... file 'trad-standard.bbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex-trad/trad-standard.bbx
+File: trad-standard.bbx 2021/03/06 v0.5 biblatex-trad base bibliography style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count400
+\c@bbx:relatedtotal=\count401
+)))
+Package biblatex Info: Trying to load citation style 'trad-abbrv'...
+Package biblatex Info: ... file 'trad-abbrv.cbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex-trad/trad-abbrv.cbx
+File: trad-abbrv.cbx 2021/03/06 v0.5 biblatex-trad abbrv citation style
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-05-27 L3 programming layer (loader) 
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count402
+\l__pdf_internal_box=\box52
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2024-05-27 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-05-08 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+))
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip73
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen142
+))
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count403
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count404
+\leftroot@=\count405
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count406
+\DOTSCASE@=\count407
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count408
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count409
+\dotsspace@=\muskip22
+\c@parentequation=\count410
+\dspbrk@lvl=\count411
+\tag@help=\toks20
+\row@=\count412
+\column@=\count413
+\maxfields@=\count414
+\andhelp@=\toks21
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks22
+\multlinegap=\skip74
+\multlinetaggap=\skip75
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+)
+(c:/texlive/2024/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2024-06-24 v3.3.19 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count415
+\l__siunitx_number_exponent_fixed_int=\count416
+\l__siunitx_number_min_decimal_int=\count417
+\l__siunitx_number_min_integer_int=\count418
+\l__siunitx_number_round_precision_int=\count419
+\l__siunitx_number_lower_threshold_int=\count420
+\l__siunitx_number_upper_threshold_int=\count421
+\l__siunitx_number_group_first_int=\count422
+\l__siunitx_number_group_size_int=\count423
+\l__siunitx_number_group_minimum_int=\count424
+\l__siunitx_angle_tmp_dim=\dimen153
+\l__siunitx_angle_marker_box=\box55
+\l__siunitx_angle_unit_box=\box56
+\l__siunitx_compound_count_int=\count425
+
+(c:/texlive/2024/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box57
+\l__siunitx_table_tmp_dim=\dimen154
+\l__siunitx_table_column_width_dim=\dimen155
+\l__siunitx_table_integer_box=\box58
+\l__siunitx_table_decimal_box=\box59
+\l__siunitx_table_uncert_box=\box60
+\l__siunitx_table_before_box=\box61
+\l__siunitx_table_after_box=\box62
+\l__siunitx_table_before_dim=\dimen156
+\l__siunitx_table_carry_dim=\dimen157
+\l__siunitx_unit_tmp_int=\count426
+\l__siunitx_unit_position_int=\count427
+\l__siunitx_unit_total_int=\count428
+
+(c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/06/14 v2.6d Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box63
+\extrarowheight=\dimen159
+\NC@list=\toks24
+\extratabsurround=\skip76
+\backup@length=\skip77
+\ar@cellbox=\box64
+))
+(c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count429
+\lst@gtempboxa=\box65
+\lst@token=\toks25
+\lst@length=\count430
+\lst@currlwidth=\dimen160
+\lst@column=\count431
+\lst@pos=\count432
+\lst@lostspace=\dimen161
+\lst@width=\dimen162
+\lst@newlines=\count433
+\lst@lineno=\count434
+\lst@maxwidth=\dimen163
+
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+\c@lstnumber=\count435
+\lst@skipnumbers=\count436
+\lst@framebox=\box66
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/05/25 1.10b listings configuration
+))
+Package: listings 2024/05/25 1.10b (Carsten Heinz)
+
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+(c:/texlive/2024/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count437
+\svg@box=\box67
+\c@svg@param@currpage=\count438
+)
+(c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/transparent/transparent.sty
+Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+
+(c:/texlive/2024/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
+ stack (HO)
+
+(c:/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)))
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box68
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks29
+))
+\pgf@x=\dimen166
+\pgf@y=\dimen167
+\pgf@xa=\dimen168
+\pgf@ya=\dimen169
+\pgf@xb=\dimen170
+\pgf@yb=\dimen171
+\pgf@xc=\dimen172
+\pgf@yc=\dimen173
+\pgf@xd=\dimen174
+\pgf@yd=\dimen175
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count439
+\c@pgf@countb=\count440
+\c@pgf@countc=\count441
+\c@pgf@countd=\count442
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count443
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count444
+\pgfsyssoftpath@bigbuffer@items=\count445
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 35.
+ (./MidtermReport.aux)
+\openout1 = `MidtermReport.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `MidtermReport.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'MidtermReport.bbl' found.
+
+(./MidtermReport.bbl)
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
+
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count446
+\scratchdimen=\dimen176
+\scratchbox=\box69
+\nofMPsegments=\count447
+\nofMParguments=\count448
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count449
+\MPscratchDim=\dimen177
+\MPnumerator=\count450
+\makeMPintoPDFobject=\count451
+\everyMPtoPDFconversion=\toks34
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(c:/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionar
+y-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 35.
+\c@lstlisting=\count452
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./MidtermReport.toc
+
+[1
+
+])
+\tf@toc=\write5
+\openout5 = `MidtermReport.toc'.
+
+
+
+[2]
+
+[1]
+
+[1
+
+]
+Overfull \hbox (9.849pt too wide) in paragraph at lines 72--73
+[]\OT1/cmr/m/n/10.95 One of the more in-ter-est-ing AUVs this in-sti-tute uses 
+is the Spray Glider[17].
+ []
+
+
+
+[2]
+
+[3]
+
+[4
+
+]
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[9
+
+]
+
+[10{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+[11]
+
+[12]
+
+[13]
+
+[14
+
+]
+
+[15]
+
+[16]
+
+[17]
+
+[18
+
+]
+
+[19]
+
+[20]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 303.
+
+
+[21]
+
+[22
+
+]
+Overfull \hbox (0.24232pt too wide) in paragraph at lines 345--347
+[]\OT1/cmr/m/n/10.95 Developing the in-ter-nal elec-tron-ics has been a chal-le
+nge. For the midterm
+ []
+
+
+
+[23]
+
+[24
+
+]
+
+[25
+
+]
+
+[26
+
+]
+Appendix A.
+<assets/FinalProject_permission_1.png, id=113, 2243.38126pt x 1201.48875pt>
+File: assets/FinalProject_permission_1.png Graphic file (type png)
+<use assets/FinalProject_permission_1.png>
+Package pdftex.def Info: assets/FinalProject_permission_1.png  used on input li
+ne 373.
+(pdftex.def)             Requested size: 336.49268pt x 180.21553pt.
+<assets/FinalProject_permission_2.png, id=115, 2243.38126pt x 1201.48875pt>
+File: assets/FinalProject_permission_2.png Graphic file (type png)
+<use assets/FinalProject_permission_2.png>
+Package pdftex.def Info: assets/FinalProject_permission_2.png  used on input li
+ne 377.
+(pdftex.def)             Requested size: 336.49268pt x 180.21553pt.
+
+
+[27
+
+ <./assets/FinalProject_permission_1.png> <./assets/FinalProject_permission_2.p
+ng>]
+Appendix B.
+<assets/gannt_start-june22.png, id=122, 2521.42pt x 717.68124pt>
+File: assets/gannt_start-june22.png Graphic file (type png)
+<use assets/gannt_start-june22.png>
+Package pdftex.def Info: assets/gannt_start-june22.png  used on input line 383.
+
+(pdftex.def)             Requested size: 378.19669pt x 107.64754pt.
+
+Overfull \hbox (18.19669pt too wide) in paragraph at lines 383--384
+ [] 
+ []
+
+<assets/gaant_june22-july28.png, id=123, 2521.42pt x 717.68124pt>
+File: assets/gaant_june22-july28.png Graphic file (type png)
+<use assets/gaant_june22-july28.png>
+Package pdftex.def Info: assets/gaant_june22-july28.png  used on input line 387
+.
+(pdftex.def)             Requested size: 378.19669pt x 107.64754pt.
+
+Overfull \hbox (18.19669pt too wide) in paragraph at lines 387--388
+ [] 
+ []
+
+<assets/gaant_july28-sept2.png, id=124, 2521.42pt x 717.68124pt>
+File: assets/gaant_july28-sept2.png Graphic file (type png)
+<use assets/gaant_july28-sept2.png>
+Package pdftex.def Info: assets/gaant_july28-sept2.png  used on input line 391.
+
+(pdftex.def)             Requested size: 378.19669pt x 107.64754pt.
+
+Overfull \hbox (18.19669pt too wide) in paragraph at lines 391--392
+ [] 
+ []
+
+<assets/backlog.png, id=125, 1786.675pt x 751.80875pt>
+File: assets/backlog.png Graphic file (type png)
+<use assets/backlog.png>
+Package pdftex.def Info: assets/backlog.png  used on input line 395.
+(pdftex.def)             Requested size: 357.32867pt x 150.35909pt.
+
+
+[28
+
+ <./assets/gannt_start-june22.png> <./assets/gaant_june22-july28.png> <./assets
+/gaant_july28-sept2.png>]
+<assets/priority.png, id=132, 1782.66pt x 930.47626pt>
+File: assets/priority.png Graphic file (type png)
+<use assets/priority.png>
+Package pdftex.def Info: assets/priority.png  used on input line 399.
+(pdftex.def)             Requested size: 356.52568pt x 186.09195pt.
+
+
+[29 <./assets/backlog.png> <./assets/priority.png>]
+Appendix C.
+<assets/breakout_schematic.png, id=138, 1524.69624pt x 1039.885pt>
+File: assets/breakout_schematic.png Graphic file (type png)
+<use assets/breakout_schematic.png>
+Package pdftex.def Info: assets/breakout_schematic.png  used on input line 405.
+
+(pdftex.def)             Requested size: 304.93385pt x 207.97331pt.
+<assets/breakout_pcb_schema.png, id=139, 523.9575pt x 957.5775pt>
+File: assets/breakout_pcb_schema.png Graphic file (type png)
+<use assets/breakout_pcb_schema.png>
+Package pdftex.def Info: assets/breakout_pcb_schema.png  used on input line 409
+.
+(pdftex.def)             Requested size: 104.78964pt x 191.5121pt.
+<assets/breakout_pcb_3d.png, id=140, 1324.95pt x 1007.765pt>
+File: assets/breakout_pcb_3d.png Graphic file (type png)
+<use assets/breakout_pcb_3d.png>
+Package pdftex.def Info: assets/breakout_pcb_3d.png  used on input line 413.
+(pdftex.def)             Requested size: 264.9853pt x 201.54942pt.
+
+
+[30
+
+ <./assets/breakout_schematic.png> <./assets/breakout_pcb_schema.png>]
+
+[31 <./assets/breakout_pcb_3d.png>]
+Appendix D.
+
+
+[32
+
+]
+
+[33
+
+]
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+Appendix E.
+
+
+[43
+
+]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+
+[53]
+Appendix F.
+<assets/sonar_transmitter.png, id=221, 1373.13pt x 1088.065pt>
+File: assets/sonar_transmitter.png Graphic file (type png)
+<use assets/sonar_transmitter.png>
+Package pdftex.def Info: assets/sonar_transmitter.png  used on input line 1269.
+
+(pdftex.def)             Requested size: 411.94218pt x 326.42203pt.
+
+Overfull \hbox (51.94218pt too wide) in paragraph at lines 1269--1270
+ [] 
+ []
+
+
+
+[54
+
+ <./assets/sonar_transmitter.png>]
+<assets/sonar_receiver.png, id=226, 1258.7025pt x 1032.85875pt>
+File: assets/sonar_receiver.png Graphic file (type png)
+<use assets/sonar_receiver.png>
+Package pdftex.def Info: assets/sonar_receiver.png  used on input line 1275.
+(pdftex.def)             Requested size: 377.61366pt x 309.86002pt.
+
+Overfull \hbox (17.61366pt too wide) in paragraph at lines 1275--1276
+ [] 
+ []
+
+
+
+[55 <./assets/sonar_receiver.png>]
+Appendix G.
+
+
+[56
+
+]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+
+[62]
+
+[63]
+Appendix H.
+
+
+[64
+
+]
+
+[65]
+
+[66]
+
+[67]
+
+[68]
+
+[69]
+
+[70]
+
+[71]
+
+[72]
+
+[73]
+
+[74]
+
+[75]
+
+[76]
+
+[77]
+
+[78]
+
+[79]
+Appendix I.
+
+
+[80
+
+]
+
+[81]
+
+[82]
+
+[83]
+
+[84]
+
+[85]
+
+[86]
+
+[87]
+
+[88]
+
+[89]
+
+[90]
+
+[91]
+
+[92]
+
+[93]
+
+[94]
+
+[95]
+
+[96]
+
+Package biblatex Warning: Month out of range
+(biblatex)                at entry 'AVRDUDE' on input line 3064.
+
+
+Overfull \hbox (3.7895pt too wide) in paragraph at lines 3065--3065
+[]\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
+c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . youtube 
+.
+ []
+
+
+Overfull \hbox (67.02507pt too wide) in paragraph at lines 3065--3065
+[]\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
+c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / brickexperimen
+tchannel .
+ []
+
+
+Overfull \hbox (1.40726pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 sites / default / files / component _ datasheet / ESP8266 %
+ 20NodeMCU %
+ []
+
+
+Overfull \hbox (14.90463pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 robotshop . com / media / s / spa / rb -[] spa -[] 1388 / p
+df / hcsr04 -[] ultrasonic -[]
+ []
+
+
+Package biblatex Warning: Month out of range
+(biblatex)                at entry 'GCC_AVR' on input line 3064.
+
+
+Overfull \hbox (4.40726pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 issues / planning -[] and -[] tracking -[] with -[] project
+s / learning -[] about -[]
+ []
+
+
+
+[97
+
+]
+Overfull \hbox (15.12927pt too wide) in paragraph at lines 3065--3065
+[]\OT1/cmr/m/n/10.95 megaTinyCore. Spence konde. \OT1/cmr/m/sc/10.95 url\OT1/cm
+r/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / github . com / SpenceKonde /
+ []
+
+
+Overfull \hbox (70.39151pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 microchip . com / downloads / aemDocuments / documents / MC
+U08 / ProductDocuments /
+ []
+
+
+Overfull \hbox (21.15332pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 science -[] final -[] project / lecture / xTXbf / module -[
+] author -[] interviews -[]
+ []
+
+
+Overfull \hbox (18.1427pt too wide) in paragraph at lines 3065--3065
+[]\OT1/cmr/m/n/10.95 M. Pro. Ul-tra-sonic sen-sor. \OT1/cmr/m/sc/10.95 url\OT1/
+cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . farnell . com / datashee
+ts /
+ []
+
+
+Overfull \hbox (15.40463pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 learn / uol -[] cm3070 -[] computer -[] science -[] final -
+[] project / discussions /
+ []
+
+
+Overfull \hbox (15.9463pt too wide) in paragraph at lines 3065--3065
+\OT1/cmtt/m/n/10.95 groups / nZogU _ NUEe6kARIL6JjJgQ / threads / SPXNkveKEe6Ew
+A4ifGOouQ$\OT1/cmr/m/n/10.95 . 
+ []
+
+
+
+[98]
+Overfull \hbox (38.67235pt too wide) in paragraph at lines 3065--3065
+[]\OT1/cmr/m/n/10.95 Wolfram. High-frequency sonar per-for-mance. \OT1/cmr/m/sc
+/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / demonstrations 
+.
+ []
+
+
+
+[99] (./MidtermReport.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-05-27>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+
+Package logreq Info: Writing requests to 'MidtermReport.run.xml'.
+\openout1 = `MidtermReport.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 20242 strings out of 473584
+ 421650 string characters out of 5732363
+ 2063908 words of memory out of 5000000
+ 42900 multiletter control sequences out of 15000+600000
+ 569162 words of font info for 77 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 94i,6n,93p,2374b,1694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2024/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2024/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c
+:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2
+024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/
+public/cm-super/sfrm1095.pfb>
+Output written on MidtermReport.pdf (103 pages, 1798157 bytes).
+PDF statistics:
+ 436 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -19,6 +19,61 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{AVRDUDE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=93f27a36a75886d56cfd2c4350bd8540}{%
+           family={avrdude},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{fullhash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{fullhashraw}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{bibnamehash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{authorbibnamehash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{authornamehash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{authorfullhash}{93f27a36a75886d56cfd2c4350bd8540}
+      \strng{authorfullhashraw}{93f27a36a75886d56cfd2c4350bd8540}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{avrdude documentation}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://avrdudes.github.io/avrdude/7.2/avrdude.pdf
+      \endverb
+      \verb{url}
+      \verb https://avrdudes.github.io/avrdude/7.2/avrdude.pdf
+      \endverb
+    \endentry
+    \entry{I2C_FAST}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1c2ab1217820795de422c703a6806f32}{%
+           family={Bus},
+           familyi={B\bibinitperiod},
+           given={I2C},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c2ab1217820795de422c703a6806f32}
+      \strng{fullhash}{1c2ab1217820795de422c703a6806f32}
+      \strng{fullhashraw}{1c2ab1217820795de422c703a6806f32}
+      \strng{bibnamehash}{1c2ab1217820795de422c703a6806f32}
+      \strng{authorbibnamehash}{1c2ab1217820795de422c703a6806f32}
+      \strng{authornamehash}{1c2ab1217820795de422c703a6806f32}
+      \strng{authorfullhash}{1c2ab1217820795de422c703a6806f32}
+      \strng{authorfullhashraw}{1c2ab1217820795de422c703a6806f32}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fast Mode}
+      \verb{urlraw}
+      \verb https://www.i2c-bus.org/fastmode/
+      \endverb
+      \verb{url}
+      \verb https://www.i2c-bus.org/fastmode/
+      \endverb
+    \endentry
     \entry{BRICK_EXPERIMENT_CHANNEL_PROFILE}{online}{}{}
       \name{author}{1}{}{%
         {{hash=70d0c724fa255a1b3f113f57403c36ea}{%
@@ -77,6 +132,136 @@
       \verb https@//brickexperimentchannel.wordpress.com/
       \endverb
     \endentry
+    \entry{ECOSUB}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0269ee6f9c0d9e79386051fbfc83d329}{%
+           family={ecoSub},
+           familyi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{fullhash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{fullhashraw}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{bibnamehash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{authorbibnamehash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{authornamehash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{authorfullhash}{0269ee6f9c0d9e79386051fbfc83d329}
+      \strng{authorfullhashraw}{0269ee6f9c0d9e79386051fbfc83d329}
+      \field{sortinit}{e}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ecoSub}
+      \verb{urlraw}
+      \verb https://www.ecosub.uk/
+      \endverb
+      \verb{url}
+      \verb https://www.ecosub.uk/
+      \endverb
+    \endentry
+    \entry{HC_SR04}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c455a66d4b566d57591347771593cd24}{%
+           family={Freaks},
+           familyi={F\bibinitperiod},
+           given={Elec},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{c455a66d4b566d57591347771593cd24}
+      \strng{fullhash}{c455a66d4b566d57591347771593cd24}
+      \strng{fullhashraw}{c455a66d4b566d57591347771593cd24}
+      \strng{bibnamehash}{c455a66d4b566d57591347771593cd24}
+      \strng{authorbibnamehash}{c455a66d4b566d57591347771593cd24}
+      \strng{authornamehash}{c455a66d4b566d57591347771593cd24}
+      \strng{authorfullhash}{c455a66d4b566d57591347771593cd24}
+      \strng{authorfullhashraw}{c455a66d4b566d57591347771593cd24}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ultrasonic Ranging Module HC - SR04}
+      \verb{urlraw}
+      \verb https://cdn.robotshop.com/media/s/spa/rb-spa-1388/pdf/hcsr04-ultrasonic-range-finder.pdf
+      \endverb
+      \verb{url}
+      \verb https://cdn.robotshop.com/media/s/spa/rb-spa-1388/pdf/hcsr04-ultrasonic-range-finder.pdf
+      \endverb
+    \endentry
+    \entry{GCC_AVR}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=e0d511356bd44120af49cc96c9dcf3b3}{%
+           family={gcc},
+           familyi={g\bibinitperiod}}}%
+      }
+      \strng{namehash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{fullhash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{fullhashraw}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{bibnamehash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{authorbibnamehash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{authornamehash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{authorfullhash}{e0d511356bd44120af49cc96c9dcf3b3}
+      \strng{authorfullhashraw}{e0d511356bd44120af49cc96c9dcf3b3}
+      \field{sortinit}{g}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{avr-gcc documentation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://gcc.gnu.org/wiki/avr-gcc
+      \endverb
+      \verb{url}
+      \verb https://gcc.gnu.org/wiki/avr-gcc
+      \endverb
+    \endentry
+    \entry{UNDERWATER_RADIO}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=2352069b9803b77880a5d40780db449d}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Zhen},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=18277bfd8661fc97bd51ea353d29400b}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Xiaoman},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f9d052e32540c1d8008e05e55c129e63}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ping},
+           giveni={P\bibinitperiod}}}%
+        {{hash=20aec422fc29111af4445b85323284f2}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Xianchuang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bc9736b40ca170d1b1ff5b2a9bb2545b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ning},
+           giveni={N\bibinitperiod}}}%
+        {{hash=9ac25ab8e3498db13c4ae6dac8a3635e}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Wenqi},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{fullhash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{fullhashraw}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{bibnamehash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{authorbibnamehash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{authornamehash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{authorfullhash}{4ad797768e1c048f2b6a11f12baa16bf}
+      \strng{authorfullhashraw}{4ad797768e1c048f2b6a11f12baa16bf}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{title}{A Topology Control with Energy Balance in Underwater WIreless Sensor Networks for IoT-Based Applications}
+      \field{year}{2018}
+    \endentry
     \entry{SPURV}{article}{}{}
       \name{author}{1}{}{%
         {{hash=3233c8e0fd83ab7490508f6513195d1f}{%
@@ -102,6 +287,256 @@
       \field{labeltitlesource}{title}
       \field{title}{SPURV - The First Decade}
       \field{year}{1973}
+    \endentry
+    \entry{AUV_MARKETSHARE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=17cc469da010a0dc7af3811ffeae6517}{%
+           family={Insights},
+           familyi={I\bibinitperiod},
+           given={Fortune\bibnamedelima Business},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{fullhash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{fullhashraw}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{bibnamehash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{authorbibnamehash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{authornamehash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{authorfullhash}{17cc469da010a0dc7af3811ffeae6517}
+      \strng{authorfullhashraw}{17cc469da010a0dc7af3811ffeae6517}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Autonomous Underwater Vehicle (AUV) Market Size, Share \& COVID-19 Impact Analysis, By Type (Small, Medium, and Large), By Application (Scientific, Research , Defense, and Oil \& Gas Industry), By Propulsion System (Electric System, Mechanical System, and Hybrid System), By Payoad (Camera, Sensors, Intertial Navigation System, and Others), and Regional Forecase, 2021-2028}
+      \verb{urlraw}
+      \verb https://www.fortunebusinessinsights.com/segmentation/autonomous-underwater-vehicle-market-105907
+      \endverb
+      \verb{url}
+      \verb https://www.fortunebusinessinsights.com/segmentation/autonomous-underwater-vehicle-market-105907
+      \endverb
+    \endentry
+    \entry{NATIONAL_OCEANOGRAPHIC_AUTOSUBS}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7bc3e19ce164c8a66ea874549c0ab95a}{%
+           family={Institute},
+           familyi={I\bibinitperiod},
+           given={National\bibnamedelima Oceanographic},
+           giveni={N\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{fullhash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{fullhashraw}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{bibnamehash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{authorbibnamehash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{authornamehash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{authorfullhash}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \strng{authorfullhashraw}{7bc3e19ce164c8a66ea874549c0ab95a}
+      \field{extraname}{1}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Autosubs}
+      \verb{urlraw}
+      \verb https://noc.ac.uk/facilities/marine-autonomous-robotic-systems/autosubs
+      \endverb
+      \verb{url}
+      \verb https://noc.ac.uk/facilities/marine-autonomous-robotic-systems/autosubs
+      \endverb
+    \endentry
+    \entry{WOODS_HOLE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0ff354a2b0943c2beb7897fd02231a7b}{%
+           family={Institute},
+           familyi={I\bibinitperiod},
+           given={Woods\bibnamedelimb Hole\bibnamedelima Oceanographic},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{bibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorbibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authornamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \field{extraname}{2}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{auvs}
+      \verb{urlraw}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/
+      \endverb
+      \verb{url}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/
+      \endverb
+    \endentry
+    \entry{WOODS_HOLE_REMUS}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0ff354a2b0943c2beb7897fd02231a7b}{%
+           family={Institute},
+           familyi={I\bibinitperiod},
+           given={Woods\bibnamedelimb Hole\bibnamedelima Oceanographic},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{bibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorbibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authornamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \field{extraname}{3}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Remus}
+      \verb{urlraw}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/remus/
+      \endverb
+      \verb{url}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/remus/
+      \endverb
+    \endentry
+    \entry{WOODS_HOLE_SPRAY_GLIDER}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0ff354a2b0943c2beb7897fd02231a7b}{%
+           family={Institute},
+           familyi={I\bibinitperiod},
+           given={Woods\bibnamedelimb Hole\bibnamedelima Oceanographic},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{fullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{bibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorbibnamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authornamehash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhash}{0ff354a2b0943c2beb7897fd02231a7b}
+      \strng{authorfullhashraw}{0ff354a2b0943c2beb7897fd02231a7b}
+      \field{extraname}{4}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Spray Glider}
+      \verb{urlraw}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/spray-glider/
+      \endverb
+      \verb{url}
+      \verb https://www.whoi.edu/what-we-do/explore/underwater-vehicles/auvs/spray-glider/
+      \endverb
+    \endentry
+    \entry{KICAD}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=65a497b7130fb0033c9aa6850ba3aedb}{%
+           family={KiCad},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{fullhash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{fullhashraw}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{bibnamehash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{authorbibnamehash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{authornamehash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{authorfullhash}{65a497b7130fb0033c9aa6850ba3aedb}
+      \strng{authorfullhashraw}{65a497b7130fb0033c9aa6850ba3aedb}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{KiCad}
+      \verb{urlraw}
+      \verb https://www.kicad.org/
+      \endverb
+      \verb{url}
+      \verb https://www.kicad.org/
+      \endverb
+    \endentry
+    \entry{MEGATINYCORE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9fab2c0a204aea01528b6494c1dc014d}{%
+           family={megaTinyCore},
+           familyi={m\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{fullhash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{fullhashraw}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{bibnamehash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{authorbibnamehash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{authornamehash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{authorfullhash}{9fab2c0a204aea01528b6494c1dc014d}
+      \strng{authorfullhashraw}{9fab2c0a204aea01528b6494c1dc014d}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Spence Konde}
+      \verb{urlraw}
+      \verb https://github.com/SpenceKonde/megaTinyCore
+      \endverb
+      \verb{url}
+      \verb https://github.com/SpenceKonde/megaTinyCore
+      \endverb
+    \endentry
+    \entry{ATTINY1627}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f7962ad60e8c8ec26481358db76f7f6a}{%
+           family={Microchip},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{fullhash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{fullhashraw}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{bibnamehash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{authorbibnamehash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{authornamehash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{authorfullhash}{f7962ad60e8c8ec26481358db76f7f6a}
+      \strng{authorfullhashraw}{f7962ad60e8c8ec26481358db76f7f6a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ATtiny1624/1626/1627 Data Sheet}
+      \verb{urlraw}
+      \verb https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny1624-26-27-DataSheet-DS40002234B.pdf
+      \endverb
+      \verb{url}
+      \verb https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny1624-26-27-DataSheet-DS40002234B.pdf
+      \endverb
+    \endentry
+    \entry{ADVANCED_NAVIGATION_HYDRUS}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7ecd309ab505a9efb207a8a84656483f}{%
+           family={Navigation},
+           familyi={N\bibinitperiod},
+           given={Advanced},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{fullhash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{fullhashraw}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{bibnamehash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{authorbibnamehash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{authornamehash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{authorfullhash}{7ecd309ab505a9efb207a8a84656483f}
+      \strng{authorfullhashraw}{7ecd309ab505a9efb207a8a84656483f}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Hydrus}
+      \verb{urlraw}
+      \verb https://www.advancednavigation.com/robotics/micro-auv/hydrus
+      \endverb
+      \verb{url}
+      \verb https://www.advancednavigation.com/robotics/micro-auv/hydrus
+      \endverb
     \endentry
     \entry{TITAN_IMPLOSION}{online}{}{}
       \name{author}{1}{}{%
@@ -161,6 +596,34 @@
       \field{title}{Underwater robots: Autonomous Underwater Vehicles (AUVs)}
       \field{year}{1999}
     \endentry
+    \entry{RADIO_FREQ_TABLE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=f4ac6c71617233031e82dfdd4638d71c}{%
+           family={Ofcom},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{fullhash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{fullhashraw}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{bibnamehash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{authorbibnamehash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{authornamehash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{authorfullhash}{f4ac6c71617233031e82dfdd4638d71c}
+      \strng{authorfullhashraw}{f4ac6c71617233031e82dfdd4638d71c}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{title}{UK Frequency Allocation Table}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb http://static.ofcom.org.uk/static/spectrum/fat.html
+      \endverb
+      \verb{url}
+      \verb http://static.ofcom.org.uk/static/spectrum/fat.html
+      \endverb
+    \endentry
     \entry{COURSERA_PROJECT_VIDEO}{online}{}{}
       \name{author}{1}{}{%
         {{hash=fcee9693e9e4049126d64bc39ab6adf7}{%
@@ -191,6 +654,62 @@
       \verb NEEDED
       \endverb
     \endentry
+    \entry{ALUMINIUM_TRANSDUCER}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=36df47c34b65c8313e3ab035aca37c53}{%
+           family={Pro},
+           familyi={P\bibinitperiod},
+           given={Multicomp},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{fullhash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{fullhashraw}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{bibnamehash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{authorbibnamehash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{authornamehash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{authorfullhash}{36df47c34b65c8313e3ab035aca37c53}
+      \strng{authorfullhashraw}{36df47c34b65c8313e3ab035aca37c53}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ultrasonic Sensor}
+      \verb{urlraw}
+      \verb https://www.farnell.com/datasheets/3771814.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.farnell.com/datasheets/3771814.pdf
+      \endverb
+    \endentry
+    \entry{PING2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9528f85f2c807e7a922065c08d7c5c82}{%
+           family={Robotics},
+           familyi={R\bibinitperiod},
+           given={Blue},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{fullhash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{fullhashraw}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{bibnamehash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{authorbibnamehash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{authornamehash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{authorfullhash}{9528f85f2c807e7a922065c08d7c5c82}
+      \strng{authorfullhashraw}{9528f85f2c807e7a922065c08d7c5c82}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ping2 Sonar Altimeter and Echosounder}
+      \verb{urlraw}
+      \verb https://bluerobotics.com/store/sonars/echosounders/ping-sonar-r2-rp/
+      \endverb
+      \verb{url}
+      \verb https://bluerobotics.com/store/sonars/echosounders/ping-sonar-r2-rp/
+      \endverb
+    \endentry
     \entry{COURSERA_PROJECT_PERMISSION}{online}{}{}
       \name{author}{1}{}{%
         {{hash=76734206a2102c7a3fd48db54c3e5089}{%
@@ -218,6 +737,207 @@
       \verb{url}
       \verb NEEDED
       \endverb
+    \endentry
+    \entry{JSN_SR04T}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2aa392bbcfcfd2160ed84484107f9d28}{%
+           family={Supplies},
+           familyi={S\bibinitperiod},
+           given={Proto},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{fullhash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{fullhashraw}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{bibnamehash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{authorbibnamehash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{authornamehash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{authorfullhash}{2aa392bbcfcfd2160ed84484107f9d28}
+      \strng{authorfullhashraw}{2aa392bbcfcfd2160ed84484107f9d28}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{JSN-SR04T V3.0 Waterproof Ultrasonic Range Finder}
+      \verb{urlraw}
+      \verb https://protosupplies.com/product/jsn-sr04t-v3-0-waterproof-ultrasonic-range-finder/
+      \endverb
+      \verb{url}
+      \verb https://protosupplies.com/product/jsn-sr04t-v3-0-waterproof-ultrasonic-range-finder/
+      \endverb
+    \endentry
+    \entry{I2C}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=850877bcc6af8f03fbe2405ea8c3425c}{%
+           family={Visconti},
+           familyi={V\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod}}}%
+        {{hash=93093c71b405c21d03fe56cb042ca28e}{%
+           family={Giannotta},
+           familyi={G\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod}}}%
+        {{hash=dae852eb47c8b0aa2ab8f1ce1cfb658b}{%
+           family={Brama},
+           familyi={B\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e39d04ddae47e85048bdb197bf3a8de0}{%
+           family={Primiceri},
+           familyi={P\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7bc70fd9c335599d38c57b4e6c0b9019}{%
+           family={Malvasi},
+           familyi={M\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8858eca397ed537efe9f10433cff9929}{%
+           family={Centuori},
+           familyi={C\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{fullhash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{fullhashraw}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{bibnamehash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{authorbibnamehash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{authornamehash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{authorfullhash}{dee2edcc08a5b43398d63e1cf868ebec}
+      \strng{authorfullhashraw}{dee2edcc08a5b43398d63e1cf868ebec}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Smart Sensing and Intelligent Systems}
+      \field{title}{FEATURE, OPERATION PRINCIPLE AND LIMITS OF SPI AND I2C COMMUNICATION PROTOCOLS FOR SMART OBJECTS: A NOVEL SPI-BASED HYBRID PROTOCOL ESPECIALLY SUITABLE FOR IoT APPLICATIONS}
+      \field{volume}{10}
+      \field{year}{2017}
+      \field{pages}{262\bibrangedash 295}
+      \range{pages}{34}
+    \endentry
+    \entry{MAKE_AVR}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=775a41bbd8846645f305b28ad684fd99}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Elliot},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Maker Media Inc.}%
+      }
+      \strng{namehash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{fullhash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{fullhashraw}{775a41bbd8846645f305b28ad684fd99}
+      \strng{bibnamehash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{authorbibnamehash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{authornamehash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{authorfullhash}{775a41bbd8846645f305b28ad684fd99}
+      \strng{authorfullhashraw}{775a41bbd8846645f305b28ad684fd99}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Make: AVR Programming}
+      \field{year}{2015}
+    \endentry
+    \entry{AUV_PPF}{article}{}{}
+      \name{author}{14}{}{%
+        {{hash=26efeb1d555d6ba87de47054269cbea4}{%
+           family={Wynn},
+           familyi={W\bibinitperiod},
+           given={Russel\bibnamedelima B},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=45038abfb31f7a76feb3247898250f40}{%
+           family={Huvenne},
+           familyi={H\bibinitperiod},
+           given={Veerle\bibnamedelima AI},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6f4367fa9842c326d2c590fde7d0d13c}{%
+           family={Bas},
+           familyi={B\bibinitperiod},
+           given={Timothy\bibnamedelimb P\bibnamedelima Le},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=9000a15d562bf17bdaa018a3f6b7ac1d}{%
+           family={Murton},
+           familyi={M\bibinitperiod},
+           given={Bramley\bibnamedelima J},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=f0e99b5fd0e2432b9036756b371eb450}{%
+           family={Connelly},
+           familyi={C\bibinitperiod},
+           given={Douglas\bibnamedelima P},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=31944e194fb51e47a0ec0621a8e5c472}{%
+           family={Bett},
+           familyi={B\bibinitperiod},
+           given={Brian\bibnamedelima J},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=6f6433bea3a91760cb1e299c3ff81a91}{%
+           family={Ruhl},
+           familyi={R\bibinitperiod},
+           given={Henry\bibnamedelima A},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=75cb0158cb0cc7bb1198dd9aaeedd257}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Kirsty\bibnamedelima J},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=87e10486f21af17f545abe3fb7aafa72}{%
+           family={Peakall},
+           familyi={P\bibinitperiod},
+           given={Jeffery},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0a52379897593ac23decd4647e9a48ac}{%
+           family={Parsons},
+           familyi={P\bibinitperiod},
+           given={Daniel\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=9c7b25e8e837043babdfd3f08d23f328}{%
+           family={Summer},
+           familyi={S\bibinitperiod},
+           given={Esther\bibnamedelima J},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3a19fca4ca69357551084ebda680b81a}{%
+           family={Darby},
+           familyi={D\bibinitperiod},
+           given={Stephen\bibnamedelima E},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4fadf5e0cb27c73478e6076dfd09315b}{%
+           family={Dorrell},
+           familyi={D\bibinitperiod},
+           given={Robert\bibnamedelima M},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b93c52a0dccee858bcbbb0cee08c9a7b}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ScienceDirect}%
+      }
+      \strng{namehash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{fullhash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{fullhashraw}{ee461068caa442b3d4956c1ad237c012}
+      \strng{bibnamehash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{authorbibnamehash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{authornamehash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{authorfullhash}{ee461068caa442b3d4956c1ad237c012}
+      \strng{authorfullhashraw}{ee461068caa442b3d4956c1ad237c012}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Elsevier}
+      \field{title}{Autonomous Underwater Vehicles (AUVs): Their past, present and future contributions to the advancement of marine geoscience}
+      \field{volume}{352}
+      \field{year}{2014}
+      \field{pages}{451\bibrangedash 468}
+      \range{pages}{18}
     \endentry
   \enddatalist
 \endrefsection

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.2)  2 SEP 2024 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.2)  3 SEP 2024 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -646,24 +646,24 @@ File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 41.
+h' as default language. on input line 43.
  (./FinalReport.aux)
 \openout1 = `FinalReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -679,8 +679,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'FinalReport.bbl' found.
 
 (./FinalReport.bbl)
-Package biblatex Info: Reference section=0 on input line 41.
-Package biblatex Info: Reference segment=0 on input line 41.
+Package biblatex Info: Reference section=0 on input line 43.
+Package biblatex Info: Reference segment=0 on input line 43.
 
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -710,14 +710,14 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 41.
+or `english'. on input line 43.
 \c@lstlisting=\count452
-LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -743,79 +743,161 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 
-[2]
+[2{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 [3
 
 ]
+Overfull \hbox (9.849pt too wide) in paragraph at lines 83--84
+[]\OT1/cmr/m/n/10.95 One of the more in-ter-est-ing AUVs this in-sti-tute uses 
+is the Spray Glider[14].
+ []
 
-[4
+
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+
+[8
 
 ]
 
-[5
+[9]
+
+[10]
+
+[11
 
 ]
 
-[6
+[12
 
 ]
 
-[7
+[13
 
 ]
-Overfull \hbox (61.55006pt too wide) in paragraph at lines 73--73
+<assets/breakout_schematic.png, id=67, 1524.69624pt x 1039.885pt>
+File: assets/breakout_schematic.png Graphic file (type png)
+<use assets/breakout_schematic.png>
+Package pdftex.def Info: assets/breakout_schematic.png  used on input line 185.
+
+(pdftex.def)             Requested size: 360.0pt x 245.51546pt.
+
+
+[14
+
+]
+<assets/breakout_pcb_schema.png, id=72, 523.9575pt x 957.5775pt>
+File: assets/breakout_pcb_schema.png Graphic file (type png)
+<use assets/breakout_pcb_schema.png>
+Package pdftex.def Info: assets/breakout_pcb_schema.png  used on input line 189
+.
+(pdftex.def)             Requested size: 360.0pt x 657.95302pt.
+
+
+[15 <./assets/breakout_schematic.png>]
+Overfull \vbox (62.15276pt too high) has occurred while \output is active []
+
+
+
+[16 <./assets/breakout_pcb_schema.png>]
+<assets/breakout_pcb_3d.png, id=82, 1324.95pt x 1007.765pt>
+File: assets/breakout_pcb_3d.png Graphic file (type png)
+<use assets/breakout_pcb_3d.png>
+Package pdftex.def Info: assets/breakout_pcb_3d.png  used on input line 193.
+(pdftex.def)             Requested size: 360.0pt x 273.80705pt.
+
+
+[17 <./assets/breakout_pcb_3d.png>]
+Overfull \hbox (3.7895pt too wide) in paragraph at lines 197--197
+[]\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
+c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . youtube 
+.
+ []
+
+
+Overfull \hbox (67.02507pt too wide) in paragraph at lines 197--197
 []\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
 c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https @ / / brickexperimen
 tchannel .
  []
 
 
-Overfull \hbox (8.01598pt too wide) in paragraph at lines 73--73
-[]\OT1/cmr/m/n/10.95 U. of Lon-don. Mod-ule au-thor in-ter-views - project tem-
-plates. \OT1/cmr/m/sc/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 NEEDED
-$\OT1/cmr/m/n/10.95 . 
+Overfull \hbox (14.90463pt too wide) in paragraph at lines 197--197
+\OT1/cmtt/m/n/10.95 robotshop . com / media / s / spa / rb -[] spa -[] 1388 / p
+df / hcsr04 -[] ultrasonic -[]
  []
 
 
 
-[8
+[18
 
-] (./FinalReport.aux)
+]
+Overfull \hbox (15.12927pt too wide) in paragraph at lines 197--197
+[]\OT1/cmr/m/n/10.95 megaTinyCore. Spence konde. \OT1/cmr/m/sc/10.95 url\OT1/cm
+r/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / github . com / SpenceKonde /
+ []
+
+
+Overfull \hbox (70.39151pt too wide) in paragraph at lines 197--197
+\OT1/cmtt/m/n/10.95 microchip . com / downloads / aemDocuments / documents / MC
+U08 / ProductDocuments /
+ []
+
+
+Overfull \hbox (18.1427pt too wide) in paragraph at lines 197--197
+[]\OT1/cmr/m/n/10.95 M. Pro. Ul-tra-sonic sen-sor. \OT1/cmr/m/sc/10.95 url\OT1/
+cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . farnell . com / datashee
+ts /
+ []
+
+
+Overfull \hbox (15.40463pt too wide) in paragraph at lines 197--197
+\OT1/cmtt/m/n/10.95 https : / / protosupplies . com / product / jsn -[] sr04t -
+[] v3 -[] 0 -[] waterproof -[]
+ []
+
+
+
+[19] (./FinalReport.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-16>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-
 Package logreq Info: Writing requests to 'FinalReport.run.xml'.
 \openout1 = `FinalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19176 strings out of 473579
- 403979 string characters out of 5732264
- 1933960 words of memory out of 5000000
- 41841 multiletter control sequences out of 15000+600000
- 565944 words of font info for 66 fonts, out of 8000000 for 9000
+ 19283 strings out of 473579
+ 408183 string characters out of 5732264
+ 1939960 words of memory out of 5000000
+ 41945 multiletter control sequences out of 15000+600000
+ 567543 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,6n,93p,1352b,1373s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,6n,93p,1413b,1380s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2024/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt10.pfb>
-Output written on FinalReport.pdf (11 pages, 101266 bytes).
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/20
+24/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/font
+s/type1/public/cm-super/sfrm1095.pfb>
+Output written on FinalReport.pdf (22 pages, 412896 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

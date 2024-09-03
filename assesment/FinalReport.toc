@@ -1,0 +1,15 @@
+\contentsline {chapter}{Introduction}{1}{}%
+\contentsline {chapter}{Literature Review}{3}{}%
+\contentsline {section}{Previous Works}{3}{}%
+\contentsline {subsection}{Amateur Level}{3}{}%
+\contentsline {subsection}{Commercial Level}{3}{}%
+\contentsline {subsection}{Research Level}{4}{}%
+\contentsline {chapter}{Key Literature}{4}{}%
+\contentsline {chapter}{Project Design}{8}{}%
+\contentsline {section}{Domain}{8}{}%
+\contentsline {section}{Technologies}{9}{}%
+\contentsline {subsection}{Microcontrollers}{9}{}%
+\contentsline {subsection}{AUV Body}{9}{}%
+\contentsline {chapter}{Appendices}{14}{}%
+\contentsline {section}{\numberline {1.1}AVR ATTiny 1627 Features}{14}{}%
+\contentsline {section}{\numberline {1.2}VQFN Breakout}{15}{}%

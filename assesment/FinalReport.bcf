@@ -2374,11 +2374,45 @@
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">SPURV</bcf:citekey>
     <bcf:citekey order="2" intorder="1">TITAN_IMPLOSION</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">COURSERA_PROJECT_VIDEO</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">COURSERA_PROJECT_PERMISSION</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">BRICK_EXPERIMENT_CHANNEL_PROFILE</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">BRICK_EXPERIMENT_CHANNEL_BLOG</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">AUV_COST</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">AUV_MARKETSHARE</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">COURSERA_PROJECT_VIDEO</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">COURSERA_PROJECT_PERMISSION</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">BRICK_EXPERIMENT_CHANNEL_PROFILE</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">BRICK_EXPERIMENT_CHANNEL_BLOG</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">AUV_COST</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">ECOSUB</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">BRICK_EXPERIMENT_CHANNEL_PROFILE</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">BRICK_EXPERIMENT_CHANNEL_BLOG</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">ADVANCED_NAVIGATION_HYDRUS</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">WOODS_HOLE</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">WOODS_HOLE_REMUS</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">WOODS_HOLE_SPRAY_GLIDER</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">NATIONAL_OCEANOGRAPHIC_AUTOSUBS</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">AUV_PPF</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">AUV_PPF</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">AUV_PPF</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">ATTINY1627</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">ATTINY1627</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">ATTINY1627</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">I2C</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">I2C</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">I2C</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">I2C_FAST</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">I2C</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">I2C</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">MAKE_AVR</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">GCC_AVR</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">AVRDUDE</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">UNDERWATER_RADIO</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">RADIO_FREQ_TABLE</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">UNDERWATER_RADIO</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">KICAD</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">MEGATINYCORE</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">PING2</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">ALUMINIUM_TRANSDUCER</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">HC_SR04</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">JSN_SR04T</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">HC_SR04</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -2246,7 +2246,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ATtiny1627-M"
+		(property "Value" "Side Motors"
 			(at 72.0441 45.72 0)
 			(effects
 				(font

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.2)  3 SEP 2024 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.20)  3 SEP 2024 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **FinalReport.tex
 (./FinalReport.tex
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-08-16>
+L3 programming layer <2024-05-27>
 (c:/texlive/2024/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
 (c:/texlive/2024/texmf-dist/tex/latex/base/size11.clo
@@ -316,7 +316,7 @@ Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
 
 (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-08-16 L3 programming layer (loader) 
+Package: expl3 2024-05-27 L3 programming layer (loader) 
 
 (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
@@ -324,13 +324,13 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box52
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2024-08-16 L3 programming layer (loader) 
+(biblatex)             2024-05-27 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
 (c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 (c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
+Package: xparse 2024-05-08 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
 ))
@@ -434,7 +434,7 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 \Gin@req@width=\dimen152
 )
 (c:/texlive/2024/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2024-08-20 v3.3.21 A comprehensive (SI) units package
+Package: siunitx 2024-06-24 v3.3.19 A comprehensive (SI) units package
 \l__siunitx_number_uncert_offset_int=\count415
 \l__siunitx_number_exponent_fixed_int=\count416
 \l__siunitx_number_min_decimal_int=\count417
@@ -771,9 +771,7 @@ is the Spray Glider[14].
 
 [10]
 
-[11
-
-]
+[11]
 
 [12
 
@@ -782,104 +780,158 @@ is the Spray Glider[14].
 [13
 
 ]
-<assets/breakout_schematic.png, id=67, 1524.69624pt x 1039.885pt>
-File: assets/breakout_schematic.png Graphic file (type png)
-<use assets/breakout_schematic.png>
-Package pdftex.def Info: assets/breakout_schematic.png  used on input line 185.
-
-(pdftex.def)             Requested size: 360.0pt x 245.51546pt.
-
 
 [14
 
 ]
-<assets/breakout_pcb_schema.png, id=72, 523.9575pt x 957.5775pt>
+<assets/breakout_schematic.png, id=70, 1524.69624pt x 1039.885pt>
+File: assets/breakout_schematic.png Graphic file (type png)
+<use assets/breakout_schematic.png>
+Package pdftex.def Info: assets/breakout_schematic.png  used on input line 204.
+
+(pdftex.def)             Requested size: 360.0pt x 245.51546pt.
+
+
+[15
+
+]
+<assets/breakout_pcb_schema.png, id=75, 523.9575pt x 957.5775pt>
 File: assets/breakout_pcb_schema.png Graphic file (type png)
 <use assets/breakout_pcb_schema.png>
-Package pdftex.def Info: assets/breakout_pcb_schema.png  used on input line 189
+Package pdftex.def Info: assets/breakout_pcb_schema.png  used on input line 208
 .
 (pdftex.def)             Requested size: 360.0pt x 657.95302pt.
 
 
-[15 <./assets/breakout_schematic.png>]
+[16 <./assets/breakout_schematic.png>]
 Overfull \vbox (62.15276pt too high) has occurred while \output is active []
 
 
 
-[16 <./assets/breakout_pcb_schema.png>]
-<assets/breakout_pcb_3d.png, id=82, 1324.95pt x 1007.765pt>
+[17 <./assets/breakout_pcb_schema.png>]
+<assets/breakout_pcb_3d.png, id=85, 1324.95pt x 1007.765pt>
 File: assets/breakout_pcb_3d.png Graphic file (type png)
 <use assets/breakout_pcb_3d.png>
-Package pdftex.def Info: assets/breakout_pcb_3d.png  used on input line 193.
+Package pdftex.def Info: assets/breakout_pcb_3d.png  used on input line 212.
 (pdftex.def)             Requested size: 360.0pt x 273.80705pt.
+<assets/AUVSchematic.png, id=86, 720.89325pt x 784.73175pt>
+File: assets/AUVSchematic.png Graphic file (type png)
+<use assets/AUVSchematic.png>
+Package pdftex.def Info: assets/AUVSchematic.png  used on input line 219.
+(pdftex.def)             Requested size: 360.0pt x 391.88594pt.
 
 
-[17 <./assets/breakout_pcb_3d.png>]
-Overfull \hbox (3.7895pt too wide) in paragraph at lines 197--197
+[18 <./assets/breakout_pcb_3d.png>]
+<assets/CentralControllerSchematic.png, id=91, 653.44125pt x 667.293pt>
+File: assets/CentralControllerSchematic.png Graphic file (type png)
+<use assets/CentralControllerSchematic.png>
+Package pdftex.def Info: assets/CentralControllerSchematic.png  used on input l
+ine 224.
+(pdftex.def)             Requested size: 360.0pt x 367.6232pt.
+
+
+[19 <./assets/AUVSchematic.png>]
+<assets/DepthControllerSchematic.png, id=96, 1156.32pt x 600.44325pt>
+File: assets/DepthControllerSchematic.png Graphic file (type png)
+<use assets/DepthControllerSchematic.png>
+Package pdftex.def Info: assets/DepthControllerSchematic.png  used on input lin
+e 229.
+(pdftex.def)             Requested size: 360.0pt x 186.93257pt.
+
+
+[20 <./assets/CentralControllerSchematic.png>]
+<assets/SonarModuleSchematic.png, id=101, 389.65575pt x 373.99725pt>
+File: assets/SonarModuleSchematic.png Graphic file (type png)
+<use assets/SonarModuleSchematic.png>
+Package pdftex.def Info: assets/SonarModuleSchematic.png  used on input line 23
+4.
+(pdftex.def)             Requested size: 360.0pt x 345.55397pt.
+<assets/MainMotorSchematic.png, id=102, 411.33675pt x 383.63326pt>
+File: assets/MainMotorSchematic.png Graphic file (type png)
+<use assets/MainMotorSchematic.png>
+Package pdftex.def Info: assets/MainMotorSchematic.png  used on input line 239.
+
+(pdftex.def)             Requested size: 360.0pt x 335.77193pt.
+
+
+[21 <./assets/DepthControllerSchematic.png> <./assets/SonarModuleSchematic.png>
+]
+<assets/SideMotorSchematic.png, id=108, 412.54124pt x 383.031pt>
+File: assets/SideMotorSchematic.png Graphic file (type png)
+<use assets/SideMotorSchematic.png>
+Package pdftex.def Info: assets/SideMotorSchematic.png  used on input line 244.
+
+(pdftex.def)             Requested size: 360.0pt x 334.25124pt.
+
+
+[22 <./assets/MainMotorSchematic.png>]
+
+[23 <./assets/SideMotorSchematic.png>]
+Overfull \hbox (3.7895pt too wide) in paragraph at lines 251--251
 []\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
 c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . youtube 
 .
  []
 
 
-Overfull \hbox (67.02507pt too wide) in paragraph at lines 197--197
+Overfull \hbox (67.02507pt too wide) in paragraph at lines 251--251
 []\OT1/cmr/m/n/10.95 B. E. Chan-nel. Brick ex-per-i-ment chan-nel. \OT1/cmr/m/s
 c/10.95 url\OT1/cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https @ / / brickexperimen
 tchannel .
  []
 
 
-Overfull \hbox (14.90463pt too wide) in paragraph at lines 197--197
+Overfull \hbox (14.90463pt too wide) in paragraph at lines 251--251
 \OT1/cmtt/m/n/10.95 robotshop . com / media / s / spa / rb -[] spa -[] 1388 / p
 df / hcsr04 -[] ultrasonic -[]
  []
 
 
 
-[18
+[24
 
 ]
-Overfull \hbox (15.12927pt too wide) in paragraph at lines 197--197
+Overfull \hbox (15.12927pt too wide) in paragraph at lines 251--251
 []\OT1/cmr/m/n/10.95 megaTinyCore. Spence konde. \OT1/cmr/m/sc/10.95 url\OT1/cm
 r/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / github . com / SpenceKonde /
  []
 
 
-Overfull \hbox (70.39151pt too wide) in paragraph at lines 197--197
+Overfull \hbox (70.39151pt too wide) in paragraph at lines 251--251
 \OT1/cmtt/m/n/10.95 microchip . com / downloads / aemDocuments / documents / MC
 U08 / ProductDocuments /
  []
 
 
-Overfull \hbox (18.1427pt too wide) in paragraph at lines 197--197
+Overfull \hbox (18.1427pt too wide) in paragraph at lines 251--251
 []\OT1/cmr/m/n/10.95 M. Pro. Ul-tra-sonic sen-sor. \OT1/cmr/m/sc/10.95 url\OT1/
 cmr/m/n/10.95 : $\OT1/cmtt/m/n/10.95 https : / / www . farnell . com / datashee
 ts /
  []
 
 
-Overfull \hbox (15.40463pt too wide) in paragraph at lines 197--197
+Overfull \hbox (15.40463pt too wide) in paragraph at lines 251--251
 \OT1/cmtt/m/n/10.95 https : / / protosupplies . com / product / jsn -[] sr04t -
 [] v3 -[] 0 -[] waterproof -[]
  []
 
 
 
-[19] (./FinalReport.aux)
+[25] (./FinalReport.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-08-16>
+L3 programming layer <2024-05-27>
  ***********
 Package logreq Info: Writing requests to 'FinalReport.run.xml'.
 \openout1 = `FinalReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19283 strings out of 473579
- 408183 string characters out of 5732264
- 1939960 words of memory out of 5000000
- 41945 multiletter control sequences out of 15000+600000
- 567543 words of font info for 71 fonts, out of 8000000 for 9000
+ 19335 strings out of 473584
+ 409931 string characters out of 5732363
+ 1939908 words of memory out of 5000000
+ 41990 multiletter control sequences out of 15000+600000
+ 568220 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,6n,93p,1413b,1380s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
@@ -894,10 +946,10 @@ exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/20
 24/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/font
 s/type1/public/cm-super/sfrm1095.pfb>
-Output written on FinalReport.pdf (22 pages, 412896 bytes).
+Output written on FinalReport.pdf (28 pages, 633497 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 183 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

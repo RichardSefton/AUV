@@ -10,6 +10,16 @@
 \contentsline {section}{Technologies}{9}{}%
 \contentsline {subsection}{Microcontrollers}{9}{}%
 \contentsline {subsection}{AUV Body}{9}{}%
-\contentsline {chapter}{Appendices}{14}{}%
-\contentsline {section}{\numberline {1.1}AVR ATTiny 1627 Features}{14}{}%
-\contentsline {section}{\numberline {1.2}VQFN Breakout}{15}{}%
+\contentsline {subsection}{Navigation}{10}{}%
+\contentsline {subsection}{Mechanical}{11}{}%
+\contentsline {subsection}{Electronics}{11}{}%
+\contentsline {chapter}{Appendices}{15}{}%
+\contentsline {section}{\numberline {1.1}AVR ATTiny 1627 Features}{15}{}%
+\contentsline {section}{\numberline {1.2}VQFN Breakout}{16}{}%
+\contentsline {section}{\numberline {1.3}AUV Electronics Schematics}{19}{}%
+\contentsline {subsection}{\numberline {1.3.1}AUV Schematic}{19}{}%
+\contentsline {subsection}{\numberline {1.3.2}Central Controller Schematic}{20}{}%
+\contentsline {subsection}{\numberline {1.3.3}Depth Controller Schematic}{21}{}%
+\contentsline {subsection}{\numberline {1.3.4}Sonar Module Schematic}{21}{}%
+\contentsline {subsection}{\numberline {1.3.5}Main Motor Schematic}{22}{}%
+\contentsline {subsection}{\numberline {1.3.6}Side Motor Schematic}{23}{}%

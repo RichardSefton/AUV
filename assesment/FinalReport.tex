@@ -142,9 +142,28 @@
 	
 	\subsection*{AUV Body}
 	\addcontentsline{toc}{subsection}{AUV Body}
-	In order to keep the AUV as accessible as possible to any institutes or researchers looking to develop one, the AUV hull and internal fixtures has been designed to be 3D printed. This negates the requirement for users to need to get the parts fabricated in materials that require special tools or specialised knowledge on how to work with them, or that are costly such as metal or fibreglass or carbon fibre. Once the initial investment of a 3D printer is overcome if not already available (\unit{\approx}£400 for one that prints a variety of materials), the cost in filament is extremely low in comparison. This approach does require further research and experimentation to determine the best combination of filaments or materials to print the components in, along with any potential post-processing to increase the suitability and durability of the parts. 
+	In order to keep the AUV as accessible as possible to any institutes or researchers looking to develop one, the AUV hull and internal fixtures has been designed to be 3D printed. This negates the requirement for users to need to get the parts fabricated in materials that require special tools or specialised knowledge on how to work with them, or that are costly such as metal or fibreglass or carbon fibre. Once the initial investment of a 3D printer is overcome if not already available (\unit{\approx}£400 for one that prints a variety of materials), the cost in filament is extremely low in comparison. This approach does require further research and experimentation to determine the best combination of filaments or materials to print the components in, along with any potential post-processing to increase the suitability and durability of the parts.
+	Since it is common knowledge that often electronics and water do not mix, the design used magnets to connect moving parts on the inside to the outside of the vessel (propellers), as this removes the need to try and have a hole with enough clearance to freely rotate a shaft, while keeping the vessel waterproof. 
 	
-	For navigation and obstacle avoidance this project employs the use of Sonar. Sonar specifically for underwater applications on the consumer level is extremely hard to come by but there are some options available such as the Ping2\cite{PING2}. while these are feature rich (using multiple frequencies for accurate sonar imaging), they are quite expensive (\unit{\approx}£400), and future availability could be questionable. To this end, the original plan starting this project was to try to develop a custom sonar module using transducers rated for underwater use\cite{ALUMINIUM_TRANSDUCER} that would operate in a similar way to the popular HC-SR04\cite{HC_SR04} ultrasonic rangefinders. This proved to be a fruitless endeavour which I can only surmise was down to a combination of inexperience with analogue/audio electronics and not meeting the voltage requirements of the transducers (160\unit{\volt}pp). This ended up using significantly more of the planned time than expected and planned and in the end depended on the use of prefabricated waterproof sonar modules (JSN-SR04T\cite{JSN_SR04T}) which also works in a similar way to the HC-SR04\cite{HC_SR04}.
+	\subsection*{Navigation}
+	\addcontentsline{toc}{subsection}{Navigation}
+	For navigation and obstacle avoidance this project employs the use of Sonar. Sonar specifically for underwater applications on the consumer level is extremely hard to come by but there are some options available such as the Ping2\cite{PING2}. while these are feature rich (using multiple frequencies for accurate sonar imaging), they are quite expensive (\unit{\approx}£400), and future availability could be questionable. To this end, the original plan starting this project was to try to develop a custom sonar module using transducers rated for underwater use\cite{ALUMINIUM_TRANSDUCER} that would operate by providing a distance in \unit{\centi\metre} upon request. The requesting trigger would be by command via the $I^{2}C$ rail. The distance would then be available on the next $I^{2}C$ read request. This could have also been developed further to having an additional pin to notify the host device that the distance is ready to be requested, but really would be unnecessary given how fast the speed of sound travels, particularly underwater (~1500\unit{\metre}/\unit{\second}). 
+	
+	This however proved to be a fruitless endeavour which I can only surmise was down to a combination of inexperience with analogue/audio electronics and not meeting the voltage requirements of the transducers (160\unit{\volt}pp). This ended up using significantly more of the planned time than expected and in the end depended on the use of prefabricated ultrasonic rangefinders rated as ``waterproof" (JSN-SR04T\cite{JSN_SR04T}). These devices also works in a similar way to the HC-SR04\cite{HC_SR04} where the trigger pin is pulled high for a minimum of 10\unit{\micro\second} then released which triggers the transmitting transducer to pulse, and pulls the echo pin high. Once the receiving transducer receives a signal, the echo pin is pulled low and the time between its high and low state can be used to calculate the distance using the formula:
+	
+	$$
+	distance = \frac{(time * speedOfSound)}{2}
+	$$	
+	
+	The division by 2 in this formula is because we only need to calculate the distance to the object, and the pulse measured is the time it takes the ultrasonic waves to reach the object and then return.
+	
+	\subsection*{Mechanical}
+	\addcontentsline{toc}{subsection}{Mechanical}
+	The responses of the sonar modules incorporated into the design of this AUV are used to drive actuators to respond to the physical environment. This includes having the ability to dive and rise, move forward, backwards, and rotate to a new heading to avoid obstacles. With the aim of keeping this device low cost, the goal was to attempt to use inexpensive, readily available parts (stepper and toy motors). The Stepper motor was chosen as it provides precise control over some parts (the depth controller) and can also provide enough torque to physically operate them (depth controller is a large syringe connected to a threaded shaft to convert the rotary force into a linear motion). The main propeller was also quite large and so benefited from this additional torque. The toy motors chosen to turn the smaller side motors as these would benefit from the raw speed they can provide. 
+	
+	\subsection*{Electronics}
+	\addcontentsline{toc}{subsection}{Electronics} 
+	The AUVs primary computer would consist of 8 independent modules interconnected via a central controller on the $I^{2}C$ rail. These modules are 4 sonars (lower, forward, left and right), one depth controller, one rear motor controller, and 2 side motor controllers. The circuitry for these modules is not particularly complex as all the complexity exists in the 3rd party circuits (motor driver boards and ultrasonic rangefinder board which are all not modelled) and can be seen in the appendices \ref{appendix:auv_electronics_scematics}.
 	
 	\chapter*{Implementation}
 	Implemementation: this should describe the implementation of the project. This should follow the style of the topic 6 peer review (but greatly expanded to cover the entire implementation), describing the major algorithms/techniques used, explanation of the most important parts of the code and a visual representation of the results (e.g. screenshorts or graphs). (max 3 pages)
@@ -192,6 +211,41 @@
 		\label{picture:breakout3}
 		\includegraphics[width= \linewidth]{assets/breakout_pcb_3d.png}
 	\end{center}
+	
+	\section{AUV Electronics Schematics}\label{appendix:auv_electronics_scematics}
+	\subsection{AUV Schematic}\label{appendix:auv_schematic}
+	\begin{center}
+		\label{picture:auv_schematic}
+		\includegraphics[width=\linewidth]{assets/AUVSchematic.png}
+	\end{center}
+	\subsection{Central Controller Schematic}\label{appendix:central_controller_schematic}
+	\begin{center}
+		\label{picture:central_controller_schematic}
+		\includegraphics[width=\linewidth]{assets/CentralControllerSchematic.png}
+	\end{center}
+	\subsection{Depth Controller Schematic}\label{appendix:depth_controller_schematic}
+	\begin{center}
+		\label{picture:depth_controller_schematic}
+		\includegraphics[width=\linewidth]{assets/DepthControllerSchematic.png}
+	\end{center}
+	\subsection{Sonar Module Schematic}\label{appendix:sonar_schematic}
+	\begin{center}
+		\label{picture:sonar_schematic}
+		\includegraphics[width=\linewidth]{assets/SonarModuleSchematic.png}
+	\end{center}
+	\subsection{Main Motor Schematic}\label{appendix:main_motor_schematic}
+	\begin{center}
+		\label{picture:main_motor_schematic}
+		\includegraphics[width=\linewidth]{assets/MainMotorSchematic.png}
+	\end{center}
+	\subsection{Side Motor Schematic}\label{appendix:side_motor_schematic}
+	\begin{center}
+		\label{picture:side_motor_schematic}
+		\includegraphics[width=\linewidth]{assets/SideMotorSchematic.png}
+	\end{center}
+	
+	
+	
 	
 	\printbibliography
 \end{document}

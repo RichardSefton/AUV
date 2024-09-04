@@ -2412,6 +2412,12 @@
     <bcf:citekey order="38" intorder="1">ALUMINIUM_TRANSDUCER</bcf:citekey>
     <bcf:citekey order="39" intorder="1">JSN_SR04T</bcf:citekey>
     <bcf:citekey order="40" intorder="1">HC_SR04</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">ATTINY1627</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">MEGATINYCORE</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">MEGATINYCORE_WIRE</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">JSN_SR04T</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">HC_SR04</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">STUART</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

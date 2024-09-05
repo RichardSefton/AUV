@@ -158,6 +158,35 @@
       \verb https://www.ecosub.uk/
       \endverb
     \endentry
+    \entry{UNIT_TEST_MC}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c47b3080d1d819d1f69759bcc745d36c}{%
+           family={Freaks},
+           familyi={F\bibinitperiod},
+           given={AVR},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{fullhash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{fullhashraw}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{bibnamehash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{authorbibnamehash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{authornamehash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{authorfullhash}{c47b3080d1d819d1f69759bcc745d36c}
+      \strng{authorfullhashraw}{c47b3080d1d819d1f69759bcc745d36c}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unit test in Microchip studio}
+      \verb{urlraw}
+      \verb https://www.avrfreaks.net/s/topic/a5C3l000000UcMhEAK/t161267
+      \endverb
+      \verb{url}
+      \verb https://www.avrfreaks.net/s/topic/a5C3l000000UcMhEAK/t161267
+      \endverb
+    \endentry
     \entry{HC_SR04}{online}{}{}
       \name{author}{1}{}{%
         {{hash=c455a66d4b566d57591347771593cd24}{%
@@ -174,6 +203,7 @@
       \strng{authornamehash}{c455a66d4b566d57591347771593cd24}
       \strng{authorfullhash}{c455a66d4b566d57591347771593cd24}
       \strng{authorfullhashraw}{c455a66d4b566d57591347771593cd24}
+      \field{extraname}{2}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
@@ -458,6 +488,34 @@
       \verb https://www.kicad.org/
       \endverb
     \endentry
+    \entry{ARCHIMEDES_PRINCIPLE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=38a22813ea343de49ded84db0af32f48}{%
+           family={Learning},
+           familyi={L\bibinitperiod},
+           given={Lumen},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{38a22813ea343de49ded84db0af32f48}
+      \strng{fullhash}{38a22813ea343de49ded84db0af32f48}
+      \strng{fullhashraw}{38a22813ea343de49ded84db0af32f48}
+      \strng{bibnamehash}{38a22813ea343de49ded84db0af32f48}
+      \strng{authorbibnamehash}{38a22813ea343de49ded84db0af32f48}
+      \strng{authornamehash}{38a22813ea343de49ded84db0af32f48}
+      \strng{authorfullhash}{38a22813ea343de49ded84db0af32f48}
+      \strng{authorfullhashraw}{38a22813ea343de49ded84db0af32f48}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Archimedes principle and Bouyancy}
+      \verb{urlraw}
+      \verb https://courses.lumenlearning.com/suny-osuniversityphysics/chapter/14-4-archimedes-principle-and-buoyancy/
+      \endverb
+      \verb{url}
+      \verb https://courses.lumenlearning.com/suny-osuniversityphysics/chapter/14-4-archimedes-principle-and-buoyancy/
+      \endverb
+    \endentry
     \entry{MEGATINYCORE}{online}{}{}
       \name{author}{1}{}{%
         {{hash=9fab2c0a204aea01528b6494c1dc014d}{%
@@ -682,6 +740,32 @@
       \verb http://static.ofcom.org.uk/static/spectrum/fat.html
       \endverb
     \endentry
+    \entry{ATMEL_ICE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d06b05f0c7723d78633e69b001c3d356}{%
+           family={RS-Online},
+           familyi={R\bibinithyphendelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{fullhash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{fullhashraw}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{bibnamehash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{authorbibnamehash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{authornamehash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{authorfullhash}{d06b05f0c7723d78633e69b001c3d356}
+      \strng{authorfullhashraw}{d06b05f0c7723d78633e69b001c3d356}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{ATMEL-ICE}
+      \verb{urlraw}
+      \verb https://uk.rs-online.com/web/p/chip-programmers/1306122?cm_mmc=UK-PPC-DS3A-_-google-_-3_UK_EN_Semiconductors_Chip+Programmers-_-Microchip+-+1306122+-+ATATMEL-ICE-_-atatmel+ice&matchtype=e&kwd-66984139136&cq_src=google_ads&cq_cmp=12689163037&cq_term=atatmel%20ice&cq_plac=&cq_net=g&cq_plt=gp&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfFbf23eDzecxRUQwEWtZWzJqNBjkdBgyD1kSa7oO1rrOHBVbRWHaBRoCGVcQAvD_BwE&gclsrc=aw.ds
+      \endverb
+      \verb{url}
+      \verb https://uk.rs-online.com/web/p/chip-programmers/1306122?cm_mmc=UK-PPC-DS3A-_-google-_-3_UK_EN_Semiconductors_Chip+Programmers-_-Microchip+-+1306122+-+ATATMEL-ICE-_-atatmel+ice&matchtype=e&kwd-66984139136&cq_src=google_ads&cq_cmp=12689163037&cq_term=atatmel%20ice&cq_plac=&cq_net=g&cq_plt=gp&gad_source=1&gclid=CjwKCAjwreW2BhBhEiwAavLwfFbf23eDzecxRUQwEWtZWzJqNBjkdBgyD1kSa7oO1rrOHBVbRWHaBRoCGVcQAvD_BwE&gclsrc=aw.ds
+      \endverb
+    \endentry
     \entry{ALUMINIUM_TRANSDUCER}{online}{}{}
       \name{author}{1}{}{%
         {{hash=36df47c34b65c8313e3ab035aca37c53}{%
@@ -708,6 +792,32 @@
       \endverb
       \verb{url}
       \verb https://www.farnell.com/datasheets/3771814.pdf
+      \endverb
+    \endentry
+    \entry{AUV_REPO}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=b0581ae05f864c5466dc07a5385fe692}{%
+           family={RichardSefton},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{fullhash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{fullhashraw}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{bibnamehash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{authorbibnamehash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{authornamehash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{authorfullhash}{b0581ae05f864c5466dc07a5385fe692}
+      \strng{authorfullhashraw}{b0581ae05f864c5466dc07a5385fe692}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{AUV Repository}
+      \verb{urlraw}
+      \verb https://github.com/RichardSefton/AUV
+      \endverb
+      \verb{url}
+      \verb https://github.com/RichardSefton/AUV
       \endverb
     \endentry
     \entry{PING2}{online}{}{}
@@ -875,6 +985,39 @@
       \field{year}{2017}
       \field{pages}{262\bibrangedash 295}
       \range{pages}{34}
+    \endentry
+    \entry{BOUYANT_FORCE}{online}{}{}
+      \name{author}{2}{}{%
+        {{hash=326ec1096494fb434a064677fc8f121c}{%
+           family={Walker},
+           familyi={W\bibinitperiod},
+           given={P},
+           giveni={P\bibinitperiod}}}%
+        {{hash=96de2e26985920d2bd5b0038c3afb5e5}{%
+           family={Wordeman},
+           familyi={W\bibinitperiod},
+           given={Kirsten},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{fullhash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{fullhashraw}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{bibnamehash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{authorbibnamehash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{authornamehash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{authorfullhash}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \strng{authorfullhashraw}{f50a3b2b6733a94ce3ebaf8d4e3fb69a}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{How to calculate the Bouyant Force of a floating object}
+      \verb{urlraw}
+      \verb https://study.com/skill/learn/how-to-calculate-the-buoyant-force-of-a-floating-object-explanation.html
+      \endverb
+      \verb{url}
+      \verb https://study.com/skill/learn/how-to-calculate-the-buoyant-force-of-a-floating-object-explanation.html
+      \endverb
     \endentry
     \entry{MAKE_AVR}{book}{}{}
       \name{author}{1}{}{%

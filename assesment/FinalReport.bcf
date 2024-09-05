@@ -2418,6 +2418,11 @@
     <bcf:citekey order="44" intorder="1">JSN_SR04T</bcf:citekey>
     <bcf:citekey order="45" intorder="1">HC_SR04</bcf:citekey>
     <bcf:citekey order="46" intorder="1">STUART</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">BOUYANT_FORCE</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">ARCHIMEDES_PRINCIPLE</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">AUV_REPO</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">UNIT_TEST_MC</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">ATMEL_ICE</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

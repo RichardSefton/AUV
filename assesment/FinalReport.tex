@@ -44,47 +44,22 @@
 \begin{document}
 	\maketitle
 	\tableofcontents
-	
-	\begin{abstract}
-		This report depicts the end to end design and development of an Autonomous Underwater Vehicle for the Final Project of the BSc Computer Science degree. As it transpires this was an incredibly ambitious project to deliver in such a short time frame. This report will try to capture the key aspects of the development process which will be a challenge in itself given the constraints on the report and as such, some aspects will be focused on more than others.  
-	\end{abstract}
-	
-	\chapter*{Introduction} (max 2 pages)
+
+	\chapter*{Introduction}
 	\addcontentsline{toc}{chapter}{Introduction}
-	Autonomous Underwater Vehicles have been around since the 1950s, with the first AUV on record developed by Washington University in 1957 named SPURV\cite{SPURV} (Self Propelled Underwater Research Vehicle). The device was fitted with various temperature and pressure sending probes and could traverse to depths of 3600\unit{\meter} and one of the last uses of the SPURV AUV was to study submarine wakes in the 70s. Since this first development, in the last 67 years AUVs have been refined and further developed by various governments, oceanographic institutes, universities and private companies. Today, AUVs are often considered cheaper, better and safer to deploy than manned underwater vehicles (particularly in the light of the more recent Titan submarine implosion\cite{TITAN_IMPLOSION}), and safer than deploying divers. They are capable of obtaining more data than any single diver can obtain, and capable of diving longer than any manned vehicle as the requirement for breathable air is negated. An AUVs dive time is only limited by its available power which will only increase as power technology improves. AUVs are used across a multitude of different industrial sectors spanning scientific research, surveying, military, shipping and gas and oil\cite{AUV_MARKETSHARE}. 
+	Autonomous Underwater Vehicles have been around since the 1950s, with the first AUV on record developed by Washington University in 1957 called SPURV\cite{SPURV} (Self Propelled Underwater Research Vehicle). The device was fitted with various temperature and pressure sending probes and could travel to depths of 3600\unit{\meter} and one of the last uses of the SPURV AUV was to study submarine wakes in the 70s. Since this initial development, over the last 67 years AUVs have been refined and further developed by various governments, oceanographic institutes, universities and private companies. Today, AUVs are often considered cheaper, better and safer to deploy than manned underwater vehicles, particularly in the light of incidents such as the recent Titan submarine implosion\cite{TITAN_IMPLOSION}, and safer than deploying divers. They are capable of obtaining more data than any single diver can obtain, and capable of diving longer than any manned vehicle as the requirement for breathable air is negated. An AUVs dive time is only limited by its available power which will only increase as power technology and computer efficiency improves. AUVs are used across a multitude of different industrial sectors spanning scientific research, surveying, military, shipping and gas and oil\cite{AUV_MARKETSHARE}. 
 	
-	The aim of this project is to design and develop a rudimentary AUV. This project does not comfortably fall into any of the predefined template project ideas but was born from a personal enjoyment of the Internet of Things module which allowed me to explore microcontroller programming and interacting with physical sensors and actuators, which blossomed into a passion for robotics. As one of the early module videos highlighted, our projects should be something we are passionate about as without passion we would lack the motivation to complete such a lengthy and isolated piece of work\cite{COURSERA_PROJECT_VIDEO}. I found that the existing Internet of Things templates involved topics I'm not particularly passionate about. I did gain permission from the Coursera Tutor Forums prior to embarking on this journey\cite{COURSERA_PROJECT_PERMISSION}.
+	The aim of this project is to design and develop an AUV. This project does not comfortably fall into any of the predefined template project ideas but was born from a personal enjoyment of the Internet of Things module which allowed me to explore microcontroller programming and interacting with physical sensors and actuators. This has since blossomed into a passion for robotics. As one of the early module videos highlighted, our projects should be something we are passionate about as without passion we would lack the motivation to complete such a lengthy and isolated piece of work\cite{COURSERA_PROJECT_VIDEO}. I found that the existing Internet of Things templates involved topics I'm not particularly passionate about. I did gain permission from the Coursera Tutor Forums prior to embarking on this journey\cite{COURSERA_PROJECT_PERMISSION}.
 	
-	This project was initially inspired by the work of a YouTuber (Brick Experiment Channel\cite{BRICK_EXPERIMENT_CHANNEL_PROFILE}) who created a small remote controlled submarine using a watertight container and Lego. The accompanying blog\cite{BRICK_EXPERIMENT_CHANNEL_BLOG} depicts the design and development of several versions of this device, and also explains some of the key concepts that need to be considered such as buoyancy. The original plan for this project was to do something similar to this (occupying the hobby space of the AUV market) - a small device that provides basic functionality autonomously, using similar materials (a water tight container and Lego). However, following the initial research into the AUV market there is a trend of AUVs costing thousands\cite{AUV_COST}, a cost which will increase with the additional custom payloads (sensor arrays) required for the specific research projects. There are a small handful of manufacturers that offer lower cost AUVs to customers such as the ecoSub\cite{ECOSUB} which states one of their submarines are \unit{\approx}£15k, this is a price point that may still be out of reach for many projects. In addition to the initial cost of AUVs being expensive, the parts would be custom made by the manufacturer and so any repairs could be equally costly. 
+	This project was initially inspired by the work of a YouTuber (Brick Experiment Channel\cite{BRICK_EXPERIMENT_CHANNEL_PROFILE}) who created a small remote controlled submarine using a watertight container and Lego. The accompanying blog\cite{BRICK_EXPERIMENT_CHANNEL_BLOG} depicts the design and development of several iterations of this device, and also explains some of the key concepts that need to be considered such as buoyancy. The original plan for this project was to do something similar to this (occupying the hobby space of the AUV market) - a small device that provides basic functionality autonomously, using similar materials (a water tight container and Lego). However, following the initial research into the AUV market there is a trend of AUVs costing thousands to hundreds of thousands\cite{AUV_COST} of pounds, a cost which will increase with the additional custom payloads (sensor arrays) required for the specific research projects. There are a small handful of manufacturers that offer lower cost AUVs to customers such as the ecoSub\cite{ECOSUB} which states one of their vessels are \unit{\approx}£15k which is a price point that may still be out of reach for many research projects. In addition to the initial cost of AUVs being expensive, the parts could be custom made by the manufacturer and so any repairs could be equally costly. 
 	
-	While the inspiration for this project started with a small remote controlled submarine, the initial research has expanded the scope to try and develop an extremely low cost AUV which could be made open source (allowing for easy customisations) and can be manufactured by the researchers that require them using readily available parts and 3D printing which is now common relatively common and would mitigate the requirement for $3^{rd}$ party companies fabricating parts. This would also mitigate costly repairs as all the design files would be a part of the project. The target users of this AUV may be required to develop their own payloads, but even the cost of hiring a developer to do this may still be cheaper than buying AUVs from known sources. 
+	While the inspiration for this project started with a small remote controlled submarine, the initial research has expanded the scope to attempt to develop an extremely low cost AUV which could be made open source (allowing for easy customisations) and can be manufactured by the researchers that require them using readily available parts and 3D printing for fabrication of physical parts which is now relatively common and would mitigate the requirement for $3^{rd}$ party companies fabricating parts. This would also mitigate costly repairs as all the design files would be a part of the project. The target users of this AUV may be required to develop their own payloads, but even the cost of hiring a developer to do this may still be cheaper than buying AUVs from existing sources. This could seriously open up underwater research for projects that are underfunded. These projects may have previously relied on human divers to obtain data as the safer unmanned alternative is out of reach for them so this would make such endeavours safer as well as cost effective.  
 	
-	By developing an open source AUV, this could seriously open up underwater research for projects that are underfunded. These projects may have previously relied on human divers to obtain data as the safer unmanned alternative is out of reach for them so this would make such endeavours safer too.  
+	\textbf{Word count: 734}
 	
-	\chapter*{Literature Review} (max 5 pages)
+	\chapter*{Literature Review}
 	\addcontentsline{toc}{chapter}{Literature Review}
-	\section*{Previous works}
-	\addcontentsline{toc}{section}{Previous Works}
-	\subsection*{Amateur Level}
-	\addcontentsline{toc}{subsection}{Amateur Level}
-	The YouTuber Brick Experiment Channel\cite{BRICK_EXPERIMENT_CHANNEL_PROFILE} wrote a series of blog posts\cite{BRICK_EXPERIMENT_CHANNEL_BLOG} outlining the build process for the $4^{th}$ iteration of their remote controlled submarine. 
-	
-	The posts are detailed covering the steps of building this submarine with reasoning behind the design decisions along with a critical evaluation of each step. This version is using a large syringe to bring water onboard the vehicle to control buoyancy, and is driven by two motors: one for propulsion, and one for direction. The sensors incorporated measure pressure to accurately gauge depth, and a laser to measure distance from the bed of a body of water. 
-	
-	The blog also raised communication as a consideration: While the aim of this project is to build an autonomous vehicle, it would be nice to communicate with it in flight. The problem is this cannot be done easily with wireless frequencies as the higher frequencies that provide the required bandwidth do not penetrate water that well.
-	
-	\subsection*{Commercial Level}
-	\addcontentsline{toc}{subsection}{Commercial Level}
-	The company Advanced Navigation makes the Hydrus Drone\cite{ADVANCED_NAVIGATION_HYDRUS}, which claims to be one of the smallest AUVs on the market. The device itself controls depth and position with impellers, a 4K camera with AI integrations, and a forward facing sonar. The most important aspect of Advanced Navigation's AUV is how they address the issues around wireless communication. This company has fitted their device with acoustic and optical modems so data can be transferred using audio frequencies and light (presumably similar to fibre octics).
-	
-	\subsection*{Research Level}
-	\addcontentsline{toc}{subsection}{Research Level}
-	The Woods Hole Oceanographic Institute\cite{WOODS_HOLE} draws attention to the use of different AUVs depending on the area of research or environment. They use one of 6 AUV models, which operate at different depths or different functionality. The REMUS\cite{WOODS_HOLE_REMUS} can be equipped with varying sensors and is programmed for survey missions. It was also adapted to survey the Delaware river Aqueduct for leaks. 
-	
-	One of the more interesting AUVs this institute uses is the Spray Glider\cite{WOODS_HOLE_SPRAY_GLIDER}. This description for this device is one that glides through the water without any external thrusters so can be travel for weeks at a time. The device uses internal bladders to control buoyancy, and is set to navigate preset paths equipped with varying sensors. What is interesting about this device is the lack of external propulsion seems to make this device more passive, and can therefore operate at lower voltage.
-	
-	The UK National Oceanography Centre has details on the challenges around an designing an AUV\cite{NATIONAL_OCEANOGRAPHIC_AUTOSUBS}. For power and propulsion it highlights the lack of oxygen for internal combustion makes it necessary to use batteries for power and notes the difference in speed between AUVs and surface ships. For navigation it highlights that because GPS can't penetrate the top few mm of water, the reliance on other techniques is required. It suggests an approach called Dead Reckoning which gets the speed of the AUV by measuring the Doppler shift from the sea bed for relative speed and using a gyro to measure the heading. It highlights that navigational accuracy is vital to survey missions. 
-	
+ 	
 	\section*{Key Literature}
 	\addcontentsline{toc}{section}{Key Literature}
 	The definition for an AUV is best described in an article titled ``Autonomous Underwater Vehicles (AUVs): Their past, present and future contributions to the advancement of marine geoscience". 
@@ -99,7 +74,7 @@
 	
 	While this article includes a lot of jargon relating to marine geosciences, it provides a good overview of the uses of AUVs and their previous applications. More importantly, it provides some good starting points for some concepts I will need to  explore during the development of this project. This includes references to works that look into the Dead Reckoning method of positioning, and a launch pad into some key concepts such as Sonar. 
 
-	Because the sensors deployed on an AUV are specific to its function and is something that can be configured, it is worth considering a modular design. As a part of this there could be some level of connectivity between the separate modules. Modern MCUs typically feature multiple options for communication protocols such as UART, USART, $I^{2}C$, SPI, USB, Ethernet or could be as simple as pulling a pin high or low. For the purpose of this project, we will consider $I^{2}C$ as it uses minimal wires, and allows for two way communication. The MCU data sheet\cite{ATTINY1627} is the manufacturers documentation and is a vital reference for development on any given  MCU and it directly relates to the MCU specific library in code. It has all the details and requirements to setup any of the provided MCU features, and gives a brief overview of each feature. 
+	Because the sensors deployed on an AUV are specific to its function and is something that can be configured, it is worth considering a modular design. As a part of this there could be some level of connectivity between the separate modules. Modern MCUs typically feature multiple options for communication protocols such as UART, USART, $I^{2}C$, SPI, USB, Ethernet or could be as simple as pulling a pin high or low. For the purpose of this project, $I^{2}C$ will be used as it uses minimal wires, and allows for two way communication in a half-duplex capacity (not simultaneously). The MCU data sheet\cite{ATTINY1627} is the manufacturers documentation and is a vital reference for development on any given  MCU and it directly relates to the MCU specific library in code. It has all the details and requirements to setup any of the provided MCU features, and gives a brief overview of each feature. 
 	
 	With regards to the ATTiny 1627 MCU, the data sheet describes $I^{2}C$ as a TWI (Two Wire Interface): ``The Two-Wire Interface (TWI) is a bidirectional, two-wire communication interface (bus) with a Serial Data Line (SDA) and a Serial Clock Line (SCL)"\cite{ATTINY1627}. There are several advantages to using the TWI bus as a communication protocol as it allows the connection of ``one or several slave devices to one or several master devices"\cite{ATTINY1627} allowing a network of devices to become interconnected. This would also allow for parallel computation as instead leaving one device to perform all of the sensor readings and calculations, some of which could be computationally expensive or using deliberate pauses of code execution, a master device could simply trigger the networked modules to each perform their actions and then do nothing while waiting for the responses. 
 	
@@ -119,36 +94,60 @@
 	
 	This addressing is how the devices know what devices they need to talk to on a network. With the system of addressing and the ability to broadcast transmissions we can begin to visualise the $I^{2}C$ protocol as akin to web sockets. The interesting point raised here is that conflict resolution needs to be handled where the network has multiple masters. One such proposal they put forward is Arbitration: ``since $I^{2}C$ supports multiple masters, an arbitration rule is necessary. In this protocol, arbitration proceeds bit by bit and the rule is deterministic: the first master that produces a one when the other produces a zero loses the arbitration"\cite{I2C}. 
 	
-	Another resource that covers a lot of information about AVR Microcontrollers and also providing an overview of the features as well as how to interact with actuators such as servos and stepper motors, is 'Make: AVR Programming'\cite{MAKE_AVR}. While this book does contain quite a broad overview of the features and protocols, it also has examples of code to interact with them, as well as an overview of the toolchain required to programme a microcontroller (in this instance involving Make, avr-gcc\cite{GCC_AVR} and AVRDude\cite{AVRDUDE} as well as a physical hardware programmer). However, the example code is all written for a specific MCU that the book focuses on, being the ATMEGA168. However, as the author notes, this should not be too difficult to port to my specifically chosen MCU as the book also tries to teach another skill being the ability to refer to relevant sections of the data sheet. 
+	Another resource that covers a lot of information about AVR Microcontrollers and also providing an overview of the features as well as how to interact with actuators such as servos and stepper motors, is 'Make: AVR Programming'\cite{MAKE_AVR}. While this book does contain quite a broad overview of the features and protocols, it also has examples of code to interact with them, as well as an overview of the toolchain required to programme a microcontroller (in this instance involving Make, avr-gcc\cite{GCC_AVR} and AVRDude\cite{AVRDUDE} as well as a physical hardware programmer). However, the example code is all written for a specific MCU that the book focuses on, being the ATMEGA168. but as the author notes, this should not be too difficult to port to my specifically chosen MCU as the book also tries to teach another skill being the ability to refer to relevant sections of the data sheet. 
 	
-	As well as internal device communication protocols, it would also be good if we could have some way of interacting with the device in flight: receiving data, and possibly some rudimentary manual over ride/remote control. As corroborated in an article exploring underwater wireless networks, ``radio is seriously attenuated in water"\cite{UNDERWATER_RADIO}. Radio waves exist on the EM Spectrum and the lower the frequency, the further it can penetrate water due to the electrical dissipation that occurs, which is accentuated by salt water. High frequencies that we are used to as standard data transfer frequencies (WiFi, Bluetooth) are measured in \unit{\giga\hertz}, and these penetrate only a few \unit{\centi\meter} of water. Even LoRa at 433\unit{\mega\hertz} will only penetrate 30-50\unit{\centi\meter} of water. The military use lower radio frequencies operating in the range of \unit{\hertz} to \unit{\kilo\hertz} to communicate with their submarines but the trade off is lower frequencies bandwidth (less data can be transferred as there are fewer cycles per second). Additionally, radio frequencies are controlled\cite{RADIO_FREQ_TABLE} and as a hobby enthusiast/student I only have access to a limited range of frequencies.  
+	As well as internal device communication protocols, it would also be good if we could have some way of interacting with the device in flight: receiving data, and possibly some rudimentary manual over ride/remote control. As corroborated in an article exploring underwater wireless networks, ``radio is seriously attenuated in water"\cite{UNDERWATER_RADIO}. Radio waves exist on the EM Spectrum and the lower the frequency, the further it can penetrate water due to the electrical dissipation that occurs, which is accentuated by salt water. High frequencies that we are used to as standard data transfer frequencies (WiFi, Bluetooth) are measured in \unit{\giga\hertz}, and these penetrate only a few \unit{\centi\meter} of water. Even LoRa at 433\unit{\mega\hertz} will only penetrate 30-50\unit{\centi\meter} of water. The military use lower radio frequencies operating in the range of \unit{\hertz} to \unit{\kilo\hertz} to communicate with their submarines but the trade off is lower frequencies provide less bandwidth (less data can be transferred as there are fewer cycles per second). Additionally, radio frequencies are controlled\cite{RADIO_FREQ_TABLE} and as a hobby enthusiast/student I would only be licenced to access to a limited range of frequencies.  
 	
 	The article also states ``acoustic communication is almost the only effective way for underwater wireless transmission. Nevertheless, compared with the traditional radio, underwater acoustic communication is greatly affected by poor conditions, such as absorption, scattering, multipath interference and Doppler effect"\cite{UNDERWATER_RADIO}. While I think the authors are perhaps exaggerating this point to justify their experiments somewhat, it does offer an alternate avenue to wireless communication with a device while it is operating underwater, but it would require the development of an ultrasonic modem of some description. Alternatively we could just add a plug to the device for a physical wire for external control/data transmission. While this goes against the design of an AUV as being untethered, it would also act as a lifeline to retrieve the device while minimising risk, even when testing in controlled bodies of water.
 	
-	\chapter*{Design} (max 4 pages)
+		\section*{Previous works}
+	\addcontentsline{toc}{section}{Previous Works}
+	\subsection*{Amateur Level}
+	\addcontentsline{toc}{subsection}{Amateur Level}
+	The YouTuber Brick Experiment Channel\cite{BRICK_EXPERIMENT_CHANNEL_PROFILE} wrote a series of blog posts\cite{BRICK_EXPERIMENT_CHANNEL_BLOG} outlining the build process for the $4^{th}$ iteration of their remote controlled submarine. 
+	
+	The posts are detailed covering the steps of building this submarine with reasoning behind the design decisions along with a critical evaluation of each step. This version is using a large syringe to bring water onboard the vehicle to control buoyancy, and is driven by two motors: one for propulsion, and one for direction. The sensors incorporated measure pressure to accurately gauge depth, and a laser to measure distance from the bed of a body of water. It is worth noting that lasers are not the best method of measuring distance in water due to issues with refraction and in turbulent or murky waters the readings could be false. This is corroborated by the author who states that this sensor gave inaccurate readings and ultimately went unused. 
+	
+	The blog also raised communication as a consideration: While the aim of this project is to build an autonomous vehicle, it would be nice to communicate with it in flight. The problem is this cannot be done easily with wireless frequencies as the higher frequencies that provide the required bandwidth do not penetrate water that well.
+	
+	\subsection*{Commercial Level}
+	\addcontentsline{toc}{subsection}{Commercial Level}
+	The company Advanced Navigation makes the Hydrus Drone\cite{ADVANCED_NAVIGATION_HYDRUS}, which claims to be one of the smallest AUVs on the market. The device itself controls depth and position with impellers, a 4K camera with AI integrations, and a forward facing sonar. The most important aspect of Advanced Navigation's AUV is how they address the issues around wireless communication. This company has fitted their device with acoustic and optical modems so data can be transferred using audio frequencies and light (presumably similar to fibre octics). This is similar to the suggestion in the article on underwater communication\cite{UNDERWATER_RADIO} which also suggested the use of acoustics.
+	
+	\subsection*{Research Level}
+	\addcontentsline{toc}{subsection}{Research Level}
+	The Woods Hole Oceanographic Institute\cite{WOODS_HOLE} draws attention to the use of different AUVs depending on the area of research or environment. They use one of 6 AUV models, which operate at different depths or provide different functionality. The REMUS\cite{WOODS_HOLE_REMUS} can be equipped with varying sensors and is programmed for survey missions. It was also previously adapted to survey the Delaware river Aqueduct for leaks. 
+	
+	One of the more interesting AUVs this institute uses is the Spray Glider\cite{WOODS_HOLE_SPRAY_GLIDER}. This description for this device is one that glides through the water without any external thrusters so can be travel for weeks at a time. The device uses internal bladders to control buoyancy, and is set to navigate preset paths equipped with varying sensors. What is interesting about this device is the lack of external propulsion presumably makes this device more passive, and can therefore operate at lower voltage.
+	
+	The UK National Oceanography Centre has details on the challenges around an designing an AUV\cite{NATIONAL_OCEANOGRAPHIC_AUTOSUBS}. For power and propulsion it highlights the lack of oxygen for internal combustion makes it necessary to use batteries for power and notes the difference in speed between AUVs and surface ships. For navigation it highlights that because GPS can't penetrate the top few mm of water, the reliance on other techniques is required. It suggests an approach called Dead Reckoning which gets the speed of the AUV by measuring the Doppler shift from the sea bed for relative speed and using a gyro to measure the heading. It highlights that navigational accuracy is vital to survey missions.
+	
+	\textbf{Word count: 1752}
+	
+	\chapter*{Design}
 	\addcontentsline{toc}{chapter}{Project Design}
 	\section*{Domain}
 	\addcontentsline{toc}{section}{Domain}
 	AUVs have applications spanning multiple domains both in scientific exploration as well as commercial enterprise. For science they are used for surveying coastlines and ocean beds, sampling in remote or hard to reach locations and exploring the depths to name a few applications. For commerce they can de deployed to monitor gas and oil pipelines, drills, survey potential resource sites, and monitor ship hulls etc. The deployment of AUVs over physical diving or manned equipment offer more benefits when compared to the cost and safety. AUVs can potentially spend longer underwater depending on the design and payload they are equipped with and the size of the power source, and can gather far more data than a diver with far less risk to human life.
 	
-	For this project, the aim was to develop a low cost, open source AUV that will be targeted towards the scientific exploration domain. Since this domain still covers a multitude of deployment scenarios (coastal surveys, lake/ocean floor mapping, deep sea exploration) spanning countless research applications including water quality/temperature, imaging/mapping, ecosystem exploration etc., this project will initially target scenarios that require an AUV to more likely to dive to shallower depths such as coastal surveys. Since the sensor payloads vary depending on the research requirements, the plan is to deliver the AUV shell that can perform the basics of autonomous traversal of a body of water relying on sonar technology for obstacle avoidance which can be easy to extend relying on the $I^{2}C$ bus for communication of connected modules. This can be extended by the researchers deploying the AUV either by integrating with the main electronics driving the device, or by making their own sensor payload independent to the main electronics. 
+	For this project, the aim was to develop a low cost, open source AUV that will be targeted towards the scientific exploration domain. Since this domain still covers a multitude of deployment scenarios (coastal surveys, lake/ocean floor mapping, deep sea exploration) spanning countless research applications including water quality/temperature, imaging/mapping, ecosystem exploration etc., this project will initially target scenarios that require an AUV to more likely to dive to shallower depths such as coastal surveys, as diving to deeper depths would require pressure as an important consideration when choosing potential materials. Since the sensor payloads vary depending on the research requirements, the plan is to deliver the AUV shell that can perform the basics of autonomous traversal of a body of water relying on sonar technology for obstacle avoidance which can be easy to extend relying on the $I^{2}C$ bus for communication of connected modules. This can be extended by the researchers deploying the AUV either by integrating with the main electronics driving the device, or by making their own sensor payload independent to the main electronics. 
 	
 	\section*{Technologies}
 	\addcontentsline{toc}{section}{Technologies}
 	\subsection*{Microcontrollers}
 	\addcontentsline{toc}{subsection}{Microcontrollers}
-	Because this project is something to be deployed to remote environments, the microcontrollers required should be efficient and low powered. To achieve this I chose the ATTiny 1627 microcontroller mentioned previously in this report. This micro controller has been chosen due the fact it is feature rich with low power requirements as the device itself can operate from 1.8\unit{\volt} to 5.5\unit{\volt} and the efficiency can potentially be extended using the devices sleep settings. The full list of features for this microcontroller can be found in the appendices \ref{appendix:attiny_features}. Because this chip is extremely small, with the 24 pin version only being available in a QFN/VQFN (Quad Flat No leads) packaging, it was necessary to develop a simple breakout board to make this chip breadboard compatible. This required a small amount of learning how to design PCBs, but using KiCad\cite{KICAD}, this proved relatively easy for such a simple design, and after manufacturing costs and MCU costs this proved economical as each board cost \unit{\approx}£8 which is a price comparable to the popular Node 8266 MCU used during the Internet of Things module. The designs for this board can be seen in the appendices \ref{appendix:vqfn_breakout}
+	Because this project is something to be deployed to remote environments, the microcontrollers required should be efficient and low powered. To achieve this I chose the ATTiny 1627 microcontroller mentioned previously in this report. This micro controller has been chosen due the fact it is feature rich with low power requirements as the device itself can operate from 1.8\unit{\volt} to 5.5\unit{\volt} and the efficiency can potentially be extended using the devices sleep settings. The full list of features for this microcontroller can be found in the appendices \ref{appendix:attiny_features}. Because this chip is extremely small (\ref{appendix:images_mcu}), with the 24 pin version only being available in a QFN/VQFN (Quad Flat No leads) packaging, it was necessary to develop a simple breakout board to make this chip breadboard compatible. This required a small amount of learning how to design PCBs, but using KiCad\cite{KICAD}, this proved relatively easy for such a simple design, and after manufacturing costs and MCU costs this proved economical as each board cost \unit{\approx}£8 which is a price comparable to the popular Node 8266 MCU used during the Internet of Things module. The designs for this board can be seen in the appendices \ref{appendix:vqfn_breakout}
 	
-	While device packs such as the megaTinyCore\cite{MEGATINYCORE} would allow the development of Arduino code on these microcontrollers, the chosen approach was to use ``bare metal" C code and directly use the core AVR libraries to interact with the various registers. This is because, while Arduino as a level of abstraction has various API methods that make development a bit easier, it comes with a loss of being able to easily configure many of the device peripherals to be used in specific scenarios, and some of the peripherals (such as Timer Counters) are already configured and used for some functions such as delay. By relying on peripherals and ISRs(Interrupt Service Routines), the code can be developed to be more event driven than running code in a main loop. ISRs work by raising an interrupt flag on the peripheral once a condition has been met. The flag triggers any code inside an ISR vector to be run. The design for the modules will be several modules interconnected using the $I^{2}C$/TWI protocol in a star topology where only one device is the Host and the rest are Clients, and are designed in such as way that the pseudocode for each of the modules found in the appendices \ref{appendix:pseudocode} can be used as a starting point ot develop the bare metal C code to run on the microcontrollers. 
+	While device packs such as the megaTinyCore\cite{MEGATINYCORE} would allow the development of Arduino code on these microcontrollers, the chosen approach was to use ``bare metal" C code and directly use the core AVR libraries to interact with the various registers. This is because, while Arduino as a level of abstraction has various API methods that make development a bit easier, it comes with a loss of being able to easily configure many of the device peripherals to be used in specific scenarios, and some of the peripherals (such as Timer Counters) are already configured and used for some functions such as delay. By relying on peripherals and ISRs(Interrupt Service Routines), the code can be developed to be more event driven than running code in a main loop. ISRs work by raising an interrupt flag on the peripheral once a condition has been met. The flag triggers any code inside an ISR vector to be run. The design for the AUV will include several modules interconnected using the $I^{2}C$/TWI protocol in a star topology where one device is designated as the host and the rest are considered clients. They are designed in such as way that the pseudocode for each of the modules found in the appendices \ref{appendix:pseudocode} can be used as a starting point ot develop the bare metal C code to run on the microcontrollers. 
 	
 	\subsection*{AUV Body}
 	\addcontentsline{toc}{subsection}{AUV Body}
-	In order to keep the AUV as accessible as possible to any institutes or researchers looking to develop one, the AUV hull and internal fixtures has been designed to be 3D printed. This negates the requirement for users to need to get the parts fabricated in materials that require special tools or specialised knowledge on how to work with them, or that are costly such as metal or fibreglass or carbon fibre. Once the initial investment of a 3D printer is overcome if not already available (\unit{\approx}£400 for one that prints a variety of materials), the cost in filament is extremely low in comparison. This approach does require further research and experimentation to determine the best combination of filaments or materials to print the components in, along with any potential post-processing to increase the suitability and durability of the parts.
-	Since it is common knowledge that often electronics and water do not mix, the design used magnets to connect moving parts on the inside to the outside of the vessel (propellers), as this removes the need to try and have a hole with enough clearance to freely rotate a shaft, while keeping the vessel waterproof. 
+	In order to keep the AUV as accessible as possible to any institutes or researchers looking to develop one, the AUV hull and internal fixtures has been designed to be 3D printed (\ref{appendix:images_hull}). This negates the requirement for users to need to get the parts fabricated in materials that require special tools or specialised knowledge on how to work with them, or that are costly such as metal or fibreglass or carbon fibre. Once the initial investment of a 3D printer is overcome if not already available (\unit{\approx}£400 for one that prints a variety of materials), the cost in filament is extremely low in comparison. This approach does require further research and experimentation to determine the best combination of filaments or materials to print the components in, along with any potential post-processing to increase the suitability and durability of the parts.
+	Since it is common knowledge that often electronics and water do not mix, the design used magnets to connect moving parts on the inside to the outside of the vessel (propellers), as this removes the need to try and have a hole with enough clearance to freely rotate a shaft, while keeping the vessel waterproof (\ref{appendix:images_parts}). 
 	
 	\subsection*{Navigation}
 	\addcontentsline{toc}{subsection}{Navigation}
-	For navigation and obstacle avoidance this project employs the use of Sonar. Sonar specifically for underwater applications on the consumer level is extremely hard to come by but there are some options available such as the Ping2\cite{PING2}. while these are feature rich (using multiple frequencies for accurate sonar imaging), they are quite expensive (\unit{\approx}£400), and future availability could be questionable. To this end, the original plan starting this project was to try to develop a custom sonar module using transducers rated for underwater use\cite{ALUMINIUM_TRANSDUCER} that would operate by providing a distance in \unit{\centi\metre} upon request. The requesting trigger would be by command via the $I^{2}C$ rail. The distance would then be available on the next $I^{2}C$ read request. This could have also been developed further to having an additional pin to notify the host device that the distance is ready to be requested, but really would be unnecessary given how fast the speed of sound travels, particularly underwater (~1500\unit{\metre}/\unit{\second}). 
+	For navigation and obstacle avoidance this project employs the use of Sonar. Sonar specifically for underwater applications on the consumer level is extremely hard to come by but there are some options available such as the Ping2\cite{PING2}. while these are feature rich (using multiple frequencies for accurate sonar imaging), they are quite expensive (\unit{\approx}£400), and future availability could be questionable. To this end, the original plan starting this project was to try to develop a custom sonar module using transducers rated for underwater use\cite{ALUMINIUM_TRANSDUCER} that would operate by providing a distance in \unit{\centi\metre} upon request. The requesting trigger would be by command via the $I^{2}C$ rail. The distance would then be available on the next $I^{2}C$ read request. This could have also been developed further to having an additional pin to notify the host device that the distance is ready to be requested, but really would be unnecessary given how fast the speed of sound travels, particularly underwater (\unit{\approx}1500\unit{\metre}/\unit{\second}). 
 	
 	This however proved to be a fruitless endeavour which I can only surmise was down to a combination of inexperience with analogue/audio electronics and not meeting the voltage requirements of the transducers (160\unit{\volt}pp). This ended up using significantly more of the planned time than expected and in the end depended on the use of prefabricated ultrasonic rangefinders rated as ``waterproof" (JSN-SR04T\cite{JSN_SR04T}). These devices also works in a similar way to the HC-SR04\cite{HC_SR04} where the trigger pin is pulled high for a minimum of 10\unit{\micro\second} then released which triggers the transmitting transducer to pulse, and pulls the echo pin high. Once the receiving transducer receives a signal, the echo pin is pulled low and the time between its high and low state can be used to calculate the distance using the formula:
 	
@@ -160,11 +159,12 @@
 	
 	\subsection*{Mechanical}
 	\addcontentsline{toc}{subsection}{Mechanical}
-	The responses of the sonar modules incorporated into the design of this AUV are used to drive actuators to respond to the physical environment. This includes having the ability to dive and rise, move forward, backwards, and rotate to a new heading to avoid obstacles. With the aim of keeping this device low cost, the goal was to attempt to use inexpensive, readily available parts (stepper and toy motors). The Stepper motor was chosen as it provides precise control over some parts (the depth controller) and can also provide enough torque to physically operate them (depth controller is a large syringe connected to a threaded shaft to convert the rotary force into a linear motion). The main propeller was also quite large and so benefited from this additional torque. The toy motors chosen to turn the smaller side motors as these would benefit from the raw speed they can provide. 
+	The responses of the sonar modules incorporated into the design of this AUV are used to drive actuators to respond to the physical environment. This includes having the ability to dive and rise, move forward, backwards, and rotate to a new heading to avoid obstacles. With the aim of keeping this device low cost, the goal was to attempt to use inexpensive, readily available parts (stepper and toy motors). The Stepper motor was chosen as it provides precise control over some parts (the depth controller) and can also provide enough torque to physically operate them (the depth controller is a large syringe connected to a threaded shaft to convert the rotary force into a linear motion as seen in the appendices \ref{appendix:images_parts}). The main propeller was also quite large and so benefited from this additional torque. The toy motors chosen to turn the smaller side motors as these would benefit from the raw speed they can provide. 
+	
+	\textbf{Word count: 1402}
 	
 	\chapter*{Implementation}
 	\addcontentsline{toc}{chapter}{Implementation}
-	(max 3 pages)
 	
 	\section*{$I^{2}C$}
 	\addcontentsline{toc}{section}{$I^{2}C$}
@@ -172,21 +172,17 @@
 	
 	First, the device data sheet\cite{ATTINY1627} provides a very good overview of what is required to initialise the protocol and use it for effective communication. The initialisation procedures and further instructions are many pages long as it tries to be as thorough as possible to cover all the different scenarios (covering read, write operations, bus idle and error states and arbitration rules and how to handle these along with various interrupt flags that can be raised). This was the original point of reference for this protocol which was used to develop my own library from scratch (appendices \ref{appendix:midterm_i2c_code}) with the library code split into code specifically for the host device and client device depending on the specific use case of each MCU. For the host (appendix \ref{appendix:midterm_i2c_host_h} and \ref{appendix:midterm_i2c_host_c}), the initialisation process involved setting the baud rate, setting the bus status to `IDLE', and because I decided to use the peripherals ``Smart mode" to save myself from having to manually send ACK and NACK bits after each byte is transmitted/received, the MCTRLB register has to have the relevant ACKACT configuration set, and then the protocol is enabled by writing to the MCTRLA register. Using the protocol was theoretically simple, with commands initiated by the host. The host issues a command to a connected client device by first sending the address by writing to the MADDR register (7 bits) which is shifted left by 1 bit as the first bit is used to indicate if the operation is read(0) or write(1). Once the client has responded with ACK (acknowledging it has received the request and is ready to receive more data), either the host transmits data until the client sends a NACK bit (indicating it can't receive or won't accept any more data), or the client sends data till the host sends an ACK or NACK bit. 
 	
-	 The client code (appendices \ref{appendix:midterm_i2c_client_h} and \ref{appendix:midterm_i2c_client_c}) initialisation is slightly simpler. For this, we simply set the address of the client to the SADDR register (7 bits shifted left by 1 bit), with the first bit indicating if the protocol should respond to open broadcasts on the bus (messages addressed to 0x00), and also the SCTRLA register is where the protocol is enabled and the Interrupts are enabled. The client uses interrupts and callbacks to handle the operations. The ISR code first checks the if the Address or Stop interrupt flag (APIF) is raised which if this is the case, it will check the address match flag (AP). If AP flag is raised this is the Address match and so it would send an ACK bit (by clearing the flag and setting the SCTRLB register to a RESPONSE configuration). If the AP flag is not raised, this indicates a stop command was received (after the host received a NACK) and so the SCTRLB register is set to a COMPTRANS configuration to end the transaction and release the clock (which while controlled by the host could still be held by the client in a method known as `clock stretching'), forcing the bus state to enter an IDLE state.  The next interrupt checked is the DIF (Data) which if raised it indicates that there is data ready to be read in the SDATA register (data received from the host). 
+	 The client code (appendices \ref{appendix:midterm_i2c_client_h} and \ref{appendix:midterm_i2c_client_c}) initialisation is slightly simpler. For this, we simply set the address of the client to the SADDR register (7 bits shifted left by 1 bit), with the first bit indicating if the protocol should respond to open broadcasts on the bus (messages addressed to 0x00), and also the SCTRLA register is where the protocol and the Interrupts are enabled. The client uses interrupts and callbacks to handle the operations. The ISR code first checks the if the Address or Stop interrupt flag (APIF) is raised which if this is the case, it will check the address match flag (AP). If AP flag is raised this is the Address match and so it would send an ACK bit (by clearing the flag and setting the SCTRLB register to a RESPONSE configuration). If the AP flag is not raised, this indicates a stop command was received (after the host received a NACK) and so the SCTRLB register is set to a COMPTRANS configuration to end the transaction and release the clock (which while controlled by the host could still be held by the client in a method known as `clock stretching'), forcing the bus state to enter an IDLE state.  The next interrupt checked is the DIF (Data) which if raised it indicates that there is data ready to be read in the SDATA register (data received from the host). 
 	 
 	 This implementation of the $I^{2}C$ protocol is very basic but was still very difficult to develop. It does not handle issues with arbitration, and occasionally the code would get stuck on a blocking while loop that was waiting for either the bus to enter a specific state, or an interrupt flag to be raised. If the bus entered into an Error state, this would not occur and during the initial development of this library, this was indeed the case. While this sufficed for the midterm prototype, seeing this is the lynchpin of the software on each MCU (as without communication the modules would do nothing) this was deemed unfit for purpose for the final product. However, the more I tried to develop this library, the farther from working code I got. 
 	 
-	 At this point, since time was short due to other aspects of the project (the unsuccessful Sonar Module), I decided to run an experiment utilizing the megaTinyCore\cite{MEGATINYCORE} Arduino device pack and its version of the popular Wire package\cite{MEGATINYCORE_WIRE}. Using Arduino code I developed a simple circuit of interconnected microcontrollers and LEDs where the host device could set the colour of the RGB LEDs on the client and the clients could send a colour for the host (thereby testing both read and write operations). This worked flawlessly, so I decided this would a be good library to use as a basis. However the toolchains I was using (released by microchip) are not capable for compiling C++ code for 8 bit MCUs, so I had to first of all remove references to other libraries (Wire extends Arduino's `Stream' class) which removed the ability to send characters over this protocol as this allowed for the interpretation of them, and also convert this library to C. I could have written the project in Arduino using this device pack, but as mentioned previously, this would remove the ability to easily configure the MCU peripherals which I needed the ability to do.
+	 At this point, since time was short due to other aspects of the project (the unsuccessful Sonar Module), I decided to run an experiment utilizing the megaTinyCore\cite{MEGATINYCORE} Arduino device pack and its version of the popular Wire package\cite{MEGATINYCORE_WIRE}. Using Arduino code I developed a simple circuit of interconnected microcontrollers and LEDs where the host device could set the colour of the RGB LEDs on the client and the clients could send a colour for the host (thereby testing both read and write operations). This worked flawlessly, so I decided this would a be good library to use as a basis. However the toolchains I was using (released by microchip) are not capable for compiling C++ code for 8 bit MCUs, so I had to first of all remove references to other libraries (Wire extends the Arduino `Stream' class) which removed the ability to send characters over this protocol as this allowed for the interpretation of them, and also convert this library to C. I could have written the project in Arduino using this device pack, but as mentioned previously, this would remove the ability to easily configure the MCU peripherals which I needed the ability to do.
 	 
 	  This new implementation (I named CWire since it was the Wire library rewritten in C), while having \textit{some} limitations (only able to send hex or integer values), worked flawlessly and there are a couple of differences between this implementation and my own. The main difference is this version does not use Smart Mode to automatically send ACK or NACK bits, but controls this as necessary in the code by writing to the MCTRLB register. Second, it uses arrays to store data received and to be transmitted so as soon as the DIF flag is raised for example, it is cleared from the appropriate data register almost immediately and temporarily stored until read properly by the host code implementing this library. This aids in freeing up the bus state almost immediately. This library also combines the host and client code which while in this projects design is not necessary as only one device will be designated as host, it means I only have to maintain one library as opposed to two, and this can be exported as a stand alone entity to be used in other future projects using MCUs in the same family. Finally, this code has far more robust error handling for the different bus states, and it also handles arbitration by throwing an error, and cases where the bus is busy it will wait till it is idle before transmitting. The full code for this library can be seen in appendices \ref{appendix:cwire_library_code}
 	
-	\section*{Sonar}
-	\addcontentsline{toc}{section}{Sonar}
-	The final sonar module incorporated into this project is something I am less than happy with. As mentioned previously, this aspect of the project was something I was hoping to develop from scratch due to the lack of affordable low cost prefabricated options that are designed specifically for underwater use. In the end I had to settle with for a module (JSN-SR04T\cite{JSN_SR04T}) that while not rated for underwater use, there are forums that deployed the same sensors underwater had mixed reviews as to how well they worked in this environment. This is a stop gap solution as the only way I will be able to develop this particular module further is outside of the time restrictions imposed by this module. Since this module works in a similar fashion to the HC-SR04 module\cite{HC_SR04}, I was able to use code I had developed in a previous personal project\cite{STUART}. Despite using similar code to what I had previously used, the rangefinder would not give what I would consider accurate results while testing the device. This could be due to a combination of factors: first, breadboards were used extensively through the development and testing phases of this project. Poor breadboards can sometimes create issues that are not present where a soldered solution is created. This is due to the design of breadboards (metal strips that contact the wires) can produce alot of electrical noise that may prevent some components that are sensitive from working as expected. This has happened to me before on a previous module integrating LoRa modules. Second, while the HC-SR04 module uses two transducers to transmit and receive, the JSN-SR04T uses a single transducer to perform both operations. In order to get an accurate response the device has to wait for the transducer to stop ``ringing" after transmission is ended before it can detect a response, otherwise it could be receiving false positives. This results in an increased blind spot (which is only going to be exacerbated underwater) which could also be impacting the distance calculations. Finally, the transducer is connected to the devices PCB via an extremely long cable which I doubt from the thickness is shielded. This had to be coiled to fit inside the AUV which could have created inductance impacting the sensor. While the results were not accurate, they did appear to scale to the distance from an object, so were able to incorporate this into the final project, with the knowledge that in the future these will hopefully not be apart of the project. 
-	
 	\section*{Depth Controller}
 	\addcontentsline{toc}{section}{Depth Controller}
-	The depth controller in this AUV is an interesting area. Following similar design principles to The Brick Experiments remote controlled submarine, the depth is controlled using a large syringe drawing in water from outside the AUV to modify the overall mass of the vehicle affecting the bouyancy. The first design challenge was pushing and pulling the syringe. To accomplish this I designed and printed a housing for the syringe which are included in the AUV CAD drawings in appendices\ref{appendix:auv_designs}. The housing connects the syringe plunger to a threaded shaft driven by a stepper motor. In order to prevent this from trying to over screw at either end (which could potentially cause physical damage) at either end I created a `buffer'. This is a small metal plate with voltage running through it (generated from one of the pins on the MCU to keep it at a safe current). The nut that traverses the thread has two wires attached connected to the MCU so when they touch each end of this `buffer' we can determine that we have reached the end of travel and adjust the position variables in code accordingly. Because these detection wires are floating waiting to detect a voltage I enabled the internal pullup resistors on these pins as without this the pins would often not correctly detect the voltage and the pins have interrupts set to trigger on rising voltage changes. This buffer worked well, but because I did not want the detection pins to potentially sit at a position where it could be continuously drawing power, once detected the position is set to wind itself back to just before the buffer plate is touched. The complete code for the depth controller can be seen in appendices \ref{appendix:final_code_depth_controller_h}.
+	The depth controller (\ref{appendix:images_parts}) in this AUV is an interesting area. Following similar design principles to The Brick Experiments remote controlled submarine, the depth is controlled using a large syringe drawing in water from outside the AUV to modify the overall mass of the vehicle affecting the buoyancy. The first design challenge was pushing and pulling the syringe. To accomplish this I designed and printed a housing for the syringe which are included in the AUV CAD drawings in appendices\ref{appendix:auv_designs}. The housing connects the syringe plunger to a threaded shaft driven by a stepper motor. In order to prevent this from trying to over screw at either end (which could potentially cause physical damage) at either end I created a `buffer'. This is a small metal plate with voltage running through it (generated from one of the pins on the MCU to keep it at a safe current). The nut that traverses the thread has two wires attached connected to the MCU so when they touch each end of this `buffer' we can determine that we have reached the end of travel and adjust the position variables in code accordingly. Because these detection wires are floating waiting to detect a voltage I enabled the internal pullup resistors on these pins as without this the pins would often not correctly detect the voltage and the pins have interrupts set to trigger on rising voltage changes. This buffer worked well, but because I did not want the detection pins to potentially sit at a position where it could be continuously drawing power, once detected the position is set to wind itself back to just before the buffer plate is touched. The complete code for the depth controller can be seen in appendices \ref{appendix:final_code_depth_controller_h}.
 	
 	The Depth Controller aspect of this project is directly related to the ballast calculations that are necessary to perform to ensure the AUV is correctly weighted. Bouyant force\cite{BOUYANT_FORCE} is the upward force applied to an object against the gravitation downward pull. If the bouyant force is greater than the weight of the object in fluid, the object will float\cite{ARCHIMEDES_PRINCIPLE}. In order to calculate the required weight to be added to the AUV I have developed a simple python notebook to perform the calculations, which can be seen in the code repository\cite{AUV_REPO}. 
 	$$
@@ -197,16 +193,17 @@
 	$$
 	N = mass \times g
 	$$
-	The weight of the AUV is approximately 39.2\unit{\newton}. Since this is less than the bouyant force, the AUV without ballast will float. For this AUV to be able to dive and raise effectivly without the use of propellers or fins/rudders, it would need to be slightly positively bouyant. This would cause additional water drawn in through the syringe on the depth controller to change the AUV weight so it would fall into negative bouyancy and therefore start to sink. Releasing the water should then cause it to go back to slight positive bouyancy causing the AUV to rise. This is acheived by adding ballast. Since the target bouyancy is 0.1\unit{\newton} we need to perform the calculation $b = Fb - W - 0.1$ which is $b = 74.676 - 39.2 - 0.1$. $b$ is therefore the additional weight we need to add as ballast. In order to get the required mass, we simply reverse the mass to newton calculation. 
+	With the mass of the AUV being \unit{\approx} 4\unit{\kilo\gram}, the weight of the AUV is calculated to be approximately 39.2\unit{\newton}. Since this is less than the bouyant force, the AUV without ballast will float. For this AUV to be able to dive and raise effectivly without the use of propellers or fins/rudders, it would need to be slightly positively bouyant. This would cause additional water drawn in through the syringe on the depth controller to change the AUV weight so it would fall into negative bouyancy and therefore start to sink. Releasing the water should then cause it to go back to slight positive bouyancy causing the AUV to rise. This is acheived by adding ballast. Since the target bouyancy is 0.1\unit{\newton} we need to perform the calculation $b = Fb - W - 0.1$ which is $b = 74.676 - 39.2 - 0.1$. $b$ is therefore the additional weight we need to add as ballast. In order to get the required mass, we simply reverse the mass to newton calculation. 
 	$$
-	mass = \div{b}{g}
+	mass = \frac{b}{g}
 	$$
 	This equation would give us the overall target mass of the AUV which is calculated as 7.61(2d.p). To get the mass of ballast required we take off the AUVs current mass which is ~4\unit{\kilo\gram}. This means we require ~3.61\unit{\kilo\gram} of additional mass. 
 	
+	\textbf{Word count: 1916}
+	
 	
 	\chapter*{Evaluation}
-	
-	(max 3 pages)
+	\addcontentsline{toc}{chapter}{Evaluation}
 	
 	The testing and evaluation of this project can be split into two parts: Software/hardware (electronics), and mechanical (meaning the testing of the 3D printed parts and mechanical solutions). While I am an advocate of test driven development, this approach is not the most appropriate for microcontroller programming as the code is very dependent on the hardware, or specifically the state of the bytes in the registers of the hardware. While it would be theoretically possible to mock these states in some kind of simulator, there are some actions that also happen automatically by reading from or writing to certain registers such as interrupt flags being cleared by reading/writing from data registers. Test driven code using mocked simulations that don't account for this could therefore be inaccurate when running the same code on the actual MCU. While unit testing \textit{is} possible for MCU programming, there is no official methodology or libraries provided by Microchip (AVR manufacturer), and forums\cite{UNIT_TEST_MC} tend to be of split opinions as to whether this is practical or not owing to the code being tested for simulators not the actual hardware, but with some people stating they do use google test libraries and simulators. 
 	
@@ -214,20 +211,123 @@
 	
 	The development of the specific software features were manually tested with an attempt to cover as many edge cases as I could think of, but ignoring scenarios that were deemed impossible to reach, such as the Depth Controllers buffer hitting the IN and OUT buffers simultaneously is physically impossible. This manual testing method did allow for an iterative approach to the code, where bugs were fixed as observed, but it was time consuming and could not be exhaustive. With more time available it would be worth exploring a TDD approach as there are some aspects of the code that are not reliant on the MCU itself, such as the distance calculations in the Sonar module. Admittedly the testing of the software could have benefited from some consideration prior to starting development by writing some manual test scripts but considering I was testing a debugging simultaneously alongside revising the code, this would have interrupted my workflow.
 	
-	The mechanical aspects of the project (primarily the 3D printed parts seen in appendices \ref{appendix:auv_designs}) were also iteratively designed and tested in the same way as, and often alongside, the software. The depth controller, being a part that had moving parts and needed to operate smoothly was an example of successful iterative testing and designing. The first iteration of this was modelled to house the stepper motor and connect to the threaded shaft but immediately failed its test as this was modelled as a single piece and I did not account for clearance allowing the stepper motor to get inside the housing. Following this design flaw, the part was redesigned to be comprised of individual components that can be put together. This made future adjustments to the model far easier, for example one issue the part had for a while during development was it would get stuck occasionally while turning while the software was trying to perform either a `raise' or `dive' operation. While it would move again by itself more often than not, the few seconds it was stuck at a position would throw the timings off on a software level (so where the software \textit{thinks} the plunger is may not be accurate), and it put unnessary strain on the motor as it required torque to move past this point. The remedy for this was to allow for larger tollerances between the printed parts. By adding an additional 0.2\unit{\milli\metre} clearance on the thread and nut driving the syringe (0.4\unit{\milli\metre} total), the travel was far smoother and mitigated any future requirements for additional components such as grease. 
+	The mechanical aspects of the project (primarily the 3D printed parts seen in appendices \ref{appendix:auv_designs} and \ref{appendix:images}) were also iteratively designed and tested in the same way as, and often alongside, the software. The depth controller, being a part that had moving parts and needed to operate smoothly was an example of successful iterative testing and designing. The first iteration of this was modelled to house the stepper motor and connect to the threaded shaft but immediately failed its test as this was modelled as a single piece and I did not account for clearance allowing the stepper motor to get inside the housing. Following this design flaw, the part was redesigned to be comprised of individual components that can be put together. This made future adjustments to the model far easier, for example one issue the part had for a while during development was it would get stuck occasionally while turning while the software was trying to perform either a `raise' or `dive' operation. While it would move again by itself more often than not, the few seconds it was stuck at a position would throw the timings off on a software level (so where the software \textit{thinks} the plunger is may not be accurate), and it put unnessary strain on the motor as it required torque to move past this point. The remedy for this was to allow for larger tollerances between the printed parts. By adding an additional 0.2\unit{\milli\metre} clearance on the thread and nut driving the syringe (0.4\unit{\milli\metre} total), the travel was far smoother and mitigated any future requirements for additional components such as grease. 
 	
-	Another mechanical aspect of this project that could have benefitted from earlier testing stages was the mechanism to drive the propellors. This aspect of the project was a bit of a challenge as a hole for the any shaft that provided clearances to allow free movement would also allow the ingress of water. To this end, I decided to attempt a solution using magnets to drive propellers seperated by a physical barrier. In this design, the motor with a shaft/gears to step up the speed are on the interior of the vessel, while the propeller itself is on the outside. Connecting these are 2 flat disks perpendicular to the physical wall seperating each other but parallel with each other, with equally spaced magnets with alternating polarities. The issue with this design is the motors do not have enough torque to physically turn these disks when they are magnetically attached directly to the wall seperating them. The only assumption for this is the surface area of the disks offers too much friction for the parts to move freely. On the rear motor this was mitigated by adding a small washer in between reducing the contact area, while still keeping the magnets attracted to each other enough to drive the propeller. The side motors however relied on small toy motors that provide plenty of speed but next to no torque, and while the main propeller was supported by a prop guard, the side motors were designed to be detachable to reduce breakage during travel, and so could not be solved by inserting a washer between and so in this iteration of the final solution, the side propellers will not turn if attached. This is one instance where failure to properly test a solution prior to incorporating it fully into the project was a failure as this could have been identified earlier, and the designed revised before it was too late, while keeping the core concept (magnetically driven) and the inexpensive toy motor in place without having to look at more expensive (in terms of both economically and power consumption) motors that have more torque. 
+	Another mechanical aspect of this project that could have benefitted from earlier testing stages was the mechanism to drive the propellors. This aspect of the project was a bit of a challenge as a hole for any shaft that provided clearances to allow free movement would also allow the ingress of water. To this end, I decided to attempt a solution using magnets to drive propellers seperated by a physical barrier. In this design, the motor with a shaft/gears to step up the speed are on the interior of the vessel, while the propeller itself is on the outside. Connecting these are 2 flat disks perpendicular to the physical wall seperating each other but parallel with each other, with equally spaced magnets with alternating polarities. The issue with this design is the motors do not have enough torque to physically turn these disks when they are magnetically attached directly to the wall seperating them. The only assumption for this is the surface area of the disks offers too much friction for the parts to move freely (\ref{appendix:images_parts}). On the rear motor this was mitigated by adding a small washer in between reducing the contact area, while still keeping the magnets attracted to each other enough to drive the propeller. The side motors however relied on small toy motors that provide plenty of speed but next to no torque, and while the main propeller was supported by a prop guard, the side motors were designed to be detachable to reduce breakage during travel, and so could not be solved by inserting a washer between and so in this iteration of the final solution, the side propellers will not turn if attached. This is one instance where failure to properly test a solution prior to incorporating it fully into the project resulted in an overall failure as this could have been identified earlier and the designed revised before it was too late while keeping the core concept (magnetically driven) and the inexpensive toy motor in place without having to look at more expensive (in terms of both economically and power consumption) motors that have more torque. 
 	
-	Finally, the waterproofing of this project was one aspect of the mechanical aspects of the project that did go through proper testing and rounds of iterative changes. The test scenario was to print the vehicle, assemble it and submerge it to check for water-tightness. The first test just the AUV sections with only TPU printed gaskets in between and was largly unsucessful. Water seeped in from every joint, indicated by several streams of bubbles across the AUV. As the sections appeared to be the weak point, the next test was the same again but using silicone sealant to seal these sections. While this test resulted in no bubbles between the sections, water was still getting in to the interior. On closer inspection of the AUV body, there are small holes in the surface of the hull, particularly on the more complex areas such as the side motor pods. This is a negative aspect of using 3D printing to make the hull as with incorrect settings in the slicer, combined with the nature of how these parts are manufactured layer by layer can lead to such imperfections. To mitigate this and to save having to reprint everything at a higher resolution (a process with would have taken in excess of 10 days), each section of the hull was coated in epoxy resin and allowed to cure for over 24 hours. Finally, the vessel was reassembled (a process which was now much harder as the tolerances of the model did not include the thickness of the resin layer) and copious amounts of silicone was applied to every layer. This passed the water tightness test, but as it transpires it only really passed this particular `dry run' if you'll excuse the pun. 
+	Finally, the waterproofing of this project was one aspect of the project that did go through proper testing and rounds of iterative changes. The test scenario was to print the vehicle, assemble it and submerge it to check for water-tightness. The first test just the AUV sections with only TPU printed gaskets in between and was largly unsucessful. Water seeped in from every joint, indicated by several streams of bubbles across the AUV. As the section joints appeared to be the weak point, the next test was the same again but using silicone sealant to seal these sections. While this test resulted in no bubbles between the sections, water was still getting in to the interior. On closer inspection of the AUV body, there are small holes in the surface of the hull, particularly on the more complex areas such as the side motor pods. This is a negative aspect of using 3D printing to make the hull as with incorrect settings in the slicer, combined with the nature of how these parts are manufactured layer by layer can lead to such imperfections. To mitigate this and to save having to reprint everything at a higher resolution (a process with would have taken in excess of 10 days), each section of the hull was coated in epoxy resin and allowed to cure for over 24 hours. Finally, the vessel was reassembled (a process which was now much harder as the tolerances of the model did not include the thickness of the resin layer) and copious amounts of silicone was applied between every section. This passed the water tightness test, but as it transpires it only really passed this particular `dry run' if you'll excuse the pun. 
 	
-	The final test for the AUV was testing the unit as a whole, in a body of water. The initial challenge here was finding a body of water large enough and suitable enough to adequately test. This was found by putting a post on Facebook, in the local community groups to see if anyone had a pool I could borrow for which one individual granted me access to his pool. This test failed. The after placing the AUV in the water, and turning it on, nothing appeared to happen, and eventually it seemed the bow of the AUV was gradually sitting lower in the water than when it was first put in indicating it was taking on water, which was confirmed by the weight of the AUV when lifting it out. Unfortunately there are too many variables to determine what went wrong in this test. First, because the AUV is a sealed box, I had no visibility on the status LEDs soldered onto the modules to determine if it was operating correctly. It could be that connecting wires came unattached during the assembly process so nothing was working to start. The water ingress, while a problem on this test, highlights that the process to make the vessel water tight is too prone to error and needs further exploration, experimenting with different combinations of materials and printer settings. Another contributing factor is the prop guard at the rear of the AUV was broken in transit which could have provided an avenue for water to seep in. Unfortunately, this test only occured with a week to go before the final deadline and there is physically not enough time to refine, reprint, and resolder what is required to replace any potentially broken parts in that space. While there are lessons to be learnt from this test (and that is the point of tests), there is not enough time to enact on them in the scope of this module.   
+	The final test for the AUV was testing the unit as a whole in a body of water. The initial challenge here was finding a body of water large and suitable enough to adequately test in. This was found by putting a post on Facebook in a local community group to see if anyone had a pool I could borrow for which one individual granted me access to his pool. This test failed. The after placing the AUV in the water and turning it on, nothing appeared to happen and eventually it seemed the aft of the AUV was gradually sitting lower in the water than when it was first put in indicating it was taking on water, which was confirmed by the weight of the AUV when lifting it out of the pool. Unfortunately there are too many variables to determine what went wrong in this test. First, because the AUV is a sealed box, I had no visibility on the status LEDs soldered onto the modules to determine if it was operating correctly. It could be that connecting wires came unattached during the assembly process so nothing was working to start. The water ingress, while a problem on this test, highlights that the process to make the vessel water tight is too prone to error and needs further exploration, experimenting with different combinations of materials and printer settings. Another contributing factor is the prop guard at the rear of the AUV was broken in transit which could have provided an avenue for water to seep in. Unfortunately, this test only occurred with a week to go before the final deadline and there is physically not enough time to refine, reprint, and resolder what is required to replace any potentially broken parts in that space. While there are lessons to be learnt from this test, there is not enough time to act on them within the scope of this module.   
 	
+	\textbf{Word count: 1745}
 	
 	\chapter*{Conclusion}
-	Conclusion: This can be a short summary of the project as a whole but it can also bring out any broader themes you would like to discuss or suggest further work. (max 2 pages)
+	\addcontentsline{toc}{chapter}{Conclusion}
+	
+	Whilst the final test for this AUV ended in disappointing failure with no real insight as to why, owing in no small part to a slight oversight of the design of the vessel not making the status LEDs visible while the sealed, this project was successful in the the aim of making a cost effective AUV. By breaking down the cost of the AUV, we can see how cost effective it is when compared to manufactured AUVs that are currently on the market. The Bill of Materials in the appendices (\ref{appendix:bom}) shows the breakdown and the total cost of the AUV coming to £341.22. Even though there are some flaws and issues to iron out, I would say this is a huge saving and can make underwater research projects far more accessible. It is worth noting however that some items such as the 3D printer, or the sundries (wire, resistors, leds etc.) are not included in the BoM. This is because the 3D printer is considered an investment that can be used to print many AUVs, and to speed up production multiple printers could be required, and the other sundries the cost is minimal (it would equate to £1 at most)
+	
+	With that said, in order to fix the outstanding issues, the price of manufacturing a single AUV is likely to rise. While every endeavour would be made to make the device as low cost as possible, some of the parts such as the motors, would likely need upgrading, and it may prove necessary to print the device in a different (more durable) material which could potentially increase the price further. All together, in the future I estimate the AUV could be manufactured for \unit{\approx}£1000 or less with upgraded components included. 
+	
+	Taking this project forward, there are a few areas that require improvement. First, the Sonar Module. As I have previously alluded to, I am not happy with the inclusion of the JSN-SR04T module included in the device. It would be beneficial to design a low cost Sonar module from the ground up capable of scanning multiple frequencies, and properly rated for underwater use. Something that provides the functionality of the Ping2\cite{PING2}, but at a fraction of the price. While this may increase costs, the benefits would be a more suitable Sonar included in the project, and also more control over the design of such a module and how it could be fitted to the AUV. 
+	
+	Second, the Central Controller is currently developed on the ATTiny 1627, along with the other connected modules. This particular module would benefit from the use of device compatible with Robot Operating System (RoS\cite{ROS}) as this would be beneficial for implementing future features that would be expected on such a device, such as mission planning, and techniques used to accurately gauge position such as Dead Reckoning. 
+	
+	Third, would be the inclusion of other modules to help navigation such as a gyroscope, GPS, and pressure gauge. Such devices would be beneficial to the safe running of the AUV with the pressure keeping the AUV above what would be considered its crush depth. 
+	
+	The hull is another area that definitely needs severe improvement. As the finishing processes were cumbersome to the point it proved fatal to the final test, much further investigation is required to determine the optimum material and printer settings to make this device seaworthy (or at least freshwater worthy). It would be ideal if this particular area could be investigated to the point that no post processing techniques are required, but I still maintain the parts would be best kept as 3D printed parts as this is by far the most accessible option. 
+	
+	In summary, while the device itself failed in its final test, the key areas worked during testing and development, albeit with some areas requiring further development. This was a severely ambitious project and while the final results were less than ideal, there is definitely scope for further development and I think if this was to be taken further, it could have a positive impact on the world. 
+	
+	\textbf{Word count: 675}
+
+	\chapter*{Acknowledgements}
+	\addcontentsline{toc}{chapter}{Acknowledgements}
+	
+	There have been a few people who I would like to acknowledge for this project.
+	
+	First, my friend and colleague Babak Jahedmanesh who provided me with a long term loan of his oscilloscope and hot air soldering gun. 
+	
+	Second is my sister Rebecca Sefton who spent a day helping me epoxy the AUV hull. This reduced wastage as without her the resin would have begun the curing process while I was painting it on.
+	
+	Third is 'Jez' Banks (name from Facebook) who provided access to his swimming pool at his home for testing purposes.
+	
+	Finally is my partner Ana Rita Goncalves who didn't complain about the dining table becoming a workstation for a few months in our incredibly small flat.
+	
+	The code repository can be found at https://github.com/RichardSefton/AUV
+	
+	\textbf{Word count: 8226} 
+
+	\newpage
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\printbibliography
 	
 	\chapter*{Appendices}
 	\addcontentsline{toc}{chapter}{Appendices}
+	
+	\section{Bill of Materials}\label{appendix:bom}
+		\begin{center}
+		\begin{tabular}{ c | c | c | c }
+			\hline
+			\textbf{Part} & \textbf{Price per unit} & \textbf{Qty} & \textbf{Total} \\
+			\hline\hline
+			Printed Hull: Lower & £7 & 4 & £28 \\
+			\hline
+			Printed Hull: Upper & £5 & 4 & £20 \\
+			\hline
+			Printed Hull: Bow & £4.50 & 1 & £4.50 \\
+			\hline
+			Printed Hull: Aft & £5 & 1 & £5 \\
+			\hline
+			Printed Hull: Gaskets & £0.35 & 5 & £1.75 \\
+			\hline
+			Depth Controller & £5.50 & 1 & £5.50 \\
+			\hline
+			Main Propeller & £1.10 & 1 & £1.10 \\
+			\hline
+			Side Propellers & £0.40 & 4 & £1.60 \\
+			\hline
+			QFN Breakout PCB & £7.11 & 9 & £63.99 \\
+			\hline
+			ATTiny 1627 MCU & £0.93 & 9 & £8.37 \\
+			\hline
+			Syringe & £6.83 & 1 & £6.83 \\
+			\hline
+			Main Propeller & £1.10 & 1 & £1.10 \\
+			\hline
+			3mm Brass Rods & £1.59 & 3 & £4.79 \\
+			\hline
+			JSN-SR04T Rangefinder & £7.67 & 4 & £30.68 \\
+			\hline
+			Bolts: 50 M4 $\times$ 30mm & £8.99 & 2 & £17.98 \\
+			\hline
+			Bolts: 20 M4 $\times$ 60mm & £8.99 & 1 & £8.99 \\
+			\hline
+			Nuts: M4 4mm & £5.99 & 1 & £5.99 \\
+			\hline
+			5 Pack Stripboard & £4.62 & 2 & £9.24 \\
+			\hline
+			Stepper Motor and Driver Board & £2.40 & 2 & £4.80 \\
+			\hline
+			1kg Steel ball bearings & £9.99 & 4 & £39.96 \\
+			\hline
+			40 Extra strong 6mm $\times$ 3mm Magnets & £4.99 & 1 & £4.99 \\
+			\hline
+			Toy Motors & £0.90 & 4 & £3.60 \\
+			\hline
+			Dual Channel Motor Driver Boards & £1.40 & 1 & £2.80 \\
+			\hline
+			6mm surgical tubing & £13.99 & 1 & £13.99 \\
+			\hline
+			Push button switches & £1.99 & 3 & £5.97 \\
+			\hline
+			6\unit{\volt} Battery Pack & £8.50 & 2 & £17 \\
+			\hline
+			4.8\unit{\volt} Battery Pack & £11.50 & 2 & £23 \\
+			\hline\hline
+			\textbf{Total} & & & \textbf{£341.22} \\
+		\end{tabular}
+	\end{center}
+	
 	\section{AVR ATTiny 1627 Features}\label{appendix:attiny_features}
 	\begin{itemize}
 		\item Low Power
@@ -249,6 +349,117 @@
 		\item Interrupts on all GPIO pins
 		\item 22 Programmable GPIO pins
 	\end{itemize}
+	
+	\section{Images}\label{appendix:images}
+	\subsection{MCU}\label{appendix:images_mcu}
+	\begin{center}
+		\label{picture:images_mcu_1}
+		\includegraphics[width=\linewidth]{assets/MCU1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:breakout_1}
+		\includegraphics[width=\linewidth]{assets/BREAKOUT1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_mcu_soldered_1}
+		\includegraphics[width=\linewidth]{assets/MCU_SOLDERED1.jpg}
+	\end{center}
+		\begin{center}
+		\label{picture:images_mcu_soldered_2}
+		\includegraphics[width=\linewidth]{assets/MCU_SOLDERED2.jpg}
+	\end{center}
+	
+	\subsection{Hull}\label{appendix:images_hull}
+	\begin{center}
+		\label{picture:images_hull_1}
+		\includegraphics[width=\linewidth]{assets/AUV_Hull1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_hull_2}
+		\includegraphics[width=\linewidth]{assets/AUV_Hull2.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_hull_3}
+		\includegraphics[width=\linewidth]{assets/AUV_Hull3.jpg}
+	\end{center}
+	
+	\subsection{Parts}\label{appendix:images_parts}
+	\begin{center}
+		\label{picture:images_parts_1}
+		\includegraphics[width=\linewidth]{assets/Syringe1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_2}
+		\includegraphics[width=\linewidth]{assets/DepthController1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_3}
+		\includegraphics[width=\linewidth]{assets/DepthController2.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_4}
+		\includegraphics[width=\linewidth]{assets/SideProp1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_5}
+		\includegraphics[width=\linewidth]{assets/MainProp1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_6}
+		\includegraphics[width=\linewidth]{assets/MainProp2.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_parts_7}
+		\includegraphics[width=\linewidth]{assets/MainProp3.jpg}
+	\end{center}
+	
+	\subsection{Hull}\label{appendix:images_development}
+	\begin{center}
+		\label{picture:images_development_1}
+		\includegraphics[width=\linewidth]{assets/AUV_ModuleDevelopment1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_development_2}
+		\includegraphics[width=\linewidth]{assets/AUV_ModuleDevelopment2.jpg}
+	\end{center}
+	
+	\subsection{Build}\label{appendix:images_build}
+	\begin{center}
+		\label{picture:images_build_1}
+		\includegraphics[width=\linewidth]{assets/AUV_Build1.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_2}
+		\includegraphics[width=\linewidth]{assets/AUV_Build2.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_3}
+		\includegraphics[width=\linewidth]{assets/AUV_Build3.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_4}
+		\includegraphics[width=\linewidth]{assets/AUV_Build4.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_5}
+		\includegraphics[width=\linewidth]{assets/AUV_Build5.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_6}
+		\includegraphics[width=\linewidth]{assets/AUV_Build6.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_7}
+		\includegraphics[width=\linewidth]{assets/AUV_Build7.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_8}
+		\includegraphics[width=\linewidth]{assets/AUV_Build8.jpg}
+	\end{center}
+	\begin{center}
+		\label{picture:images_build_9}
+		\includegraphics[width=\linewidth]{assets/AUV_Build9.jpg}
+	\end{center}
 	
 	\section{VQFN Breakout}\label{appendix:vqfn_breakout}
 	\begin{center}
@@ -880,7 +1091,6 @@
 			}
 		}
 	\end{lstlisting}
-	\printbibliography
 	
 	\section{CWire Library}\label{appendix:cwire_library_code}
 	\subsection{CWire.h}\label{appendix:cwire_h}

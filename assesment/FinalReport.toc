@@ -1,59 +1,69 @@
-\contentsline {chapter}{Introduction}{1}{}%
-\contentsline {chapter}{Literature Review}{3}{}%
-\contentsline {section}{Previous Works}{3}{}%
-\contentsline {subsection}{Amateur Level}{3}{}%
-\contentsline {subsection}{Commercial Level}{3}{}%
-\contentsline {subsection}{Research Level}{4}{}%
-\contentsline {section}{Key Literature}{4}{}%
-\contentsline {chapter}{Project Design}{8}{}%
-\contentsline {section}{Domain}{8}{}%
-\contentsline {section}{Technologies}{9}{}%
-\contentsline {subsection}{Microcontrollers}{9}{}%
-\contentsline {subsection}{AUV Body}{9}{}%
-\contentsline {subsection}{Navigation}{10}{}%
-\contentsline {subsection}{Mechanical}{11}{}%
-\contentsline {chapter}{Implementation}{12}{}%
-\contentsline {section}{$I^{2}C$}{12}{}%
-\contentsline {section}{Sonar}{14}{}%
-\contentsline {section}{Depth Controller}{15}{}%
-\contentsline {chapter}{Appendices}{22}{}%
-\contentsline {section}{\numberline {1.1}AVR ATTiny 1627 Features}{22}{}%
-\contentsline {section}{\numberline {1.2}VQFN Breakout}{23}{}%
-\contentsline {section}{\numberline {1.3}AUV Electronics Schematics}{26}{}%
-\contentsline {subsection}{\numberline {1.3.1}AUV Schematic}{26}{}%
-\contentsline {subsection}{\numberline {1.3.2}Central Controller Schematic}{27}{}%
-\contentsline {subsection}{\numberline {1.3.3}Depth Controller Schematic}{28}{}%
-\contentsline {subsection}{\numberline {1.3.4}Sonar Module Schematic}{28}{}%
-\contentsline {subsection}{\numberline {1.3.5}Main Motor Schematic}{29}{}%
-\contentsline {subsection}{\numberline {1.3.6}Side Motor Schematic}{30}{}%
-\contentsline {section}{\numberline {1.4}Pseudocode}{30}{}%
-\contentsline {subsection}{\numberline {1.4.1}Central Controller}{30}{}%
-\contentsline {subsection}{\numberline {1.4.2}Depth Controller}{32}{}%
-\contentsline {subsection}{\numberline {1.4.3}Main Motor}{34}{}%
-\contentsline {subsection}{\numberline {1.4.4}Sonar}{35}{}%
-\contentsline {subsection}{\numberline {1.4.5}Side Motor}{36}{}%
-\contentsline {section}{\numberline {1.5}Midterm $I^{2}C$}{36}{}%
-\contentsline {subsection}{\numberline {1.5.1}host.h}{36}{}%
-\contentsline {subsection}{\numberline {1.5.2}host.c}{37}{}%
-\contentsline {subsection}{\numberline {1.5.3}client.h}{40}{}%
-\contentsline {subsection}{\numberline {1.5.4}client.c}{40}{}%
-\contentsline {section}{\numberline {1.6}CWire Library}{45}{}%
-\contentsline {subsection}{\numberline {1.6.1}CWire.h}{45}{}%
-\contentsline {subsection}{\numberline {1.6.2}CWire.c}{52}{}%
-\contentsline {section}{\numberline {1.7}AUV Designs}{66}{}%
-\contentsline {section}{\numberline {1.8}Final Code}{97}{}%
-\contentsline {subsection}{\numberline {1.8.1}Common ShortTypes.h}{97}{}%
-\contentsline {subsection}{\numberline {1.8.2}Common Common.h}{97}{}%
-\contentsline {subsection}{\numberline {1.8.3}Common Common.c}{97}{}%
-\contentsline {subsection}{\numberline {1.8.4}Central Controller AddressBook.h}{98}{}%
-\contentsline {subsection}{\numberline {1.8.5}Central Controller AUV.h}{98}{}%
-\contentsline {subsection}{\numberline {1.8.6}Central Controller AUV.c}{100}{}%
-\contentsline {subsection}{\numberline {1.8.7}Central Controller CentralController.h}{102}{}%
-\contentsline {subsection}{\numberline {1.8.8}Stepper Motor StepperMotor.h}{109}{}%
-\contentsline {subsection}{\numberline {1.8.9}Stepper Motor StepperMotor.c}{110}{}%
-\contentsline {subsection}{\numberline {1.8.10}Depth Controller DepthController.h}{112}{}%
-\contentsline {subsection}{\numberline {1.8.11}Sonar Sonar.h}{116}{}%
-\contentsline {subsection}{\numberline {1.8.12}Sonar Sonar.c}{117}{}%
-\contentsline {subsection}{\numberline {1.8.13}Sonar SonarModule.h}{118}{}%
-\contentsline {subsection}{\numberline {1.8.14}Main Motor MainMotor.h}{120}{}%
-\contentsline {subsection}{\numberline {1.8.15}Side Motor SideMotor.h}{122}{}%
+\contentsline {chapter}{Introduction}{3}{}%
+\contentsline {chapter}{Literature Review}{5}{}%
+\contentsline {section}{Key Literature}{5}{}%
+\contentsline {section}{Previous Works}{8}{}%
+\contentsline {subsection}{Amateur Level}{8}{}%
+\contentsline {subsection}{Commercial Level}{9}{}%
+\contentsline {subsection}{Research Level}{9}{}%
+\contentsline {chapter}{Project Design}{10}{}%
+\contentsline {section}{Domain}{10}{}%
+\contentsline {section}{Technologies}{11}{}%
+\contentsline {subsection}{Microcontrollers}{11}{}%
+\contentsline {subsection}{AUV Body}{11}{}%
+\contentsline {subsection}{Navigation}{12}{}%
+\contentsline {subsection}{Mechanical}{13}{}%
+\contentsline {chapter}{Implementation}{14}{}%
+\contentsline {section}{$I^{2}C$}{14}{}%
+\contentsline {section}{Depth Controller}{16}{}%
+\contentsline {chapter}{Evaluation}{18}{}%
+\contentsline {chapter}{Conclusion}{22}{}%
+\contentsline {chapter}{Acknowledgements}{24}{}%
+\contentsline {chapter}{Bibliography}{25}{}%
+\contentsline {chapter}{Appendices}{28}{}%
+\contentsline {section}{\numberline {1.1}Bill of Materials}{28}{}%
+\contentsline {section}{\numberline {1.2}AVR ATTiny 1627 Features}{29}{}%
+\contentsline {section}{\numberline {1.3}Images}{30}{}%
+\contentsline {subsection}{\numberline {1.3.1}MCU}{30}{}%
+\contentsline {subsection}{\numberline {1.3.2}Hull}{32}{}%
+\contentsline {subsection}{\numberline {1.3.3}Parts}{33}{}%
+\contentsline {subsection}{\numberline {1.3.4}Hull}{37}{}%
+\contentsline {subsection}{\numberline {1.3.5}Build}{38}{}%
+\contentsline {section}{\numberline {1.4}VQFN Breakout}{42}{}%
+\contentsline {section}{\numberline {1.5}AUV Electronics Schematics}{45}{}%
+\contentsline {subsection}{\numberline {1.5.1}AUV Schematic}{45}{}%
+\contentsline {subsection}{\numberline {1.5.2}Central Controller Schematic}{46}{}%
+\contentsline {subsection}{\numberline {1.5.3}Depth Controller Schematic}{47}{}%
+\contentsline {subsection}{\numberline {1.5.4}Sonar Module Schematic}{47}{}%
+\contentsline {subsection}{\numberline {1.5.5}Main Motor Schematic}{48}{}%
+\contentsline {subsection}{\numberline {1.5.6}Side Motor Schematic}{49}{}%
+\contentsline {section}{\numberline {1.6}Pseudocode}{49}{}%
+\contentsline {subsection}{\numberline {1.6.1}Central Controller}{49}{}%
+\contentsline {subsection}{\numberline {1.6.2}Depth Controller}{51}{}%
+\contentsline {subsection}{\numberline {1.6.3}Main Motor}{53}{}%
+\contentsline {subsection}{\numberline {1.6.4}Sonar}{54}{}%
+\contentsline {subsection}{\numberline {1.6.5}Side Motor}{55}{}%
+\contentsline {section}{\numberline {1.7}Midterm $I^{2}C$}{55}{}%
+\contentsline {subsection}{\numberline {1.7.1}host.h}{55}{}%
+\contentsline {subsection}{\numberline {1.7.2}host.c}{56}{}%
+\contentsline {subsection}{\numberline {1.7.3}client.h}{59}{}%
+\contentsline {subsection}{\numberline {1.7.4}client.c}{59}{}%
+\contentsline {section}{\numberline {1.8}CWire Library}{62}{}%
+\contentsline {subsection}{\numberline {1.8.1}CWire.h}{62}{}%
+\contentsline {subsection}{\numberline {1.8.2}CWire.c}{68}{}%
+\contentsline {section}{\numberline {1.9}AUV Designs}{83}{}%
+\contentsline {section}{\numberline {1.10}Final Code}{114}{}%
+\contentsline {subsection}{\numberline {1.10.1}Common ShortTypes.h}{114}{}%
+\contentsline {subsection}{\numberline {1.10.2}Common Common.h}{114}{}%
+\contentsline {subsection}{\numberline {1.10.3}Common Common.c}{114}{}%
+\contentsline {subsection}{\numberline {1.10.4}Central Controller AddressBook.h}{115}{}%
+\contentsline {subsection}{\numberline {1.10.5}Central Controller AUV.h}{115}{}%
+\contentsline {subsection}{\numberline {1.10.6}Central Controller AUV.c}{117}{}%
+\contentsline {subsection}{\numberline {1.10.7}Central Controller CentralController.h}{119}{}%
+\contentsline {subsection}{\numberline {1.10.8}Stepper Motor StepperMotor.h}{126}{}%
+\contentsline {subsection}{\numberline {1.10.9}Stepper Motor StepperMotor.c}{127}{}%
+\contentsline {subsection}{\numberline {1.10.10}Depth Controller DepthController.h}{129}{}%
+\contentsline {subsection}{\numberline {1.10.11}Sonar Sonar.h}{133}{}%
+\contentsline {subsection}{\numberline {1.10.12}Sonar Sonar.c}{134}{}%
+\contentsline {subsection}{\numberline {1.10.13}Sonar SonarModule.h}{135}{}%
+\contentsline {subsection}{\numberline {1.10.14}Main Motor MainMotor.h}{137}{}%
+\contentsline {subsection}{\numberline {1.10.15}Side Motor SideMotor.h}{139}{}%

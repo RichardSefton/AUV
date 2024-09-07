@@ -848,6 +848,32 @@
       \verb https://bluerobotics.com/store/sonars/echosounders/ping-sonar-r2-rp/
       \endverb
     \endentry
+    \entry{ROS}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=0cc95bcb9ab3a784043fe73499f395b8}{%
+           family={RoS},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{fullhash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{fullhashraw}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{bibnamehash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{authorbibnamehash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{authornamehash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{authorfullhash}{0cc95bcb9ab3a784043fe73499f395b8}
+      \strng{authorfullhashraw}{0cc95bcb9ab3a784043fe73499f395b8}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Robot Operating System}
+      \verb{urlraw}
+      \verb https://www.ros.org/
+      \endverb
+      \verb{url}
+      \verb https://www.ros.org/
+      \endverb
+    \endentry
     \entry{COURSERA_PROJECT_PERMISSION}{online}{}{}
       \name{author}{1}{}{%
         {{hash=76734206a2102c7a3fd48db54c3e5089}{%
@@ -864,7 +890,6 @@
       \strng{authornamehash}{76734206a2102c7a3fd48db54c3e5089}
       \strng{authorfullhash}{76734206a2102c7a3fd48db54c3e5089}
       \strng{authorfullhashraw}{76734206a2102c7a3fd48db54c3e5089}
-      \field{extraname}{1}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -875,35 +900,6 @@
       \endverb
       \verb{url}
       \verb NEEDED
-      \endverb
-    \endentry
-    \entry{STUART}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=76734206a2102c7a3fd48db54c3e5089}{%
-           family={Sefton},
-           familyi={S\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{fullhash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{fullhashraw}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{bibnamehash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{authorbibnamehash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{authornamehash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{authorfullhash}{76734206a2102c7a3fd48db54c3e5089}
-      \strng{authorfullhashraw}{76734206a2102c7a3fd48db54c3e5089}
-      \field{extraname}{2}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{STUART}
-      \verb{urlraw}
-      \verb https://github.com/RichardSefton/STUART/tree/master/STUART.X
-      \endverb
-      \verb{url}
-      \verb https://github.com/RichardSefton/STUART/tree/master/STUART.X
       \endverb
     \endentry
     \entry{JSN_SR04T}{online}{}{}
